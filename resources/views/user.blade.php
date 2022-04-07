@@ -41,6 +41,13 @@
 							<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 						</div>
 @endif
+
+		@if(session()->has('loginError'))
+					<div class="alert alert-warning alert-dismissible fade show" role="alert">
+						{{ session('loginError') }}</strong>
+							<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+						</div>
+@endif
 				
 				<div class="col-md-12">
 					<div class="card-body">
@@ -48,15 +55,32 @@
 						
 						<h4 class="mb-3 f-w-400">Masuk</h4>
 
-<form action="/login" method="post">
-	@csrf
+<form action="/user" method="POST">
+   @csrf
 						<div class="form-group mb-3">
 							<label class="floating-label" for="Email">Email / Username</label>
-							<input type="text" class="form-control" id="Email" placeholder="" autofocus>
+							<input type="text" name="email" class="form-control @error('email') is-invalid
+							@enderror" id="Email" placeholder="" value="{{ old ('email')}}" autofocus>
+							@error('email')
+
+							<div class="invalid-feedback">
+							{{ $message }}
+							</div>
+								
+							@enderror
 						</div>
 						<div class="form-group mb-4">
 							<label class="floating-label" for="Password">Password</label>
-							<input type="password" class="form-control" id="Password" placeholder="">
+							<input type="password" name="password" class="form-control @error('password')is-invalid
+								
+							@enderror" id="Password" placeholder="">
+							@error('password')
+
+							<div class="invalid-feedback">
+							{{ $message }}
+							</div>
+								
+							@enderror
 						</div>
 						<div class="form-check text-start mb-4 mt-2">
 							<input type="checkbox" class="form-check-input" id="customCheck1">
@@ -68,7 +92,6 @@
 					</div>
 				</div>
 
-			</form>
 			</div>
 		</div>
 	</div>

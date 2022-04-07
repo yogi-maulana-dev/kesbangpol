@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tutorial;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
-
 
 class TutorialController extends Controller
 {
@@ -16,7 +15,6 @@ class TutorialController extends Controller
     public function index()
     {
         //
-         return view('tutorial', ["judul" => "Halaman Tutorial"]);
     }
 
     /**
@@ -43,10 +41,10 @@ class TutorialController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Tutorial  $tutorial
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Tutorial $tutorial)
     {
         //
     }
@@ -54,10 +52,10 @@ class TutorialController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Tutorial  $tutorial
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Tutorial $tutorial)
     {
         //
     }
@@ -66,10 +64,10 @@ class TutorialController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Tutorial  $tutorial
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Tutorial $tutorial)
     {
         //
     }
@@ -77,10 +75,10 @@ class TutorialController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Tutorial  $tutorial
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Tutorial $tutorial)
     {
         //
     }
