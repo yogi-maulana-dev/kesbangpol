@@ -34,13 +34,25 @@
 	<div class="auth-content">
 		<div class="card">
 			<div class="row align-items-center text-center">
+
+				@if(session()->has('success'))
+					<div class="alert alert-success alert-dismissible fade show" role="alert">
+						{{ session('success') }}</strong>
+							<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+						</div>
+@endif
+				
 				<div class="col-md-12">
 					<div class="card-body">
 						<img src="admin/assets/images/logo-dark.png" alt="" class="img-fluid mb-4">
+						
 						<h4 class="mb-3 f-w-400">Masuk</h4>
+
+<form action="/login" method="post">
+	@csrf
 						<div class="form-group mb-3">
 							<label class="floating-label" for="Email">Email / Username</label>
-							<input type="text" class="form-control" id="Email" placeholder="">
+							<input type="text" class="form-control" id="Email" placeholder="" autofocus>
 						</div>
 						<div class="form-group mb-4">
 							<label class="floating-label" for="Password">Password</label>
@@ -55,6 +67,8 @@
 						<p class="mb-0 text-muted">Belum Punya Akun? <a href="auth-signup.html" class="f-w-400">Daftar</a></p>
 					</div>
 				</div>
+
+			</form>
 			</div>
 		</div>
 	</div>
@@ -66,7 +80,20 @@
 <script src="admin/assets/js/plugins/bootstrap.min.js"></script>
 <script src="admin/assets/js/ripple.js"></script>
 <script src="admin/assets/js/pcoded.min.js"></script>
+<script src="admin/assets/js/jquery.min.js"></script>
 
+
+<!-- notification Js -->
+
+<script>
+    $(document).ready(function() {
+        window.setTimeout(function() {
+            $(".alert").fadeTo(600, 0).slideUp(500, function(){
+                $(this).remove();
+            });
+        }, 6000);
+    });    
+</script>
 
 
 </body>
