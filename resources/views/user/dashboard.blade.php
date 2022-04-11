@@ -3,9 +3,12 @@
 @section('dashboard')
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 @if ($datas->isEmpty())
  <div class="card">
 =======
+=======
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 @foreach ($datas as $data)
     
 @if ($data -> lengkap )
@@ -163,6 +166,9 @@
                                                                 <!--Multi Model End-->
 @else
       <div class="card">
+<<<<<<< HEAD
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
+=======
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 <div class="card-header">
     <h5>Halaman Data Pendaftaran Organisasi Masyarakat</h5>
@@ -521,6 +527,7 @@
     </form>
 </div>
 </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
                                                                 @else
    <div class="card">
@@ -1119,10 +1126,15 @@
 
 
 =======
+=======
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 
 @endif
 
 @endforeach
+<<<<<<< HEAD
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
+=======
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 
 @endsection

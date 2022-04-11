@@ -3,6 +3,7 @@
 namespace App\Models;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -62,6 +63,8 @@ protected $guarded =['id'];
 
 
 =======
+=======
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -69,4 +72,7 @@ class Dashboard extends Model
 {
     use HasFactory;
 }
+<<<<<<< HEAD
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
+=======
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f

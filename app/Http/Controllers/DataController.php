@@ -24,13 +24,19 @@ class DataController extends Controller
         //
 
 <<<<<<< HEAD
+<<<<<<< HEAD
        
 
 =======
+=======
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
        return view('user.data', ["judul" => "Halaman Data",
        'datas' => Upload::where('id_user', auth()->user()->id)->get()
 
       ]);
+<<<<<<< HEAD
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
+=======
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
       
         
@@ -201,10 +207,13 @@ class DataController extends Controller
         $skt->move($tes.'/',$nama_dokumen21);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         $surat_keterangan_domisili = $request->file('surat_keterangan_domisili');
         $nama_dokumen22 = 'surat_keterangan_domisili'.date('Ymdhis').'.'.$request->file('surat_keterangan_domisili')->getClientOriginalExtension();
         $surat_keterangan_domisili->move($tes.'/',$nama_dokumen22);
 
+=======
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 =======
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 
@@ -214,9 +223,14 @@ class DataController extends Controller
         $validasi['surat_keputusan'] = $nama_dokumen4;
         $validasi['biodata_pengurus'] = $nama_dokumen5;
 <<<<<<< HEAD
+<<<<<<< HEAD
         $validasi['ktp'] = $nama_dokumen6;
         $validasi['foto'] = $nama_dokumen7;
         $validasi['surat_keterangan_domisili'] = $nama_dokumen22;
+=======
+        $validasi['KTP'] = $nama_dokumen6;
+        $validasi['foto'] = $nama_dokumen7;
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 =======
         $validasi['KTP'] = $nama_dokumen6;
         $validasi['foto'] = $nama_dokumen7;
@@ -236,8 +250,12 @@ class DataController extends Controller
         $validasi['surat_izasah'] = $nama_dokumen20;
         $validasi['skt'] = $nama_dokumen21;
 <<<<<<< HEAD
+<<<<<<< HEAD
         $validasi['surat_ketertiban'] = $nama_dokumen22;
         $validasi['id_user'] = auth()->user()->id;
+=======
+        $validasi['id_user'] = auth()->user()->nama;
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 =======
         $validasi['id_user'] = auth()->user()->nama;
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
@@ -276,6 +294,7 @@ class DataController extends Controller
     {
         //
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         
           $data = Upload::findOrFail($id);
@@ -285,6 +304,8 @@ class DataController extends Controller
        
       ]);
       
+=======
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 =======
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
     }

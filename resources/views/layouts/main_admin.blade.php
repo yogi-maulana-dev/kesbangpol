@@ -24,6 +24,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
     <!-- Required Fremwork -->
 <<<<<<< HEAD
+<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="/admin/bower_components/bootstrap/css/bootstrap.min.css">
     <!-- waves.css -->
     <link rel="stylesheet" href="/admin/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
@@ -32,6 +33,8 @@
     <!-- ico font -->
     <link rel="stylesheet" type="text/css" href="/admin/assets/icon/icofont/css/icofont.css">
 =======
+=======
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
     <link rel="stylesheet" type="text/css" href="admin/bower_components/bootstrap/css/bootstrap.min.css">
     <!-- waves.css -->
     <link rel="stylesheet" href="admin/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
@@ -39,11 +42,15 @@
     <link rel="stylesheet" type="text/css" href="admin/assets/icon/themify-icons/themify-icons.css">
     <!-- ico font -->
     <link rel="stylesheet" type="text/css" href="admin/assets/icon/icofont/css/icofont.css">
+<<<<<<< HEAD
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
+=======
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
     <!-- Font Awesome -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    
     <!-- Syntax highlighter Prism css -->
+<<<<<<< HEAD
 <<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="/admin/assets/pages/prism/prism.css">
     <!-- Style.css -->
@@ -75,6 +82,8 @@
       href="/admin/bower_components/lightbox2/css/lightbox.min.css"
     />
 =======
+=======
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
     <link rel="stylesheet" type="text/css" href="admin/assets/pages/prism/prism.css">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="admin/assets/css/style.css">
@@ -96,6 +105,9 @@
     <link rel="stylesheet" type="text/css" href="admin/assets/pages/data-table/css/buttons.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="admin/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="admin/assets/pages/data-table/extensions/responsive/css/responsive.dataTables.css">
+<<<<<<< HEAD
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
+=======
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
     <!-- Style.css -->
 </head>
@@ -179,7 +191,11 @@
                         </div>
                         <a href="index-2.html">
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <img class="img-fluid" src="/admin/assets/images/logo.png" alt="Theme-Logo" />
+=======
+                            <img class="img-fluid" src="admin/assets/images/logo.png" alt="Theme-Logo" />
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 =======
                             <img class="img-fluid" src="admin/assets/images/logo.png" alt="Theme-Logo" />
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
@@ -223,7 +239,11 @@
                                     <li class="waves-effect waves-light">
                                         <div class="media">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                             <img class="d-flex align-self-center img-radius" src="/admin/assets/images/avatar-2.jpg" alt="Generic placeholder image">
+=======
+                                            <img class="d-flex align-self-center img-radius" src="admin/assets/images/avatar-2.jpg" alt="Generic placeholder image">
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 =======
                                             <img class="d-flex align-self-center img-radius" src="admin/assets/images/avatar-2.jpg" alt="Generic placeholder image">
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
@@ -237,7 +257,11 @@
                                     <li class="waves-effect waves-light">
                                         <div class="media">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                             <img class="d-flex align-self-center img-radius" src="/admin/assets/images/avatar-4.jpg" alt="Generic placeholder image">
+=======
+                                            <img class="d-flex align-self-center img-radius" src="admin/assets/images/avatar-4.jpg" alt="Generic placeholder image">
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 =======
                                             <img class="d-flex align-self-center img-radius" src="admin/assets/images/avatar-4.jpg" alt="Generic placeholder image">
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
@@ -251,7 +275,11 @@
                                     <li class="waves-effect waves-light">
                                         <div class="media">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                             <img class="d-flex align-self-center img-radius" src="/admin/assets/images/avatar-3.jpg" alt="Generic placeholder image">
+=======
+                                            <img class="d-flex align-self-center img-radius" src="admin/assets/images/avatar-3.jpg" alt="Generic placeholder image">
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 =======
                                             <img class="d-flex align-self-center img-radius" src="admin/assets/images/avatar-3.jpg" alt="Generic placeholder image">
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
@@ -273,8 +301,13 @@
                             <li class="user-profile header-notification">
                                 <a href="#!" class="waves-effect waves-light">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <img src="/admin/assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
                                     <span>{{ auth()->user()->nama; }}</span>
+=======
+                                    <img src="admin/assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
+                                    <span>John Doe</span>
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 =======
                                     <img src="admin/assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
                                     <span>John Doe</span>
@@ -303,6 +336,7 @@
                                         </a>
                                     </li>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <form action="/keluar" method="post">
                                    
                                         
@@ -315,11 +349,16 @@
                                    
                                       </form>
 =======
+=======
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
                                     <li class="waves-effect waves-light">
                                         <a href="auth-normal-sign-in.html">
                                             <i class="ti-layout-sidebar-left"></i> Logout
                                         </a>
                                     </li>
+<<<<<<< HEAD
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
+=======
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
                                 </ul>
                             </li>
@@ -350,7 +389,11 @@
                                 <div class="media userlist-box waves-effect waves-light" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
                                     <a class="media-left" href="#!">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         <img class="media-object img-radius img-radius" src="/admin/assets/images/avatar-3.jpg" alt="Generic placeholder image ">
+=======
+                                        <img class="media-object img-radius img-radius" src="admin/assets/images/avatar-3.jpg" alt="Generic placeholder image ">
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 =======
                                         <img class="media-object img-radius img-radius" src="admin/assets/images/avatar-3.jpg" alt="Generic placeholder image ">
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
@@ -363,7 +406,11 @@
                                 <div class="media userlist-box waves-effect waves-light" data-id="2" data-status="online" data-username="Lary Doe" data-toggle="tooltip" data-placement="left" title="Lary Doe">
                                     <a class="media-left" href="#!">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         <img class="media-object img-radius" src="/admin/assets/images/avatar-2.jpg" alt="Generic placeholder image">
+=======
+                                        <img class="media-object img-radius" src="admin/assets/images/avatar-2.jpg" alt="Generic placeholder image">
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 =======
                                         <img class="media-object img-radius" src="admin/assets/images/avatar-2.jpg" alt="Generic placeholder image">
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
@@ -376,7 +423,11 @@
                                 <div class="media userlist-box waves-effect waves-light" data-id="3" data-status="online" data-username="Alice" data-toggle="tooltip" data-placement="left" title="Alice">
                                     <a class="media-left" href="#!">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         <img class="media-object img-radius" src="/admin/assets/images/avatar-4.jpg" alt="Generic placeholder image">
+=======
+                                        <img class="media-object img-radius" src="admin/assets/images/avatar-4.jpg" alt="Generic placeholder image">
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 =======
                                         <img class="media-object img-radius" src="admin/assets/images/avatar-4.jpg" alt="Generic placeholder image">
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
@@ -389,7 +440,11 @@
                                 <div class="media userlist-box waves-effect waves-light" data-id="4" data-status="online" data-username="Alia" data-toggle="tooltip" data-placement="left" title="Alia">
                                     <a class="media-left" href="#!">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         <img class="media-object img-radius" src="/admin/assets/images/avatar-3.jpg" alt="Generic placeholder image">
+=======
+                                        <img class="media-object img-radius" src="admin/assets/images/avatar-3.jpg" alt="Generic placeholder image">
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 =======
                                         <img class="media-object img-radius" src="admin/assets/images/avatar-3.jpg" alt="Generic placeholder image">
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
@@ -402,7 +457,11 @@
                                 <div class="media userlist-box waves-effect waves-light" data-id="5" data-status="online" data-username="Suzen" data-toggle="tooltip" data-placement="left" title="Suzen">
                                     <a class="media-left" href="#!">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         <img class="media-object img-radius" src="/admin/assets/images/avatar-2.jpg" alt="Generic placeholder image">
+=======
+                                        <img class="media-object img-radius" src="admin/assets/images/avatar-2.jpg" alt="Generic placeholder image">
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 =======
                                         <img class="media-object img-radius" src="admin/assets/images/avatar-2.jpg" alt="Generic placeholder image">
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
@@ -427,7 +486,11 @@
                 <div class="media chat-messages">
                     <a class="media-left photo-table" href="#!">
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <img class="media-object img-radius img-radius m-t-5" src="/admin/assets/images/avatar-3.jpg" alt="Generic placeholder image">
+=======
+                        <img class="media-object img-radius img-radius m-t-5" src="admin/assets/images/avatar-3.jpg" alt="Generic placeholder image">
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 =======
                         <img class="media-object img-radius img-radius m-t-5" src="admin/assets/images/avatar-3.jpg" alt="Generic placeholder image">
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
@@ -449,7 +512,11 @@
                     <div class="media-right photo-table">
                         <a href="#!">
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <img class="media-object img-radius img-radius m-t-5" src="/admin/assets/images/avatar-4.jpg" alt="Generic placeholder image">
+=======
+                            <img class="media-object img-radius img-radius m-t-5" src="admin/assets/images/avatar-4.jpg" alt="Generic placeholder image">
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 =======
                             <img class="media-object img-radius img-radius m-t-5" src="admin/assets/images/avatar-4.jpg" alt="Generic placeholder image">
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
@@ -2412,7 +2479,10 @@
                                                     <!-- Default card start -->
                                                 @yield('dashboard')
 <<<<<<< HEAD
+<<<<<<< HEAD
                                                 @yield('container')
+=======
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 =======
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
                                             <!-- Default card end -->
@@ -2443,7 +2513,11 @@
             <li>
                 <a href="http://www.google.com/chrome/">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <img src="/admin/assets/images/browser/chrome.png" alt="Chrome">
+=======
+                    <img src="admin/assets/images/browser/chrome.png" alt="Chrome">
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 =======
                     <img src="admin/assets/images/browser/chrome.png" alt="Chrome">
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
@@ -2453,7 +2527,11 @@
             <li>
                 <a href="https://www.mozilla.org/en-US/firefox/new/">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <img src="/admin/assets/images/browser/firefox.png" alt="Firefox">
+=======
+                    <img src="admin/assets/images/browser/firefox.png" alt="Firefox">
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 =======
                     <img src="admin/assets/images/browser/firefox.png" alt="Firefox">
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
@@ -2463,7 +2541,11 @@
             <li>
                 <a href="http://www.opera.com">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <img src="/admin/assets/images/browser/opera.png" alt="Opera">
+=======
+                    <img src="admin/assets/images/browser/opera.png" alt="Opera">
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 =======
                     <img src="admin/assets/images/browser/opera.png" alt="Opera">
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
@@ -2473,7 +2555,11 @@
             <li>
                 <a href="https://www.apple.com/safari/">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <img src="/admin/assets/images/browser/safari.png" alt="Safari">
+=======
+                    <img src="admin/assets/images/browser/safari.png" alt="Safari">
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 =======
                     <img src="admin/assets/images/browser/safari.png" alt="Safari">
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
@@ -2483,7 +2569,11 @@
             <li>
                 <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <img src="/admin/assets/images/browser/ie.png" alt="">
+=======
+                    <img src="admin/assets/images/browser/ie.png" alt="">
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 =======
                     <img src="admin/assets/images/browser/ie.png" alt="">
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
@@ -2497,6 +2587,7 @@
 <![endif]-->
 <!-- Warning Section Ends -->
 <!-- Required Jquery -->
+<<<<<<< HEAD
 <<<<<<< HEAD
 <script type="text/javascript" src="/admin/bower_components/jquery/js/jquery.min.js"></script>
 <script type="text/javascript" src="/admin/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
@@ -2591,6 +2682,8 @@ $("#file").change(function() {
 });
     </script>
 =======
+=======
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 <script type="text/javascript" src="admin/bower_components/jquery/js/jquery.min.js"></script>
 <script type="text/javascript" src="admin/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="admin/bower_components/popper.js/js/popper.min.js"></script>
@@ -2643,6 +2736,9 @@ $("#file").change(function() {
     <script src="admin/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
 
       <script src="admin/assets/pages/data-table/extensions/responsive/js/responsive-custom.js"></script>
+<<<<<<< HEAD
+>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
+=======
 >>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 
 </body>

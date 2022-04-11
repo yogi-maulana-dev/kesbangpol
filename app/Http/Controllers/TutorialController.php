@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Dashboard;
+use App\Models\Tutorial;
 use Illuminate\Http\Request;
-use App\Models\Upload;
 
-class DashboardController extends Controller
+class TutorialController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,19 +15,6 @@ class DashboardController extends Controller
     public function index()
     {
         //
-<<<<<<< HEAD
-<<<<<<< HEAD
-      
-=======
-        return view('user.dashboard', ["judul" => "Halaman Dashboard",
-       'datas' => Upload::where('id_user', auth()->user()->id)->get()
-    ]);
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
-        return view('user.dashboard', ["judul" => "Halaman Dashboard",
-       'datas' => Upload::where('id_user', auth()->user()->id)->get()
-    ]);
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
     }
 
     /**
@@ -55,10 +41,10 @@ class DashboardController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Dashboard  $dashboard
+     * @param  \App\Models\Tutorial  $tutorial
      * @return \Illuminate\Http\Response
      */
-    public function show(Dashboard $dashboard)
+    public function show(Tutorial $tutorial)
     {
         //
     }
@@ -66,27 +52,22 @@ class DashboardController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Dashboard  $dashboard
+     * @param  \App\Models\Tutorial  $tutorial
      * @return \Illuminate\Http\Response
      */
-    public function edit(Dashboard $dashboard)
+    public function edit(Tutorial $tutorial)
     {
         //
-    return view('user.dashboard', ["judul" => "Halaman Dashboard",
-    'datas' => Upload::where('id_user', auth()->user()->id)->get()
-
-    ]);
-
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Dashboard  $dashboard
+     * @param  \App\Models\Tutorial  $tutorial
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Dashboard $dashboard)
+    public function update(Request $request, Tutorial $tutorial)
     {
         //
     }
@@ -94,10 +75,10 @@ class DashboardController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Dashboard  $dashboard
+     * @param  \App\Models\Tutorial  $tutorial
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Dashboard $dashboard)
+    public function destroy(Tutorial $tutorial)
     {
         //
     }
