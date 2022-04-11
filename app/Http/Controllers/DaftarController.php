@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Tutorial;
 use Illuminate\Http\Request;
+<<<<<<<< HEAD:app/Http/Controllers/DaftarController.php
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
-
-
+use App\Models\User;
 
 class DaftarController extends Controller
+========
+
+class TutorialController extends Controller
+>>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f:app/Http/Controllers/TutorialController.php
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +23,10 @@ class DaftarController extends Controller
     public function index()
     {
         //
-        return view('daftar', ['judul' => 'Halaman Daftar']);
+<<<<<<<< HEAD:app/Http/Controllers/DaftarController.php
+        return view('daftar', ["judul" => "Halaman Daftar"]);
+========
+>>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f:app/Http/Controllers/TutorialController.php
     }
 
     /**
@@ -41,7 +48,8 @@ class DaftarController extends Controller
     public function store(Request $request)
     {
         //
-        $validasi= $request->validate([
+
+          $validasi= $request->validate([
              'nama' => 'required|max:255',
              'username' => ['required', 'min:7','max:255','unique:users'],
              'email' => 'required|email:dns|unique:users',
@@ -56,15 +64,23 @@ class DaftarController extends Controller
 
  return redirect('/user')->with('success', 'Pendaftaraan berhasil !!! Silakan login');
 
+ 
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+<<<<<<<< HEAD:app/Http/Controllers/DaftarController.php
+     * @param  \App\Models\Daftar  $daftar
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Daftar $daftar)
+========
+     * @param  \App\Models\Tutorial  $tutorial
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Tutorial $tutorial)
+>>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f:app/Http/Controllers/TutorialController.php
     {
         //
     }
@@ -72,10 +88,17 @@ class DaftarController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+<<<<<<<< HEAD:app/Http/Controllers/DaftarController.php
+     * @param  \App\Models\Daftar  $daftar
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Daftar $daftar)
+========
+     * @param  \App\Models\Tutorial  $tutorial
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Tutorial $tutorial)
+>>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f:app/Http/Controllers/TutorialController.php
     {
         //
     }
@@ -84,10 +107,17 @@ class DaftarController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+<<<<<<<< HEAD:app/Http/Controllers/DaftarController.php
+     * @param  \App\Models\Daftar  $daftar
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Daftar $daftar)
+========
+     * @param  \App\Models\Tutorial  $tutorial
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Tutorial $tutorial)
+>>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f:app/Http/Controllers/TutorialController.php
     {
         //
     }
@@ -95,10 +125,17 @@ class DaftarController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+<<<<<<<< HEAD:app/Http/Controllers/DaftarController.php
+     * @param  \App\Models\Daftar  $daftar
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Daftar $daftar)
+========
+     * @param  \App\Models\Tutorial  $tutorial
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Tutorial $tutorial)
+>>>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f:app/Http/Controllers/TutorialController.php
     {
         //
     }
