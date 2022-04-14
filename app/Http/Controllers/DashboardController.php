@@ -16,19 +16,13 @@ class DashboardController extends Controller
     public function index()
     {
         //
-<<<<<<< HEAD
-<<<<<<< HEAD
-      
-=======
+
+
+
         return view('user.dashboard', ["judul" => "Halaman Dashboard",
        'datas' => Upload::where('id_user', auth()->user()->id)->get()
     ]);
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
-        return view('user.dashboard', ["judul" => "Halaman Dashboard",
-       'datas' => Upload::where('id_user', auth()->user()->id)->get()
-    ]);
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
+
     }
 
     /**

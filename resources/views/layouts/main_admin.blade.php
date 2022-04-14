@@ -23,18 +23,6 @@
     <!-- Google font-->     
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
     <!-- Required Fremwork -->
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <link rel="stylesheet" type="text/css" href="/admin/bower_components/bootstrap/css/bootstrap.min.css">
-    <!-- waves.css -->
-    <link rel="stylesheet" href="/admin/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
-    <!-- themify-icons line icon -->
-    <link rel="stylesheet" type="text/css" href="/admin/assets/icon/themify-icons/themify-icons.css">
-    <!-- ico font -->
-    <link rel="stylesheet" type="text/css" href="/admin/assets/icon/icofont/css/icofont.css">
-=======
-=======
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
     <link rel="stylesheet" type="text/css" href="admin/bower_components/bootstrap/css/bootstrap.min.css">
     <!-- waves.css -->
     <link rel="stylesheet" href="admin/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
@@ -42,48 +30,10 @@
     <link rel="stylesheet" type="text/css" href="admin/assets/icon/themify-icons/themify-icons.css">
     <!-- ico font -->
     <link rel="stylesheet" type="text/css" href="admin/assets/icon/icofont/css/icofont.css">
-<<<<<<< HEAD
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
     <!-- Font Awesome -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    
     <!-- Syntax highlighter Prism css -->
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <link rel="stylesheet" type="text/css" href="/admin/assets/pages/prism/prism.css">
-    <!-- Style.css -->
-    <link rel="stylesheet" type="text/css" href="/admin/assets/css/style.css">
-    
-    
-    <link rel="stylesheet" type="text/css" href="/admin/assets/css/jquery.mCustomScrollbar.css">
-    <link rel="stylesheet" type="text/css" href="/admin/assets/css/pcoded-horizontal.min.css">
-
-
-       <!--forms-wizard css-->
-      <link rel="stylesheet" type="text/css" href="/admin/bower_components/jquery.steps/css/jquery.steps.css">
-
-       <!-- jquery file upload Frame work -->
-      <link href="/admin/assets/pages/jquery.filer/css/jquery.filer.css" type="text/css" rel="stylesheet" />
-      <link href="/admin/assets/pages/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css" type="text/css" rel="stylesheet" />
-
-         <!-- Data Table Css -->
-    <link rel="stylesheet" type="text/css" href="/admin/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css" href="/admin/assets/pages/data-table/css/buttons.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="/admin/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css" href="/admin/assets/pages/data-table/extensions/responsive/css/responsive.dataTables.css">
-
-
-
-      <link
-      rel="stylesheet"
-      type="text/css"
-      href="/admin/bower_components/lightbox2/css/lightbox.min.css"
-    />
-=======
-=======
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
     <link rel="stylesheet" type="text/css" href="admin/assets/pages/prism/prism.css">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="admin/assets/css/style.css">
@@ -105,10 +55,12 @@
     <link rel="stylesheet" type="text/css" href="admin/assets/pages/data-table/css/buttons.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="admin/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="admin/assets/pages/data-table/extensions/responsive/css/responsive.dataTables.css">
-<<<<<<< HEAD
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
+
+      <link
+      rel="stylesheet"
+      type="text/css"
+      href="admin/bower_components/lightbox2/css/lightbox.min.css"
+    />
     <!-- Style.css -->
 </head>
 <!-- Menu horizontal icon fixed -->
@@ -190,15 +142,7 @@
                             </div>
                         </div>
                         <a href="index-2.html">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            <img class="img-fluid" src="/admin/assets/images/logo.png" alt="Theme-Logo" />
-=======
                             <img class="img-fluid" src="admin/assets/images/logo.png" alt="Theme-Logo" />
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
-                            <img class="img-fluid" src="admin/assets/images/logo.png" alt="Theme-Logo" />
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
                         </a>
                         <a class="mobile-options waves-effect waves-light">
                             <i class="ti-more"></i>
@@ -238,15 +182,7 @@
                                     </li>
                                     <li class="waves-effect waves-light">
                                         <div class="media">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                            <img class="d-flex align-self-center img-radius" src="/admin/assets/images/avatar-2.jpg" alt="Generic placeholder image">
-=======
                                             <img class="d-flex align-self-center img-radius" src="admin/assets/images/avatar-2.jpg" alt="Generic placeholder image">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
-                                            <img class="d-flex align-self-center img-radius" src="admin/assets/images/avatar-2.jpg" alt="Generic placeholder image">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
                                             <div class="media-body">
                                                 <h5 class="notification-user">John Doe</h5>
                                                 <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
@@ -256,15 +192,7 @@
                                     </li>
                                     <li class="waves-effect waves-light">
                                         <div class="media">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                            <img class="d-flex align-self-center img-radius" src="/admin/assets/images/avatar-4.jpg" alt="Generic placeholder image">
-=======
                                             <img class="d-flex align-self-center img-radius" src="admin/assets/images/avatar-4.jpg" alt="Generic placeholder image">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
-                                            <img class="d-flex align-self-center img-radius" src="admin/assets/images/avatar-4.jpg" alt="Generic placeholder image">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
                                             <div class="media-body">
                                                 <h5 class="notification-user">Joseph William</h5>
                                                 <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
@@ -274,15 +202,7 @@
                                     </li>
                                     <li class="waves-effect waves-light">
                                         <div class="media">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                            <img class="d-flex align-self-center img-radius" src="/admin/assets/images/avatar-3.jpg" alt="Generic placeholder image">
-=======
                                             <img class="d-flex align-self-center img-radius" src="admin/assets/images/avatar-3.jpg" alt="Generic placeholder image">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
-                                            <img class="d-flex align-self-center img-radius" src="admin/assets/images/avatar-3.jpg" alt="Generic placeholder image">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
                                             <div class="media-body">
                                                 <h5 class="notification-user">Sara Soudein</h5>
                                                 <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
@@ -300,18 +220,8 @@
                             </li>
                             <li class="user-profile header-notification">
                                 <a href="#!" class="waves-effect waves-light">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                    <img src="/admin/assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
+                                    <img src="admin/assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
                                     <span>{{ auth()->user()->nama; }}</span>
-=======
-                                    <img src="admin/assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
-                                    <span>John Doe</span>
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
-                                    <img src="admin/assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
-                                    <span>John Doe</span>
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
                                     <i class="ti-angle-down"></i>
                                 </a>
                                 <ul class="show-notification profile-notification">
@@ -335,8 +245,6 @@
                                             <i class="ti-lock"></i> Lock Screen
                                         </a>
                                     </li>
-<<<<<<< HEAD
-<<<<<<< HEAD
                                     <form action="/keluar" method="post">
                                    
                                         
@@ -348,18 +256,6 @@
                                         </a> --}}
                                    
                                       </form>
-=======
-=======
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-                                    <li class="waves-effect waves-light">
-                                        <a href="auth-normal-sign-in.html">
-                                            <i class="ti-layout-sidebar-left"></i> Logout
-                                        </a>
-                                    </li>
-<<<<<<< HEAD
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
                                 </ul>
                             </li>
                         </ul>
@@ -388,15 +284,7 @@
                             <div class="main-friend-list">
                                 <div class="media userlist-box waves-effect waves-light" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
                                     <a class="media-left" href="#!">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                        <img class="media-object img-radius img-radius" src="/admin/assets/images/avatar-3.jpg" alt="Generic placeholder image ">
-=======
                                         <img class="media-object img-radius img-radius" src="admin/assets/images/avatar-3.jpg" alt="Generic placeholder image ">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
-                                        <img class="media-object img-radius img-radius" src="admin/assets/images/avatar-3.jpg" alt="Generic placeholder image ">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
                                         <div class="live-status bg-success"></div>
                                     </a>
                                     <div class="media-body">
@@ -405,15 +293,7 @@
                                 </div>
                                 <div class="media userlist-box waves-effect waves-light" data-id="2" data-status="online" data-username="Lary Doe" data-toggle="tooltip" data-placement="left" title="Lary Doe">
                                     <a class="media-left" href="#!">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                        <img class="media-object img-radius" src="/admin/assets/images/avatar-2.jpg" alt="Generic placeholder image">
-=======
                                         <img class="media-object img-radius" src="admin/assets/images/avatar-2.jpg" alt="Generic placeholder image">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
-                                        <img class="media-object img-radius" src="admin/assets/images/avatar-2.jpg" alt="Generic placeholder image">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
                                         <div class="live-status bg-success"></div>
                                     </a>
                                     <div class="media-body">
@@ -422,15 +302,7 @@
                                 </div>
                                 <div class="media userlist-box waves-effect waves-light" data-id="3" data-status="online" data-username="Alice" data-toggle="tooltip" data-placement="left" title="Alice">
                                     <a class="media-left" href="#!">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                        <img class="media-object img-radius" src="/admin/assets/images/avatar-4.jpg" alt="Generic placeholder image">
-=======
                                         <img class="media-object img-radius" src="admin/assets/images/avatar-4.jpg" alt="Generic placeholder image">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
-                                        <img class="media-object img-radius" src="admin/assets/images/avatar-4.jpg" alt="Generic placeholder image">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
                                         <div class="live-status bg-success"></div>
                                     </a>
                                     <div class="media-body">
@@ -439,15 +311,7 @@
                                 </div>
                                 <div class="media userlist-box waves-effect waves-light" data-id="4" data-status="online" data-username="Alia" data-toggle="tooltip" data-placement="left" title="Alia">
                                     <a class="media-left" href="#!">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                        <img class="media-object img-radius" src="/admin/assets/images/avatar-3.jpg" alt="Generic placeholder image">
-=======
                                         <img class="media-object img-radius" src="admin/assets/images/avatar-3.jpg" alt="Generic placeholder image">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
-                                        <img class="media-object img-radius" src="admin/assets/images/avatar-3.jpg" alt="Generic placeholder image">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
                                         <div class="live-status bg-success"></div>
                                     </a>
                                     <div class="media-body">
@@ -456,15 +320,7 @@
                                 </div>
                                 <div class="media userlist-box waves-effect waves-light" data-id="5" data-status="online" data-username="Suzen" data-toggle="tooltip" data-placement="left" title="Suzen">
                                     <a class="media-left" href="#!">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                        <img class="media-object img-radius" src="/admin/assets/images/avatar-2.jpg" alt="Generic placeholder image">
-=======
                                         <img class="media-object img-radius" src="admin/assets/images/avatar-2.jpg" alt="Generic placeholder image">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
-                                        <img class="media-object img-radius" src="admin/assets/images/avatar-2.jpg" alt="Generic placeholder image">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
                                         <div class="live-status bg-success"></div>
                                     </a>
                                     <div class="media-body">
@@ -485,15 +341,7 @@
                 </div>
                 <div class="media chat-messages">
                     <a class="media-left photo-table" href="#!">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        <img class="media-object img-radius img-radius m-t-5" src="/admin/assets/images/avatar-3.jpg" alt="Generic placeholder image">
-=======
                         <img class="media-object img-radius img-radius m-t-5" src="admin/assets/images/avatar-3.jpg" alt="Generic placeholder image">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
-                        <img class="media-object img-radius img-radius m-t-5" src="admin/assets/images/avatar-3.jpg" alt="Generic placeholder image">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
                     </a>
                     <div class="media-body chat-menu-content">
                         <div class="">
@@ -511,15 +359,7 @@
                     </div>
                     <div class="media-right photo-table">
                         <a href="#!">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            <img class="media-object img-radius img-radius m-t-5" src="/admin/assets/images/avatar-4.jpg" alt="Generic placeholder image">
-=======
                             <img class="media-object img-radius img-radius m-t-5" src="admin/assets/images/avatar-4.jpg" alt="Generic placeholder image">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
-                            <img class="media-object img-radius img-radius m-t-5" src="admin/assets/images/avatar-4.jpg" alt="Generic placeholder image">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
                         </a>
                     </div>
                 </div>
@@ -2478,13 +2318,6 @@
                                                 <div class="col-lg-12">
                                                     <!-- Default card start -->
                                                 @yield('dashboard')
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                                @yield('container')
-=======
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
                                             <!-- Default card end -->
                                         </div>
                                     </div>
@@ -2512,71 +2345,31 @@
         <ul class="iew-download">
             <li>
                 <a href="http://www.google.com/chrome/">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    <img src="/admin/assets/images/browser/chrome.png" alt="Chrome">
-=======
                     <img src="admin/assets/images/browser/chrome.png" alt="Chrome">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
-                    <img src="admin/assets/images/browser/chrome.png" alt="Chrome">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
                     <div>Chrome</div>
                 </a>
             </li>
             <li>
                 <a href="https://www.mozilla.org/en-US/firefox/new/">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    <img src="/admin/assets/images/browser/firefox.png" alt="Firefox">
-=======
                     <img src="admin/assets/images/browser/firefox.png" alt="Firefox">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
-                    <img src="admin/assets/images/browser/firefox.png" alt="Firefox">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
                     <div>Firefox</div>
                 </a>
             </li>
             <li>
                 <a href="http://www.opera.com">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    <img src="/admin/assets/images/browser/opera.png" alt="Opera">
-=======
                     <img src="admin/assets/images/browser/opera.png" alt="Opera">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
-                    <img src="admin/assets/images/browser/opera.png" alt="Opera">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
                     <div>Opera</div>
                 </a>
             </li>
             <li>
                 <a href="https://www.apple.com/safari/">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    <img src="/admin/assets/images/browser/safari.png" alt="Safari">
-=======
                     <img src="admin/assets/images/browser/safari.png" alt="Safari">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
-                    <img src="admin/assets/images/browser/safari.png" alt="Safari">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
                     <div>Safari</div>
                 </a>
             </li>
             <li>
                 <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    <img src="/admin/assets/images/browser/ie.png" alt="">
-=======
                     <img src="admin/assets/images/browser/ie.png" alt="">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
-                    <img src="admin/assets/images/browser/ie.png" alt="">
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
                     <div>IE (9 & above)</div>
                 </a>
             </li>
@@ -2587,103 +2380,6 @@
 <![endif]-->
 <!-- Warning Section Ends -->
 <!-- Required Jquery -->
-<<<<<<< HEAD
-<<<<<<< HEAD
-<script type="text/javascript" src="/admin/bower_components/jquery/js/jquery.min.js"></script>
-<script type="text/javascript" src="/admin/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="/admin/bower_components/popper.js/js/popper.min.js"></script>
-<script type="text/javascript" src="/admin/bower_components/bootstrap/js/bootstrap.min.js"></script>
-<!-- waves js -->
-<script src="/admin/assets/pages/waves/js/waves.min.js"></script>
-<!-- jquery slimscroll js -->
-<script type="text/javascript" src="/admin/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
-<!-- modernizr js -->
-<script type="text/javascript" src="/admin/bower_components/modernizr/js/modernizr.js"></script>
-<script type="text/javascript" src="/admin/bower_components/modernizr/js/css-scrollbars.js"></script>
-
-<!-- Syntax highlighter prism js -->
-<script type="text/javascript" src="/admin/assets/pages/prism/custom-prism.js"></script>
-<!-- i18next.min.js -->
-<script type="text/javascript" src="/admin/bower_components/i18next/js/i18next.min.js"></script>
-<script type="text/javascript" src="/admin/bower_components/i18next-xhr-backend/js/i18nextXHRBackend.min.js"></script>
-<script type="text/javascript" src="/admin/bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js"></script>
-<script type="text/javascript" src="/admin/bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
-
-<script src="/admin/assets/js/pcoded.min.js"></script>
-<script src="/admin/assets/js/vertical/menu/menu-hori-fixed.js"></script>
-<script src="/admin/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-
-<!-- Custom js -->
-<script src="/admin/assets/pages/forms-wizard-validation/form-wizard.js"></script>
-<script src="/admin/assets/js/pcoded.min.js"></script>
-<script src="/admin/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script type="text/javascript" src="/admin/assets/js/script.js"></script>
-
-    <!-- jquery file upload js -->
-    <script src="/admin/assets/pages/jquery.filer/js/jquery.filer.min.js"></script>
-    <script src="/admin/assets/pages/filer/custom-filer.js" type="text/javascript"></script>
-    <script src="/admin/assets/pages/filer/jquery.fileuploads.init.js" type="text/javascript"></script>
-
-<!-- Custom js -->
-<script type="text/javascript" src="/admin/assets/pages/form-validation/form-validation.js"></script>
-
-<!-- data-table js -->
-    <script src="/admin/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="/admin/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="/admin/assets/pages/data-table/js/jszip.min.js"></script>
-    <script src="/admin/assets/pages/data-table/js/pdfmake.min.js"></script>
-    <script src="/admin/assets/pages/data-table/js/vfs_fonts.js"></script>
-    <script src="/admin/assets/pages/data-table/extensions/responsive/js/dataTables.responsive.min.js"></script>
-    <script src="/admin/bower_components/datatables.net-buttons/js/buttons.print.min.js"></script>
-    <script src="/admin/bower_components/datatables.net-buttons/js/buttons.html5.min.js"></script>
-    <script src="/admin/bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="/admin/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="/admin/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
-
-      <script src="/admin/assets/pages/data-table/extensions/responsive/js/responsive-custom.js"></script>
-
-      
-    <script type="text/javascript" src="/admin/bower_components/lightbox2/js/lightbox.min.js"></script>
-<!-- choose one -->
-<!-- choose one -->
-<script src="https://unpkg.com/feather-icons"></script>
-<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-<script src="path/to/dist/feather.js"></script>
-
-  <script>
-      feather.replace()
-    </script>
-
-      <script>
-        lightbox.option({
-            'resizeDuration': 200,
-            'wrapAround': true
-        })
-
-        
-    </script>
-
-    <script>
-function readURL(input) {
-  if (input.files && input.files[0]) {
-    var reader = new FileReader();
-    
-    reader.onload = function(e) {
-      $('#gambar').attr('src', e.target.result);
-    }
-    
-    reader.readAsDataURL(input.files[0]); // convert to base64 string
-  }
-}
-
-$("#file").change(function() {
-	$('#gambar').show();
-   readURL(this);
-});
-    </script>
-=======
-=======
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 <script type="text/javascript" src="admin/bower_components/jquery/js/jquery.min.js"></script>
 <script type="text/javascript" src="admin/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="admin/bower_components/popper.js/js/popper.min.js"></script>
@@ -2736,10 +2432,26 @@ $("#file").change(function() {
     <script src="admin/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
 
       <script src="admin/assets/pages/data-table/extensions/responsive/js/responsive-custom.js"></script>
-<<<<<<< HEAD
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
+
+      
+    <script type="text/javascript" src="admin/bower_components/lightbox2/js/lightbox.min.js"></script>
+
+    <script src="path/to/dist/feather.js"></script>
+
+    <!-- choose one -->
+<script src="https://unpkg.com/feather-icons"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+<script>
+  feather.replace()
+</script>
+
+      <script>
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true
+        })
+    </script>
 
 </body>
 

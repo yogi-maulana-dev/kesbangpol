@@ -2,174 +2,8 @@
 
 @section('dashboard')
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 @if ($datas->isEmpty())
  <div class="card">
-=======
-=======
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-@foreach ($datas as $data)
-    
-@if ($data -> lengkap )
-   <div class="card">
-                                                    <div class="card-block">
-
-                                            <div class="card-header">
-                                                <h5>Data Organisasi Masyarakat Yang diajukan</h5>
-                                                <span>Responsive will automatically detect new DataTable instances being created on a page and initialize itself if it finds the responsive option or responsive class name on the table, as shown in the other examples.</span>
-                                            </div>
-                                            <div class="card-block">
-                                                <div class="dt-responsive table-responsive">
-                                                    <table id="new-cons" class="table table-striped table-bordered nowrap">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>Nama Organisasi</th>
-                                                                <th>Tujuan</th>
-                                                                <th>Program</th>
-                                                                <th><i class="ti-eye"></i></th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            @foreach ($datas as $data)
-                                                                     <tr>
-                                                                <td>{{ auth()->user()->nama }}</td>
-                                                                <td>{{ $data->tujuan }}</td>
-                                                                <td>{{ $data->program }}</td>
-                                                                <td><button class="btn waves-effect waves-dark btn-primary btn-outline-primary btn-icon" data-toggle="modal" data-target="#myModal"><i class="ti-eye"></i></button></td>
-                                                            </tr>
-                                                        
-                                                            @endforeach
-                                                       
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                              </div>
-                                            </div>
-
-                                               <!-- Modal small-->
-                                                                {{-- <button type="button" class="btn btn-success waves-effect m-b-10" data-toggle="modal" data-target="#myModal">Multi Model</button>
-                                                                <!-- Modal --> --}}
-                                                                <div class="modal fade modal-flex" id="Modal-Multi" tabindex="-1" role="dialog">
-                                                                    <div class="modal-dialog" role="document">
-                                                                        <div class="modal-content">
-                                                                            <div class="modal-header">
-                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                                    <span aria-hidden="true">&times;</span>
-                                                                                </button>
-                                                                                <h4 class="modal-title">Modal title</h4>
-                                                                            </div>
-                                                                            <div class="modal-body text-center">
-                                                                                <div>
-                                                                                    <button type="button" class="btn btn-default waves-effect m-t-20 " data-toggle="modal" data-target="#meta-Modal">Click Here!</button>
-                                                                                </div>
-                                                                                <div class="modal fade" id="meta-Modal" tabindex="-1" role="dialog">
-                                                                                    <div class="modal-dialog modal-sm" role="document">
-                                                                                        <div class="modal-content">
-                                                                                            <div class="modal-header">
-                                                                                                <h4 class="modal-title">Modal title</h4>
-                                                                                            </div>
-                                                                                            <div class="modal-body">
-                                                                                                <h5>Small Modal</h5>
-                                                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing .</p>
-                                                                                            </div>
-                                                                                            <div class="modal-footer">
-                                                                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <p class="m-t-10">Lorem ipsum dolor sit amet, consectetur adipiscing lorem impus dolorsit.onsectetur adipiscing</p>
-                                                                            </div>
-                                                                            <div class="modal-footer">
-                                                                                <button type="button" class="btn btn-default waves-effect " data-dismiss="modal">Close</button>
-                                                                                <button type="button" class="btn btn-primary waves-effect waves-light ">Save changes</button>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <!--Multi Model Start-->
-                                                                <div class="modal fade" id="myModal">
-                                                               
-                                                                    <div class="modal-dialog modal-lg">
-                                                                              
-                                                                        <div class="modal-content ">
-                                                                         
-                                                                            <div class="modal-header">
-                                                                                <h4 class="modal-title">Modal 1</h4>
-                                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                                            </div>
-
-                                                                     
-                                                                            <div class="container"></div>
-                                                                            <div class="modal-body">Content for the dialog / modal goes here.
-                                                                                <p class="p-t-40 p-b-40">more content</p>
-                                                                                <a data-toggle="modal" href="#myModal2" class="btn btn-primary">Launch modal</a>
-                                                                            </div>
-                                                                            <div class="modal-footer"> <a href="#" data-dismiss="modal" class="btn">Close</a>
-                                                                                <a href="#" class="btn btn-primary">Save changes</a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="modal fade" id="myModal2">
-                                                                    <div class="modal-dialog">
-                                                                        <div class="modal-content">
-                                                                            <div class="modal-header">
-                                                                                <h4 class="modal-title">Modal 2</h4>
-                                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                                            </div>
-                                                                            <div class="container"></div>
-                                                                            <div class="modal-body">Content for the dialog / modal goes here.
-                                                                                <p class="p-t-30 p-b-40">come content</p>
-                                                                                <a data-toggle="modal" href="#myModal3" class="btn btn-primary">Launch modal</a>
-                                                                            </div>
-                                                                            <div class="modal-footer"> <a href="#" data-dismiss="modal" class="btn">Close</a>
-                                                                                <a href="#" class="btn btn-primary">Save changes</a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="modal fade" id="myModal3">
-                                                                    <div class="modal-dialog">
-                                                                        <div class="modal-content">
-                                                                            <div class="modal-header">
-                                                                                <h4 class="modal-title">Modal 3</h4>
-                                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                                            </div>
-                                                                            <div class="container"></div>
-                                                                            <div class="modal-body">Content for the dialog / modal goes here.
-                                                                                <a data-toggle="modal" href="#myModal4" class="btn btn-primary">Launch modal</a>
-                                                                            </div>
-                                                                            <div class="modal-footer"> <a href="#" data-dismiss="modal" class="btn">Close</a>
-                                                                                <a href="#" class="btn btn-primary">Save changes</a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="modal fade" id="myModal4">
-                                                                    <div class="modal-dialog">
-                                                                        <div class="modal-content">
-                                                                            <div class="modal-header">
-                                                                                <h4 class="modal-title">Modal 4</h4>
-                                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                                            </div>
-                                                                            <div class="container"></div>
-                                                                            <div class="modal-body">Content for the dialog / modal goes here.</div>
-                                                                            <div class="modal-footer"> <a href="#" data-dismiss="modal" class="btn">Close</a>
-                                                                                <a href="#" class="btn btn-primary">Save changes</a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <!--Multi Model End-->
-@else
-      <div class="card">
-<<<<<<< HEAD
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 <div class="card-header">
     <h5>Halaman Data Pendaftaran Organisasi Masyarakat</h5>
     <!--<span>Add class of <code>.form-control required</code> with <code>&lt;input&gt;</code> tag</span>-->
@@ -527,8 +361,6 @@
     </form>
 </div>
 </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
                                                                 @else
    <div class="card">
                                                     <div class="card-block">
@@ -556,9 +388,9 @@
                                                                 <td>{{ $data->tujuan }}</td>
                                                                 <td>{{ $data->program }}</td>
                                                                 
-                                                                <td><button class="btn waves-effect waves-dark btn-primary btn-outline-primary badge bg-info" data-toggle="modal" data-target="#tabbed-form"><span data-feather="eye"></span></button>
+                                                                <td> <button class="btn waves-effect waves-dark btn-primary btn-outline-primary badge bg-info" data-toggle="modal" data-target="#tabbed-form"><span data-feather="eye"></span></button>
                                                                 <a href="/data/{{ $data->id }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
-                                                                </td>
+                                                                 </td>
                                                           
                                                                 <td>@if ($data->lengkap == 0)
                                                                     
@@ -675,79 +507,6 @@
                                                         <div class="tab-pane active" id="data1" role="tabpanel">
                                                             <form class="md-float-material form-material">
                                                                  @foreach ($datas as $data)
-
-                                                                  
-                     <?php  $pecah1 = explode(".", $data->surat_pendaftaran );
-             $surat_pendaftaran = $pecah1[1];
-
-             $pecah2 = explode(".", $data->akte_pendirian );
-             $akte_pendirian = $pecah2[1];
-
-             $pecah3 = explode(".", $data->adrt );
-             $adrt = $pecah3[1];
-
-             $pecah4 = explode(".", $data->surat_keputusan );
-             $surat_keputusan = $pecah4[1];
-
-             $pecah5 = explode(".", $data->biodata_pengurus );
-             $biodata_pengurus = $pecah5[1];
-
-             $pecah6 = explode(".", $data->ktp );
-             $ktp = $pecah6[1];
-
-             $pecah7 = explode(".", $data->foto );
-             $foto = $pecah7[1];
-
-             $pecah8 = explode(".", $data->surat_keterangan_domisili );
-             $surat_keterangan_domisili = $pecah8[1];
-
-             $pecah9 = explode(".", $data->npwp );
-             $npwp = $pecah9[1];
-
-             $pecah10 = explode(".", $data->foto_kantor );
-             $foto_kantor = $pecah10[1];
-
-             $pecah11 = explode(".", $data->surat_keterangan_ketertiban );
-             $surat_keterangan_ketertiban = $pecah11[1];
-
-             $pecah12 = explode(".", $data->surat_tidak_avilasi );
-             $surat_tidak_avilasi = $pecah12[1];
-
-             $pecah13 = explode(".", $data->surat_konflik );
-             $surat_konflik = $pecah13[1];
-
-             $pecah14 = explode(".", $data->surat_hak_cipta );
-             $surat_hak_cipta = $pecah14[1];
-
-             $pecah15 = explode(".", $data->surat_laporan );
-             $surat_laporan = $pecah15[1];
-
-             $pecah16 = explode(".", $data->surat_absah );
-             $surat_absah = $pecah16[1];
-
-             $pecah17 = explode(".", $data->surat_rekom_agama );
-             $surat_rekom_agama = $pecah17[1];
-
-             $pecah18 = explode(".", $data->surat_rekom_skpd );
-             $surat_rekom_skpd = $pecah18[1];
-
-             $pecah19 = explode(".", $data->surat_rekom_skpd_kerja );
-             $surat_rekom_skpd_kerja = $pecah19[1];
-
-             $pecah20 = explode(".", $data->surat_rekom_kesediaan );
-             $surat_rekom_kesediaan = $pecah20[1];
-
-             $pecah21 = explode(".", $data->surat_izasah );
-             $surat_izasah = $pecah21[1];
-
-             $pecah2 = explode(".", $data->skt );
-             $skt = $pecah2[1];
-
-             $pecah22 = explode(".", $data->surat_ketertiban );
-             $surat_ketertiban = $pecah22[1];
-
-             ?>
-{{ $ekstensi }}
                                                             
                                                                 <p class="text-muted text-center p-b-5">{{ $data->surat_pendaftaran }}   </p>
 
@@ -1125,16 +884,5 @@
 @endif
 
 
-=======
-=======
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-
-@endif
-
-@endforeach
-<<<<<<< HEAD
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
 
 @endsection

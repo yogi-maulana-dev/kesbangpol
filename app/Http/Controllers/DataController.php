@@ -23,21 +23,11 @@ class DataController extends Controller
     {
         //
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-       
 
-=======
-=======
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
        return view('user.data', ["judul" => "Halaman Data",
        'datas' => Upload::where('id_user', auth()->user()->id)->get()
 
       ]);
-<<<<<<< HEAD
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
       
         
     }
@@ -206,35 +196,30 @@ class DataController extends Controller
         $nama_dokumen21 = 'skt'.date('Ymdhis').'.'.$request->file('skt')->getClientOriginalExtension();
         $skt->move($tes.'/',$nama_dokumen21);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         $surat_keterangan_domisili = $request->file('surat_keterangan_domisili');
         $nama_dokumen22 = 'surat_keterangan_domisili'.date('Ymdhis').'.'.$request->file('surat_keterangan_domisili')->getClientOriginalExtension();
         $surat_keterangan_domisili->move($tes.'/',$nama_dokumen22);
 
-=======
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
+
 
         $validasi['surat_pendaftaran'] = $nama_dokumen1;
         $validasi['akte_pendirian'] = $nama_dokumen2;
         $validasi['adrt'] = $nama_dokumen3;
         $validasi['surat_keputusan'] = $nama_dokumen4;
         $validasi['biodata_pengurus'] = $nama_dokumen5;
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         $validasi['ktp'] = $nama_dokumen6;
         $validasi['foto'] = $nama_dokumen7;
         $validasi['surat_keterangan_domisili'] = $nama_dokumen22;
-=======
+
         $validasi['KTP'] = $nama_dokumen6;
         $validasi['foto'] = $nama_dokumen7;
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
+
+
         $validasi['KTP'] = $nama_dokumen6;
         $validasi['foto'] = $nama_dokumen7;
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
+
         $validasi['npwp'] = $nama_dokumen8;
         $validasi['foto_kantor'] = $nama_dokumen9;
         $validasi['surat_keterangan_ketertiban'] = $nama_dokumen10;
@@ -249,16 +234,15 @@ class DataController extends Controller
         $validasi['surat_rekom_kesediaan'] = $nama_dokumen19;
         $validasi['surat_izasah'] = $nama_dokumen20;
         $validasi['skt'] = $nama_dokumen21;
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         $validasi['surat_ketertiban'] = $nama_dokumen22;
         $validasi['id_user'] = auth()->user()->id;
-=======
+
         $validasi['id_user'] = auth()->user()->nama;
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
+
+
         $validasi['id_user'] = auth()->user()->nama;
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
+
 
         Upload::create($validasi);
 
@@ -293,8 +277,7 @@ class DataController extends Controller
     public function edit($id)
     {
         //
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 
         
           $data = Upload::findOrFail($id);
@@ -304,10 +287,7 @@ class DataController extends Controller
        
       ]);
       
-=======
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
-=======
->>>>>>> 8fbaec3dd646f7da74b4d1adbefdda860d45ac7f
+
     }
 
     /**
