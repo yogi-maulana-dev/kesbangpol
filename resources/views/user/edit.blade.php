@@ -1,6 +1,6 @@
 @extends('layouts.main_admin')
 
-@section('container')
+@section('dashboard')
 
  <div class="card">
 <div class="card-header">
@@ -45,14 +45,7 @@
 
                
                
-@if ()
-    
 
-                     @elseif ()
-
-                     @else
-
-                 @endif
               
                                                                                   <div class="col-lg-12 col-sm-12">
                                                                 <div class="thumbnail">

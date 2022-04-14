@@ -54,18 +54,6 @@ Route::post('/user',[UserController::class, 'authenticate']);
 Route::post('/keluar',[UserController::class, 'keluar']);
 
 
-Route::resource('/data/posts',DataController::class)->middleware('auth');
-
-
-Route::get('/dashboard',[DashboardController::class, 'index'])->middleware('auth');
-Route::get('/tutorial',[TutorialController::class, 'index']);
-Route::get('/user',[UserController::class, 'index'])->name('login')->middleware('guest');
-Route::post('/user',[UserController::class, 'authenticate']);
-Route::post('/keluar',[UserController::class, 'keluar']);
-
-
-Route::resource('/data/posts',DataController::class)->middleware('auth');
-
 
 //Route::post('/login',[LoginController::class, 'authenticate']);
 //Route::post('/user',[UserController::class, 'authenticate']);
