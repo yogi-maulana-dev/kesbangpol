@@ -507,8 +507,19 @@
                                                         <div class="tab-pane active" id="data1" role="tabpanel">
                                                             <form class="md-float-material form-material">
                                                                  @foreach ($datas as $data)
-                                                            
-                                                                <p class="text-muted text-center p-b-5">{{ $data->surat_pendaftaran }}   </p>
+                                                                {{-- awal --}}
+                                                                 @if (!empty($data->surat_pendaftaran))
+
+                                                                 @php
+                                                                       $pecah = explode(".", $data->surat_pendaftaran); 
+                                                                              $surat_absah = $pecah[1]; 
+                                                                 @endphp
+
+
+                                                                @if ($surat_absah =='pdf')
+
+                                                                                                                            
+                                                            <p class="text-muted text-center p-b-5">{{ $data->surat_pendaftaran }}   </p>
 
                                                                      <div class="col-lg-12 col-sm-12">
                                                                 <div class="thumbnail">
@@ -523,7 +534,48 @@
                                                                 </div>
                                                             </div>
 
-                                                                 <p class="text-muted text-center p-b-5">{{ $data->akte_pendirian }}   </p>
+                                                            @else @if ($surat_absah =='png' or $surat_absah =='jpg')
+
+                                                               <p class="text-muted text-center p-b-5">{{ $data->surat_pendaftaran }}   </p>
+
+                                                                     <div class="col-lg-12 col-sm-12">
+                                                                <div class="thumbnail">
+                                                                    <div class="thumb">
+                                                                        <a href="{{  asset(auth()->user()->nama.'/'.$data->surat_pendaftaran)  }}" data-lightbox="1" data-title="{{ auth()->user()->nama.'/'.$data->surat_pendaftaran }}">
+                                                                 
+                                                                            <img src="{{ asset(auth()->user()->nama.'/'.$data->surat_pendaftaran) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                             
+                                                            
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                                
+                                                            @else
+
+                                                                @endif
+
+                                                                 @endif
+
+                                                                 {{-- selesai 1 --}}
+                                                                 @else
+                                                                 @endif
+
+                                                                 {{-- selesai 2 --}}
+
+   {{-- awal --}}
+                                                                 @if (!empty($data->akte_pendirian))
+
+                                                                 @php
+                                                                       $pecah = explode(".", $data->akte_pendirian); 
+                                                                              $surat_absah = $pecah[1]; 
+                                                                 @endphp
+
+
+                                                                @if ($surat_absah =='pdf')
+
+                                                                                                                            
+                                                            <p class="text-muted text-center p-b-5">{{ $data->akte_pendirian }}   </p>
 
                                                                      <div class="col-lg-12 col-sm-12">
                                                                 <div class="thumbnail">
@@ -538,8 +590,49 @@
                                                                 </div>
                                                             </div>
 
-                                                                                        
-                                                                <p class="text-muted text-center p-b-5">{{ $data->adrt }}   </p>
+                                                            @else @if ($surat_absah =='png' or $surat_absah =='jpg')
+
+                                                               <p class="text-muted text-center p-b-5">{{ $data->akte_pendirian }}   </p>
+
+                                                                     <div class="col-lg-12 col-sm-12">
+                                                                <div class="thumbnail">
+                                                                    <div class="thumb">
+                                                                        <a href="{{  asset(auth()->user()->nama.'/'.$data->akte_pendirian)  }}" data-lightbox="1" data-title="{{ auth()->user()->nama.'/'.$data->akte_pendirian }}">
+                                                                 
+                                                                            <img src="{{ asset(auth()->user()->nama.'/'.$data->akte_pendirian) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                             
+                                                            
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                                
+                                                            @else
+
+                                                                @endif
+
+                                                                 @endif
+
+                                                                 {{-- selesai 1 --}}
+                                                                 @else
+                                                                 @endif
+
+                                                                 {{-- selesai 2 --}}
+
+
+                                                                {{-- awal adrt --}}
+                                                                 @if (!empty($data->adrt))
+
+                                                                 @php
+                                                                       $pecah = explode(".", $data->adrt); 
+                                                                              $surat_absah = $pecah[1]; 
+                                                                 @endphp
+
+
+                                                                @if ($surat_absah =='pdf')
+
+                                                                                                                            
+                                                            <p class="text-muted text-center p-b-5">{{ $data->adrt }}   </p>
 
                                                                      <div class="col-lg-12 col-sm-12">
                                                                 <div class="thumbnail">
@@ -554,7 +647,48 @@
                                                                 </div>
                                                             </div>
 
-                                                                    <p class="text-muted text-center p-b-5">{{ $data->surat_keputusan }}   </p>
+                                                            @else @if ($surat_absah =='png' or $surat_absah =='jpg')
+
+                                                               <p class="text-muted text-center p-b-5">{{ $data->adrt }}   </p>
+
+                                                                     <div class="col-lg-12 col-sm-12">
+                                                                <div class="thumbnail">
+                                                                    <div class="thumb">
+                                                                        <a href="{{  asset(auth()->user()->nama.'/'.$data->adrt)  }}" data-lightbox="1" data-title="{{ auth()->user()->nama.'/'.$data->adrt }}">
+                                                                 
+                                                                            <img src="{{ asset(auth()->user()->nama.'/'.$data->adrt) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                             
+                                                            
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                                
+                                                            @else
+
+                                                                @endif
+
+                                                                 @endif
+
+                                                                 {{-- selesai 1 --}}
+                                                                 @else
+                                                                 @endif
+
+                                                                 {{-- selesai 2 --}}
+
+   {{-- awal surat_keputusan --}}
+                                                                 @if (!empty($data->surat_keputusan))
+
+                                                                 @php
+                                                                       $pecah = explode(".", $data->surat_keputusan); 
+                                                                              $surat_absah = $pecah[1]; 
+                                                                 @endphp
+
+
+                                                                @if ($surat_absah =='pdf')
+
+                                                                                                                            
+                                                            <p class="text-muted text-center p-b-5">{{ $data->surat_keputusan }}   </p>
 
                                                                      <div class="col-lg-12 col-sm-12">
                                                                 <div class="thumbnail">
@@ -569,8 +703,47 @@
                                                                 </div>
                                                             </div>
 
+                                                            @else @if ($surat_absah =='png' or $surat_absah =='jpg')
 
-                                                                              <p class="text-muted text-center p-b-5">{{ $data->biodata_pengurus }}   </p>
+                                                               <p class="text-muted text-center p-b-5">{{ $data->surat_keputusan }}   </p>
+
+                                                                     <div class="col-lg-12 col-sm-12">
+                                                                <div class="thumbnail">
+                                                                    <div class="thumb">
+                                                                        <a href="{{  asset(auth()->user()->nama.'/'.$data->surat_keputusan)  }}" data-lightbox="1" data-title="{{ auth()->user()->nama.'/'.$data->surat_keputusan }}">
+                                                                 
+                                                                            <img src="{{ asset(auth()->user()->nama.'/'.$data->surat_keputusan) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                             
+                                                            
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                                
+                                                            @else
+
+                                                                @endif
+
+                                                                 @endif
+
+                                                                 {{-- selesai 1 --}}
+                                                                 @else
+                                                                 @endif
+
+                                                                 {{-- selesai 2 --}}
+   {{-- awal biodata_pengurus --}}
+                                                                 @if (!empty($data->biodata_pengurus))
+
+                                                                 @php
+                                                                       $pecah = explode(".", $data->biodata_pengurus); 
+                                                                              $surat_absah = $pecah[1]; 
+                                                                 @endphp
+
+
+                                                                @if ($surat_absah =='pdf')
+
+                                                                                                                            
+                                                            <p class="text-muted text-center p-b-5">{{ $data->biodata_pengurus }}   </p>
 
                                                                      <div class="col-lg-12 col-sm-12">
                                                                 <div class="thumbnail">
@@ -584,16 +757,62 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+
+                                                            @else @if ($surat_absah =='png' or $surat_absah =='jpg')
+
+                                                               <p class="text-muted text-center p-b-5">{{ $data->biodata_pengurus }}   </p>
+
+                                                                     <div class="col-lg-12 col-sm-12">
+                                                                <div class="thumbnail">
+                                                                    <div class="thumb">
+                                                                        <a href="{{  asset(auth()->user()->nama.'/'.$data->biodata_pengurus)  }}" data-lightbox="1" data-title="{{ auth()->user()->nama.'/'.$data->biodata_pengurus }}">
+                                                                 
+                                                                            <img src="{{ asset(auth()->user()->nama.'/'.$data->biodata_pengurus) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                             
+                                                            
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                                
+                                                            @else
+
+                                                                @endif
+
+                                                                 @endif
+
+                                                                 {{-- selesai 1 --}}
+                                                                 @else
+                                                                 @endif
+
+                                                                 {{-- selesai 2 --}}
+
+
+                                                                 
                                                           
                                                          
                                                              @endforeach
                                                             </form>
                                                         </div>
+
+
                                                         <div class="tab-pane" id="data2" role="tabpanel">
                                                             <form class="md-float-material form-material">
                                                                 @foreach ($datas as $data)
 
-                                                              <p class="text-muted text-center p-b-5">{{ $data->surat_keterangan_domisili }}   </p>
+                                                                {{-- awal surat_keterangan_domisili --}}
+                                                                 @if (!empty($data->surat_keterangan_domisili))
+
+                                                                 @php
+                                                                       $pecah = explode(".", $data->surat_keterangan_domisili); 
+                                                                              $surat_absah = $pecah[1]; 
+                                                                 @endphp
+
+
+                                                                @if ($surat_absah =='pdf')
+
+                                                                                                                            
+                                                            <p class="text-muted text-center p-b-5">{{ $data->surat_keterangan_domisili }}   </p>
 
                                                                      <div class="col-lg-12 col-sm-12">
                                                                 <div class="thumbnail">
@@ -608,9 +827,49 @@
                                                                 </div>
                                                             </div>
 
+                                                            @else @if ($surat_absah =='png' or $surat_absah =='jpg')
 
+                                                               <p class="text-muted text-center p-b-5">{{ $data->surat_keterangan_domisili }}   </p>
+
+                                                                     <div class="col-lg-12 col-sm-12">
+                                                                <div class="thumbnail">
+                                                                    <div class="thumb">
+                                                                        <a href="{{  asset(auth()->user()->nama.'/'.$data->surat_keterangan_domisili)  }}" data-lightbox="1" data-title="{{ auth()->user()->nama.'/'.$data->surat_keterangan_domisili }}">
+                                                                 
+                                                                            <img src="{{ asset(auth()->user()->nama.'/'.$data->surat_keterangan_domisili) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                             
                                                             
-                                                              <p class="text-muted text-center p-b-5">{{ $data->foto_kantor }}   </p>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                                
+                                                            @else
+
+                                                                @endif
+
+                                                                 @endif
+
+                                                                 {{-- selesai 1 --}}
+                                                                 @else
+                                                                 @endif
+
+                                                                 {{-- selesai 2 --}}
+
+
+                              {{-- awal foto_kantor --}}
+                                                                 @if (!empty($data->foto_kantor))
+
+                                                                 @php
+                                                                       $pecah = explode(".", $data->foto_kantor); 
+                                                                              $surat_absah = $pecah[1]; 
+                                                                 @endphp
+
+
+                                                                @if ($surat_absah =='pdf')
+
+                                                                                                                            
+                                                            <p class="text-muted text-center p-b-5">{{ $data->foto_kantor }}   </p>
 
                                                                      <div class="col-lg-12 col-sm-12">
                                                                 <div class="thumbnail">
@@ -625,9 +884,46 @@
                                                                 </div>
                                                             </div>
 
+                                                            @else @if ($surat_absah =='png' or $surat_absah =='jpg')
 
-                                                                                 
-                                                              <p class="text-muted text-center p-b-5">{{ $data->surat_ketertiban }}   </p>
+                                                               <p class="text-muted text-center p-b-5">{{ $data->foto_kantor }}   </p>
+
+                                                                     <div class="col-lg-12 col-sm-12">
+                                                                <div class="thumbnail">
+                                                                    <div class="thumb">
+                                                                        <a href="{{  asset(auth()->user()->nama.'/'.$data->foto_kantor)  }}" data-lightbox="1" data-title="{{ auth()->user()->nama.'/'.$data->foto_kantor }}">
+                                                                 
+                                                                            <img src="{{ asset(auth()->user()->nama.'/'.$data->foto_kantor) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                             
+                                                            
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                                
+                                                            @else
+
+                                                                @endif
+
+                                                                 @endif
+
+                                                                 {{-- selesai 1 --}}
+                                                                 @else
+                                                                 @endif
+
+                                                                 {{-- selesai 2 --}}   {{-- awal surat_ketertiban --}}
+                                                                 @if (!empty($data->surat_ketertiban))
+
+                                                                 @php
+                                                                       $pecah = explode(".", $data->surat_ketertiban); 
+                                                                              $surat_absah = $pecah[1]; 
+                                                                 @endphp
+
+
+                                                                @if ($surat_absah =='pdf')
+
+                                                                                                                            
+                                                            <p class="text-muted text-center p-b-5">{{ $data->surat_ketertiban }}   </p>
 
                                                                      <div class="col-lg-12 col-sm-12">
                                                                 <div class="thumbnail">
@@ -641,6 +937,64 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+
+                                                            @else @if ($surat_absah =='png' or $surat_absah =='jpg')
+
+                                                               <p class="text-muted text-center p-b-5">{{ $data->surat_ketertiban }}   </p>
+
+                                                                     <div class="col-lg-12 col-sm-12">
+                                                                <div class="thumbnail">
+                                                                    <div class="thumb">
+                                                                        <a href="{{  asset(auth()->user()->nama.'/'.$data->surat_ketertiban)  }}" data-lightbox="1" data-title="{{ auth()->user()->nama.'/'.$data->surat_ketertiban }}">
+                                                                 
+                                                                            <img src="{{ asset(auth()->user()->nama.'/'.$data->surat_ketertiban) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                             
+                                                            
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                                
+                                                            @else
+
+                                                                @endif
+
+                                                                 @endif
+
+                                                                 {{-- selesai 1 --}}
+                                                                 @else
+                                                                 @endif
+
+                                                                 {{-- selesai 2 --}}
+
+   {{-- awal surat_tidak_avilasi --}}
+                                                                 @if (!empty($data->surat_tidak_avilasi))
+
+                                                                 @php
+                                                                       $pecah = explode(".", $data->surat_tidak_avilasi); 
+                                                                              $surat_absah = $pecah[1]; 
+                                                                 @endphp
+
+
+                                                                @if ($surat_absah =='pdf')
+
+                                                                                                                            
+                                                            <p class="text-muted text-center p-b-5">{{ $data->surat_tidak_avilasi }}   </p>
+
+                                                                     <div class="col-lg-12 col-sm-12">
+                                                                <div class="thumbnail">
+                                                                    <div class="thumb">
+                                                                        <a href="{{  asset(auth()->user()->nama.'/'.$data->surat_tidak_avilasi)  }}" data-lightbox="1" data-title="{{ auth()->user()->nama.'/'.$data->surat_tidak_avilasi }}">
+                                                                 
+                                                                            <img src="{{ asset(auth()->user()->nama.'/'.$data->surat_tidak_avilasi) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                             
+                                                            
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            @else @if ($surat_absah =='png' or $surat_absah =='jpg')
 
                                                                <p class="text-muted text-center p-b-5">{{ $data->surat_tidak_avilasi }}   </p>
 
@@ -656,8 +1010,33 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                                
+                                                            @else
 
-                                                                       <p class="text-muted text-center p-b-5">{{ $data->surat_konflik }}   </p>
+                                                                @endif
+
+                                                                 @endif
+
+                                                                 {{-- selesai 1 --}}
+                                                                 @else
+                                                                 @endif
+
+                                                                 {{-- selesai 2 --}}
+
+
+                                                         {{-- awal surat_konflik --}}
+                                                                 @if (!empty($data->surat_konflik))
+
+                                                                 @php
+                                                                       $pecah = explode(".", $data->surat_konflik); 
+                                                                              $surat_absah = $pecah[1]; 
+                                                                 @endphp
+
+
+                                                                @if ($surat_absah =='pdf')
+
+                                                                                                                            
+                                                            <p class="text-muted text-center p-b-5">{{ $data->surat_konflik }}   </p>
 
                                                                      <div class="col-lg-12 col-sm-12">
                                                                 <div class="thumbnail">
@@ -672,6 +1051,38 @@
                                                                 </div>
                                                             </div>
 
+                                                            @else @if ($surat_absah =='png' or $surat_absah =='jpg')
+
+                                                               <p class="text-muted text-center p-b-5">{{ $data->surat_konflik }}   </p>
+
+                                                                     <div class="col-lg-12 col-sm-12">
+                                                                <div class="thumbnail">
+                                                                    <div class="thumb">
+                                                                        <a href="{{  asset(auth()->user()->nama.'/'.$data->surat_konflik)  }}" data-lightbox="1" data-title="{{ auth()->user()->nama.'/'.$data->surat_konflik }}">
+                                                                 
+                                                                            <img src="{{ asset(auth()->user()->nama.'/'.$data->surat_konflik) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                             
+                                                            
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                                
+                                                            @else
+
+                                                                @endif
+
+                                                                 @endif
+
+                                                                 {{-- selesai 1 --}}
+                                                                 @else
+                                                                 @endif
+
+                                                                 {{-- selesai 2 --}}
+
+
+                                                                 
+
                                                           
                                                     
                                                                 @endforeach
@@ -683,7 +1094,19 @@
                                                            
                                                              @foreach ($datas as $data)
 
-                                                              <p class="text-muted text-center p-b-5">{{ $data->surat_hak_cipta }}   </p>
+                                                          {{-- awal surat_hak_cipta --}}
+                                                                 @if (!empty($data->surat_hak_cipta))
+
+                                                                 @php
+                                                                       $pecah = explode(".", $data->surat_hak_cipta); 
+                                                                              $surat_absah = $pecah[1]; 
+                                                                 @endphp
+
+
+                                                                @if ($surat_absah =='pdf')
+
+                                                                                                                            
+                                                            <p class="text-muted text-center p-b-5">{{ $data->surat_hak_cipta }}   </p>
 
                                                                      <div class="col-lg-12 col-sm-12">
                                                                 <div class="thumbnail">
@@ -698,9 +1121,49 @@
                                                                 </div>
                                                             </div>
 
+                                                            @else @if ($surat_absah =='png' or $surat_absah =='jpg')
 
+                                                               <p class="text-muted text-center p-b-5">{{ $data->surat_hak_cipta }}   </p>
+
+                                                                     <div class="col-lg-12 col-sm-12">
+                                                                <div class="thumbnail">
+                                                                    <div class="thumb">
+                                                                        <a href="{{  asset(auth()->user()->nama.'/'.$data->surat_hak_cipta)  }}" data-lightbox="1" data-title="{{ auth()->user()->nama.'/'.$data->surat_hak_cipta }}">
+                                                                 
+                                                                            <img src="{{ asset(auth()->user()->nama.'/'.$data->surat_hak_cipta) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                             
                                                             
-                                                              <p class="text-muted text-center p-b-5">{{ $data->surat_laporan }}   </p>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                                
+                                                            @else
+
+                                                                @endif
+
+                                                                 @endif
+
+                                                                 {{-- selesai 1 --}}
+                                                                 @else
+                                                                 @endif
+
+                                                                 {{-- selesai 2 --}}
+
+
+                                                           {{-- awal surat_laporan --}}
+                                                                 @if (!empty($data->surat_laporan))
+
+                                                                 @php
+                                                                       $pecah = explode(".", $data->surat_laporan); 
+                                                                              $surat_absah = $pecah[1]; 
+                                                                 @endphp
+
+
+                                                                @if ($surat_absah =='pdf')
+
+                                                                                                                            
+                                                            <p class="text-muted text-center p-b-5">{{ $data->surat_laporan }}   </p>
 
                                                                      <div class="col-lg-12 col-sm-12">
                                                                 <div class="thumbnail">
@@ -715,9 +1178,48 @@
                                                                 </div>
                                                             </div>
 
+                                                            @else @if ($surat_absah =='png' or $surat_absah =='jpg')
 
-                                                                                 
-                                                              <p class="text-muted text-center p-b-5">{{ $data->surat_absah }}   </p>
+                                                               <p class="text-muted text-center p-b-5">{{ $data->surat_laporan }}   </p>
+
+                                                                     <div class="col-lg-12 col-sm-12">
+                                                                <div class="thumbnail">
+                                                                    <div class="thumb">
+                                                                        <a href="{{  asset(auth()->user()->nama.'/'.$data->surat_laporan)  }}" data-lightbox="1" data-title="{{ auth()->user()->nama.'/'.$data->surat_laporan }}">
+                                                                 
+                                                                            <img src="{{ asset(auth()->user()->nama.'/'.$data->surat_laporan) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                             
+                                                            
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                                
+                                                            @else
+
+                                                                @endif
+
+                                                                 @endif
+
+                                                                 {{-- selesai 1 --}}
+                                                                 @else
+                                                                 @endif
+
+                                                                 {{-- selesai 2 --}}
+
+   {{-- awal surat_absah --}}
+                                                                 @if (!empty($data->surat_absah))
+
+                                                                 @php
+                                                                       $pecah = explode(".", $data->surat_absah); 
+                                                                              $ekstensi = $pecah[1]; 
+                                                                 @endphp
+
+
+                                                                @if ($ekstensi =='pdf')
+
+                                                                                                                            
+                                                            <p class="text-muted text-center p-b-5">{{ $data->surat_absah }}   </p>
 
                                                                      <div class="col-lg-12 col-sm-12">
                                                                 <div class="thumbnail">
@@ -731,6 +1233,64 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+
+                                                            @else @if ($ekstensi =='png' or $ekstensi =='jpg')
+
+                                                               <p class="text-muted text-center p-b-5">{{ $data->surat_absah }}   </p>
+
+                                                                     <div class="col-lg-12 col-sm-12">
+                                                                <div class="thumbnail">
+                                                                    <div class="thumb">
+                                                                        <a href="{{  asset(auth()->user()->nama.'/'.$data->surat_absah)  }}" data-lightbox="1" data-title="{{ auth()->user()->nama.'/'.$data->surat_absah }}">
+                                                                 
+                                                                            <img src="{{ asset(auth()->user()->nama.'/'.$data->surat_absah) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                             
+                                                            
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                                
+                                                            @else
+
+                                                                @endif
+
+                                                                 @endif
+
+                                                                 {{-- selesai 1 --}}
+                                                                 @else
+                                                                 @endif
+
+                                                                 {{-- selesai 2 --}}
+
+   {{-- awal surat_rekom_agama --}}
+                                                                 @if (!empty($data->surat_rekom_agama))
+
+                                                                 @php
+                                                                       $pecah = explode(".", $data->surat_rekom_agama); 
+                                                                              $ekstensi = $pecah[1]; 
+                                                                 @endphp
+
+
+                                                                @if ($ekstensi =='pdf')
+
+                                                                                                                            
+                                                            <p class="text-muted text-center p-b-5">{{ $data->surat_rekom_agama }}   </p>
+
+                                                                     <div class="col-lg-12 col-sm-12">
+                                                                <div class="thumbnail">
+                                                                    <div class="thumb">
+                                                                        <a href="{{  asset(auth()->user()->nama.'/'.$data->surat_rekom_agama)  }}" data-lightbox="1" data-title="{{ auth()->user()->nama.'/'.$data->surat_rekom_agama }}">
+                                                                 
+                                                                            <img src="{{ asset(auth()->user()->nama.'/'.$data->surat_rekom_agama) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                             
+                                                            
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            @else @if ($ekstensi =='png' or $ekstensi =='jpg')
 
                                                                <p class="text-muted text-center p-b-5">{{ $data->surat_rekom_agama }}   </p>
 
@@ -746,8 +1306,32 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                                
+                                                            @else
 
-                                                                       <p class="text-muted text-center p-b-5">{{ $data->surat_rekom_skpd }}   </p>
+                                                                @endif
+
+                                                                 @endif
+
+                                                                 {{-- selesai 1 --}}
+                                                                 @else
+                                                                 @endif
+
+                                                                 {{-- selesai 2 --}}
+
+   {{-- awal surat_rekom_skpd --}}
+                                                                 @if (!empty($data->surat_rekom_skpd))
+
+                                                                 @php
+                                                                       $pecah = explode(".", $data->surat_rekom_skpd); 
+                                                                              $ekstensi = $pecah[1]; 
+                                                                 @endphp
+
+
+                                                                @if ($ekstensi =='pdf')
+
+                                                                                                                            
+                                                            <p class="text-muted text-center p-b-5">{{ $data->surat_rekom_skpd }}   </p>
 
                                                                      <div class="col-lg-12 col-sm-12">
                                                                 <div class="thumbnail">
@@ -760,6 +1344,39 @@
                                                                         </a>
                                                                     </div>
                                                                 </div>
+                                                            </div>
+
+                                                            @else @if ($ekstensi =='png' or $ekstensi =='jpg')
+
+                                                               <p class="text-muted text-center p-b-5">{{ $data->surat_rekom_skpd }}   </p>
+
+                                                                     <div class="col-lg-12 col-sm-12">
+                                                                <div class="thumbnail">
+                                                                    <div class="thumb">
+                                                                        <a href="{{  asset(auth()->user()->nama.'/'.$data->surat_rekom_skpd)  }}" data-lightbox="1" data-title="{{ auth()->user()->nama.'/'.$data->surat_rekom_skpd }}">
+                                                                 
+                                                                            <img src="{{ asset(auth()->user()->nama.'/'.$data->surat_rekom_skpd) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                             
+                                                            
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                                
+                                                            @else
+
+                                                                @endif
+
+                                                                 @endif
+
+                                                                 {{-- selesai 1 --}}
+                                                                 @else
+                                                                 @endif
+
+                                                                 {{-- selesai 2 --}}
+
+
+                                                                 
                                                             </div>
 
                                                           
