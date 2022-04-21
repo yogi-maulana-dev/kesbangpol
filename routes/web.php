@@ -36,15 +36,16 @@ Route::get('/berita',[BeritaController::class, 'index']);
   return view('user.dashboard', ["judul" => "Halaman Dashboard",
    'datas' => Upload::where('id_user', auth()->user()->id)->get()
 ]);
- })->middleware('auth'); 
+ })->middleware('auth');
 
- 
+
 Route::get('/tutorial',[TutorialController::class, 'index']);
 Route::get('/user',[UserController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/user',[UserController::class, 'authenticate']);
 Route::post('/keluar',[UserController::class, 'keluar']);
 
 
+Route::resource('/data',DataController::class)->middleware('auth');
 Route::resource('/data',DataController::class)->middleware('auth');
 
 Route::get('/dashboard',[DashboardController::class, 'index'])->middleware('auth');

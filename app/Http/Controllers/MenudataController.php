@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menudata;
 use Illuminate\Http\Request;
 
 class MenudataController extends Controller
@@ -40,10 +41,10 @@ class MenudataController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Menudata  $menudata
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Menudata $menudata)
     {
         //
     }
@@ -51,10 +52,10 @@ class MenudataController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Menudata  $menudata
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Menudata $menudata)
     {
         //
     }
@@ -63,10 +64,10 @@ class MenudataController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Menudata  $menudata
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Menudata $menudata)
     {
         //
     }
@@ -74,10 +75,10 @@ class MenudataController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Menudata  $menudata
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Menudata $menudata)
     {
         //
     }
