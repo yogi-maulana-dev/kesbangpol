@@ -5,7 +5,7 @@
 <!-- Mirrored from ableproadmin.com/7.0/default/auth-normal-sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 16 Apr 2022 13:54:43 GMT -->
 
 <head>
-    <title>Ablepro v7.0 bootstrap admin template by Phoenixcoded</title>
+    <title>{{ $judul }}</title>
     <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 10]>

@@ -16,9 +16,6 @@ class DashboardController extends Controller
     public function index()
     {
         //
-
-
-
         return view('user.dashboard', ["judul" => "Halaman Dashboard",
        'datas' => Upload::where('id_user', auth()->user()->id)->get()
     ]);

@@ -29,8 +29,8 @@ class UserController extends Controller
     public function create(Request $request)
     {
         //
- 
-    
+
+
 }
 
     /**
@@ -97,13 +97,13 @@ class UserController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
- 
+
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
- 
+
             return redirect()->intended('/dashboard');
         }
- 
+
     return back()->with('loginError','Login Gagal ! Email atau password salah');
     }
 
@@ -116,5 +116,5 @@ request()->session()->regenerateToken();
 return redirect('/');
     }
 
-   
+
 }
