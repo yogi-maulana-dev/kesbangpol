@@ -9,6 +9,9 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DaftarController;
 use App\Http\Controllers\TutorialController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LoginadminController;
+use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\MenudataController;
 
 
 use App\Models\Dashboard;
@@ -46,13 +49,16 @@ Route::post('/keluar',[UserController::class, 'keluar']);
 
 
 Route::resource('/data',DataController::class)->middleware('auth');
-Route::resource('/data',DataController::class)->middleware('auth');
+Route::resource('/menudata',MenudataController::class)->middleware('auth');
 
 Route::get('/dashboard',[DashboardController::class, 'index'])->middleware('auth');
+Route::get('/menudata',[MenudataController::class, 'index']);
+
+Route::get('/admin_dashboard',[AdminDashboardController::class, 'index'])->middleware('auth');
 Route::get('/tutorial',[TutorialController::class, 'index']);
-Route::get('/user',[UserController::class, 'index'])->name('login')->middleware('guest');
-Route::post('/user',[UserController::class, 'authenticate']);
-Route::post('/keluar',[UserController::class, 'keluar']);
+Route::get('/loginadmin',[LoginadminController::class, 'index'])->middleware('guest');
+Route::post('/loginadmin',[LoginadminController::class, 'loginauth']);
+Route::post('/keluar',[LoginadminController::class, 'keluar']);
 
 
 

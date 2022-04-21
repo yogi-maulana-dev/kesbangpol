@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Menudata;
 use Illuminate\Http\Request;
+use App\Models\Upload;
 
 class MenudataController extends Controller
 {
@@ -15,6 +16,13 @@ class MenudataController extends Controller
     public function index()
     {
         //
+
+               return view('admin.menudata', ['judul' => 'Halaman Data',
+               'datas' => Upload::join('users', 'uploads.id_user', "=", 'users.id')
+               ->get()
+            ]);
+
+
     }
 
     /**
@@ -47,6 +55,9 @@ class MenudataController extends Controller
     public function show(Menudata $menudata)
     {
         //
+
+
+
     }
 
     /**

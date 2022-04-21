@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class LoginadminController extends Controller
 {
@@ -14,6 +16,7 @@ class LoginadminController extends Controller
     public function index()
     {
         //
+          return view('loginadmin', ["judul" => "Halaman Home"]);
     }
 
     /**
@@ -91,7 +94,7 @@ class LoginadminController extends Controller
     'password' => ['required'],
     ]);
 
-    if (Auth::attempt($credentials)) {
+    if (Auth::guard('admin')->attempt($credentials)) {
     $request->session()->regenerate();
 
     return redirect()->intended('/dashboard');
