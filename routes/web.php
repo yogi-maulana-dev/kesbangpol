@@ -35,13 +35,15 @@ Route::get('/',[HomeController::class, 'index']);
 Route::get('/home',[HomeController::class, 'index']);
 Route::get('/berita',[BeritaController::class, 'index']);
 
- Route::get('/dashboard',function() {
-  return view('user.dashboard', ["judul" => "Halaman Dashboard",
-   'datas' => Upload::where('id_user', auth()->user()->id)->get()
+Route::get('/dashboard',function() {
+return view('user.dashboard', ["judul" => "Halaman Dashboard",
+'datas' => Upload::where('id_user', auth()->user()->id)->get()
 ]);
- })->middleware('auth');
+})->middleware('auth');
 
+Route::resource('/data',DataController::class)->middleware('auth');
 
+Route::get('/dashboard',[DashboardController::class, 'index'])->middleware('auth');
 Route::get('/tutorial',[TutorialController::class, 'index']);
 Route::get('/user',[UserController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/user',[UserController::class, 'authenticate']);

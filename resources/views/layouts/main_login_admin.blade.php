@@ -2642,7 +2642,7 @@
     <!--forms-wizard css-->
     <link rel="stylesheet" type="text/css" href="/admin/bower_components/jquery.steps/css/jquery.steps.css">
 
-    <script src="path/to/dist/feather.js"></script>
+
 
     <!-- choose one -->
     <script src="https://unpkg.com/feather-icons"></script>

@@ -20,7 +20,7 @@
     <meta name="author" content="Phoenixcoded" />
     <!-- Favicon icon -->
     <link rel="icon" href="http://html.phoenixcoded.net/mega-able/files/assets/images/favicon.ico" type="image/x-icon">
-    <!-- Google font-->     
+    <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
     <!-- Required Fremwork -->
     <link rel="stylesheet" type="text/css" href="/admin/bower_components/bootstrap/css/bootstrap.min.css">
@@ -32,13 +32,13 @@
     <link rel="stylesheet" type="text/css" href="/admin/assets/icon/icofont/css/icofont.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   
+
     <!-- Syntax highlighter Prism css -->
     <link rel="stylesheet" type="text/css" href="/admin/assets/pages/prism/prism.css">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="/admin/assets/css/style.css">
-    
-    
+
+
     <link rel="stylesheet" type="text/css" href="/admin/assets/css/jquery.mCustomScrollbar.css">
     <link rel="stylesheet" type="text/css" href="/admin/assets/css/pcoded-horizontal.min.css">
 
@@ -66,7 +66,7 @@
 <!-- Menu horizontal icon fixed -->
 
 <body class="horizontal-icon-fixed">
-    <!-- Pre-loader start --> 
+    <!-- Pre-loader start -->
     <div class="theme-loader">
         <div class="loader-track">
             <div class="preloader-wrapper">
@@ -92,7 +92,7 @@
                         <div class="circle"></div>
                     </div>
                 </div>
-                
+
                 <div class="spinner-layer spinner-yellow">
                     <div class="circle-clipper left">
                         <div class="circle"></div>
@@ -104,7 +104,7 @@
                         <div class="circle"></div>
                     </div>
                 </div>
-                
+
                 <div class="spinner-layer spinner-green">
                     <div class="circle-clipper left">
                         <div class="circle"></div>
@@ -122,7 +122,7 @@
     <!-- Pre-loader end -->
 
     <div id="pcoded" class="pcoded">
-        
+
         <div class="pcoded-container">
             <nav class="navbar header-navbar pcoded-header">
                 <div class="navbar-wrapper">
@@ -148,7 +148,7 @@
                             <i class="ti-more"></i>
                         </a>
                     </div>
-                    
+
                     <div class="navbar-container container-fluid">
                         <ul class="nav-left">
                             <li>
@@ -221,7 +221,7 @@
                             <li class="user-profile header-notification">
                                 <a href="#!" class="waves-effect waves-light">
                                     <img src="/admin/assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
-                                    <span>{{ auth()->user()->nama; }}</span>
+                                    <span>{{ $data->nama; }}</span>
                                     <i class="ti-angle-down"></i>
                                 </a>
                                 <ul class="show-notification profile-notification">
@@ -246,15 +246,15 @@
                                         </a>
                                     </li>
                                     <form action="/keluar" method="post">
-                                   
-                                        
+
+
                                            @csrf
 <button type="submit" class="waves-effect waves-light"> <li> <i class="ti-layout-sidebar-left"></i> Keluar  </li></button>
-                                      
+
                                         {{-- <a href="auth-normal-sign-in.html">
                                             <i class="ti-layout-sidebar-left"></i> Logout
                                         </a> --}}
-                                   
+
                                       </form>
                                 </ul>
                             </li>
@@ -445,7 +445,7 @@
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                         <ul class="pcoded-submenu">
-                                            
+
                                             <li class=" pcoded-hasmenu">
                                                 <a href="javascript:void(0)" class="waves-effect waves-dark">
                                                     <span class="pcoded-micon"><i class="icon-pie-chart"></i></span>
@@ -481,7 +481,7 @@
                                                             <span class="pcoded-mcaret"></span>
                                                         </a>
                                                     </li>
-                                                    
+
                                                 </ul>
                                             </li>
                                             <li class=" pcoded-hasmenu">
@@ -542,7 +542,7 @@
                                                     <span class="pcoded-mcaret"></span>
                                                 </a>
                                             </li>
-                                            
+
                                         </ul>
                                     </li>
                                     <li class="">
@@ -712,7 +712,7 @@
                                                     <span class="pcoded-mcaret"></span>
                                                 </a>
                                             </li>
-                                            
+
                                         </ul>
                                     </li>
                                     <li class="pcoded-hasmenu">
@@ -750,7 +750,7 @@
                                                     <span class="pcoded-mcaret"></span>
                                                 </a>
                                             </li>
-                                            
+
                                             <li class=" ">
                                                 <a href="notification.html" class="waves-effect waves-dark">
                                                     <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
@@ -829,7 +829,7 @@
                                                     <span class="pcoded-mcaret"></span>
                                                 </a>
                                             </li>
-                                            
+
                                         </ul>
                                     </li>
                                     <li class="pcoded-hasmenu">
@@ -860,7 +860,7 @@
                                                     <span class="pcoded-mcaret"></span>
                                                 </a>
                                             </li>
-                                            
+
                                         </ul>
                                     </li>
                                     <li class=" ">
@@ -1004,7 +1004,7 @@
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
-                                    
+
                                     <li class=" ">
                                         <a href="form-select.html" class="waves-effect waves-dark">
                                             <span class="pcoded-micon"><i class="ti-shortcode"></i></span>
@@ -1250,7 +1250,7 @@
                                                     <span class="pcoded-mcaret"></span>
                                                 </a>
                                             </li>
-                                            
+
                                         </ul>
                                     </li>
                                     <li class="pcoded-hasmenu">
@@ -1281,7 +1281,7 @@
                                                             <span class="pcoded-mcaret"></span>
                                                         </a>
                                                     </li>
-                                                    
+
                                                     <li class=" ">
                                                         <a href="dt-ext-buttons-html-5-data-export.html" class="waves-effect waves-dark">
                                                             <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
@@ -1289,7 +1289,7 @@
                                                             <span class="pcoded-mcaret"></span>
                                                         </a>
                                                     </li>
-                                                    
+
                                                 </ul>
                                             </li>
                                             <li class=" ">
@@ -1774,7 +1774,7 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        
+
                                         <li class="pcoded-hasmenu ">
                                             <a href="javascript:void(0)" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon"><i class="ti-shopping-cart"></i></span>
@@ -1917,7 +1917,7 @@
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
-                                        
+
                                         <li class="pcoded-hasmenu ">
                                             <a href="javascript:void(0)" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon"><i class="ti-dribbble"></i></span>
@@ -2127,7 +2127,7 @@
                                                                 <span class="pcoded-mcaret"></span>
                                                             </a>
                                                         </li>
-                                                        
+
                                                         <li class="">
                                                             <a href="long-press-editor.html" class="waves-effect waves-dark">
                                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
@@ -2311,7 +2311,7 @@
                                 <!-- Main-body start -->
                                 <div class="main-body">
                                     <div class="page-wrapper">
-                                        
+
                                         <!-- Page body start -->
                                         <div class="page-body">
                                             <div class="row">
@@ -2326,7 +2326,7 @@
                             </div>
                         </div>
                         <!-- Main-body end -->
-                        
+
                         {{-- <div id="styleSelector"> --}}
                         </div>
                     </div>
@@ -2433,7 +2433,7 @@
 
       <script src="/admin/assets/pages/data-table/extensions/responsive/js/responsive-custom.js"></script>
 
-      
+
     <script type="text/javascript" src="/admin/bower_components/lightbox2/js/lightbox.min.js"></script>
 
     <script src="path/to/dist/feather.js"></script>
