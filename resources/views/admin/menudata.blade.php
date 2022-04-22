@@ -6,17 +6,6 @@
             overflow-y: auto;
         }
 
-        table,
-        td {
-            border-collapse: collapse;
-            border: 1px solid #000;
-            padding: 10px;
-        }
-
-        .checkbox {
-            text-align: center;
-            /*Centering the text in a td of the table*/
-        }
 
     </style>
 
@@ -117,7 +106,7 @@
                     <div class="tab-content p-t-30">
 
                         <div class="tab-pane active" id="data1" role="tabpanel">
-                            <form class="form-material">
+                            <form class="md-float-material form-material">
 
                                 @foreach ($datas as $data)
                                     {{-- awal --}}
@@ -170,7 +159,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_terdaftar_dikemenkumham" name="surat_terdaftar_dikemenkumham" value="2">
+                                                                            <input type="checkbox" id="a_surat_terdaftar_dikemenkumham" name="surat_terdaftar_dikemenkumham" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -179,7 +168,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_terdaftar_dikemenkumham" name="surat_terdaftar_dikemenkumham" value="0">
+                                                                        <input type="checkbox" id="a_surat_terdaftar_dikemenkumham" name="surat_terdaftar_dikemenkumham" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -243,7 +232,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_terdaftar_dikemenkumham" name="surat_terdaftar_dikemenkumham" value="2">
+                                                                            <input type="checkbox" id="a_surat_terdaftar_dikemenkumham" name="surat_terdaftar_dikemenkumham" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -252,7 +241,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_terdaftar_dikemenkumham" name="surat_terdaftar_dikemenkumham" value="0">
+                                                                        <input type="checkbox" id="a_surat_terdaftar_dikemenkumham" name="surat_terdaftar_dikemenkumham" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -324,7 +313,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_pendaftaran" name="surat_pendaftaran" value="2">
+                                                                            <input type="checkbox" id="a_surat_pendaftaran" name="surat_pendaftaran" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -333,7 +322,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_pendaftaran" name="surat_pendaftaran" value="0">
+                                                                        <input type="checkbox" id="a_surat_pendaftaran" name="surat_pendaftaran" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -399,7 +388,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_pendaftaran" name="surat_pendaftaran" value="2">
+                                                                            <input type="checkbox" id="a_surat_pendaftaran" name="surat_pendaftaran" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -408,7 +397,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_pendaftaran" name="surat_pendaftaran" value="0">
+                                                                        <input type="checkbox" id="a_surat_pendaftaran" name="surat_pendaftaran" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -478,7 +467,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="akte_pendirian" name="akte_pendirian" value="2">
+                                                                            <input type="checkbox" id="a_akte_pendirian" name="akte_pendirian" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -487,7 +476,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="akte_pendirian" name="akte_pendirian" value="0">
+                                                                        <input type="checkbox" id="a_akte_pendirian" name="akte_pendirian" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -552,7 +541,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_pendaftaran" name="akte_pendirian" value="2">
+                                                                            <input type="checkbox" id="a_surat_pendaftaran" name="akte_pendirian" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -561,7 +550,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_pendaftaran" name="akte_pendirian" value="0">
+                                                                        <input type="checkbox" id="a_surat_pendaftaran" name="akte_pendirian" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -626,7 +615,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="adrt" name="adrt" value="2">
+                                                                            <input type="checkbox" id="a_adrt" name="adrt" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -635,7 +624,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="adrt" name="adrt" value="0">
+                                                                        <input type="checkbox" id="a_adrt" name="adrt" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -697,7 +686,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="adrt" name="adrt" value="2">
+                                                                            <input type="checkbox" id="a_adrt" name="adrt" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -706,7 +695,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="adrt" name="adrt" value="0">
+                                                                        <input type="checkbox" id="a_adrt" name="adrt" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -773,7 +762,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_keputusan" name="surat_keputusan" value="2">
+                                                                            <input type="checkbox" id="a_surat_keputusan" name="surat_keputusan" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -782,7 +771,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_keputusan" name="surat_keputusan" value="0">
+                                                                        <input type="checkbox" id="a_surat_keputusan" name="surat_keputusan" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -846,7 +835,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_keputusan" name="surat_keputusan" value="2">
+                                                                            <input type="checkbox" id="a_surat_keputusan" name="surat_keputusan" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -855,7 +844,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_keputusan" name="surat_keputusan" value="0">
+                                                                        <input type="checkbox" id="a_surat_keputusan" name="surat_keputusan" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -923,7 +912,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="biodata_pengurus" name="biodata_pengurus" value="2">
+                                                                            <input type="checkbox" id="a_biodata_pengurus" name="biodata_pengurus" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -932,7 +921,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="biodata_pengurus" name="biodata_pengurus" value="0">
+                                                                        <input type="checkbox" id="a_biodata_pengurus" name="biodata_pengurus" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -996,7 +985,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="biodata_pengurus" name="biodata_pengurus" value="2">
+                                                                            <input type="checkbox" id="a_biodata_pengurus" name="biodata_pengurus" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -1005,7 +994,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="biodata_pengurus" name="biodata_pengurus" value="0">
+                                                                        <input type="checkbox" id="a_biodata_pengurus" name="biodata_pengurus" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -1080,7 +1069,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="ktp" name="ktp" value="2">
+                                                                            <input type="checkbox" id="a_ktp" name="ktp" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -1089,7 +1078,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="ktp" name="ktp" value="0">
+                                                                        <input type="checkbox" id="a_ktp" name="ktp" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -1101,7 +1090,6 @@
                                                                  </p>
                                                         </div>
                                                 </div>
-
 
                                     </div>
                                 </div>
@@ -1154,7 +1142,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="ktp" name="ktp" value="2">
+                                                                            <input type="checkbox" id="a_ktp" name="ktp" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -1163,7 +1151,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="ktp" name="ktp" value="0">
+                                                                        <input type="checkbox" id="a_ktp" name="ktp" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -1222,10 +1210,8 @@
                                                 Data
                                             </a>
                                         </p>
-                                    </div>
-                                </div>
 
-                                <div class="card-block">
+                                        <div class="card-block">
                                                             <div class="form-group row">
                                                                 <p class="text-muted text-center">
                                                                 <label class="col-sm-12">Apakah data Foto ketua 4x6, tervalidasi ?</label>
@@ -1234,7 +1220,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="foto" name="foto" value="2">
+                                                                            <input type="checkbox" id="a_foto" name="foto" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -1243,7 +1229,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="foto" name="foto" value="0">
+                                                                        <input type="checkbox" id="a_foto" name="foto" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -1255,7 +1241,8 @@
                                                                  </p>
                                                         </div>
                                                 </div>
-
+                                    </div>
+                                </div>
                             @elseif ($foto == 'png' or $foto == 'jpg')
                                 <div class="col-lg-12">
                                     <div class="p-20 z-depth-bottom-1">
@@ -1306,7 +1293,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="foto" name="foto" value="2">
+                                                                            <input type="checkbox" id="a_foto" name="foto" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -1315,7 +1302,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="foto" name="foto" value="0">
+                                                                        <input type="checkbox" id="a_foto" name="foto" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -1385,7 +1372,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_keterangan_domisili" name="surat_keterangan_domisili" value="2">
+                                                                            <input type="checkbox" id="a_surat_keterangan_domisili" name="surat_keterangan_domisili" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -1394,7 +1381,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_keterangan_domisili" name="surat_keterangan_domisili" value="0">
+                                                                        <input type="checkbox" id="a_surat_keterangan_domisili" name="surat_keterangan_domisili" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -1458,7 +1445,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_keterangan_domisili" name="surat_keterangan_domisili" value="2">
+                                                                            <input type="checkbox" id="a_surat_keterangan_domisili" name="surat_keterangan_domisili" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -1467,7 +1454,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_keterangan_domisili" name="surat_keterangan_domisili" value="0">
+                                                                        <input type="checkbox" id="a_surat_keterangan_domisili" name="surat_keterangan_domisili" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -1534,7 +1521,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="npwp" name="npwp" value="2">
+                                                                            <input type="checkbox" id="a_npwp" name="npwp" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -1543,7 +1530,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="npwp" name="npwp" value="0">
+                                                                        <input type="checkbox" id="a_npwp" name="npwp" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -1607,7 +1594,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="npwp" name="npwp" value="2">
+                                                                            <input type="checkbox" id="a_npwp" name="npwp" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -1616,7 +1603,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="npwp" name="npwp" value="0">
+                                                                        <input type="checkbox" id="a_npwp" name="npwp" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -1683,7 +1670,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="foto_kantor" name="foto_kantor" value="2">
+                                                                            <input type="checkbox" id="a_foto_kantor" name="foto_kantor" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -1692,7 +1679,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="foto_kantor" name="foto_kantor" value="0">
+                                                                        <input type="checkbox" id="a_foto_kantor" name="foto_kantor" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -1701,7 +1688,7 @@
                                                                 </div>
                                                                 <span class="messages"></span>
                                                             </div>
-                                                                 </p>
+
                                                         </div>
                                                 </div>
 
@@ -1756,7 +1743,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="foto_kantor" name="foto_kantor" value="2">
+                                                                            <input type="checkbox" id="a_foto_kantor" name="foto_kantor" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -1765,7 +1752,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="foto_kantor" name="foto_kantor" value="0">
+                                                                        <input type="checkbox" id="a_foto_kantor" name="foto_kantor" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -1785,11 +1772,10 @@
                             @endif
                         @else
                         @endif
+                        </div>
                         {{-- Data surat_pendaftaran --}}
                 @endforeach
 
-
-            </div>
             {{-- ini yang ketiga --}}
             <div class="tab-pane" id="data3" role="tabpanel">
                 @foreach ($datas as $data)
@@ -1842,7 +1828,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_ketertiban" name="surat_ketertiban" value="2">
+                                                                            <input type="checkbox" id="a_surat_ketertiban" name="surat_ketertiban" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -1851,7 +1837,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_ketertiban" name="surat_ketertiban" value="0">
+                                                                        <input type="checkbox" id="a_surat_ketertiban" name="surat_ketertiban" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -1918,7 +1904,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_ketertiban" name="surat_ketertiban" value="2">
+                                                                            <input type="checkbox" id="a_surat_ketertiban" name="surat_ketertiban" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -1927,7 +1913,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_ketertiban" name="surat_ketertiban" value="0">
+                                                                        <input type="checkbox" id="a_surat_ketertiban" name="surat_ketertiban" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -1998,7 +1984,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_tidak_avilasi" name="surat_tidak_avilasi" value="2">
+                                                                            <input type="checkbox" id="a_surat_tidak_avilasi" name="surat_tidak_avilasi" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -2007,7 +1993,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_tidak_avilasi" name="surat_tidak_avilasi" value="0">
+                                                                        <input type="checkbox" id="a_surat_tidak_avilasi" name="surat_tidak_avilasi" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -2073,7 +2059,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_tidak_avilasi" name="surat_tidak_avilasi" value="2">
+                                                                            <input type="checkbox" id="a_surat_tidak_avilasi" name="surat_tidak_avilasi" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -2082,7 +2068,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_tidak_avilasi" name="surat_tidak_avilasi" value="0">
+                                                                        <input type="checkbox" id="a_surat_tidak_avilasi" name="surat_tidak_avilasi" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -2150,7 +2136,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_konflik" name="surat_konflik" value="2">
+                                                                            <input type="checkbox" id="a_surat_konflik" name="surat_konflik" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -2159,7 +2145,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_konflik" name="surat_konflik" value="0">
+                                                                        <input type="checkbox" id="a_surat_konflik" name="surat_konflik" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -2223,7 +2209,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_konflik" name="surat_konflik" value="2">
+                                                                            <input type="checkbox" id="a_surat_konflik" name="surat_konflik" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -2232,7 +2218,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_konflik" name="surat_konflik" value="0">
+                                                                        <input type="checkbox" id="a_surat_konflik" name="surat_konflik" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -2298,7 +2284,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_hak_cipta" name="surat_hak_cipta" value="2">
+                                                                            <input type="checkbox" id="a_surat_hak_cipta" name="surat_hak_cipta" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -2307,7 +2293,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_hak_cipta" name="surat_hak_cipta" value="0">
+                                                                        <input type="checkbox" id="a_surat_hak_cipta" name="surat_hak_cipta" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -2373,7 +2359,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_hak_cipta" name="surat_hak_cipta" value="2">
+                                                                            <input type="checkbox" id="a_surat_hak_cipta" name="surat_hak_cipta" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -2382,7 +2368,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_hak_cipta" name="surat_hak_cipta" value="0">
+                                                                        <input type="checkbox" id="a_surat_hak_cipta" name="surat_hak_cipta" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -2449,7 +2435,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_laporan" name="surat_laporan" value="2">
+                                                                            <input type="checkbox" id="a_surat_laporan" name="surat_laporan" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -2458,7 +2444,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_laporan" name="surat_laporan" value="0">
+                                                                        <input type="checkbox" id="a_surat_laporan" name="surat_laporan" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -2524,7 +2510,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_laporan" name="surat_laporan" value="2">
+                                                                            <input type="checkbox" id="a_surat_laporan" name="surat_laporan" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -2533,7 +2519,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_laporan" name="surat_laporan" value="0">
+                                                                        <input type="checkbox" id="a_surat_laporan" name="surat_laporan" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -2608,7 +2594,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_absah" name="surat_absah" value="2">
+                                                                            <input type="checkbox" id="a_surat_absah" name="surat_absah" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -2617,7 +2603,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_absah" name="surat_absah" value="0">
+                                                                        <input type="checkbox" id="a_surat_absah" name="surat_absah" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -2681,7 +2667,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_absah" name="surat_absah" value="2">
+                                                                            <input type="checkbox" id="a_surat_absah" name="surat_absah" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -2690,7 +2676,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_absah" name="surat_absah" value="0">
+                                                                        <input type="checkbox" id="a_surat_absah" name="surat_absah" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -2756,7 +2742,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_absah" name="surat_absah" value="2">
+                                                                            <input type="checkbox" id="a_surat_absah" name="surat_absah" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -2765,7 +2751,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_absah" name="surat_absah" value="0">
+                                                                        <input type="checkbox" id="a_surat_absah" name="surat_absah" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -2827,7 +2813,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_absah" name="surat_absah" value="2">
+                                                                            <input type="checkbox" id="a_surat_absah" name="surat_absah" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -2836,7 +2822,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_absah" name="surat_absah" value="0">
+                                                                        <input type="checkbox" id="a_surat_absah" name="surat_absah" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -2904,7 +2890,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_rekom_skpd" name="surat_rekom_skpd" value="2">
+                                                                            <input type="checkbox" id="a_surat_rekom_skpd" name="surat_rekom_skpd" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -2913,7 +2899,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_rekom_skpd" name="surat_rekom_skpd" value="0">
+                                                                        <input type="checkbox" id="a_surat_rekom_skpd" name="surat_rekom_skpd" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -2974,7 +2960,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_rekom_skpd" name="surat_rekom_skpd" value="2">
+                                                                            <input type="checkbox" id="a_surat_rekom_skpd" name="surat_rekom_skpd" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -2983,7 +2969,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_rekom_skpd" name="surat_rekom_skpd" value="0">
+                                                                        <input type="checkbox" id="a_surat_rekom_skpd" name="surat_rekom_skpd" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -3051,7 +3037,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_rekom_skpd_kerja" name="surat_rekom_skpd_kerja" value="2">
+                                                                            <input type="checkbox" id="a_surat_rekom_skpd_kerja" name="surat_rekom_skpd_kerja" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -3060,7 +3046,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_rekom_skpd_kerja" name="surat_rekom_skpd_kerja" value="0">
+                                                                        <input type="checkbox" id="a_surat_rekom_skpd_kerja" name="surat_rekom_skpd_kerja" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -3121,7 +3107,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_rekom_skpd_kerja" name="surat_rekom_skpd_kerja" value="2">
+                                                                            <input type="checkbox" id="a_surat_rekom_skpd_kerja" name="surat_rekom_skpd_kerja" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -3130,7 +3116,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_rekom_skpd_kerja" name="surat_rekom_skpd_kerja" value="0">
+                                                                        <input type="checkbox" id="a_surat_rekom_skpd_kerja" name="surat_rekom_skpd_kerja" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -3199,7 +3185,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_rekom_kesediaan" name="surat_rekom_kesediaan" value="2">
+                                                                            <input type="checkbox" id="a_surat_rekom_kesediaan" name="surat_rekom_kesediaan" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -3208,7 +3194,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_rekom_kesediaan" name="surat_rekom_kesediaan" value="0">
+                                                                        <input type="checkbox" id="a_surat_rekom_kesediaan" name="surat_rekom_kesediaan" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -3273,7 +3259,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_rekom_kesediaan" name="surat_rekom_kesediaan" value="2">
+                                                                            <input type="checkbox" id="a_surat_rekom_kesediaan" name="surat_rekom_kesediaan" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -3282,7 +3268,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_rekom_kesediaan" name="surat_rekom_kesediaan" value="0">
+                                                                        <input type="checkbox" id="a_surat_rekom_kesediaan" name="surat_rekom_kesediaan" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -3349,7 +3335,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_izasah" name="surat_izasah" value="2">
+                                                                            <input type="checkbox" id="a_surat_izasah" name="surat_izasah" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -3358,7 +3344,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_izasah" name="surat_izasah" value="0">
+                                                                        <input type="checkbox" id="a_surat_izasah" name="surat_izasah" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -3415,7 +3401,7 @@
                                         </div>
                                     </div>
 
-                                    div class="card-block">
+                                    <div class="card-block">
                                                             <div class="form-group row">
                                                                 <p class="text-muted text-center">
                                                                 <label class="col-sm-12">Apakah izasah terakhir pengurus harian ketua, seketeris, dan bendahara organisasi, tervalidasi ?</label>
@@ -3424,7 +3410,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="surat_izasah" name="surat_izasah" value="2">
+                                                                            <input type="checkbox" id="a_surat_izasah" name="surat_izasah" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -3433,7 +3419,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="surat_izasah" name="surat_izasah" value="0">
+                                                                        <input type="checkbox" id="a_surat_izasah" name="surat_izasah" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -3491,6 +3477,37 @@
                                         <a data-toggle="modal" href="#skt" class="btn btn-primary">Lihat
                                             Data</a>
                                     </p>
+
+                                        <div class="card-block">
+                                                            <div class="form-group row">
+                                                                <p class="text-muted text-center">
+                                                                <label class="col-sm-12">Apakah Surat Keterangan Terdaftar Provinsi ?</label>
+                                                                </p>
+                                                                 <p class="text-muted text-center">
+                                                                <div class="col-sm-12">
+                                                                    <div class="checkbox-fade fade-in-primary">
+                                                                        <label>
+                                                                            <input type="checkbox" id="a_skt" name="skt" value="2">
+                                                                            <span class="cr">
+                                                                               <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                                                           </span>
+                                                                           <span class="label label-lg label-success">Lengkap</span>
+                                                                       </label>
+                                                                   </div>
+                                                                   <div class="checkbox-fade fade-in-primary">
+                                                                    <label>
+                                                                        <input type="checkbox" id="a_skt" name="skt" value="0">
+                                                                        <span class="cr">
+                                                                            <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                                                        </span>
+                                                                        <span class="label label-lg label-danger">Tidak</span>
+                                                                    </label>
+                                                                </div>
+                                                                <span class="messages"></span>
+                                                            </div>
+                                                        </div>
+                                                </div>
+
                                 </div>
                             </div>
                         @elseif ($skt == 'png' or $skt == 'jpg')
@@ -3528,6 +3545,37 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                         <div class="card-block">
+                                                            <div class="form-group row">
+                                                                <p class="text-muted text-center">
+                                                                <label class="col-sm-12">Apakah Surat Keterangan Terdaftar Provinsi ?</label>
+                                                                </p>
+                                                                 <p class="text-muted text-center">
+                                                                <div class="col-sm-12">
+                                                                    <div class="checkbox-fade fade-in-primary">
+                                                                        <label>
+                                                                            <input type="checkbox" id="a_skt" name="skt" value="2">
+                                                                            <span class="cr">
+                                                                               <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                                                           </span>
+                                                                           <span class="label label-lg label-success">Lengkap</span>
+                                                                       </label>
+                                                                   </div>
+                                                                   <div class="checkbox-fade fade-in-primary">
+                                                                    <label>
+                                                                        <input type="checkbox" id="a_skt" name="skt" value="0">
+                                                                        <span class="cr">
+                                                                            <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                                                        </span>
+                                                                        <span class="label label-lg label-danger">Tidak</span>
+                                                                    </label>
+                                                                </div>
+                                                                <span class="messages"></span>
+                                                            </div>
+                                                        </div>
+                                                </div>
+
                                 </div>
                             </div>
                         @else
@@ -3582,7 +3630,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="tujuan" name="tujuan" value="2">
+                                                                            <input type="checkbox" id="a_tujuan" name="tujuan" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -3591,7 +3639,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="tujuan" name="tujuan" value="0">
+                                                                        <input type="checkbox" id="a_tujuan" name="tujuan" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -3600,7 +3648,6 @@
                                                                 </div>
                                                                 <span class="messages"></span>
                                                             </div>
-                                                                 </p>
                                                         </div>
                                                 </div>
 
@@ -3653,7 +3700,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="tujuan" name="tujuan" value="2">
+                                                                            <input type="checkbox" id="a_tujuan" name="tujuan" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -3662,7 +3709,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="tujuan" name="tujuan" value="0">
+                                                                        <input type="checkbox" id="a_tujuan" name="tujuan" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -3727,7 +3774,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="program" name="program" value="2">
+                                                                            <input type="checkbox" id="a_program" name="program" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -3736,7 +3783,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="program" name="program" value="0">
+                                                                        <input type="checkbox" id="a_program" name="program" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
@@ -3797,7 +3844,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="program" name="program" value="2">
+                                                                            <input type="checkbox" id="a_program" name="program" value="2">
                                                                             <span class="cr">
                                                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                            </span>
@@ -3806,7 +3853,7 @@
                                                                    </div>
                                                                    <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="program" name="program" value="0">
+                                                                        <input type="checkbox" id="a_program" name="program" value="0">
                                                                         <span class="cr">
                                                                             <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                                         </span>
