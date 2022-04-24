@@ -28,6 +28,7 @@
                             <th>Data Upload</i></th>
                             <th>Status</i></th>
                             <th>Download File</i></th>
+                            <th>Kirim Email</i></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -57,8 +58,24 @@
                             </td>
 
                             <td>
-                                <a href="{{ route('download', $data->nama) }}" target="_blank" rel="noopener"
+                                <form method="post" action="/send_mail">
+                                    @csrf
+                                    <input class="form-control" type="hidden" name="nama" value="{{ $data->nama }}">
+                                    <input class="form-control" type="hidden" name="email" value="{{ $data->email }}">
+                                    <div class="text-right">
+                                        <button type="submit" class="btn btn-success text-white">Kirim ke Email
+                                            Saya</button>
+                                    </div>
+                                </form>
+                                {{-- <a href="{{ route('download', $data->nama) }}" target="_blank" rel="noopener"
                                     class="btn btn-primary btn-sm text-white">
+                                    Download
+                                </a> --}}
+
+                            </td>
+                            <td>
+                                <a href="{{ route('download', $data->nama) }}" target="_blank" rel="noopener"
+                                    class="btn btn-success btn-sm text-white">
                                     Download
                                 </a>
 

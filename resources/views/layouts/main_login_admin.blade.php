@@ -2426,6 +2426,8 @@
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <!-- Default card start -->
+                                                {{ Auth::guard('admin')->user()->nama }}
+
                                                 @yield('admin_dashboard')
                                                 @yield('menudata_dashboard')
                                                 <!-- Default card end -->

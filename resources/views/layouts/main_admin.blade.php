@@ -2418,6 +2418,7 @@
                                             <div class="col-lg-12">
                                                 <!-- Default card start -->
                                                 @yield('dashboard')
+                                                @yield('admin_dashboard')
                                                 <!-- Default card end -->
                                             </div>
                                         </div>

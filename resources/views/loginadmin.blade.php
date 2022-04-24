@@ -118,22 +118,21 @@
                                     <h3 class="text-center">{{ $judul }} Aplikasi</h3>
 
                                     @if (session()->has('success'))
-                                        <div class="alert alert-success alert-dismissible fade show"
-                                            data-bs-dismiss="alert" role="alert">
-                                            {{ session('success') }}ddasd</strong>
-                                            <button type="button" class="x-square" data-bs-dismiss="alert"
-                                                aria-label="Close"></button>
-                                        </div>
+                                    <div class="alert alert-success alert-dismissible fade show" data-bs-dismiss="alert"
+                                        role="alert">
+                                        {{ session('success') }}ddasd</strong>
+                                        <button type="button" class="x-square" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
+                                    </div>
                                     @endif
 
                                     @if (session()->has('loginError'))
-                                        <div class="alert alert-warning x-square">
-                                            <button type="button" class="close" data-dismiss="alert"
-                                                aria-label="Close">
-                                                <i class="icofont" data-feather="x-square"></i>
-                                            </button>
-                                            <p><strong>{{ session('loginError') }}!</strong>
-                                        </div>
+                                    <div class="alert alert-warning x-square">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <i class="icofont" data-feather="x-square"></i>
+                                        </button>
+                                        <p><strong>{{ session('loginError') }}!</strong>
+                                    </div>
                                     @endif
 
                                 </div>
@@ -141,15 +140,14 @@
 
                             <form action="/loginadmin" method="post" class="md-float-material form-material">
                                 @csrf
-
                                 <div class="form-group form-primary">
                                     <input type="text" name="email"
                                         class="form-control @error('email') is-invalid @enderror" required=""
                                         value="{{ old('email') }}" autofocus>
                                     @error('email')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
                                     @enderror
                                     <span class="form-bar"></span>
                                     <label class="float-label">Alamat email</label>
@@ -159,9 +157,9 @@
                                         class="form-control @error('password') is-invalid @enderror" id="Password"
                                         placeholder="" required="">
                                     @error('password')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
                                     @enderror
                                     <span class="form-bar"></span>
                                     <label class="float-label">Password</label>
@@ -231,9 +229,11 @@
     <script type="text/javascript" src="/admin/bower_components/modernizr/js/css-scrollbars.js"></script>
     <!-- i18next.min.js -->
     <script type="text/javascript" src="/admin/bower_components/i18next/js/i18next.min.js"></script>
-    <script type="text/javascript" src="/admin/bower_components/i18next-xhr-backend/js/i18nextXHRBackend.min.js"></script>
+    <script type="text/javascript" src="/admin/bower_components/i18next-xhr-backend/js/i18nextXHRBackend.min.js">
+    </script>
     <script type="text/javascript"
-        src="/admin/bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js"></script>
+        src="/admin/bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js">
+    </script>
     <script type="text/javascript" src="/admin/bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
     <script type="text/javascript" src="/admin/assets/js/common-pages.js"></script>
     <script type="text/javascript" src="/admin/assets/js/analytics.js"></script>

@@ -94,7 +94,7 @@ class LoginadminController extends Controller
     'password' => ['required'],
     ]);
 
-    if (Auth::guard('admin')->attempt($credentials)) {
+    if (Auth::guard('loginadmin')->attempt($credentials)) {
     $request->session()->regenerate();
 
     return redirect()->intended('/dashboard');

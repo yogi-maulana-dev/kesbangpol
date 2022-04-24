@@ -12,6 +12,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginadminController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\MenudataController;
+use App\Http\Controllers\SendMailController;
 
 
 use App\Models\Dashboard;
@@ -46,29 +47,22 @@ return view('user.dashboard', ["judul" => "Halaman Dashboard",
 
 Route::resource('/data',DataController::class)->middleware('auth');
 
-Route::get('/dashboard',[DashboardController::class, 'index'])->middleware('auth');
-Route::get('/tutorial',[TutorialController::class, 'index']);
-Route::get('/user',[UserController::class, 'index'])->name('login')->middleware('guest');
-Route::post('/user',[UserController::class, 'authenticate']);
-Route::post('/keluar',[UserController::class, 'keluar']);
-
-
 Route::resource('/data',DataController::class);
 // Route::resource('/menudata',MenudataController::class);
 
 Route::get('/dashboard',[DashboardController::class, 'index'])->middleware('auth');
 // Route::get('/menudata',[MenudataController::class, 'index']);
 
-Route::get('/admin_dashboard',[AdminDashboardController::class, 'index'])->middleware('auth');
+Route::get('/admin_dashboard',[AdminDashboardController::class, 'index']);
 Route::get('/tutorial',[TutorialController::class, 'index']);
-Route::get('/loginadmin',[LoginadminController::class, 'index'])->middleware('guest');
-Route::post('/loginadmin',[LoginadminController::class, 'loginauth']);
+Route::get('/loginadmin',[LoginadminController::class, 'index']);
+Route::post('/loginadmin',[LoginadminController::class, 'loginauth'])->name('login')->middleware('guest');
 Route::post('/keluar',[LoginadminController::class, 'keluar']);
 
-Route::get('/menudata',[MenudataController::class, 'index']);
-Route::post('/menudata', [MenudataController::class, 'update']);
+Route::get('/menudata',[MenudataController::class, 'index'])->middleware('auth');
+Route::post('/menudata', [MenudataController::class, 'update'])->middleware('auth');
 // Route::resource('/menudata',MenudataController::class);
-Route::get('/menudata/download/{nama}', [MenudataController::class, 'download'])->name('download');
+Route::get('/menudata/download/{nama}', [MenudataController::class, 'download'])->name('download')->middleware('auth');
 
 
 
@@ -77,3 +71,19 @@ Route::get('/menudata/download/{nama}', [MenudataController::class, 'download'])
 
 Route::get('/daftar',[DaftarController::class, 'index'])->middleware('guest');
 Route::post('/daftar',[DaftarController::class, 'store']);
+// Route::get('send/mail', [SendMailController::class, 'send_mail'])->name('send_mail');
+Route::get('send/mail', [SendMailController::class, 'send_mail'])->name('send_mail');
+
+Auth::routes();
+
+Route::prefix('user')->name('user.')->group(function(){
+Route::middleware(['guest'])->group(function () {
+Route::get('/dashboard',[DashboardController::class, 'index'])->middleware('auth');
+Route::get('/tutorial',[TutorialController::class, 'index']);
+Route::get('/user',[UserController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/user',[UserController::class, 'authenticate']);
+Route::post('/keluar',[UserController::class, 'keluar']);
+});
+
+}
+)

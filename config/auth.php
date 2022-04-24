@@ -18,6 +18,11 @@ return [
         'passwords' => 'users',
     ],
 
+    'loginadmins' => [
+    'driver' => 'eloquent',
+    'model' => App\Models\Loginadmin::class,
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Authentication Guards
@@ -40,7 +45,7 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'admin' => [
+        'loginadmin' => [
         'driver' => 'session',
         'provider' => 'loginadmins',
         ],
@@ -101,6 +106,11 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
+        ],
+
+        'loginadmins' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Loginadmin::class,
         ],
     ],
 
