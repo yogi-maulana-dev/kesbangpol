@@ -2,134 +2,320 @@
 <html lang="en">
 
 
+<!-- Mirrored from ableproadmin.com/7.0/default/auth-sign-up.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 16 Apr 2022 13:57:29 GMT -->
 
 <head>
+    <title>Ablepro v7.0 bootstrap admin template by Phoenixcoded</title>
+    <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 10]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description"
+        content="Gradient Able Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
+    <meta name="keywords"
+        content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
+    <meta name="author" content="Phoenixcoded" />
+    <!-- Favicon icon -->
 
-	<title>{{ $judul }}</title>
-	<!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 11]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
-	<!-- Meta -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="">
-	<meta name="author" content="Phoenixcoded" />
-	<!-- Favicon icon -->
-	<link rel="icon" href="admin/assets/images/favicon.ico" type="image/x-icon">
-	<!-- vendor css -->
-	<link rel="stylesheet" href="admin/assets/css/style.css">
-	
-	
-
-
+    <link rel="icon" href="https://ableproadmin.com/7.0/files/assets/images/favicon.ico" type="image/x-icon">
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="/admin/bower_components/bootstrap/css/bootstrap.min.css">
+    <!-- waves.css -->
+    <link rel="stylesheet" href="/admin/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
+    <!-- feather icon -->
+    <link rel="stylesheet" type="text/css" href="/admin/assets/icon/feather/css/feather.css">
+    <!-- themify-icons line icon -->
+    <link rel="stylesheet" type="text/css" href="/admin/assets/icon/themify-icons/themify-icons.css">
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="/admin/assets/icon/icofont/css/icofont.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css" href="/admin/assets/icon/font-awesome/css/font-awesome.min.css">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="/admin/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/admin/assets/css/pages.css">
 </head>
 
-<!-- [ signin-img ] start -->
-<div class="auth-wrapper align-items-stretch aut-bg-img">
-	<div class="flex-grow-1">
-		<div class="h-100 d-md-flex align-items-center auth-side-img">
-			<div class="col-sm-10 auth-content w-auto">
-				<img src="admin/assets/images/auth/auth-logo.png" alt="" class="img-fluid">
-				<h1 class="text-white my-4">Welcome you!</h1>
-				<h4 class="text-white font-weight-normal">Signup to your account and made member of the Able pro Dashboard Template.<br/>Do not forget to play with live customizer</h4>
-			</div>
-		</div>
-		<div class="auth-side-form">
-			<div class=" auth-content">
-				<img src="admin/assets/images/auth/auth-logo-dark.png" alt="" class="img-fluid mb-4 d-block d-xl-none d-lg-none">
-				<h4 class="mb-3 f-w-400">Daftar Organisasi Masyarakat</h4>
+<body themebg-pattern="theme1">
+    <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="loader-track">
+            <div class="preloader-wrapper">
+                <div class="spinner-layer spinner-blue">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+                <div class="spinner-layer spinner-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
 
-                <form action="/daftar" method="POST">
-                    @csrf
-				<div class="form-group mb-3">
-					<label class="floating-label" for="Username">Username</label>
-					<input type="text" class="form-control @error('username')
-                        is-invalid
-                    @enderror" name="username" id="Username" placeholder="" value="{{ old('username') }}">
-                    @error('username')
+                <div class="spinner-layer spinner-yellow">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
 
-							<div class="invalid-feedback">
-							{{ $message }}
-							</div>
-								
-							@enderror
-				</div>
-				<div class="form-group mb-3">
-					<label class="floating-label" for="Email">Email Organisasi</label>
-					<input type="text" class="form-control @error('email')
-                        is-invalid
-                    @enderror" name="email" id="Email" placeholder="" value="{{ old('email') }}">
+                <div class="spinner-layer spinner-green">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pre-loader end -->
+    <section class="login-block">
+        <!-- Container-fluid starts -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <form class="md-float-material form-material" action="/daftar" method="POST">
+                        @csrf
+                        <div class="text-center">
+                            <img src="/admin/assets/images/logo.png" alt="logo.png">
+                        </div>
+                        <div class="auth-box card">
+                            <div class="card-block">
+                                <div class="row m-b-20">
+                                    <div class="col-md-12">
+                                        <h3 class="text-center txt-primary">Silakan Daftarkan Organisasi anda</h3>
+                                    </div>
+                                </div>
+                                <div class="form-group form-primary">
+                                    <input type="text" class="form-control @error('username')
+                                                        is-invalid
+                                                    @enderror" name="username" id="Username" placeholder=""
+                                        value="{{ old('username') }}">
+                                    @error('username')
 
-                       @error('password')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
 
-							<div class="invalid-feedback">
-							{{ $message }}
-							</div>
-								
-							@enderror
-				</div>
+                                    @enderror
+                                    <span class="form-bar"></span>
+                                    <label class="float-label"> Username</label>
+                                </div>
 
-                		<div class="form-group mb-3">
-					<label class="floating-label" for="Nama">Nama Organisasi</label>
-					<input type="text"  class="form-control @error('nama')
-                        is-invalid
-                    @enderror" name="nama" id="Nama" placeholder="" value="{{old('nama') }}" >
-                    @error('nama')
+                                <div class="form-group form-primary">
+                                    <input type="text" class="form-control @error('nama')
+                                                                    is-invalid
+                                                                @enderror" name="nama" id="Nama" placeholder=""
+                                        value="{{old('nama') }}">
+                                    @error('nama')
 
-							<div class="invalid-feedback">
-							{{ $message }}
-							</div>
-								
-							@enderror
-				</div>
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
 
-				<div class="form-group mb-4">
-					<label class="floating-label" for="Password">Password</label>
-					<input type="password" name="password" class="form-control @error('password') 
-                        is-invalid
-                    @enderror" id="Password" placeholder="" >
+                                    @enderror
+                                    <span class="form-bar"></span>
+                                    <label class="float-label"> Nama Organisasi</label>
+                                </div>
 
-                    @error('password')
+                                <div class="form-group form-primary">
+                                    <input type="text" class="form-control @error('email')
+                                                        is-invalid
+                                                    @enderror" name="email" id="Email" placeholder=""
+                                        value="{{ old('email') }}">
 
-							<div class="invalid-feedback">
-							{{ $message }}
-							</div>
-								
-							@enderror
-				</div>
-				<div class="form-check  text-start mb-4 mt-2">
-					<input type="checkbox" class="form-check-input" id="customCheck1">
-					<label class="form-check-label" for="customCheck1">Ingat Data <a href="#!"> </label>
-				</div>
-				<button class="btn btn-primary btn-block mb-4">Sign up</button>
-				<div class="text-center">
-					{{-- <div class="saprator my-4"><span>OR</span></div>
-					<button class="btn text-white bg-facebook mb-2 me-2  wid-40 px-0 hei-40 rounded-circle"><i class="fab fa-facebook-f"></i></button>
-					<button class="btn text-white bg-googleplus mb-2 me-2 wid-40 px-0 hei-40 rounded-circle"><i class="fab fa-google-plus-g"></i></button>
-					<button class="btn text-white bg-twitter mb-2  wid-40 px-0 hei-40 rounded-circle"><i class="fab fa-twitter"></i></button> --}}
-					<p class="mt-4">Sudah Memiliki akun? <a href="/user" class="f-w-400">Login Masuk</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
+                                    @error('password')
+
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+
+                                    @enderror
+                                    <span class="form-bar"></span>
+                                    <label class="float-label">Email Address</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group form-primary">
+                                            <input type="password" name="password" class="form-control @error('password')
+                                                                    is-invalid
+                                                                @enderror" id="Password" placeholder="">
+
+                                            @error('password')
+
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+
+                                            @enderror
+                                            <span class="form-bar"></span>
+                                            <label class="float-label">Password</label>
+                                        </div>
+                                    </div>
+                                    {{-- <div class="col-sm-6">
+                                        <div class="form-group form-primary">
+                                            <input type="password" name="confirm-password" class="form-control"
+                                                required="">
+                                            <span class="form-bar"></span>
+                                            <label class="float-label">Confirm Password</label>
+                                        </div>
+                                    </div> --}}
+                                </div>
+                                <div class="row m-t-25 text-left">
+                                    {{-- <div class="col-md-12">
+                                        <div class="checkbox-fade fade-in-primary">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                                <span class="cr"><i
+                                                        class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                                <span class="text-inverse">I read and accept <a href="#">Terms &amp;
+                                                        Conditions.</a></span>
+                                            </label>
+                                        </div>
+                                    </div> --}}
+                                    {{-- <div class="col-md-12">
+                                        <div class="checkbox-fade fade-in-primary">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                                <span class="cr"><i
+                                                        class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                                <span class="text-inverse">Send me the <a href="#!">Newsletter</a>
+                                                    weekly.</span>
+                                            </label>
+                                        </div>
+                                    </div> --}}
+                                </div>
+                                <div class="row m-t-30">
+                                    <div class="col-md-12">
+                                        <button type="submit"
+                                            class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Daftarkan
+                                            Sekarang</button>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <p class="text-inverse text-left"><a href="/"><b>Kembali ke halaman
+                                                    awal</b></a>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <p class="text-inverse text-right"><a href="index.html"><b>Login aku sudah
+                                                    ada
+                                                    !</b></a></p>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <img src="/admin/assets/images/auth/Logo-small-bottom.png" alt="small-logo.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- end of col-sm-12 -->
+            </div>
+            <!-- end of row -->
+        </div>
+        <!-- end of container-fluid -->
+    </section>
+    <!-- Warning Section Starts -->
+    <!-- Older IE warning message -->
+    <!--[if lt IE 10]>
+<div class="ie-warning">
+    <h1>Warning!!</h1>
+    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+    <div class="iew-container">
+        <ul class="iew-download">
+            <li>
+                <a href="http://www.google.com/chrome/">
+                    <img src="/admin/assets/images/browser/chrome.png" alt="Chrome">
+                    <div>Chrome</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.mozilla.org/en-US/firefox/new/">
+                    <img src="/admin/assets/images/browser/firefox.png" alt="Firefox">
+                    <div>Firefox</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.opera.com">
+                    <img src="/admin/assets/images/browser/opera.png" alt="Opera">
+                    <div>Opera</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.apple.com/safari/">
+                    <img src="/admin/assets/images/browser/safari.png" alt="Safari">
+                    <div>Safari</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                    <img src="/admin/assets/images/browser/ie.png" alt="">
+                    <div>IE (9 & above)</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p>Sorry for the inconvenience!</p>
 </div>
-<!-- [ signin-img ] end -->
-
-<!-- Required Js -->
-<script src="admin/assets/js/vendor-all.min.js"></script>
-<script src="admin/assets/js/plugins/bootstrap.min.js"></script>
-<script src="admin/assets/js/ripple.js"></script>
-<script src="admin/assets/js/pcoded.min.js"></script>
-
-
-
+<![endif]-->
+    <!-- Warning Section Ends -->
+    <!-- Required Jquery -->
+    <script type="text/javascript" src="/admin/bower_components/jquery/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/admin/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/admin/bower_components/popper.js/js/popper.min.js"></script>
+    <script type="text/javascript" src="/admin/bower_components/bootstrap/js/bootstrap.min.js"></script>
+    <!-- waves js -->
+    <script src="/admin/assets/pages/waves/js/waves.min.js"></script>
+    <!-- jquery slimscroll js -->
+    <script type="text/javascript" src="/admin/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
+    <!-- modernizr js -->
+    <script type="text/javascript" src="/admin/bower_components/modernizr/js/modernizr.js"></script>
+    <script type="text/javascript" src="/admin/bower_components/modernizr/js/css-scrollbars.js"></script>
+    <!-- i18next.min.js -->
+    <script type="text/javascript" src="/admin/bower_components/i18next/js/i18next.min.js"></script>
+    <script type="text/javascript" src="/admin/bower_components/i18next-xhr-backend/js/i18nextXHRBackend.min.js">
+    </script>
+    <script type="text/javascript"
+        src="/admin/bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js">
+    </script>
+    <script type="text/javascript" src="/admin/bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
+    <script type="text/javascript" src="/admin/assets/js/common-pages.js"></script>
+    <script type="text/javascript" src="/admin/assets/js/analytics.js"></script>
 </body>
 
 
-<!-- Mirrored from ableproadmin.com/bootstrap/default/auth-signup-img-side.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 16:34:00 GMT -->
+<!-- Mirrored from ableproadmin.com/7.0/default/auth-sign-up.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 16 Apr 2022 13:57:29 GMT -->
+
 </html>

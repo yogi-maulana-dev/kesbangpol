@@ -44,7 +44,7 @@ class DataController extends Controller
         // $anusurat_pendaftaran = '/' . $tes . '/' . $data->surat_pendaftaran;
         // $anuakte_pendirian = '/' . $tes . '/' . $data->akte_pendirian;
         // $anuadrt = '/' . $tes . '/' . $data->adrt;
-        // $anutujuan = '/' . $tes . '/' . $data->tujuan;
+        // $anukeabsahan_kantor = '/' . $tes . '/' . $data->keabsahan_kantor;
         // $anuprogram = '/' . $tes . '/' . $data->program;
         // $anusurat_keputusan = '/' . $tes . '/' . $data->surat_keputusan;
         // $anubiodata_pengurus = '/' . $tes . '/' . $data->biodata_pengurus;
@@ -72,7 +72,7 @@ class DataController extends Controller
             'surat_pendaftaran' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
             'akte_pendirian' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
             'adrt' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
-            'tujuan' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
+            'keabsahan_kantor' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
             'program' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
             'surat_keputusan' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
             'biodata_pengurus' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
@@ -203,9 +203,9 @@ class DataController extends Controller
         $nama_dokumen23 = 'program' . date('Ymdhis') . '.' . $request->file('program')->getClientOriginalExtension();
         $program->move($tes . '/', $nama_dokumen23);
 
-        $tujuan = $request->file('tujuan');
-        $nama_dokumen24 = 'tujuan' . date('Ymdhis') . '.' . $request->file('tujuan')->getClientOriginalExtension();
-        $tujuan->move($tes . '/', $nama_dokumen24);
+        $keabsahan_kantor = $request->file('keabsahan_kantor');
+        $nama_dokumen24 = 'keabsahan_kantor' . date('Ymdhis') . '.' . $request->file('keabsahan_kantor')->getClientOriginalExtension();
+        $keabsahan_kantor->move($tes . '/', $nama_dokumen24);
 
          $surat_terdaftar_dikemenkumham = $request->file('surat_terdaftar_dikemenkumham');
         $nama_dokumen25 = 'surat_terdaftar_dikemenkumham' . date('Ymdhis') . '.' . $request->file('surat_terdaftar_dikemenkumham')->getClientOriginalExtension();
@@ -237,7 +237,7 @@ class DataController extends Controller
 
         $validasi['surat_keterangan_domisili'] = $nama_dokumen22;
         $validasi['program'] = $nama_dokumen23;
-        $validasi['tujuan'] = $nama_dokumen24;
+        $validasi['keabsahan_kantor'] = $nama_dokumen24;
         $validasi['surat_terdaftar_dikemenkumham'] = $nama_dokumen25;
         $validasi['id_user'] = auth()->user()->id;
 
@@ -303,7 +303,7 @@ class DataController extends Controller
         $anusurat_pendaftaran = $tes . '/' . $data->surat_pendaftaran;
         $anuakte_pendirian =  $tes . '/' . $data->akte_pendirian;
         $anuadrt = $tes . '/' . $data->adrt;
-        $anutujuan = $tes . '/' . $data->tujuan;
+        $anukeabsahan_kantor = $tes . '/' . $data->keabsahan_kantor;
         $anuprogram = $tes . '/' . $data->program;
         $anusurat_keputusan =  $tes . '/' . $data->surat_keputusan;
         $anubiodata_pengurus =  $tes . '/' . $data->biodata_pengurus;
@@ -331,7 +331,7 @@ class DataController extends Controller
             'surat_pendaftaran' => 'file|mimes:pdf,png,jpg,jpeg|max:1024',
             'akte_pendirian' => 'file|mimes:pdf,png,jpg,jpeg|max:1024',
             'adrt' => 'file|mimes:pdf,png,jpg,jpeg|max:1024',
-            'tujuan' => 'file|mimes:pdf,png,jpg,jpeg|max:1024',
+            'keabsahan_kantor' => 'file|mimes:pdf,png,jpg,jpeg|max:1024',
             'program' => 'file|mimes:pdf,png,jpg,jpeg|max:1024',
             'surat_keputusan' => 'file|mimes:pdf,png,jpg,jpeg|max:1024',
             'biodata_pengurus' => 'file|mimes:pdf,png,jpg,jpeg|max:1024',
@@ -803,17 +803,17 @@ class DataController extends Controller
              */
         }
 
-        if ($request->hasFile('tujuan')) {
+        if ($request->hasFile('keabsahan_kantor')) {
 
-                  if(File::exists($anutujuan)){
-            File::delete($anutujuan);
+                  if(File::exists($anukeabsahan_kantor)){
+            File::delete($anukeabsahan_kantor);
         }
 
-            $tujuan = $request->file('tujuan');
-            $nama_dokumen24 = 'tujuan' . date('Ymdhis') . '.' . $request->file('tujuan')->getClientOriginalExtension();
-            $tujuan->move($tes . '/', $nama_dokumen24);
-            $validasi['tujuan'] = $nama_dokumen24;
-            /** tujuan
+            $keabsahan_kantor = $request->file('keabsahan_kantor');
+            $nama_dokumen24 = 'keabsahan_kantor' . date('Ymdhis') . '.' . $request->file('keabsahan_kantor')->getClientOriginalExtension();
+            $keabsahan_kantor->move($tes . '/', $nama_dokumen24);
+            $validasi['keabsahan_kantor'] = $nama_dokumen24;
+            /** keabsahan_kantor
              * Show the form for creating a new resource.
              * Whatapps 6289631031237
              * email : yogimaulana100@gmail.com
@@ -848,7 +848,7 @@ class DataController extends Controller
 
         // $validasi['surat_keterangan_domisili'] = $nama_dokumen22;
         // $validasi['program'] = $nama_dokumen23;
-        // $validasi['tujuan'] = $nama_dokumen24;
+        // $validasi['keabsahan_kantor'] = $nama_dokumen24;
         // $validasi['surat_terdaftar_dikemenkumham'] = $nama_dokumen25;
         $validasi['id_user'] = auth()->user()->id;
 
