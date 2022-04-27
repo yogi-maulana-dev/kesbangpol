@@ -230,7 +230,7 @@
                             <li class="user-profile header-notification">
                                 <a href="#!" class="waves-effect waves-light">
                                     <img src="/admin_tampil/assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
-                                    <span></span>
+                                    <span>{{ Auth::guard('admin')->user()->nama; }}</span>
                                     <i class="ti-angle-down"></i>
                                 </a>
                                 <ul class="show-notification profile-notification">
@@ -401,16 +401,24 @@
                     <div class="pcoded-inner-navbar">
                         <ul class="pcoded-item pcoded-left-item">
                             <li class="pcoded-hasmenu">
-                                <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                <a href="/admin/dashboard" class="waves-effect waves-dark">
+
                                     <span class="pcoded-micon"><i class="ti-layout-cta-right"></i><b>D</b></span>
                                     <span class="pcoded-mtext">Dashboard</span>
                                     <span class="pcoded-mcaret"></span>
                                 </a>
                             </li>
                             <li class="pcoded-hasmenu">
+                                <a href="/admin/berita" class="waves-effect waves-dark">
+                                    <span class="pcoded-micon"><i class="icofont icofont-newspaper"></i><b>U</b></span>
+                                    <span class="pcoded-mtext">Berita</span>
+                                    <span class="pcoded-mcaret"></span>
+                                </a>
+                            </li>
+                            <li class="pcoded-hasmenu">
                                 <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                    <span class="pcoded-micon"><i class="ti-gift "></i><b>U</b></span>
-                                    <span class="pcoded-mtext">UI Element</span>
+                                    <span class="pcoded-micon"><i class="icofont icofont-newspaper"></i></i><b>A</b></span>
+                                    <span class="pcoded-mtext">App</span>
                                     <span class="pcoded-mcaret"></span>
                                 </a>
                                 <ul class="pcoded-submenu">
@@ -421,320 +429,6 @@
                                             <span class="pcoded-badge label label-danger">HOT</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="pcoded-hasmenu">
-                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                    <span class="pcoded-micon"><i class="ti-comments"></i><b>A</b></span>
-                                    <span class="pcoded-mtext">App</span>
-                                    <span class="pcoded-mcaret"></span>
-                                </a>
-                                <ul class="pcoded-submenu">
-                                    <li class=" ">
-                                        <a href="chat.html" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-comments"></i></span>
-                                            <span class="pcoded-mtext">Chat</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                    </li>
-
-                                    <li class="pcoded-hasmenu ">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-dribbble"></i></span>
-                                            <span class="pcoded-mtext">Social</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class="">
-                                                <a href="fb-wall.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Wall</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="message.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Messages</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="pcoded-hasmenu ">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-check-box"></i></span>
-                                            <span class="pcoded-mtext">Task</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class="">
-                                                <a href="task-list.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Task List</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="task-board.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Task Board</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="task-detail.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Task Detail</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="issue-list.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Issue List</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="pcoded-hasmenu ">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-notepad"></i></span>
-                                            <span class="pcoded-mtext">To-Do</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class="">
-                                                <a href="todo.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">To-Do</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="notes.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Notes</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="pcoded-hasmenu ">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-gallery"></i></span>
-                                            <span class="pcoded-mtext">Gallery</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class="">
-                                                <a href="gallery-grid.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Gallery-Grid</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="gallery-masonry.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Masonry Gallery</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="gallery-advance.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Advance Gallery</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="pcoded-hasmenu ">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-search"></i></span>
-                                            <span class="pcoded-mtext">Search</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class="">
-                                                <a href="search-result.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Simple Search</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="search-result2.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Grouping Search</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="pcoded-hasmenu ">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-medall-alt"></i></span>
-                                            <span class="pcoded-mtext">Job Search</span>
-                                            <span class="pcoded-badge label label-danger">NEW</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class="">
-                                                <a href="job-card-view.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Card View</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="job-details.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Job Detailed</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="job-find.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Job Find</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="job-panel-view.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Job Panel View</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="pcoded-hasmenu">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><b>E</b></span>
-                                            <span class="pcoded-mtext">Extension</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class="pcoded-hasmenu ">
-                                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-pencil-alt"></i></span>
-                                                    <span class="pcoded-mtext">Editor</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                                <ul class="pcoded-submenu">
-                                                    <li class="">
-                                                        <a href="ck-editor.html" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                            <span class="pcoded-mtext">CK-Editor</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="">
-                                                        <a href="wysiwyg-editor.html" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                            <span class="pcoded-mtext">WYSIWYG Editor</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="">
-                                                        <a href="ace-editor.html" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                            <span class="pcoded-mtext">Ace Editor</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-
-                                                    <li class="">
-                                                        <a href="long-press-editor.html" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                            <span class="pcoded-mtext">Long Press Editor</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="pcoded-hasmenu ">
-                                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-layout-media-right"></i></span>
-                                                    <span class="pcoded-mtext">Invoice</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                                <ul class="pcoded-submenu">
-                                                    <li class="">
-                                                        <a href="invoice.html" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                            <span class="pcoded-mtext">Invoice</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="">
-                                                        <a href="invoice-summary.html" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                            <span class="pcoded-mtext">Invoice Summary</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="">
-                                                        <a href="invoice-list.html" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                            <span class="pcoded-mtext">Invoice List</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="pcoded-hasmenu ">
-                                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-calendar"></i></span>
-                                                    <span class="pcoded-mtext">Event Calendar</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                                <ul class="pcoded-submenu">
-                                                    <li class="">
-                                                        <a href="event-full-calender.html" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                            <span class="pcoded-mtext">Full Calendar</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="">
-                                                        <a href="event-clndr.html" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                            <span class="pcoded-mtext">CLNDER</span>
-                                                            <span class="pcoded-badge label label-info">NEW</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="">
-                                                <a href="image-crop.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-cut"></i></span>
-                                                    <span class="pcoded-mtext">Image Cropper</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="file-upload.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-cloud-up"></i></span>
-                                                    <span class="pcoded-mtext">File Upload</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="change-loges.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-list"></i></span>
-                                                    <span class="pcoded-mtext">Change Loges</span>
-                                                    <span class="pcoded-badge label label-warning">1.0</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
                                     </li>
                                 </ul>
                             </li>
