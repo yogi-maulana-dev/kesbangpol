@@ -8,132 +8,33 @@
 
 </style>
 
-
-<div class="card">
-    <div class="card-block">
-
-        <div class="card-header">
-            <h5>Data Organisasi Masyarakat Yang diajukan</h5>
-            <span>Data yang sudah dikirim akan di proses sampa 3 x 24 jam, jika ada kesalahan atau kekurangan data
-                mohon dilakukan pengirim data yang kurang sesuai syarat yang ada.</span>
-        </div>
+<div class="col-lg-3 col-md-6">
+    <div class="card bg-c-blue total-card">
         <div class="card-block">
-            <div class="dt-responsive table-responsive">
-                <table id="new-cons" class="table table-striped table-bordered nowrap">
-                    <thead>
-                        <tr>
-                            <th>Nama Organisasi</th>
-                            <th>Tujuan</th>
-                            <th>Program</th>
-                            <th>Data Upload</i></th>
-                            <th>Status</i></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{-- @foreach ($datas as $data)
-                        <tr>
-                            <td>{{ $data->nama }}</td>
-                            <td>{{ $data->tujuan }}</td>
-                            <td>{{ $data->program }}</td>
-
-                            <td> <button
-                                    class="btn waves-effect waves-dark btn-primary btn-outline-primary badge bg-info"
-                                    data-target="#tabbed-form" data-toggle="modal"><span
-                                        data-feather="eye"></span></button>
-                                <a href="/data/{{ $data->id }}/edit" class="badge bg-warning"><span
-                                        data-feather="edit"></span></a>
-                            </td>
-
-                            <td>
-                                @if ($data->lengkap == 0)
-                                <div class="label-main">
-                                    <label class="label label-lg label-primary"><i class="fa fa-spinner"></i>
-                                        Proses</label>
-
-                                </div>
-                                @else
-                                Sudah di verikasi
-                                @endif
-                            </td>
-                        </tr>
-                        @endforeach --}}
-
-                    </tbody>
-                </table>
+            <div class="text-left">
+                <h4>4000</h4>
+                <p class="m-0">Total Sales</p>
             </div>
+            <span class="label bg-c-blue value-badges">12%</span>
+        </div>
+        <div id="total-value-graph-1" style="height: 100px; padding: 0px; position: relative;"><canvas class="flot-base" width="247" height="100" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 247.203px; height: 100px;"></canvas>
+            <div class="flot-text" style="position: absolute; inset: 0px; font-size: smaller; color: rgb(84, 84, 84);">
+                <div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; inset: 0px;">
+                    <div style="position: absolute; max-width: 41px; top: 100px; font: 400 0px / 0px &quot;Open Sans&quot;, sans-serif; color: transparent; left: 0px; text-align: center;">0</div>
+                    <div style="position: absolute; max-width: 41px; top: 100px; font: 400 0px / 0px &quot;Open Sans&quot;, sans-serif; color: transparent; left: 55px; text-align: center;">20</div>
+                    <div style="position: absolute; max-width: 41px; top: 100px; font: 400 0px / 0px &quot;Open Sans&quot;, sans-serif; color: transparent; left: 110px; text-align: center;">40</div>
+                    <div style="position: absolute; max-width: 41px; top: 100px; font: 400 0px / 0px &quot;Open Sans&quot;, sans-serif; color: transparent; left: 165px; text-align: center;">60</div>
+                    <div style="position: absolute; max-width: 41px; top: 100px; font: 400 0px / 0px &quot;Open Sans&quot;, sans-serif; color: transparent; left: 220px; text-align: center;">80</div>
+                </div>
+                <div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; inset: 0px;">
+                    <div style="position: absolute; top: 100px; font: 400 0px / 0px &quot;Open Sans&quot;, sans-serif; color: transparent; left: 0px; text-align: right;">0</div>
+                    <div style="position: absolute; top: 67px; font: 400 0px / 0px &quot;Open Sans&quot;, sans-serif; color: transparent; left: 0px; text-align: right;">10</div>
+                    <div style="position: absolute; top: 33px; font: 400 0px / 0px &quot;Open Sans&quot;, sans-serif; color: transparent; left: 0px; text-align: right;">20</div>
+                    <div style="position: absolute; top: 0px; font: 400 0px / 0px &quot;Open Sans&quot;, sans-serif; color: transparent; left: 0px; text-align: right;">30</div>
+                </div>
+            </div><canvas class="flot-overlay" width="247" height="100" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 247.203px; height: 100px;"></canvas>
         </div>
     </div>
 </div>
 
-
-<!-- tabbed form modal start -->
-<div id="tabbed-form" class="modal fade mixed-form" role="dialog">
-    <div class="modal-dialog">
-        <div class="card">
-            <div class="card-body">
-                <!-- Nav tabs -->
-                <ul class="nav nav-tabs md-tabs nav-justified" role="tablist">
-                    <li class="nav-item waves-effect waves-dark">
-                        <a class="nav-link active" data-toggle="tab" href="#data1" role="tab">
-                            <h6 class="m-b-0">Data 1</h6>
-                        </a>
-                        <div class="slide"></div>
-                    </li>
-                    <li class="nav-item waves-effect waves-dark">
-                        <a class="nav-link" data-toggle="tab" href="#data2" role="tab">
-                            <h6 class="m-b-0">Data 2</h6>
-                        </a>
-                        <div class="slide"></div>
-                    </li>
-
-                    <li class="nav-item waves-effect waves-dark">
-                        <a class="nav-link" data-toggle="tab" href="#data3" role="tab">
-                            <h6 class="m-b-0">Data 3</h6>
-                        </a>
-                        <div class="slide"></div>
-                    </li>
-
-                    <li class="nav-item waves-effect waves-dark">
-                        <a class="nav-link" data-toggle="tab" href="#data4" role="tab">
-                            <h6 class="m-b-0">Data 4</h6>
-                        </a>
-                        <div class="slide"></div>
-                    </li>
-                </ul>
-                <!-- Tab panes -->
-
-
-
-
-
-                <script>
-                    $(document).ready(function() {
-
-            $('#openBtn').click(() => $('#myModal').modal({
-                show: true
-            }));
-
-            $(document).on('show.bs.modal', '.modal', function() {
-                const zIndex = 1040 + 10 * $('.modal:visible').length;
-                $(this).css('z-index', zIndex);
-                setTimeout(() => $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1)
-                    .addClass('modal-stack'));
-            });
-
-        });
-
-
-        <
-        script >
-            function switchStyle() {
-                if (document.getElementById("styleSwitch").checked) {
-                    document.getElementById("gallery").classList.add("custom");
-                    document.getElementById("exampleModal").classList.add("custom");
-                } else {
-                    document.getElementById("gallery").classList.remove("custom");
-                    document.getElementById("exampleModal").classList.remove("custom");
-                }
-            }
-                </script>
-
-                @endsection
+@endsection

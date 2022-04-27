@@ -35,13 +35,11 @@
 
 
             <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Surat keabsahaan kepemilikan kantor dilampiri scan bukti
-                    kepemilikan atau kontrak kantor</label>
+                <label class="col-sm-3 col-form-label">Tujuan Organisasi</label>
                 <div class="col-sm-8">
-                    <input type="file" name="keabsahan_kantor"
-                        class="form-control @error('keabsahan_kantor') is-invalid @enderror">
+                    <input type="file" name="tujuan" class="form-control @error('tujuan') is-invalid @enderror">
 
-                    @error('keabsahan_kantor')
+                    @error('tujuan')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -66,7 +64,7 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Surat permohonan Pendaftaran</label>
+                <label class="col-sm-3 col-form-label">Surat Pendaftaran</label>
                 <div class="col-sm-8">
                     <input type="file" name="surat_pendaftaran"
                         class="form-control @error('surat_pendaftaran') is-invalid @enderror">
@@ -341,7 +339,7 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Surat pernyataan ketersedian, untuk menyantumkan nama
+                <label class="col-sm-3 col-form-label">Surat pernyataan persetujuan, untuk menyantumkan nama
                     anggota nama pejabat negara, pemerintahan, dan tokoh masyarakt</label>
                 <div class="col-sm-8">
                     <input type="file" name="surat_rekom_kesediaan"
@@ -357,7 +355,8 @@
 
 
             <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Izasah terakhir ketua, seketaris, dan pengurusan lainnya</label>
+                <label class="col-sm-3 col-form-label">Surat pernyataan persetujuan, untuk menyantumkan nama
+                    anggota nama pejabat negara, pemerintahan, dan tokoh masyarakt</label>
                 <div class="col-sm-8">
                     <input type="file" name="surat_izasah"
                         class="form-control @error('surat_izasah') is-invalid @enderror">
@@ -372,7 +371,8 @@
 
 
             <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Surat keterangan terdaftar (SKT) Provinsi</label>
+                <label class="col-sm-3 col-form-label">Surat pernyataan persetujuan, untuk menyantumkan nama
+                    anggota nama pejabat negara, pemerintahan, dan tokoh masyarakt</label>
                 <div class="col-sm-8">
                     <input type="file" name="skt" class="form-control @error('skt') is-invalid @enderror">
 
@@ -410,6 +410,8 @@
                     <thead>
                         <tr>
                             <th>Nama Organisasi</th>
+                            <th>Tujuan</th>
+                            <th>Program</th>
                             <th>Data Upload</i></th>
                             <th>Status</i></th>
                         </tr>
@@ -418,6 +420,8 @@
                         @foreach ($datas as $data)
                         <tr>
                             <td>{{ auth()->user()->nama }}</td>
+                            <td>{{ $data->tujuan }}</td>
+                            <td>{{ $data->program }}</td>
 
                             <td> <button
                                     class="btn waves-effect waves-dark btn-primary btn-outline-primary badge bg-info"
@@ -2512,27 +2516,27 @@
 
                             {{-- awal --}}
 
-                            @if (!empty($data->keabsahan_kantor))
+                            @if (!empty($data->tujuan))
                             @php
-                            $pecah = explode('.', $data->keabsahan_kantor);
-                            $keabsahan_kantor = $pecah[1];
+                            $pecah = explode('.', $data->tujuan);
+                            $tujuan = $pecah[1];
                             @endphp
-                            @if ($keabsahan_kantor == 'pdf')
+                            @if ($tujuan == 'pdf')
                             <div class="col-lg-12">
                                 <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
                                     data-original-title=".z-depth-top-1">
                                     <p class="text-muted text-center p-b-5">
-                                        @if ($data->a_keabsahan_kantor == 0)
+                                        @if ($data->a_tujuan == 0)
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
-                                            $data->keabsahan_kantor }}</label>
-                                        @elseif ($data->a_keabsahan_kantor == 1)
+                                            $data->tujuan }}</label>
+                                        @elseif ($data->a_tujuan == 1)
                                         <label class="label label-inverse-success"><span
-                                                data-feather="check-circle"></span>{{ $data->keabsahan_kantor }}</label>
+                                                data-feather="check-circle"></span>{{ $data->tujuan }}</label>
                                         @else
                                         @endif
                                     </p>
 
-                                    {{-- tutup status data keabsahan_kantor
+                                    {{-- tutup status data tujuan
                                     /**
                                     * Show the form for creating a new resource.
                                     * Whatapps 6289631031237
@@ -2541,27 +2545,27 @@
                                     * https://serbaotodidak.com/
                                     */ --}}
                                     <p class="text-muted text-center p-b-5">
-                                        <a data-toggle="modal" href="#keabsahan_kantor" class="btn btn-primary">Lihat
+                                        <a data-toggle="modal" href="#tujuan" class="btn btn-primary">Lihat
                                             Data</a>
                                     </p>
                                 </div>
                             </div>
-                            @elseif ($keabsahan_kantor == 'png' or $keabsahan_kantor == 'jpg')
+                            @elseif ($tujuan == 'png' or $tujuan == 'jpg')
                             <div class="col-lg-12">
                                 <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
                                     data-original-title=".z-depth-top-1">
                                     <p class="text-muted text-center p-b-5">
-                                        @if ($data->a_keabsahan_kantor == 0)
+                                        @if ($data->a_tujuan == 0)
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
-                                            $data->keabsahan_kantor }}</label>
-                                        @elseif ($data->a_keabsahan_kantor == 1)
+                                            $data->tujuan }}</label>
+                                        @elseif ($data->a_tujuan == 1)
                                         <label class="label label-inverse-success"><span
-                                                data-feather="check-circle"></span>{{ $data->keabsahan_kantor }}</label>
+                                                data-feather="check-circle"></span>{{ $data->tujuan }}</label>
                                         @else
                                         @endif
                                     </p>
 
-                                    {{-- tutup status data keabsahan_kantor
+                                    {{-- tutup status data tujuan
                                     /**
                                     * Show the form for creating a new resource.
                                     * Whatapps 6289631031237
@@ -2572,10 +2576,10 @@
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="thumbnail">
                                             <div class="thumb">
-                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->keabsahan_kantor) }}"
+                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->tujuan) }}"
                                                     data-lightbox="1"
-                                                    data-title="{{ auth()->user()->nama . '/' . $data->keabsahan_kantor }}">
-                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->keabsahan_kantor) }}"
+                                                    data-title="{{ auth()->user()->nama . '/' . $data->tujuan }}">
+                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->tujuan) }}"
                                                         alt="" class="img-fluid img-thumbnail mx-auto d-block"
                                                         style="max-height: 200px;">
                                                 </a>
@@ -2589,7 +2593,7 @@
                             @else
                             @endif
 
-                            {{-- penutup Data keabsahan_kantor --}}
+                            {{-- penutup Data tujuan --}}
 
                             {{-- awal --}}
 
@@ -2884,8 +2888,8 @@
     </div>
 </div>
 
-<!-- Modal keabsahan_kantor-->
-<div id="keabsahan_kantor" class="modal fade" role="dialog">
+<!-- Modal tujuan-->
+<div id="tujuan" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">
         <!-- Modal content-->
         <div class="modal-content">
@@ -2893,30 +2897,30 @@
                 <button type="button" class="close" data-dismiss="modal">
                     &times;
                 </button>
-                <h4 class="modal-title">{{ auth()->user()->nama . '/' . $data->keabsahan_kantor }} </h4>
+                <h4 class="modal-title">{{ auth()->user()->nama . '/' . $data->tujuan }} </h4>
             </div>
             <div class="modal-body">
                 <!-- <embed
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             type="application/pdf"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            src="http://127.0.0.1:8000/yrka1234/keabsahan_kantor20220416012844.pdf"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            src="http://127.0.0.1:8000/yrka1234/tujuan20220416012844.pdf"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             frameborder="0"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             width="100%"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             height="400px"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             scrolling="auto"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           /> -->
                 <object width="100%" height="400px"
-                    data="{{ asset(auth()->user()->nama . '/' . $data->keabsahan_kantor) }}"></object>
+                    data="{{ asset(auth()->user()->nama . '/' . $data->tujuan) }}"></object>
                 <!--
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <iframe
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             type="application/pdf"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            src="http://127.0.0.1:8000/yrka1234/keabsahan_kantor20220416012844.pdf"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            src="http://127.0.0.1:8000/yrka1234/tujuan20220416012844.pdf"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             width="600"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             height="400"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ></iframe> -->
 
                 <!-- <object
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             type="application/pdf"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            data="http://127.0.0.1:8000/yrka1234/keabsahan_kantor20220416012844.pdf"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            data="http://127.0.0.1:8000/yrka1234/tujuan20220416012844.pdf"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             width="600"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             height="700"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ></object> -->

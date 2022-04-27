@@ -33,16 +33,16 @@
 
             {{-- ini adalah penutup a_surat_terdaftar_dikemenkumham --}}
 
-            @if ($data->a_ == 0)
+            @if ($data->a_tujuan == 0)
             <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Surat keabsahaan kepemilikan kantor dilampiri scan bukti
-                    kepemilikan atau kontrak kantor</label>
+                <label class="col-sm-3 col-form-label">Tujuan Organisasi </label>
                 <div class="col-sm-8">
                     {{-- <img class="img-fluid " id="gambar" src="#" alt="Pilih Gambar" OnError=" $(this).hide();" />
                     --}}
-                    <input type="file" name="" id="upload" class="form-control upload @error('') is-invalid @enderror"
-                        onchange="showFile()" accept="image/*, application/pdf">
-                    @error('')
+                    <input type="file" name="tujuan" id="upload"
+                        class="form-control upload @error('tujuan') is-invalid @enderror" onchange="showFile()"
+                        accept="image/*, application/pdf">
+                    @error('tujuan')
                     <div class="invalid-feedback">
 
                         {{ $message }}
@@ -53,7 +53,7 @@
             @else
             @endif
 
-            {{-- ini adalah penutup a_ --}}
+            {{-- ini adalah penutup a_tujuan --}}
 
             @if ($data->a_program == 0)
             <div class="form-group row">
@@ -461,7 +461,7 @@
 
             @if ($data->a_surat_rekom_kesediaan == 0)
             <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Surat pernyataan pesetujuan, untuk menyantumkan nama
+                <label class="col-sm-3 col-form-label">Surat pernyataan persetujuan, untuk menyantumkan nama
                     anggota nama
                     pejabat negara, pemerintahan, dan tokoh masyarakt</label>
                 <div class="col-sm-8">
@@ -487,7 +487,7 @@
 
             @if ($data->a_surat_izasah == 0)
             <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Surat pernyataan perse, untuk menyantumkan nama
+                <label class="col-sm-3 col-form-label">Surat pernyataan persetujuan, untuk menyantumkan nama
                     anggota nama
                     pejabat negara, pemerintahan, dan tokoh masyarakt</label>
                 <div class="col-sm-8">

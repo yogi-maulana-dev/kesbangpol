@@ -15,9 +15,5 @@
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
         "prettier": "2.6.2"
-    },
-    "dependencies": {
-        "feather-icons": "^4.29.0",
-        "jquery-filepond": "^1.0.0"
     }
 }

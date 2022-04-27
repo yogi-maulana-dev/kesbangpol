@@ -16,62 +16,56 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description"
-        content="Gradient Able Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
-    <meta name="keywords"
-        content="Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+    <meta name="description" content="Gradient Able Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
+    <meta name="keywords" content="Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
     <meta name="author" content="Phoenixcoded" />
     <!-- Favicon icon -->
     <link rel="icon" href="http://html.phoenixcoded.net/mega-able/files/assets/images/favicon.ico" type="image/x-icon">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
     <!-- Required Fremwork -->
-    <link rel="stylesheet" type="text/css" href="/admin/bower_components/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/admin_tampil/bower_components/bootstrap/css/bootstrap.min.css">
     <!-- waves.css -->
-    <link rel="stylesheet" href="/admin/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/admin_tampil/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
     <!-- themify-icons line icon -->
-    <link rel="stylesheet" type="text/css" href="/admin/assets/icon/themify-icons/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="/admin_tampil/assets/icon/themify-icons/themify-icons.css">
     <!-- ico font -->
-    <link rel="stylesheet" type="text/css" href="/admin/assets/icofont/icofont.css">
+    <link rel="stylesheet" type="text/css" href="/admin_tampil/assets/icofont/icofont.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Syntax highlighter Prism css -->
-    <link rel="stylesheet" type="text/css" href="/admin/assets/pages/prism/prism.css">
+    <link rel="stylesheet" type="text/css" href="/admin_tampil/assets/pages/prism/prism.css">
     <!-- Style.css -->
-    <link rel="stylesheet" type="text/css" href="/admin/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/admin_tampil/assets/css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="/admin_tampil/files/assets/css/widget.css">
 
 
-    <link rel="stylesheet" type="text/css" href="/admin/assets/css/jquery.mCustomScrollbar.css">
-    <link rel="stylesheet" type="text/css" href="/admin/assets/css/pcoded-horizontal.min.css">
+    <link rel="stylesheet" type="text/css" href="/admin_tampil/assets/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="/admin_tampil/assets/css/pcoded-horizontal.min.css">
 
 
     <!--forms-wizard css-->
-    <link rel="stylesheet" type="text/css" href="/admin/bower_components/jquery.steps/css/jquery.steps.css">
+    <link rel="stylesheet" type="text/css" href="/admin_tampil/bower_components/jquery.steps/css/jquery.steps.css">
 
     <!-- jquery file upload Frame work -->
-    <link href="/admin/assets/pages/jquery.filer/css/jquery.filer.css" type="text/css" rel="stylesheet" />
-    <link href="/admin/assets/pages/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css" type="text/css"
-        rel="stylesheet" />
+    <link href="/admin_tampil/assets/pages/jquery.filer/css/jquery.filer.css" type="text/css" rel="stylesheet" />
+    <link href="/admin_tampil/assets/pages/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css" type="text/css" rel="stylesheet" />
 
     <!-- Data Table Css -->
-    <link rel="stylesheet" type="text/css"
-        href="/admin/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css" href="/admin/assets/pages/data-table/css/buttons.dataTables.min.css">
-    <link rel="stylesheet" type="text/css"
-        href="/admin/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css"
-        href="/admin/assets/pages/data-table/extensions/responsive/css/responsive.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="/admin_tampil/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="/admin_tampil/assets/pages/data-table/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="/admin_tampil/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="/admin_tampil/assets/pages/data-table/extensions/responsive/css/responsive.dataTables.css">
 
-    <link rel="stylesheet" type="text/css" href="/admin/bower_components/lightbox2/css/lightbox.min.css" />
+    <link rel="stylesheet" type="text/css" href="/admin_tampil/bower_components/lightbox2/css/lightbox.min.css" />
     <!-- Style.css -->
 
     <!-- Switch component css -->
-    <link rel="stylesheet" type="text/css" href="/admin/files/bower_components/switchery/css/switchery.min.css">
+    <link rel="stylesheet" type="text/css" href="/admin_tampil/files/bower_components/switchery/css/switchery.min.css">
     <!-- Tags css -->
-    <link rel="stylesheet" type="text/css"
-        href="/admin/files/bower_components/bootstrap-tagsinput/css/bootstrap-tagsinput.css" />
+    <link rel="stylesheet" type="text/css" href="/admin_tampil/files/bower_components/bootstrap-tagsinput/css/bootstrap-tagsinput.css" />
 
 </head>
 <!-- Menu horizontal icon fixed -->
@@ -145,17 +139,15 @@
                             <div class="header-search">
                                 <div class="main-search morphsearch-search">
                                     <div class="input-group">
-                                        <span class="input-group-prepend search-close"><i
-                                                class="ti-close input-group-text"></i></span>
+                                        <span class="input-group-prepend search-close"><i class="ti-close input-group-text"></i></span>
                                         <input type="text" class="form-control" placeholder="Enter Keyword">
-                                        <span class="input-group-append search-btn"><i
-                                                class="ti-search input-group-text"></i></span>
+                                        <span class="input-group-append search-btn"><i class="ti-search input-group-text"></i></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <a href="index-2.html">
-                            <img class="img-fluid" src="/admin/assets/images/logo.png" alt="Theme-Logo" />
+                            <img class="img-fluid" src="/admin_tampil/assets/images/logo.png" alt="Theme-Logo" />
                         </a>
                         <a class="mobile-options waves-effect waves-light">
                             <i class="ti-more"></i>
@@ -171,11 +163,9 @@
                             <li class="header-search">
                                 <div class="main-search morphsearch-search">
                                     <div class="input-group">
-                                        <span class="input-group-prepend search-close"><i
-                                                class="ti-close input-group-text"></i></span>
+                                        <span class="input-group-prepend search-close"><i class="ti-close input-group-text"></i></span>
                                         <input type="text" class="form-control" placeholder="Enter Keyword">
-                                        <span class="input-group-append search-btn"><i
-                                                class="ti-search input-group-text"></i></span>
+                                        <span class="input-group-append search-btn"><i class="ti-search input-group-text"></i></span>
                                     </div>
                                 </div>
                             </li>
@@ -198,8 +188,7 @@
                                     </li>
                                     <li class="waves-effect waves-light">
                                         <div class="media">
-                                            <img class="d-flex align-self-center img-radius"
-                                                src="/admin/assets/images/avatar-2.jpg" alt="Generic placeholder image">
+                                            <img class="d-flex align-self-center img-radius" src="/admin_tampil/assets/images/avatar-2.jpg" alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h5 class="notification-user">John Doe</h5>
                                                 <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
@@ -210,8 +199,7 @@
                                     </li>
                                     <li class="waves-effect waves-light">
                                         <div class="media">
-                                            <img class="d-flex align-self-center img-radius"
-                                                src="/admin/assets/images/avatar-4.jpg" alt="Generic placeholder image">
+                                            <img class="d-flex align-self-center img-radius" src="/admin_tampil/assets/images/avatar-4.jpg" alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h5 class="notification-user">Joseph William</h5>
                                                 <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
@@ -222,8 +210,7 @@
                                     </li>
                                     <li class="waves-effect waves-light">
                                         <div class="media">
-                                            <img class="d-flex align-self-center img-radius"
-                                                src="/admin/assets/images/avatar-3.jpg" alt="Generic placeholder image">
+                                            <img class="d-flex align-self-center img-radius" src="/admin_tampil/assets/images/avatar-3.jpg" alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h5 class="notification-user">Sara Soudein</h5>
                                                 <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
@@ -242,8 +229,7 @@
                             </li>
                             <li class="user-profile header-notification">
                                 <a href="#!" class="waves-effect waves-light">
-                                    <img src="/admin/assets/images/avatar-4.jpg" class="img-radius"
-                                        alt="User-Profile-Image">
+                                    <img src="/admin_tampil/assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
                                     <span></span>
                                     <i class="ti-angle-down"></i>
                                 </a>
@@ -268,10 +254,10 @@
                                             <i class="ti-lock"></i> Lock Screen
                                         </a>
                                     </li>
-                                    <form action="/keluar" method="post">
+                                    <form action="{{ route('admin.logout') }}" method="post">
 
+                                        {{ csrf_field() }}
 
-                                        @csrf
                                         <button type="submit" class="waves-effect waves-light">
                                             <li> <i class="ti-layout-sidebar-left"></i> Keluar </li>
                                         </button>
@@ -299,8 +285,7 @@
                                 <div class="right-icon-control">
                                     <form class="form-material">
                                         <div class="form-group form-primary">
-                                            <input type="text" name="footer-email" class="form-control"
-                                                id="search-friends" required="">
+                                            <input type="text" name="footer-email" class="form-control" id="search-friends" required="">
                                             <span class="form-bar"></span>
                                             <label class="float-label"><i class="fa fa-search m-r-10"></i>Search
                                                 Friend</label>
@@ -309,60 +294,45 @@
                                 </div>
                             </div>
                             <div class="main-friend-list">
-                                <div class="media userlist-box waves-effect waves-light" data-id="1"
-                                    data-status="online" data-username="Josephin Doe" data-toggle="tooltip"
-                                    data-placement="left" title="Josephin Doe">
+                                <div class="media userlist-box waves-effect waves-light" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
                                     <a class="media-left" href="#!">
-                                        <img class="media-object img-radius img-radius"
-                                            src="/admin/assets/images/avatar-3.jpg" alt="Generic placeholder image ">
+                                        <img class="media-object img-radius img-radius" src="/admin_tampil/assets/images/avatar-3.jpg" alt="Generic placeholder image ">
                                         <div class="live-status bg-success"></div>
                                     </a>
                                     <div class="media-body">
                                         <div class="f-13 chat-header">Josephin Doe</div>
                                     </div>
                                 </div>
-                                <div class="media userlist-box waves-effect waves-light" data-id="2"
-                                    data-status="online" data-username="Lary Doe" data-toggle="tooltip"
-                                    data-placement="left" title="Lary Doe">
+                                <div class="media userlist-box waves-effect waves-light" data-id="2" data-status="online" data-username="Lary Doe" data-toggle="tooltip" data-placement="left" title="Lary Doe">
                                     <a class="media-left" href="#!">
-                                        <img class="media-object img-radius" src="/admin/assets/images/avatar-2.jpg"
-                                            alt="Generic placeholder image">
+                                        <img class="media-object img-radius" src="/admin_tampil/assets/images/avatar-2.jpg" alt="Generic placeholder image">
                                         <div class="live-status bg-success"></div>
                                     </a>
                                     <div class="media-body">
                                         <div class="f-13 chat-header">Lary Doe</div>
                                     </div>
                                 </div>
-                                <div class="media userlist-box waves-effect waves-light" data-id="3"
-                                    data-status="online" data-username="Alice" data-toggle="tooltip"
-                                    data-placement="left" title="Alice">
+                                <div class="media userlist-box waves-effect waves-light" data-id="3" data-status="online" data-username="Alice" data-toggle="tooltip" data-placement="left" title="Alice">
                                     <a class="media-left" href="#!">
-                                        <img class="media-object img-radius" src="/admin/assets/images/avatar-4.jpg"
-                                            alt="Generic placeholder image">
+                                        <img class="media-object img-radius" src="/admin_tampil/assets/images/avatar-4.jpg" alt="Generic placeholder image">
                                         <div class="live-status bg-success"></div>
                                     </a>
                                     <div class="media-body">
                                         <div class="f-13 chat-header">Alice</div>
                                     </div>
                                 </div>
-                                <div class="media userlist-box waves-effect waves-light" data-id="4"
-                                    data-status="online" data-username="Alia" data-toggle="tooltip"
-                                    data-placement="left" title="Alia">
+                                <div class="media userlist-box waves-effect waves-light" data-id="4" data-status="online" data-username="Alia" data-toggle="tooltip" data-placement="left" title="Alia">
                                     <a class="media-left" href="#!">
-                                        <img class="media-object img-radius" src="/admin/assets/images/avatar-3.jpg"
-                                            alt="Generic placeholder image">
+                                        <img class="media-object img-radius" src="/admin_tampil/assets/images/avatar-3.jpg" alt="Generic placeholder image">
                                         <div class="live-status bg-success"></div>
                                     </a>
                                     <div class="media-body">
                                         <div class="f-13 chat-header">Alia</div>
                                     </div>
                                 </div>
-                                <div class="media userlist-box waves-effect waves-light" data-id="5"
-                                    data-status="online" data-username="Suzen" data-toggle="tooltip"
-                                    data-placement="left" title="Suzen">
+                                <div class="media userlist-box waves-effect waves-light" data-id="5" data-status="online" data-username="Suzen" data-toggle="tooltip" data-placement="left" title="Suzen">
                                     <a class="media-left" href="#!">
-                                        <img class="media-object img-radius" src="/admin/assets/images/avatar-2.jpg"
-                                            alt="Generic placeholder image">
+                                        <img class="media-object img-radius" src="/admin_tampil/assets/images/avatar-2.jpg" alt="Generic placeholder image">
                                         <div class="live-status bg-success"></div>
                                     </a>
                                     <div class="media-body">
@@ -383,8 +353,7 @@
                 </div>
                 <div class="media chat-messages">
                     <a class="media-left photo-table" href="#!">
-                        <img class="media-object img-radius img-radius m-t-5" src="/admin/assets/images/avatar-3.jpg"
-                            alt="Generic placeholder image">
+                        <img class="media-object img-radius img-radius m-t-5" src="/admin_tampil/assets/images/avatar-3.jpg" alt="Generic placeholder image">
                     </a>
                     <div class="media-body chat-menu-content">
                         <div class="">
@@ -404,8 +373,7 @@
                     </div>
                     <div class="media-right photo-table">
                         <a href="#!">
-                            <img class="media-object img-radius img-radius m-t-5"
-                                src="/admin/assets/images/avatar-4.jpg" alt="Generic placeholder image">
+                            <img class="media-object img-radius img-radius m-t-5" src="/admin_tampil/assets/images/avatar-4.jpg" alt="Generic placeholder image">
                         </a>
                     </div>
                 </div>
@@ -434,217 +402,10 @@
                         <ul class="pcoded-item pcoded-left-item">
                             <li class="pcoded-hasmenu">
                                 <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                    <span class="pcoded-micon"><i class="ti-layout-cta-right"></i><b>N</b></span>
-                                    <span class="pcoded-mtext">Navigation</span>
+                                    <span class="pcoded-micon"><i class="ti-layout-cta-right"></i><b>D</b></span>
+                                    <span class="pcoded-mtext">Dashboard</span>
                                     <span class="pcoded-mcaret"></span>
                                 </a>
-                                <ul class="pcoded-submenu">
-                                    <li class="pcoded-hasmenu">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-home"></i></span>
-                                            <span class="pcoded-mtext">Dashboard</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class="">
-                                                <a href="index-2.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Default</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="dashboard-ecommerce.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Ecommerce</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="dashboard-crm.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">CRM</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="dashboard-analytics.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Analytics</span>
-                                                    <span class="pcoded-badge label label-info ">NEW</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="dashboard-project.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Project</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="pcoded-hasmenu">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-layout"></i></span>
-                                            <span class="pcoded-mtext">Page layouts</span>
-                                            <span class="pcoded-badge label label-warning">NEW</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-
-                                            <li class=" pcoded-hasmenu">
-                                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="icon-pie-chart"></i></span>
-                                                    <span class="pcoded-mtext">Vertical</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                                <ul class="pcoded-submenu">
-                                                    <li class=" ">
-                                                        <a href="menu-static.html" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i class="icon-chart"></i></span>
-                                                            <span class="pcoded-mtext">Static Layout</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                    <li class=" ">
-                                                        <a href="menu-header-fixed.html"
-                                                            class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i class="icon-chart"></i></span>
-                                                            <span class="pcoded-mtext">Header Fixed</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                    <li class=" ">
-                                                        <a href="menu-compact.html" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i class="icon-chart"></i></span>
-                                                            <span class="pcoded-mtext">Compact</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                    <li class=" ">
-                                                        <a href="menu-sidebar.html" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i class="icon-chart"></i></span>
-                                                            <span class="pcoded-mtext">Sidebar Fixed</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-
-                                                </ul>
-                                            </li>
-                                            <li class=" pcoded-hasmenu">
-                                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="icon-pie-chart"></i></span>
-                                                    <span class="pcoded-mtext">Horizontal</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                                <ul class="pcoded-submenu">
-                                                    <li class=" ">
-                                                        <a href="menu-horizontal-static.html" target="_blank"
-                                                            class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i class="icon-chart"></i></span>
-                                                            <span class="pcoded-mtext">Static Layout</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                    <li class=" ">
-                                                        <a href="menu-horizontal-fixed.html" target="_blank"
-                                                            class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i class="icon-chart"></i></span>
-                                                            <span class="pcoded-mtext">Fixed layout</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                    <li class=" ">
-                                                        <a href="menu-horizontal-icon.html" target="_blank"
-                                                            class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i class="icon-chart"></i></span>
-                                                            <span class="pcoded-mtext">Static With Icon</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                    <li class=" ">
-                                                        <a href="menu-horizontal-icon-fixed.html" target="_blank"
-                                                            class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i class="icon-chart"></i></span>
-                                                            <span class="pcoded-mtext">Fixed With Icon</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="menu-bottom.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="icon-pie-chart"></i></span>
-                                                    <span class="pcoded-mtext">Bottom Menu</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="box-layout.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="icon-pie-chart"></i></span>
-                                                    <span class="pcoded-mtext">Box Layout</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="menu-rtl.html" target="_blank" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="icon-pie-chart"></i></span>
-                                                    <span class="pcoded-mtext">RTL</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-
-                                        </ul>
-                                    </li>
-                                    <li class="">
-                                        <a href="navbar-light.html" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i
-                                                    class="ti-layout-cta-right"></i><b>N</b></span>
-                                            <span class="pcoded-mtext" data-i18n="nav.navigate.main">Navigation</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                    </li>
-                                    <li class="pcoded-hasmenu">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-view-grid"></i><b>W</b></span>
-                                            <span class="pcoded-mtext">Widget</span>
-                                            <span class="pcoded-badge label label-danger">100+</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class="">
-                                                <a href="widget-statistic.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Statistic</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="widget-data.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Data</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="widget-chart.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Chart Widget</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="widget-chart-advance.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Advance Widgets</span>
-                                                    <span class="pcoded-badge label label-info">25+</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
                             </li>
                             <li class="pcoded-hasmenu">
                                 <a href="javascript:void(0)" class="waves-effect waves-dark">
@@ -653,276 +414,6 @@
                                     <span class="pcoded-mcaret"></span>
                                 </a>
                                 <ul class="pcoded-submenu">
-                                    <li class="pcoded-hasmenu">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
-                                            <span class="pcoded-mtext">Basic Components</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class=" ">
-                                                <a href="alert.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Alert</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="breadcrumb.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Breadcrumbs</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="button.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Button</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="box-shadow.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Box-Shadow</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="accordion.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Accordion</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="generic-class.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Generic Class</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="tabs.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Tabs</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="color.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Color</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="label-badge.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Label Badge</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="progress-bar.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Progress Bar</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="preloader.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Pre-Loader</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="list.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">List</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="tooltip.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Tooltip And Popover</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="typography.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Typography</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="other.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Other</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-
-                                        </ul>
-                                    </li>
-                                    <li class="pcoded-hasmenu">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-crown"></i></span>
-                                            <span class="pcoded-mtext">Advance Components</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class=" ">
-                                                <a href="draggable.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Draggable</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="bs-grid.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Grid Stack</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="light-box.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Light Box</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="modal.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Modal</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-
-                                            <li class=" ">
-                                                <a href="notification.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Notifications</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="notify.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">PNOTIFY</span>
-                                                    <span class="pcoded-badge label label-info">NEW</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="rating.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Rating</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="range-slider.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Range Slider</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="slider.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Slider</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="syntax-highlighter.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Syntax Highlighter</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="tour.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Tour</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="treeview.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Tree View</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="nestable.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Nestable</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="toolbar.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Toolbar</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="x-editable.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">X-Editable</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-
-                                        </ul>
-                                    </li>
-                                    <li class="pcoded-hasmenu">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-gift"></i></span>
-                                            <span class="pcoded-mtext">Extra Components</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class=" ">
-                                                <a href="session-timeout.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Session Timeout</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="session-idle-timeout.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Session Idle Timeout</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="offline.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Offline</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-
-                                        </ul>
-                                    </li>
-                                    <li class=" ">
-                                        <a href="animation.html" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-reload rotate-refresh"></i></span>
-                                            <span class="pcoded-mtext">Animations</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                    </li>
                                     <li class=" ">
                                         <a href="sticky.html" class="waves-effect waves-dark">
                                             <span class="pcoded-micon"><i class="ti-layers-alt"></i></span>
@@ -930,1071 +421,6 @@
                                             <span class="pcoded-badge label label-danger">HOT</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
-                                    </li>
-                                    <li class="pcoded-hasmenu">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-star"></i></span>
-                                            <span class="pcoded-mtext">Icons</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class=" ">
-                                                <a href="icon-font-awesome.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Font Awesome</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="icon-themify.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Themify</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="icon-simple-line.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Simple Line Icon</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="icon-ion.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Ion Icon</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="icon-material-design.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Material Design</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="icon-icofonts.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Ico Fonts</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="icon-weather.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Weather Icon</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="icon-typicons.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Typicons</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="icon-flags.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Flags</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="pcoded-hasmenu">
-                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                    <span class="pcoded-micon"><i class="ti-pencil-alt"></i><b>F</b></span>
-                                    <span class="pcoded-mtext">Forms</span>
-                                    <span class="pcoded-mcaret"></span>
-                                </a>
-                                <ul class="pcoded-submenu">
-                                    <li class="pcoded-hasmenu">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-layers"></i></span>
-                                            <span class="pcoded-mtext">Form Components</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class=" ">
-                                                <a href="form-elements-component.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Form Components</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="form-elements-add-on.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Form-Elements-Add-On</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="form-elements-advance.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Form-Elements-Advance</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="form-validation.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Form Validation</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class=" ">
-                                        <a href="form-picker.html" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-pencil-alt"></i></span>
-                                            <span class="pcoded-mtext">Form Picker</span>
-                                            <span class="pcoded-badge label label-warning">NEW</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                    </li>
-
-                                    <li class=" ">
-                                        <a href="form-select.html" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-shortcode"></i></span>
-                                            <span class="pcoded-mtext">Form Select</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                    </li>
-                                    <li class=" ">
-                                        <a href="form-masking.html" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-write"></i></span>
-                                            <span class="pcoded-mtext">Form Masking</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                    </li>
-                                    <li class=" ">
-                                        <a href="form-wizard.html" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-archive"></i></span>
-                                            <span class="pcoded-mtext">Form Wizard</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                    </li>
-                                    <li class="pcoded-hasmenu">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-receipt"></i></span>
-                                            <span class="pcoded-mtext">Ready To Use</span>
-                                            <span class="pcoded-badge label label-danger">HOT</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class=" ">
-                                                <a href="ready-cloned-elements-form.html"
-                                                    class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Cloned Elements Form</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="ready-currency-form.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Currency Form</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="ready-form-booking.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Booking Form</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="ready-form-booking-multi-steps.html"
-                                                    class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Booking Multi Steps Form</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="ready-form-comment.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Comment Form</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="ready-form-contact.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Contact Form</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="ready-job-application-form.html"
-                                                    class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Job Application Form</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="ready-js-addition-form.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">JS Addition Form</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="ready-login-form.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Login Form</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="ready-popup-modal-form.html" target="_blank"
-                                                    class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Popup Modal Form</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="ready-registration-form.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Registration Form</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="ready-review-form.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Review Form</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="ready-subscribe-form.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Subscribe Form</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="ready-suggestion-form.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Suggestion Form</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="ready-tabs-form.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Tabs Form</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="pcoded-hasmenu">
-                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                    <span class="pcoded-micon"><i class="ti-view-list-alt"></i><b>T</b></span>
-                                    <span class="pcoded-mtext">Tables</span>
-                                    <span class="pcoded-mcaret"></span>
-                                </a>
-                                <ul class="pcoded-submenu">
-                                    <li class="pcoded-hasmenu">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-receipt"></i></span>
-                                            <span class="pcoded-mtext">Bootstrap Table</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class=" ">
-                                                <a href="bs-basic-table.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Basic Table</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="bs-table-sizing.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Sizing Table</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="bs-table-border.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Border Table</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="bs-table-styling.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Styling Table</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="pcoded-hasmenu">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-widgetized"></i></span>
-                                            <span class="pcoded-mtext">Data Table</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class=" ">
-                                                <a href="dt-basic.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Basic Initialization</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="dt-advance.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Advance Initialization</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="dt-styling.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Styling</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="dt-api.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">API</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="dt-ajax.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Ajax</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="dt-server-side.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Server Side</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="dt-plugin.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Plug-In</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="dt-data-sources.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Data Sources</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-
-                                        </ul>
-                                    </li>
-                                    <li class="pcoded-hasmenu">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-loop"></i></span>
-                                            <span class="pcoded-mtext">Data Table Extensions</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class=" ">
-                                                <a href="dt-ext-autofill.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">AutoFill</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="pcoded-hasmenu">
-                                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Button</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                                <ul class="pcoded-submenu">
-                                                    <li class=" ">
-                                                        <a href="dt-ext-basic-buttons.html"
-                                                            class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
-                                                            <span class="pcoded-mtext">Basic Button</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-
-                                                    <li class=" ">
-                                                        <a href="dt-ext-buttons-html-5-data-export.html"
-                                                            class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
-                                                            <span class="pcoded-mtext">Html-5 Data Export</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-
-                                                </ul>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="dt-ext-col-reorder.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Col Reorder</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="dt-ext-fixed-columns.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Fixed Columns</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="dt-ext-fixed-header.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Fixed Header</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="dt-ext-key-table.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Key Table</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="dt-ext-responsive.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Responsive</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="dt-ext-row-reorder.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Row Reorder</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="dt-ext-scroller.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Scroller</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="dt-ext-select.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Select Table</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class=" ">
-                                        <a href="foo-table.html" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-view-list-alt"></i></span>
-                                            <span class="pcoded-mtext">FooTable</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                    </li>
-                                    <li class="pcoded-hasmenu">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-view-list"></i></span>
-                                            <span class="pcoded-mtext">Handson Table</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class="">
-                                                <a href="handson-appearance.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Appearance</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="handson-data-operation.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Data Operation</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="handson-rows-cols.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Rows Columns</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="handson-columns-only.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Columns Only</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="handson-cell-features.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Cell Features</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="handson-cell-types.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Cell Types</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="handson-integrations.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Integrations</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="handson-rows-only.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Rows Only</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="handson-utilities.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Utilities</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="">
-                                        <a href="editable-table.html" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-write"></i></span>
-                                            <span class="pcoded-mtext">Editable Table</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="pcoded-hasmenu">
-                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                    <span class="pcoded-micon"><i class="ti-bar-chart-alt"></i><b>C</b></span>
-                                    <span class="pcoded-mtext">Chart And Maps</span>
-                                    <span class="pcoded-mcaret"></span>
-                                </a>
-                                <ul class="pcoded-submenu">
-                                    <li class="pcoded-hasmenu ">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-bar-chart-alt"></i></span>
-                                            <span class="pcoded-mtext">Charts</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class="">
-                                                <a href="chart-google.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Google Chart</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="chart-echart.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Echarts</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="chart-chartjs.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">ChartJs</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="chart-list.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">List Chart</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="chart-float.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Float Chart</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="chart-knob.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Knob chart</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="chart-morris.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Morris Chart</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="chart-nvd3.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Nvd3 Chart</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="chart-peity.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Peity Chart</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="chart-radial.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Radial Chart</span> <span
-                                                        class="pcoded-mcaret"></span> </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="chart-rickshaw.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Rickshaw Chart</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="chart-sparkline.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Sparkline Chart</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="chart-c3.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">C3 Chart</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="pcoded-hasmenu ">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-map-alt"></i></span>
-                                            <span class="pcoded-mtext">Maps</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class="">
-                                                <a href="map-google.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Google Maps</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="map-vector.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Vector Maps</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="map-api.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Google Map Search API</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="location.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Location</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="">
-                                        <a href="http://html.phoenixcoded.net/mega-able/files/extra-pages/landingpage/index.html"
-                                            target="_blank" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-mobile"></i></span>
-                                            <span class="pcoded-mtext">Landing Page</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="pcoded-hasmenu">
-                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                    <span class="pcoded-micon"><i class="ti-receipt"></i><b>P</b></span>
-                                    <span class="pcoded-mtext">Pages</span>
-                                    <span class="pcoded-mcaret"></span>
-                                </a>
-                                <ul class="pcoded-submenu">
-                                    <li class="pcoded-hasmenu ">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-id-badge"></i><b>A</b></span>
-                                            <span class="pcoded-mtext">Authentication</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class="pcoded-hasmenu">
-                                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Login</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                                <ul class="pcoded-submenu">
-                                                    <li class="">
-                                                        <a href="auth-normal-sign-in.html" target="_blank"
-                                                            class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
-                                                            <span class="pcoded-mtext">Simple</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="">
-                                                        <a href="auth-normal-sign-in-header-footer.html" target="_blank"
-                                                            class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
-                                                            <span class="pcoded-mtext">Header &amp; Footer</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="">
-                                                        <a href="auth-sign-in-social.html" target="_blank"
-                                                            class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
-                                                            <span class="pcoded-mtext">Social</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="">
-                                                        <a href="auth-sign-in-social-header-footer.html" target="_blank"
-                                                            class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
-                                                            <span class="pcoded-mtext">Social With Header &amp;
-                                                                Footer</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="pcoded-hasmenu">
-                                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Registration</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                                <ul class="pcoded-submenu">
-                                                    <li class="">
-                                                        <a href="auth-sign-up.html" target="_blank"
-                                                            class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
-                                                            <span class="pcoded-mtext">Simple</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="">
-                                                        <a href="auth-sign-up-header-footer.html" target="_blank"
-                                                            class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
-                                                            <span class="pcoded-mtext">Header &amp; Footer</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="">
-                                                        <a href="auth-sign-up-social.html" target="_blank"
-                                                            class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
-                                                            <span class="pcoded-mtext">Social</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="">
-                                                        <a href="auth-sign-up-social-header-footer.html" target="_blank"
-                                                            class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
-                                                            <span class="pcoded-mtext">Social With Header &amp;
-                                                                Footer</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="">
-                                                <a href="auth-multi-step-sign-up.html" target="_blank"
-                                                    class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Multi Step Registration</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="auth-reset-password.html" target="_blank"
-                                                    class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Forgot Password</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="auth-lock-screen.html" target="_blank"
-                                                    class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Lock Screen</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="auth-modal.html" target="_blank"
-                                                    class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Modal</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="pcoded-hasmenu ">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-settings"></i></span>
-                                            <span class="pcoded-mtext">Maintenance</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class="">
-                                                <a href="error.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Error</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="comming-soon.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Comming Soon</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="offline-ui.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Offline UI</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="pcoded-hasmenu ">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-user"></i></span>
-                                            <span class="pcoded-mtext">User Profile</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class="">
-                                                <a href="timeline.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Timeline</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="timeline-social.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Timeline Social</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="user-profile.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">User Profile</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="user-card.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">User Card</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-
-                                    <li class="pcoded-hasmenu ">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-shopping-cart"></i></span>
-                                            <span class="pcoded-mtext">E-Commerce</span>
-                                            <span class="pcoded-badge label label-danger">NEW</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class="">
-                                                <a href="product.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Product</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="product-list.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Product List</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="product-edit.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Product Edit</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="product-detail.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Product Detail</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="product-cart.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Product Card</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="product-payment.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Credit Card Form</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="pcoded-hasmenu ">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-email"></i></span>
-                                            <span class="pcoded-mtext">Email</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class="">
-                                                <a href="email-compose.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Compose Email</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="email-inbox.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Inbox</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="">
-                                                <a href="email-read.html" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Read Mail</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="pcoded-hasmenu ">
-                                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-email"></i></span>
-                                                    <span class="pcoded-mtext">Email Template</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                                <ul class="pcoded-submenu">
-                                                    <li class="">
-                                                        <a href="http://html.phoenixcoded.net/mega-able/files/extra-pages/email-templates/email-welcome.html"
-                                                            class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
-                                                            <span class="pcoded-mtext">Welcome Email</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="">
-                                                        <a href="http://html.phoenixcoded.net/mega-able/files/extra-pages/email-templates/email-password.html"
-                                                            class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
-                                                            <span class="pcoded-mtext">Reset Password</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="">
-                                                        <a href="http://html.phoenixcoded.net/mega-able/files/extra-pages/email-templates/email-newsletter.html"
-                                                            class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
-                                                            <span class="pcoded-mtext">Newsletter Email</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="">
-                                                        <a href="http://html.phoenixcoded.net/mega-able/files/extra-pages/email-templates/email-launch.html"
-                                                            class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
-                                                            <span class="pcoded-mtext">App Launch</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="">
-                                                        <a href="http://html.phoenixcoded.net/mega-able/files/extra-pages/email-templates/email-activation.html"
-                                                            class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
-                                                            <span class="pcoded-mtext">Activation Code</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
                                     </li>
                                 </ul>
                             </li>
@@ -2203,34 +629,29 @@
                                                 <ul class="pcoded-submenu">
                                                     <li class="">
                                                         <a href="ck-editor.html" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
+                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                             <span class="pcoded-mtext">CK-Editor</span>
                                                             <span class="pcoded-mcaret"></span>
                                                         </a>
                                                     </li>
                                                     <li class="">
                                                         <a href="wysiwyg-editor.html" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
+                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                             <span class="pcoded-mtext">WYSIWYG Editor</span>
                                                             <span class="pcoded-mcaret"></span>
                                                         </a>
                                                     </li>
                                                     <li class="">
                                                         <a href="ace-editor.html" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
+                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                             <span class="pcoded-mtext">Ace Editor</span>
                                                             <span class="pcoded-mcaret"></span>
                                                         </a>
                                                     </li>
 
                                                     <li class="">
-                                                        <a href="long-press-editor.html"
-                                                            class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
+                                                        <a href="long-press-editor.html" class="waves-effect waves-dark">
+                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                             <span class="pcoded-mtext">Long Press Editor</span>
                                                             <span class="pcoded-mcaret"></span>
                                                         </a>
@@ -2239,32 +660,28 @@
                                             </li>
                                             <li class="pcoded-hasmenu ">
                                                 <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i
-                                                            class="ti-layout-media-right"></i></span>
+                                                    <span class="pcoded-micon"><i class="ti-layout-media-right"></i></span>
                                                     <span class="pcoded-mtext">Invoice</span>
                                                     <span class="pcoded-mcaret"></span>
                                                 </a>
                                                 <ul class="pcoded-submenu">
                                                     <li class="">
                                                         <a href="invoice.html" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
+                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                             <span class="pcoded-mtext">Invoice</span>
                                                             <span class="pcoded-mcaret"></span>
                                                         </a>
                                                     </li>
                                                     <li class="">
                                                         <a href="invoice-summary.html" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
+                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                             <span class="pcoded-mtext">Invoice Summary</span>
                                                             <span class="pcoded-mcaret"></span>
                                                         </a>
                                                     </li>
                                                     <li class="">
                                                         <a href="invoice-list.html" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
+                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                             <span class="pcoded-mtext">Invoice List</span>
                                                             <span class="pcoded-mcaret"></span>
                                                         </a>
@@ -2279,18 +696,15 @@
                                                 </a>
                                                 <ul class="pcoded-submenu">
                                                     <li class="">
-                                                        <a href="event-full-calender.html"
-                                                            class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
+                                                        <a href="event-full-calender.html" class="waves-effect waves-dark">
+                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                             <span class="pcoded-mtext">Full Calendar</span>
                                                             <span class="pcoded-mcaret"></span>
                                                         </a>
                                                     </li>
                                                     <li class="">
                                                         <a href="event-clndr.html" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
+                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                             <span class="pcoded-mtext">CLNDER</span>
                                                             <span class="pcoded-badge label label-info">NEW</span>
                                                             <span class="pcoded-mcaret"></span>
@@ -2354,8 +768,7 @@
                                                 <ul class="pcoded-submenu">
                                                     <li class="">
                                                         <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
+                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                             <span class="pcoded-mtext">Menu Level 3.1</span>
                                                             <span class="pcoded-mcaret"></span>
                                                         </a>
@@ -2401,8 +814,7 @@
                                             </li>
                                             <li class="">
                                                 <a href="#" target="_blank" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i
-                                                            class="ti-layout-list-post"></i></span>
+                                                    <span class="pcoded-micon"><i class="ti-layout-list-post"></i></span>
                                                     <span class="pcoded-mtext">Submit Issue</span>
                                                     <span class="pcoded-mcaret"></span>
                                                 </a>
@@ -2426,8 +838,6 @@
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <!-- Default card start -->
-                                                {{ Auth::guard('admin')->user()->nama }}
-
                                                 @yield('admin_dashboard')
                                                 @yield('menudata_dashboard')
                                                 <!-- Default card end -->
@@ -2440,12 +850,12 @@
                             <!-- Main-body end -->
 
                             {{-- <div id="styleSelector"> --}}
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!-- Warning Section Starts -->
     <!-- Older IE warning message -->
@@ -2457,31 +867,31 @@
         <ul class="iew-download">
             <li>
                 <a href="http://www.google.com/chrome/">
-                    <img src="/admin/assets/images/browser/chrome.png" alt="Chrome">
+                    <img src="/admin_tampil/assets/images/browser/chrome.png" alt="Chrome">
                     <div>Chrome</div>
                 </a>
             </li>
             <li>
                 <a href="https://www.mozilla.org/en-US/firefox/new/">
-                    <img src="/admin/assets/images/browser/firefox.png" alt="Firefox">
+                    <img src="/admin_tampil/assets/images/browser/firefox.png" alt="Firefox">
                     <div>Firefox</div>
                 </a>
             </li>
             <li>
                 <a href="http://www.opera.com">
-                    <img src="/admin/assets/images/browser/opera.png" alt="Opera">
+                    <img src="/admin_tampil/assets/images/browser/opera.png" alt="Opera">
                     <div>Opera</div>
                 </a>
             </li>
             <li>
                 <a href="https://www.apple.com/safari/">
-                    <img src="/admin/assets/images/browser/safari.png" alt="Safari">
+                    <img src="/admin_tampil/assets/images/browser/safari.png" alt="Safari">
                     <div>Safari</div>
                 </a>
             </li>
             <li>
                 <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                    <img src="/admin/assets/images/browser/ie.png" alt="">
+                    <img src="/admin_tampil/assets/images/browser/ie.png" alt="">
                     <div>IE (9 & above)</div>
                 </a>
             </li>
@@ -2492,66 +902,65 @@
 <![endif]-->
     <!-- Warning Section Ends -->
     <!-- Required Jquery -->
-    <script type="text/javascript" src="/admin/bower_components/jquery/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/admin/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="/admin/bower_components/popper.js/js/popper.min.js"></script>
-    <script type="text/javascript" src="/admin/bower_components/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/admin_tampil/bower_components/jquery/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/admin_tampil/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/admin_tampil/bower_components/popper.js/js/popper.min.js"></script>
+    <script type="text/javascript" src="/admin_tampil/bower_components/bootstrap/js/bootstrap.min.js"></script>
     <!-- waves js -->
-    <script src="/admin/assets/pages/waves/js/waves.min.js"></script>
+    <script src="/admin_tampil/assets/pages/waves/js/waves.min.js"></script>
     <!-- jquery slimscroll js -->
-    <script type="text/javascript" src="/admin/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
+    <script type="text/javascript" src="/admin_tampil/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
     <!-- modernizr js -->
-    <script type="text/javascript" src="/admin/bower_components/modernizr/js/modernizr.js"></script>
-    <script type="text/javascript" src="/admin/bower_components/modernizr/js/css-scrollbars.js"></script>
+    <script type="text/javascript" src="/admin_tampil/bower_components/modernizr/js/modernizr.js"></script>
+    <script type="text/javascript" src="/admin_tampil/bower_components/modernizr/js/css-scrollbars.js"></script>
 
     <!-- Syntax highlighter prism js -->
-    <script type="text/javascript" src="/admin/assets/pages/prism/custom-prism.js"></script>
+    <script type="text/javascript" src="/admin_tampil/assets/pages/prism/custom-prism.js"></script>
     <!-- i18next.min.js -->
-    <script type="text/javascript" src="/admin/bower_components/i18next/js/i18next.min.js"></script>
-    <script type="text/javascript" src="/admin/bower_components/i18next-xhr-backend/js/i18nextXHRBackend.min.js">
+    <script type="text/javascript" src="/admin_tampil/bower_components/i18next/js/i18next.min.js"></script>
+    <script type="text/javascript" src="/admin_tampil/bower_components/i18next-xhr-backend/js/i18nextXHRBackend.min.js">
     </script>
-    <script type="text/javascript"
-        src="/admin/bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js">
+    <script type="text/javascript" src="/admin_tampil/bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js">
     </script>
-    <script type="text/javascript" src="/admin/bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
+    <script type="text/javascript" src="/admin_tampil/bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
 
-    <script src="/admin/assets/js/pcoded.min.js"></script>
-    <script src="/admin/assets/js/vertical/menu/menu-hori-fixed.js"></script>
-    <script src="/admin/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/admin_tampil/assets/js/pcoded.min.js"></script>
+    <script src="/admin_tampil/assets/js/vertical/menu/menu-hori-fixed.js"></script>
+    <script src="/admin_tampil/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 
     <!-- Custom js -->
-    <script src="/admin/assets/pages/forms-wizard-validation/form-wizard.js"></script>
-    <script src="/admin/assets/js/pcoded.min.js"></script>
-    <script src="/admin/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script type="text/javascript" src="/admin/assets/js/script.js"></script>
+    <script src="/admin_tampil/assets/pages/forms-wizard-validation/form-wizard.js"></script>
+    <script src="/admin_tampil/assets/js/pcoded.min.js"></script>
+    <script src="/admin_tampil/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="/admin_tampil/assets/js/script.js"></script>
 
     <!-- jquery file upload js -->
-    <script src="/admin/assets/pages/jquery.filer/js/jquery.filer.min.js"></script>
-    <script src="/admin/assets/pages/filer/custom-filer.js" type="text/javascript"></script>
-    <script src="/admin/assets/pages/filer/jquery.fileuploads.init.js" type="text/javascript"></script>
+    <script src="/admin_tampil/assets/pages/jquery.filer/js/jquery.filer.min.js"></script>
+    <script src="/admin_tampil/assets/pages/filer/custom-filer.js" type="text/javascript"></script>
+    <script src="/admin_tampil/assets/pages/filer/jquery.fileuploads.init.js" type="text/javascript"></script>
 
     <!-- Custom js -->
-    <script type="text/javascript" src="/admin/assets/pages/form-validation/form-validation.js"></script>
+    <script type="text/javascript" src="/admin_tampil/assets/pages/form-validation/form-validation.js"></script>
 
     <!-- data-table js -->
-    <script src="/admin/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="/admin/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="/admin/assets/pages/data-table/js/jszip.min.js"></script>
-    <script src="/admin/assets/pages/data-table/js/pdfmake.min.js"></script>
-    <script src="/admin/assets/pages/data-table/js/vfs_fonts.js"></script>
-    <script src="/admin/assets/pages/data-table/extensions/responsive/js/dataTables.responsive.min.js"></script>
-    <script src="/admin/bower_components/datatables.net-buttons/js/buttons.print.min.js"></script>
-    <script src="/admin/bower_components/datatables.net-buttons/js/buttons.html5.min.js"></script>
-    <script src="/admin/bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="/admin/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="/admin/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+    <script src="/admin_tampil/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="/admin_tampil/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="/admin_tampil/assets/pages/data-table/js/jszip.min.js"></script>
+    <script src="/admin_tampil/assets/pages/data-table/js/pdfmake.min.js"></script>
+    <script src="/admin_tampil/assets/pages/data-table/js/vfs_fonts.js"></script>
+    <script src="/admin_tampil/assets/pages/data-table/extensions/responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/admin_tampil/bower_components/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="/admin_tampil/bower_components/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="/admin_tampil/bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="/admin_tampil/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/admin_tampil/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
 
-    <script src="/admin/assets/pages/data-table/extensions/responsive/js/responsive-custom.js"></script>
+    <script src="/admin_tampil/assets/pages/data-table/extensions/responsive/js/responsive-custom.js"></script>
 
 
-    <script type="text/javascript" src="/admin/bower_components/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="/admin_tampil/bower_components/lightbox2/js/lightbox.min.js"></script>
     <!--forms-wizard css-->
-    <link rel="stylesheet" type="text/css" href="/admin/bower_components/jquery.steps/css/jquery.steps.css">
+    <link rel="stylesheet" type="text/css" href="/admin_tampil/bower_components/jquery.steps/css/jquery.steps.css">
 
     {{-- <script>
         $('#tabbed-form').on('show.bs.modal', function(event) {
@@ -2570,43 +979,61 @@
     <script>
         $(document).ready(function() {
 
-                $('#openBtn').click(() => $('#myModal').modal({
-                    show: true
-                }));
+            $('#openBtn').click(() => $('#myModal').modal({
+                show: true
+            }));
 
-                $(document).on('show.bs.modal', '.modal', function() {
-                    const zIndex = 1040 + 10 * $('.modal:visible').length;
-                    $(this).css('z-index', zIndex);
-                    setTimeout(() => $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1)
-                        .addClass('modal-stack'));
-                });
-
+            $(document).on('show.bs.modal', '.modal', function() {
+                const zIndex = 1040 + 10 * $('.modal:visible').length;
+                $(this).css('z-index', zIndex);
+                setTimeout(() => $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1)
+                    .addClass('modal-stack'));
             });
+
+        });
+
     </script>
 
     <script>
         function switchStyle() {
-                    if (document.getElementById("styleSwitch").checked) {
-                        document.getElementById("gallery").classList.add("custom");
-                        document.getElementById("exampleModal").classList.add("custom");
-                    } else {
-                        document.getElementById("gallery").classList.remove("custom");
-                        document.getElementById("exampleModal").classList.remove("custom");
-                    }
-                }
+            if (document.getElementById("styleSwitch").checked) {
+                document.getElementById("gallery").classList.add("custom");
+                document.getElementById("exampleModal").classList.add("custom");
+            } else {
+                document.getElementById("gallery").classList.remove("custom");
+                document.getElementById("exampleModal").classList.remove("custom");
+            }
+        }
+
     </script>
 
 
     <script>
         feather.replace()
+
     </script>
 
     <script>
         lightbox.option({
-            'resizeDuration': 200,
-            'wrapAround': true
+            'resizeDuration': 200
+            , 'wrapAround': true
         })
+
     </script>
+
+    <!-- Float Chart js -->
+    <script src="/admin_tampil/assets/pages/chart/float/jquery.flot.js"></script>
+    <script src="/admin_tampil/assets/pages/chart/float/jquery.flot.categories.js"></script>
+    <script src="/admin_tampil/assets/pages/chart/float/curvedLines.js"></script>
+    <script src="/admin_tampil/assets/pages/chart/float/jquery.flot.tooltip.min.js"></script>
+    <!-- amchart js -->
+    <script src="/admin_tampil/assets/pages/widget/amchart/amcharts.js"></script>
+    <script src="/admin_tampil/assets/pages/widget/amchart/serial.js"></script>
+    <script src="/admin_tampil/assets/pages/widget/amchart/light.js"></script>
+    <!-- Custom js -->
+    <script src="/admin_tampil/assets/js/pcoded.min.js"></script>
+    <script type="text/javascript" src="/admin_tampil/assets/pages/dashboard/custom-dashboard.min.js"></script>
+
 
 
 </body>

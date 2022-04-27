@@ -1,24 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DataController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\BeritaController;
-use App\Http\Controllers\DaftarController;
-use App\Http\Controllers\TutorialController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\LoginadminController;
-use App\Http\Controllers\AdminDashboardController;
-use App\Http\Controllers\MenudataController;
-use App\Http\Controllers\SendMailController;
-
-
-use App\Models\Dashboard;
-use Illuminate\Http\Request;
-use App\Models\Upload;
-
 
 
 /*
@@ -32,58 +17,32 @@ use App\Models\Upload;
 |
 */
 
-Route::get('/',[HomeController::class, 'index']);
-Route::get('/home',[HomeController::class, 'index']);
-Route::get('/berita',[BeritaController::class, 'index']);
 
-Route::get('/dashboard',function() {
-return view('user.dashboard', ["judul" => "Halaman Dashboard",
-'datas' => Upload::where('id_user', auth()->user()->id)->get()
-]);
-})->middleware('auth');
+// Route::get('/',[HomeController::class, 'index']);
+Route::get('/home',[HomeController::class, 'index'])->name('home');
 
+// router bagian loginuser
+Route::get('/login',['App\Http\Controllers\AuthUser\LoginController', 'index'])->name('user.login');
+Route::post('/keluar',['App\Http\Controllers\AuthUser\LoginController', 'keluar'])->name('user.keluar');
+Route::post('/login',['App\Http\Controllers\AuthUser\LoginController', 'loginuser'])->name('user.login.save');
+Route::get('/dashboard',['App\Http\Controllers\AuthUser\AdminController', 'index'])->name('user.dashboard');
 
+// router bagian loginuser
 
+Route::prefix('admin')->name('admin.')->group(function(){
+// Route::middleware(['guest:admin', 'PreventBackHistory'])->group(function () {
+Route::middleware(['guest:admin','preventBackHistory'])->group(function () {
 
-Route::resource('/data',DataController::class)->middleware('auth');
+Route::view('/login','admin.login', ["judul" => "Home Admin "])->name('login');
+Route::post('/check',['App\Http\Controllers\AuthAdmin\LoginController', 'loginadmin'])->name('login.save');
 
-Route::resource('/data',DataController::class);
-// Route::resource('/menudata',MenudataController::class);
-
-Route::get('/dashboard',[DashboardController::class, 'index'])->middleware('auth');
-// Route::get('/menudata',[MenudataController::class, 'index']);
-
-Route::get('/admin_dashboard',[AdminDashboardController::class, 'index']);
-Route::get('/tutorial',[TutorialController::class, 'index']);
-Route::get('/loginadmin',[LoginadminController::class, 'index']);
-Route::post('/loginadmin',[LoginadminController::class, 'loginauth'])->name('login')->middleware('guest');
-Route::post('/keluar',[LoginadminController::class, 'keluar']);
-
-Route::get('/menudata',[MenudataController::class, 'index'])->middleware('auth');
-Route::post('/menudata', [MenudataController::class, 'update'])->middleware('auth');
-// Route::resource('/menudata',MenudataController::class);
-Route::get('/menudata/download/{nama}', [MenudataController::class, 'download'])->name('download')->middleware('auth');
-
-
-
-//Route::post('/login',[LoginController::class, 'authenticate']);
-//Route::post('/user',[UserController::class, 'authenticate']);
-
-Route::get('/daftar',[DaftarController::class, 'index'])->middleware('guest');
-Route::post('/daftar',[DaftarController::class, 'store']);
-// Route::get('send/mail', [SendMailController::class, 'send_mail'])->name('send_mail');
-Route::get('send/mail', [SendMailController::class, 'send_mail'])->name('send_mail');
-
-Auth::routes();
-
-Route::prefix('user')->name('user.')->group(function(){
-Route::middleware(['guest'])->group(function () {
-Route::get('/dashboard',[DashboardController::class, 'index'])->middleware('auth');
-Route::get('/tutorial',[TutorialController::class, 'index']);
-Route::get('/user',[UserController::class, 'index'])->name('login')->middleware('guest');
-Route::post('/user',[UserController::class, 'authenticate']);
-Route::post('/keluar',[UserController::class, 'keluar']);
 });
+Route::post('/logout',['App\Http\Controllers\AuthAdmin\LoginController', 'logout'])->name('logout');
 
-}
-)
+Route::middleware(['auth:admin','preventBackHistory'])->group(function(){
+Route::get('/dashboard',['App\Http\Controllers\AuthAdmin\AdminController', 'index'])->name('dashboard');
+Route::get('/berita',['App\Http\Controllers\AuthAdmin\BeritaController', 'index'])->name('berita');
+Route::get('/menudata',['App\Http\Controllers\AuthAdmin\MenudataController', 'index'])->name('menudata');
+
+});
+});
