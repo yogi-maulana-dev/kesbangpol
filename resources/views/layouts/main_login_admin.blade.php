@@ -534,6 +534,7 @@
                                                 <!-- Default card start -->
                                                 @yield('admin_dashboard')
                                                 @yield('menudata_dashboard')
+                                                @yield('berita')
                                                 <!-- Default card end -->
                                             </div>
                                         </div>

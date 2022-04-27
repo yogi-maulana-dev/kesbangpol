@@ -24,11 +24,7 @@ class AdminController extends Controller
     public function index()
     {
     //
-    return view('admin.index', ["judul" => "Halaman dasdasd",
+    return view('admin.index', ["judul" => "Halaman Login Admin",
     'datas' => Upload::where('id_user', auth()->user()->id)->get()]);
     }
-
-
-
-
 }
