@@ -14,6 +14,7 @@
     <![endif]-->
     <!-- Meta -->
     <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="Gradient Able Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
@@ -40,6 +41,8 @@
     <link rel="stylesheet" type="text/css" href="/admin_tampil/assets/css/style.css">
 
     <link rel="stylesheet" type="text/css" href="/admin_tampil/files/assets/css/widget.css">
+
+
 
 
     <link rel="stylesheet" type="text/css" href="/admin_tampil/assets/css/jquery.mCustomScrollbar.css">
@@ -717,6 +720,9 @@
     </script>
 
     <!-- Float Chart js -->
+
+
+
     <script src="/admin_tampil/assets/pages/chart/float/jquery.flot.js"></script>
     <script src="/admin_tampil/assets/pages/chart/float/jquery.flot.categories.js"></script>
     <script src="/admin_tampil/assets/pages/chart/float/curvedLines.js"></script>

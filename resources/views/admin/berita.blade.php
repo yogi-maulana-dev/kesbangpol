@@ -1,8 +1,10 @@
-@extends('layouts.main_login_admin') @section('berita')
+@extends('layouts.main_login_admin')
+@section('berita')
 <style>
     .modal {
         overflow-y: auto;
     }
+
 </style>
 
 
@@ -18,8 +20,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Judul</i>
-                            </th>
+                            <th>Judul</th>
                             {{--
                             <th>Nomor Whatsapp</i>
                             </th> --}}
@@ -29,48 +30,25 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($beritas as $berita)
+
                         <tr>
-                            <td>{{ $berita->nama }}</td>
-                            <td>{{ $berita->email }}</td>
+                            <td>No ++</td>
+                            <td>Judul</td>
+                            <td>Gambar</td>
+                            <td>Kategori</td>
 
-                            <td> <button class="btn waves-effect waves-dark btn-primary btn-outline-primary badge bg-info" data-target="#tabbed-form-{{ $berita->id }}" data-titleku="DataOrkemas" data-toggle="modal"><span data-feather="eye"></span></button>                                {{-- <a href="/data/{{ $berita->id }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a> --}}
+                            <td> <button class="btn waves-effect waves-dark btn-primary btn-outline-primary badge bg-info" data-target="#tabbed-form" data-titleku="DataOrkemas" data-toggle="modal"><span data-feather="eye"></span></button> {{-- <a href="/data/{{ $berita->id }}/edit"
+                                class="badge bg-warning"><span data-feather="edit"></span></a> --}}
                             </td>
+                            {{-- <td>
+                                <a href="{{ route('admin.download', $berita->nama) }}" target="_blank" rel="noopener"
+                            class="btn btn-success btn-sm text-white">
+                            Download
+                            </a>
 
-                            <td>
-                                @if ($berita->lengkap == 0)
-                                <div class="label-main">
-                                    <label class="label label-lg label-primary"><i class="fa fa-spinner"></i>
-                                        Proses</label>
-
-                                </div>
-                                @else Sudah di verikasi @endif
-                            </td>
-
-                            <td>
-                                <form method="post" action="/send/mail">
-                                    @csrf
-                                    <input class="form-control" type="text" name="nama" value="{{ $berita->nama }}">
-                                    <input class="form-control" type="text" name="email" value="{{ $berita->email }}">
-                                    <div class="text-right">
-                                        <button type="submit" class="btn btn-primary">Kirim ke Email Saya</button>
-                                    </div>
-                                </form>
-                                {{-- <a href="{{ route('download', $berita->nama) }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm text-white">
-                                Download
-                                </a> --}}
-
-                            </td>
-                            <td>
-                                <a href="{{ route('admin.download', $berita->nama) }}" target="_blank" rel="noopener" class="btn btn-success btn-sm text-white">
-                                    Download
-                                </a>
-
-                            </td>
+                            </td> --}}
 
                         </tr>
-                        @endforeach
-
                     </tbody>
                 </table>
             </div>
@@ -78,106 +56,261 @@
     </div>
 </div>
 
-@endforeach
 
 
 
 
+<!-- tabbed form modal start -->
+<div id="tabbed-form" class="modal fade mixed-form" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="card">
+            <div class="card-body">
+                <!-- Nav tabs -->
 
-<!--
+                <!-- Tab panes -->
+                <div class="tab-content p-t-30">
+                    <div class="tab-pane active" id="sign_in" role="tabpanel">
+                        <form action="/berita/save/" class="md-float-material form-material" enctype="multipart/form-data">
+                            @csrf
+                            <p class="text-muted text-center p-b-5">Form Posting Berita</p>
+                            <div class="form-group form-primary">
+                                <input type="text" name="judul" class="form-control" required="">
+                                <span class="form-bar"></span>
+                                <label class="float-label">Judul</label>
+                            </div>
+                            <div class="form-group form-primary">
+                                <label class="col-sm-4 col-form-label">Gambar Berita</label>
+                                <input type="file" name="judul" class="form-control" required="">
+                                <span class="form-bar"></span>
+                            </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                            <div class="form-group form-primary">
+                                <label class="col-sm-4 col-form-label">Isi berita</label>
+                                <textarea class="form-control editor" rows="100" cols="300" id="editor" name="editor"></textarea>
+                            </div>
+
+                            <div class="row m-t-30">
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Simpan Data</button>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- tabbed form modal end -->
+
+{{-- <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/decoupled-document/ckeditor.js"></script> --}}
+{{-- <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script> --}}
+
+
+
+{{-- <script>
+    ClassicEditor
+
+        .create(document.querySelector('#editor'), {
+            ckfinder: {
+                uploadUrl: "{{route('admin.ckeditor.upload', ['_token' => csrf_token() ])}}"
+}
+
+})
+
+.then(editor => {
+console.log(editor);
+})
+
+.catch(error => {
+console.error(error);
+});
+
+</script> --}}
+{{-- <script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script> --}}
+<script src="/admin_tampil/ckeditor5/ckeditor.js"></script>
+<script src="/admin_tampil/imageresize/plugin.js"></script>
+
+
+
+<script src="https://ckeditor.com/apps/ckfinder/3.5.0/ckfinder.js"></script>
+
 
 <script>
-    $(document).on('click', 'input[name="a_surat_terdaftar_dikemenkumham"]', function() {
-        $('input[name="a_surat_terdaftar_dikemenkumham"]').not(this).prop('checked', false);
-    });
+    class MyUploadAdapter {
+        constructor(loader) {
+            this.loader = loader;
+        }
 
-    $(document).on('click', 'input[name="a_surat_pendaftaran"]', function() {
-        $('input[name="a_surat_pendaftaran"]').not(this).prop('checked', false);
-    });
+        upload() {
+            return this.loader.file
+                .then(file => new Promise((resolve, reject) => {
+                    this._initRequest();
+                    this._initListeners(resolve, reject, file);
+                    this._sendRequest(file);
+                }));
+        }
 
-    $(document).on('click', 'input[name="a_adrt"]', function() {
-        $('input[name="a_adrt"]').not(this).prop('checked', false);
-    });
+        abort() {
+            if (this.xhr) {
+                this.xhr.abort();
+            }
+        }
 
-    $(document).on('click', 'input[name="a_keabsahan_kantor"]', function() {
-        $('input[name="a_keabsahan_kantor"]').not(this).prop('checked', false);
-    });
+        _initRequest() {
+            const xhr = this.xhr = new XMLHttpRequest();
 
-    $(document).on('click', 'input[name="a_program"]', function() {
-        $('input[name="a_program"]').not(this).prop('checked', false);
-    });
+            xhr.open('POST', "{{route('admin.ckeditor.upload', ['_token' => csrf_token() ])}}", true);
 
-    $(document).on('click', 'input[name="a_surat_keputusan"]', function() {
-        $('input[name="a_surat_keputusan"]').not(this).prop('checked', false);
-    });
+            xhr.responseType = 'json';
+        }
 
-    $(document).on('click', 'input[name="a_biodata_pengurus"]', function() {
-        $('input[name="a_biodata_pengurus"]').not(this).prop('checked', false);
-    });
+        _initListeners(resolve, reject, file) {
+            const xhr = this.xhr;
+            const loader = this.loader;
+            const genericErrorText = `Couldn't upload file: ${ file.name }.`;
+
+            xhr.addEventListener('error', () => reject(genericErrorText));
+            xhr.addEventListener('abort', () => reject());
+            xhr.addEventListener('load', () => {
+                const response = xhr.response;
+
+                if (!response || response.error) {
+                    return reject(response && response.error ? response.error.message : genericErrorText);
+                }
+
+                resolve(response);
+            });
+
+            if (xhr.upload) {
+                xhr.upload.addEventListener('progress', evt => {
+                    if (evt.lengthComputable) {
+                        loader.uploadTotal = evt.total;
+                        loader.uploaded = evt.loaded;
+                    }
+                });
+            }
+        }
+
+        _sendRequest(file) {
+            const data = new FormData();
+
+            data.append('upload', file);
+
+            this.xhr.send(data);
+        }
+    }
+
+    function MyCustomUploadAdapterPlugin(editor) {
+        editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
+            return new MyUploadAdapter(loader);
+        };
+    }
+
+    ClassicEditor
+        .create(document.querySelector('#editor'), {
 
 
-    $(document).on('click', 'input[name="a_akte_pendirian"]', function() {
-        $('input[name="a_akte_pendirian"]').not(this).prop('checked', false);
-    });
+            image: {
+                resizeUnit: 'px'
+                , resizeOptions: [{
+                        name: 'resizeImage:original'
+                        , label: 'Original'
+                        , value: null
+                    }
+                    , {
+                        name: 'resizeImage:100'
+                        , label: '100px'
+                        , value: '100'
+                    }
+                    , {
+                        name: 'resizeImage:200'
+                        , label: '200px'
+                        , value: '200'
+                    }
+                ],
 
-    $(document).on('click', 'input[name="a_ktp"]', function() {
-        $('input[name="a_ktp"]').not(this).prop('checked', false);
-    });
+                resizeOptions: [{
+                        name: 'resizeImage:original'
+                        , value: null
+                        , label: 'Original'
+                    }
+                    , {
+                        name: 'resizeImage:40'
+                        , value: '40'
+                        , label: '40%'
+                    }
+                    , {
+                        name: 'resizeImage:60'
+                        , value: '60'
+                        , label: '60%'
+                    }
+                ],
 
-    $(document).on('click', 'input[name="a_foto"]', function() {
-        $('input[name="a_foto"]').not(this).prop('checked', false);
-    });
 
-    $(document).on('click', 'input[name="a_surat_keterangan_domisili"]', function() {
-        $('input[name="a_surat_keterangan_domisili"]').not(this).prop('checked', false);
-    });
+            },
 
-    $(document).on('click', 'input[name="a_npwp"]', function() {
-        $('input[name="a_npwp"]').not(this).prop('checked', false);
-    });
 
-    $(document).on('click', 'input[name="a_foto_kantor"]', function() {
-        $('input[name="a_foto_kantor"]').not(this).prop('checked', false);
-    });
 
-    $(document).on('click', 'input[name="a_surat_ketertiban"]', function() {
-        $('input[name="a_surat_ketertiban"]').not(this).prop('checked', false);
-    });
-    $(document).on('click', 'input[name="a_surat_tidak_avilasi"]', function() {
-        $('input[name="a_surat_tidak_avilasi"]').not(this).prop('checked', false);
-    });
-    $(document).on('click', 'input[name="a_surat_konflik"]', function() {
-        $('input[name="a_surat_konflik"]').not(this).prop('checked', false);
-    });
-    $(document).on('click', 'input[name="a_surat_hak_cipta"]', function() {
-        $('input[name="a_surat_hak_cipta"]').not(this).prop('checked', false);
-    });
-    $(document).on('click', 'input[name="a_surat_laporan"]', function() {
-        $('input[name="a_surat_laporan"]').not(this).prop('checked', false);
-    });
-    $(document).on('click', 'input[name="a_surat_absah"]', function() {
-        $('input[name="a_surat_absah"]').not(this).prop('checked', false);
-    });
-    $(document).on('click', 'input[name="a_surat_rekom_agama"]', function() {
-        $('input[name="a_surat_rekom_agama"]').not(this).prop('checked', false);
-    });
-    $(document).on('click', 'input[name="a_surat_rekom_skpd"]', function() {
-        $('input[name="a_surat_rekom_skpd"]').not(this).prop('checked', false);
-    });
-    $(document).on('click', 'input[name="a_surat_rekom_skpd_kerja"]', function() {
-        $('input[name="a_surat_rekom_skpd_kerja"]').not(this).prop('checked', false);
-    });
-    $(document).on('click', 'input[name="a_surat_rekom_kesediaan"]', function() {
-        $('input[name="a_surat_rekom_kesediaan"]').not(this).prop('checked', false);
-    });
-    $(document).on('click', 'input[name="a_surat_izasah"]', function() {
-        $('input[name="a_surat_izasah"]').not(this).prop('checked', false);
-    });
-    $(document).on('click', 'input[name="a_skt"]', function() {
-        $('input[name="a_skt"]').not(this).prop('checked', false);
-    });
-</script> -->
+
+            toolbar: [
+                "ckfinder"
+                , "imageUpload"
+                , "|"
+                , "heading"
+                , "|"
+                , "bold"
+                , "italic"
+                , "|"
+                , "undo"
+                , "redo"
+                , 'imageSize:lockAspectRatio'
+                , 'imageSize:width'
+                , 'imageSize:height'
+                , 'imageStyle:block'
+                , 'imageStyle:side'
+                , '|'
+                , 'toggleImageCaption'
+                , 'imageTextAlternative'
+                , '|'
+                , 'linkImage'
+                , 'resizeImage'
+                , 'resizeImage:50'
+                , 'resizeImage:75'
+                , 'resizeImage:original'
+                , 'insertTable'
+                , 'heading', '|', 'bulletedList', 'numberedList', 'alignment', 'undo', 'redo',
+
+            ],
+
+            table: {
+                defaultHeadings: {
+                    rows: 1
+                    , columns: 1
+                }
+            },
+
+            alignment: {
+                options: ['left', 'right']
+            },
+
+
+            extraPlugins: [MyCustomUploadAdapterPlugin]
+
+        , })
+
+        .catch(error => {
+            console.error(error);
+        });
+
+</script>
+
+
+
+
+
+
+
 
 @endsection

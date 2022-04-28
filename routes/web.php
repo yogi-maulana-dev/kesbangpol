@@ -47,6 +47,9 @@ Route::post('/check',['App\Http\Controllers\AuthAdmin\LoginController', 'loginad
 Route::middleware(['auth:admin','preventBackHistory'])->group(function(){
 Route::get('/dashboard',['App\Http\Controllers\AuthAdmin\AdminController', 'index'])->name('dashboard');
 Route::get('/berita',['App\Http\Controllers\AuthAdmin\BeritaController', 'index'])->name('berita');
+Route::post('/berita',['App\Http\Controllers\AuthAdmin\BeritaController', 'store'])->name('berita.save');
+Route::post('/berita',['App\Http\Controllers\AuthAdmin\BeritaController', 'uploadimage'])->name('ckeditor.upload');
+
 Route::get('/menudata',['App\Http\Controllers\AuthAdmin\MenudataController', 'index'])->name('menudata');
 Route::get('/menudata/download/{nama}', ['App\Http\Controllers\AuthAdmin\MenudataController', 'download'])->name('download');
 Route::post('/logout',['App\Http\Controllers\AuthAdmin\LoginController', 'logout'])->name('logout');

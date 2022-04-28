@@ -27,10 +27,9 @@ class MenudataController extends Controller
                'datas' => Upload::join('users', 'uploads.id_user', "=", 'users.id')
                ->get(),
                'datacuk' => Upload::all()
+   ]);
+   }
 
-
-
-    }
 
     /**
      * Show the form for creating a new resource.
