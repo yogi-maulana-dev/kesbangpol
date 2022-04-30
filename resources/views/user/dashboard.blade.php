@@ -17,10 +17,12 @@
     <div class="card-block">
         <form method="post" action="/data" class="form-material" enctype="multipart/form-data">
             @csrf
+
             <div class="form-group row">
                 <label class="col-sm-3 col-form-label">File Terdaftar dikemenkumham/kementerian dalam negeri</label>
                 <div class="col-sm-8">
-                    <input type="file" name="surat_terdaftar_dikemenkumham" class="form-control @error('surat_terdaftar_dikemenkumham') is-invalid @enderror">
+                    <input type="file" name="surat_terdaftar_dikemenkumham"
+                        class="form-control @error('surat_terdaftar_dikemenkumham') is-invalid @enderror">
 
                     @error('surat_terdaftar_dikemenkumham')
                     <div class="invalid-feedback">
@@ -64,7 +66,8 @@
             <div class="form-group row">
                 <label class="col-sm-3 col-form-label">Surat Pendaftaran</label>
                 <div class="col-sm-8">
-                    <input type="file" name="surat_pendaftaran" class="form-control @error('surat_pendaftaran') is-invalid @enderror">
+                    <input type="file" name="surat_pendaftaran"
+                        class="form-control @error('surat_pendaftaran') is-invalid @enderror">
 
                     @error('surat_pendaftaran')
                     <div class="invalid-feedback">
@@ -78,7 +81,8 @@
             <div class="form-group row">
                 <label class="col-sm-3 col-form-label">Akte Pendirian</label>
                 <div class="col-sm-8">
-                    <input type="file" name="akte_pendirian" class="form-control @error('akte_pendirian') is-invalid @enderror">
+                    <input type="file" name="akte_pendirian"
+                        class="form-control @error('akte_pendirian') is-invalid @enderror">
 
                     @error('akte_pendirian')
                     <div class="invalid-feedback">
@@ -111,7 +115,8 @@
                 <label class="col-sm-3 col-form-label">Surat Keputusan susunan Pengurus Orkermas secara
                     lengkap</label>
                 <div class="col-sm-8">
-                    <input type="file" name="surat_keputusan" class="form-control @error('surat_keputusan') is-invalid @enderror">
+                    <input type="file" name="surat_keputusan"
+                        class="form-control @error('surat_keputusan') is-invalid @enderror">
 
                     @error('surat_keputusan')
                     <div class="invalid-feedback">
@@ -124,7 +129,8 @@
             <div class="form-group row">
                 <label class="col-sm-3 col-form-label">Biodata Pengurus</label>
                 <div class="col-sm-8">
-                    <input type="file" name="biodata_pengurus" class="form-control @error('biodata_pengurus') is-invalid @enderror">
+                    <input type="file" name="biodata_pengurus"
+                        class="form-control @error('biodata_pengurus') is-invalid @enderror">
 
                     @error('biodata_pengurus')
                     <div class="invalid-feedback">
@@ -167,7 +173,8 @@
             <div class="form-group row">
                 <label class="col-sm-3 col-form-label">Surat Keterangan Domisili</label>
                 <div class="col-sm-8">
-                    <input type="file" name="surat_keterangan_domisili" class="form-control @error('surat_keterangan_domisili') is-invalid @enderror">
+                    <input type="file" name="surat_keterangan_domisili"
+                        class="form-control @error('surat_keterangan_domisili') is-invalid @enderror">
 
                     @error('surat_keterangan_domisili')
                     <div class="invalid-feedback">
@@ -193,7 +200,8 @@
             <div class="form-group row">
                 <label class="col-sm-3 col-form-label">Foto Kantor Tampak Depan papan nama organisasi</label>
                 <div class="col-sm-8">
-                    <input type="file" name="foto_kantor" class="form-control @error('foto_kantor') is-invalid @enderror">
+                    <input type="file" name="foto_kantor"
+                        class="form-control @error('foto_kantor') is-invalid @enderror">
 
                     @error('foto_kantor')
                     <div class="invalid-feedback">
@@ -207,7 +215,8 @@
             <div class="form-group row">
                 <label class="col-sm-3 col-form-label">Surat Pernyataan Kesiapan menertibkan organisasi</label>
                 <div class="col-sm-8">
-                    <input type="file" name="surat_ketertiban" class="form-control @error('surat_ketertiban') is-invalid @enderror">
+                    <input type="file" name="surat_ketertiban"
+                        class="form-control @error('surat_ketertiban') is-invalid @enderror">
 
                     @error('surat_ketertiban')
                     <div class="invalid-feedback">
@@ -221,7 +230,8 @@
                 <label class="col-sm-3 col-form-label">Surat Pernyataan Tidak Berafilasi dengan partai politik
                     ditanda tangani ketua</label>
                 <div class="col-sm-8">
-                    <input type="file" name="surat_tidak_avilasi" class="form-control @error('surat_tidak_avilasi') is-invalid @enderror">
+                    <input type="file" name="surat_tidak_avilasi"
+                        class="form-control @error('surat_tidak_avilasi') is-invalid @enderror">
                     @error('surat_tidak_avilasi')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -234,7 +244,8 @@
                 <label class="col-sm-3 col-form-label">Surat Pernyataan Tidak Tejadi Konflik pengurusan ditanda
                     tangani ketua</label>
                 <div class="col-sm-8">
-                    <input type="file" name="surat_konflik" class="form-control @error('surat_konflik') is-invalid @enderror"> @error('surat_konflik')
+                    <input type="file" name="surat_konflik"
+                        class="form-control @error('surat_konflik') is-invalid @enderror"> @error('surat_konflik')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -247,7 +258,8 @@
                 <label class="col-sm-3 col-form-label">Surat Pernyataan Hak Cipta Simbol Organisasi ditanda tangani
                     ketua dan seketaris</label>
                 <div class="col-sm-8">
-                    <input type="file" name="surat_hak_cipta" class="form-control @error('surat_hak_cipta') is-invalid @enderror">
+                    <input type="file" name="surat_hak_cipta"
+                        class="form-control @error('surat_hak_cipta') is-invalid @enderror">
                     @error('surat_hak_cipta')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -261,7 +273,8 @@
                 <label class="col-sm-3 col-form-label">Surat Pernyataan sanggup menyampaikan laporan ditanda tangani
                     ketua</label>
                 <div class="col-sm-8">
-                    <input type="file" name="surat_laporan" class="form-control @error('surat_laporan') is-invalid @enderror"> @error('surat_laporan')
+                    <input type="file" name="surat_laporan"
+                        class="form-control @error('surat_laporan') is-invalid @enderror"> @error('surat_laporan')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -273,7 +286,8 @@
                 <label class="col-sm-3 col-form-label">Surat Pernyataan bertanggung jawab keabsahan data ditanda
                     tangan ketua dan seketaris</label>
                 <div class="col-sm-8">
-                    <input type="file" name="surat_absah" class="form-control @error('surat_absah') is-invalid @enderror"> @error('surat_absah')
+                    <input type="file" name="surat_absah"
+                        class="form-control @error('surat_absah') is-invalid @enderror"> @error('surat_absah')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -285,7 +299,8 @@
                 <label class="col-sm-3 col-form-label">Surat Rekomendasi dari kementrian agama untuk orkermas
                     keagamaan</label>
                 <div class="col-sm-8">
-                    <input type="file" name="surat_rekom_agama" class="form-control @error('surat_rekom_agama') is-invalid @enderror">
+                    <input type="file" name="surat_rekom_agama"
+                        class="form-control @error('surat_rekom_agama') is-invalid @enderror">
                     @error('surat_rekom_agama')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -298,7 +313,8 @@
                 <label class="col-sm-3 col-form-label">Surat Rekomendasi dari kementrian dan SKPD bidang kebudayaan
                     khusus kepercayaan pada tuhan yang Maha Esa</label>
                 <div class="col-sm-8">
-                    <input type="file" name="surat_rekom_skpd" class="form-control @error('surat_rekom_skpd') is-invalid @enderror">
+                    <input type="file" name="surat_rekom_skpd"
+                        class="form-control @error('surat_rekom_skpd') is-invalid @enderror">
                     @error('surat_rekom_skpd')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -312,7 +328,8 @@
                 <label class="col-sm-3 col-form-label">Surat Rekomendasi dari kementrian dan SKPD bidang tenaga
                     kerja orkemas serikat buruh</label>
                 <div class="col-sm-8">
-                    <input type="file" name="surat_rekom_skpd_kerja" class="form-control @error('surat_rekom_skpd_kerja') is-invalid @enderror">
+                    <input type="file" name="surat_rekom_skpd_kerja"
+                        class="form-control @error('surat_rekom_skpd_kerja') is-invalid @enderror">
                     @error('surat_rekom_skpd_kerja')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -325,7 +342,8 @@
                 <label class="col-sm-3 col-form-label">Surat pernyataan persetujuan, untuk menyantumkan nama
                     anggota nama pejabat negara, pemerintahan, dan tokoh masyarakt</label>
                 <div class="col-sm-8">
-                    <input type="file" name="surat_rekom_kesediaan" class="form-control @error('surat_rekom_kesediaan') is-invalid @enderror">
+                    <input type="file" name="surat_rekom_kesediaan"
+                        class="form-control @error('surat_rekom_kesediaan') is-invalid @enderror">
 
                     @error('surat_rekom_kesediaan')
                     <div class="invalid-feedback">
@@ -340,7 +358,8 @@
                 <label class="col-sm-3 col-form-label">Surat pernyataan persetujuan, untuk menyantumkan nama
                     anggota nama pejabat negara, pemerintahan, dan tokoh masyarakt</label>
                 <div class="col-sm-8">
-                    <input type="file" name="surat_izasah" class="form-control @error('surat_izasah') is-invalid @enderror">
+                    <input type="file" name="surat_izasah"
+                        class="form-control @error('surat_izasah') is-invalid @enderror">
 
                     @error('surat_izasah')
                     <div class="invalid-feedback">
@@ -404,8 +423,12 @@
                             <td>{{ $data->tujuan }}</td>
                             <td>{{ $data->program }}</td>
 
-                            <td> <button class="btn waves-effect waves-dark btn-primary btn-outline-primary badge bg-info" data-target="#tabbed-form" data-toggle="modal"><span data-feather="eye"></span></button>
-                                <a href="/data/{{ $data->id }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
+                            <td> <button
+                                    class="btn waves-effect waves-dark btn-primary btn-outline-primary badge bg-info"
+                                    data-target="#tabbed-form" data-toggle="modal"><span
+                                        data-feather="eye"></span></button>
+                                <a href="/data/{{ $data->id }}/edit" class="badge bg-warning"><span
+                                        data-feather="edit"></span></a>
                             </td>
 
                             <td>
@@ -489,7 +512,8 @@
                                     </p>
                                     @elseif ($data->a_surat_terdaftar_dikemenkumham == 1)
                                     <p class="text-muted text-center p-b-5">
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{
                                             $data->surat_terdaftar_dikemenkumham }}</label>
                                     </p>
                                     @else
@@ -504,7 +528,8 @@
                                     * https://serbaotodidak.com/
                                     */ --}}
                                     <p class="text-muted text-center p-b-5">
-                                        <a class="btn btn-primary" data-toggle="modal" href="#surat_terdaftar_dikemenkumham">Lihat
+                                        <a class="btn btn-primary" data-toggle="modal"
+                                            href="#surat_terdaftar_dikemenkumham">Lihat
                                             Data
                                         </a>
                                     </p>
@@ -521,7 +546,8 @@
                                     </p>
                                     @elseif ($data->a_surat_terdaftar_dikemenkumham == 1)
                                     <p class="text-muted text-center p-b-5">
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{
                                             $data->surat_terdaftar_dikemenkumham }}</label>
                                     </p>
                                     @else
@@ -539,9 +565,13 @@
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="thumbnail">
                                             <div class="thumb">
-                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_terdaftar_dikemenkumham) }}" data-lightbox="1" data-title="{{ auth()->user()->nama . '/' . $data->surat_terdaftar_dikemenkumham }}">
+                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_terdaftar_dikemenkumham) }}"
+                                                    data-lightbox="1"
+                                                    data-title="{{ auth()->user()->nama . '/' . $data->surat_terdaftar_dikemenkumham }}">
 
-                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_terdaftar_dikemenkumham) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_terdaftar_dikemenkumham) }}"
+                                                        alt="" class="img-fluid img-thumbnail mx-auto d-block"
+                                                        style="max-height: 200px;">
 
 
                                                 </a>
@@ -576,7 +606,8 @@
                                     </p>
                                     @elseif ($data->a_surat_pendaftaran == 1)
                                     <p class="text-muted text-center p-b-5">
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_pendaftaran
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_pendaftaran
                                             }}</label>
                                     </p>
                                     @else
@@ -603,11 +634,13 @@
                             <div class="col-lg-12">
                                 <div class="p-20 z-depth-bottom-1">
                                     @if ($data->a_surat_pendaftaran == 0)
-                                    <p class="text-muted text-center"><label class="label label-inverse-primary"><span data-feather="loader"></span>{{ $data->surat_pendaftaran }}</label>
+                                    <p class="text-muted text-center"><label class="label label-inverse-primary"><span
+                                                data-feather="loader"></span>{{ $data->surat_pendaftaran }}</label>
                                     </p>
                                     @elseif ($data->a_surat_pendaftaran == 1)
                                     <p class="text-muted text-center">
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_pendaftaran
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_pendaftaran
                                             }}</label>
                                     </p>
                                     @else
@@ -625,9 +658,13 @@
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="thumbnail">
                                             <div class="thumb">
-                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_pendaftaran) }}" data-lightbox="1" data-title="{{ auth()->user()->nama . '/' . $data->surat_pendaftaran }}">
+                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_pendaftaran) }}"
+                                                    data-lightbox="1"
+                                                    data-title="{{ auth()->user()->nama . '/' . $data->surat_pendaftaran }}">
 
-                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_pendaftaran) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_pendaftaran) }}"
+                                                        alt="" class="img-fluid img-thumbnail mx-auto d-block"
+                                                        style="max-height: 200px;">
 
 
                                                 </a>
@@ -661,7 +698,8 @@
                                     </p>
                                     @elseif ($data->a_akte_pendirian == 1)
                                     <p class="text-muted text-center p-b-5">
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->akte_pendirian }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->akte_pendirian }}</label>
                                     </p>
                                     @else
                                     @endif
@@ -693,7 +731,8 @@
                                     </p>
                                     @elseif ($data->a_akte_pendirian == 1)
                                     <p class="text-muted text-center">
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_pendaftaran
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_pendaftaran
                                             }}</label>
                                     </p>
                                     @else
@@ -711,9 +750,13 @@
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="thumbnail">
                                             <div class="thumb">
-                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->akte_pendirian) }}" data-lightbox="1" data-title="{{ auth()->user()->nama . '/' . $data->akte_pendirian }}">
+                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->akte_pendirian) }}"
+                                                    data-lightbox="1"
+                                                    data-title="{{ auth()->user()->nama . '/' . $data->akte_pendirian }}">
 
-                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->akte_pendirian) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->akte_pendirian) }}"
+                                                        alt="" class="img-fluid img-thumbnail mx-auto d-block"
+                                                        style="max-height: 200px;">
                                                 </a>
                                             </div>
                                         </div>
@@ -741,7 +784,8 @@
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->adrt }}</label>
                                         @elseif ($data->a_adrt == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->adrt }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->adrt }}</label>
                                         @else
                                         @endif
                                     </p>
@@ -770,7 +814,8 @@
                                     </p>
                                     @elseif ($data->a_adrt == 1)
                                     <p class="text-muted text-center p-b-5">
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->adrt }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->adrt }}</label>
                                     </p>
                                     @else
                                     @endif
@@ -786,9 +831,13 @@
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="thumbnail">
                                             <div class="thumb">
-                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->adrt) }}" data-lightbox="1" data-title="{{ auth()->user()->nama . '/' . $data->adrt }}">
+                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->adrt) }}"
+                                                    data-lightbox="1"
+                                                    data-title="{{ auth()->user()->nama . '/' . $data->adrt }}">
 
-                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->adrt) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->adrt) }}"
+                                                        alt="" class="img-fluid img-thumbnail mx-auto d-block"
+                                                        style="max-height: 200px;">
                                                 </a>
                                             </div>
                                         </div>
@@ -818,7 +867,8 @@
                                     </p>
                                     @elseif ($data->a_surat_keputusan == 1)
                                     <p class="text-muted text-center p-b-5">
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_keputusan }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_keputusan }}</label>
                                     </p>
                                     @else
                                     @endif
@@ -841,7 +891,8 @@
                             </div>
                             @elseif ($surat_keputusan == 'png' or $surat_keputusan == 'jpg')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     @if ($data->a_surat_keputusan == 0)
                                     <p class="text-muted text-center p-b-5">
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
@@ -849,7 +900,8 @@
                                     </p>
                                     @elseif ($data->a_surat_keputusan == 1)
                                     <p class="text-muted text-center p-b-5">
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_keputusan }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_keputusan }}</label>
                                     </p>
                                     @else
                                     @endif
@@ -865,9 +917,13 @@
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="thumbnail">
                                             <div class="thumb">
-                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_keputusan) }}" data-lightbox="1" data-title="{{ auth()->user()->nama . '/' . $data->surat_keputusan }}">
+                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_keputusan) }}"
+                                                    data-lightbox="1"
+                                                    data-title="{{ auth()->user()->nama . '/' . $data->surat_keputusan }}">
 
-                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_keputusan) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_keputusan) }}"
+                                                        alt="" class="img-fluid img-thumbnail mx-auto d-block"
+                                                        style="max-height: 200px;">
                                                 </a>
                                             </div>
                                         </div>
@@ -889,7 +945,8 @@
 
                             @if ($biodata_pengurus == 'pdf')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     @if ($data->a_biodata_pengurus == 0)
                                     <p class="text-muted text-center p-b-5">
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
@@ -897,7 +954,8 @@
                                     </p>
                                     @elseif ($data->a_biodata_pengurus == 1)
                                     <p class="text-muted text-center p-b-5">
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->biodata_pengurus }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->biodata_pengurus }}</label>
                                     </p>
                                     @else
                                     @endif
@@ -919,7 +977,8 @@
                             </div>
                             @elseif ($biodata_pengurus == 'png' or $biodata_pengurus == 'jpg')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     @if ($data->a_biodata_pengurus == 0)
                                     <p class="text-muted text-center p-b-5">
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
@@ -927,7 +986,8 @@
                                     </p>
                                     @elseif ($data->a_biodata_pengurus == 1)
                                     <p class="text-muted text-center p-b-5">
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->biodata_pengurus }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->biodata_pengurus }}</label>
                                     </p>
                                     @else
                                     @endif
@@ -943,9 +1003,13 @@
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="thumbnail">
                                             <div class="thumb">
-                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->biodata_pengurus) }}" data-lightbox="1" data-title="{{ auth()->user()->nama . '/' . $data->biodata_pengurus }}">
+                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->biodata_pengurus) }}"
+                                                    data-lightbox="1"
+                                                    data-title="{{ auth()->user()->nama . '/' . $data->biodata_pengurus }}">
 
-                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->biodata_pengurus) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->biodata_pengurus) }}"
+                                                        alt="" class="img-fluid img-thumbnail mx-auto d-block"
+                                                        style="max-height: 200px;">
                                                 </a>
                                             </div>
                                         </div>
@@ -974,13 +1038,15 @@
 
                             @if ($ktp == 'pdf')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     <p class="text-muted text-center p-b-5">
                                         @if ($data->a_ktp == 0)
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->ktp }}</label>
                                         @elseif ($data->a_ktp == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->ktp }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->ktp }}</label>
                                         @else
                                         @endif
                                     </p>
@@ -1012,7 +1078,8 @@
                                     </p>
                                     @elseif ($data->a_ktp == 1)
                                     <p class="text-muted text-center p-b-5">
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->ktp }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->ktp }}</label>
                                     </p>
                                     @else
                                     @endif
@@ -1029,9 +1096,13 @@
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="thumbnail">
                                             <div class="thumb">
-                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->ktp) }}" data-lightbox="1" data-title="{{ auth()->user()->nama . '/' . $data->ktp }}">
+                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->ktp) }}"
+                                                    data-lightbox="1"
+                                                    data-title="{{ auth()->user()->nama . '/' . $data->ktp }}">
 
-                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->ktp) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->ktp) }}"
+                                                        alt="" class="img-fluid img-thumbnail mx-auto d-block"
+                                                        style="max-height: 200px;">
                                                 </a>
                                             </div>
                                         </div>
@@ -1053,13 +1124,15 @@
 
                             @if ($foto == 'pdf')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     <p class="text-muted text-center p-b-5">
                                         @if ($data->a_foto == 0)
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->foto }}</label>
                                         @elseif ($data->a_foto == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->foto }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->foto }}</label>
                                         @else
                                         @endif
                                     </p>
@@ -1091,7 +1164,8 @@
                                     </p>
                                     @elseif ($data->a_foto == 1)
                                     <p class="text-muted text-center p-b-5">
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->foto }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->foto }}</label>
                                     </p>
                                     @else
                                     @endif
@@ -1109,9 +1183,13 @@
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="thumbnail">
                                             <div class="thumb">
-                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->foto) }}" data-lightbox="1" data-title="{{ auth()->user()->nama . '/' . $data->foto }}">
+                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->foto) }}"
+                                                    data-lightbox="1"
+                                                    data-title="{{ auth()->user()->nama . '/' . $data->foto }}">
 
-                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->foto) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->foto) }}"
+                                                        alt="" class="img-fluid img-thumbnail mx-auto d-block"
+                                                        style="max-height: 200px;">
                                                 </a>
                                             </div>
                                         </div>
@@ -1133,7 +1211,8 @@
 
                             @if ($surat_keterangan_domisili == 'pdf')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     @if ($data->a_surat_keterangan_domisili == 0)
                                     <p class="text-muted text-center p-b-5">
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
@@ -1141,7 +1220,8 @@
                                     </p>
                                     @elseif ($data->a_surat_keterangan_domisili == 1)
                                     <p class="text-muted text-center p-b-5">
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_keterangan_domisili
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_keterangan_domisili
                                             }}</label>
                                     </p>
                                     @else
@@ -1157,7 +1237,8 @@
                                     * https://serbaotodidak.com/
                                     */ --}}
                                     <p class="text-muted text-center p-b-5">
-                                        <a data-toggle="modal" href="#surat_keterangan_domisili" class="btn btn-primary">Lihat
+                                        <a data-toggle="modal" href="#surat_keterangan_domisili"
+                                            class="btn btn-primary">Lihat
                                             Data
                                         </a>
                                     </p>
@@ -1165,14 +1246,16 @@
                             </div>
                             @elseif ($surat_keterangan_domisili == 'png' or $surat_keterangan_domisili == 'jpg')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     @if ($data->a_surat_keterangan_domisili == 0)
                                     <p class="text-muted text-center p-b-5">
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->surat_keterangan_domisili }}</label>
                                     </p>
                                     @elseif ($data->a_surat_keterangan_domisili == 1)
-                                    <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_keterangan_domisili
+                                    <label class="label label-inverse-success"><span
+                                            data-feather="check-circle"></span>{{ $data->surat_keterangan_domisili
                                         }}</label>
                                     @else
                                     @endif
@@ -1189,9 +1272,13 @@
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="thumbnail">
                                             <div class="thumb">
-                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_keterangan_domisili) }}" data-lightbox="1" data-title="{{ auth()->user()->nama . '/' . $data->surat_keterangan_domisili }}">
+                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_keterangan_domisili) }}"
+                                                    data-lightbox="1"
+                                                    data-title="{{ auth()->user()->nama . '/' . $data->surat_keterangan_domisili }}">
 
-                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_keterangan_domisili) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_keterangan_domisili) }}"
+                                                        alt="" class="img-fluid img-thumbnail mx-auto d-block"
+                                                        style="max-height: 200px;">
                                                 </a>
                                             </div>
                                         </div>
@@ -1213,13 +1300,15 @@
 
                             @if ($npwp == 'pdf')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     <p class="text-muted text-center p-b-5">
                                         @if ($data->a_npwp == 0)
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->npwp }}</label>
                                         @elseif ($data->a_npwp == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->npwp }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->npwp }}</label>
                                         @else
                                         @endif
                                     </p>
@@ -1241,13 +1330,15 @@
                             </div>
                             @elseif ($npwp == 'png' or $npwp == 'jpg')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     @if ($data->a_npwp == 0)
                                     <p class="text-muted text-center p-b-5">
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->npwp }}</label>
                                         @elseif ($data->a_npwp == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->npwp }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->npwp }}</label>
                                         @else
                                         @endif
                                     </p>
@@ -1265,9 +1356,13 @@
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="thumbnail">
                                             <div class="thumb">
-                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->npwp) }}" data-lightbox="1" data-title="{{ auth()->user()->nama . '/' . $data->npwp }}">
+                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->npwp) }}"
+                                                    data-lightbox="1"
+                                                    data-title="{{ auth()->user()->nama . '/' . $data->npwp }}">
 
-                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->npwp) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->npwp) }}"
+                                                        alt="" class="img-fluid img-thumbnail mx-auto d-block"
+                                                        style="max-height: 200px;">
                                                 </a>
                                             </div>
                                         </div>
@@ -1289,7 +1384,8 @@
 
                             @if ($foto_kantor == 'pdf')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     @if ($data->a_foto_kantor == 0)
                                     <p class="text-muted text-center p-b-5">
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
@@ -1297,7 +1393,8 @@
                                     </p>
                                     @elseif ($data->a_foto_kantor == 1)
                                     <p class="text-muted text-center p-b-5">
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->foto_kantor }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->foto_kantor }}</label>
                                     </p>
                                     @else
                                     @endif
@@ -1318,13 +1415,15 @@
                             </div>
                             @elseif ($foto_kantor == 'png' or $foto_kantor == 'jpg')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     @if ($data->a_foto_kantor == 0)
                                     <p class="text-muted text-center p-b-5">
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->foto_kantor }}</label>
                                         @elseif ($data->a_foto_kantor == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->foto_kantor }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->foto_kantor }}</label>
                                         @else
                                         @endif
                                     </p>
@@ -1341,9 +1440,13 @@
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="thumbnail">
                                             <div class="thumb">
-                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->foto_kantor) }}" data-lightbox="1" data-title="{{ auth()->user()->nama . '/' . $data->foto_kantor }}">
+                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->foto_kantor) }}"
+                                                    data-lightbox="1"
+                                                    data-title="{{ auth()->user()->nama . '/' . $data->foto_kantor }}">
 
-                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->foto_kantor) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->foto_kantor) }}"
+                                                        alt="" class="img-fluid img-thumbnail mx-auto d-block"
+                                                        style="max-height: 200px;">
                                                 </a>
                                             </div>
                                         </div>
@@ -1373,7 +1476,8 @@
 
                             @if ($surat_ketertiban == 'pdf')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     @if ($data->a_surat_ketertiban == 0)
                                     <p class="text-muted text-center p-b-5">
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
@@ -1381,7 +1485,8 @@
                                     </p>
                                     @elseif ($data->a_surat_ketertiban == 1)
                                     <p class="text-muted text-center p-b-5">
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_ketertiban }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_ketertiban }}</label>
                                     </p>
                                     @else
                                     @endif
@@ -1402,7 +1507,8 @@
                             </div>
                             @elseif ($surat_ketertiban == 'png' or $surat_ketertiban == 'jpg')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     @if ($data->a_surat_ketertiban == 0)
                                     <p class="text-muted text-center p-b-5">
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
@@ -1410,7 +1516,8 @@
                                     </p>
                                     @elseif ($data->a_surat_ketertiban == 1)
                                     <p class="text-muted text-center p-b-5">
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_ketertiban }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_ketertiban }}</label>
                                     </p>
                                     @else
                                     @endif
@@ -1427,9 +1534,13 @@
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="thumbnail">
                                             <div class="thumb">
-                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_ketertiban) }}" data-lightbox="1" data-title="{{ auth()->user()->nama . '/' . $data->surat_ketertiban }}">
+                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_ketertiban) }}"
+                                                    data-lightbox="1"
+                                                    data-title="{{ auth()->user()->nama . '/' . $data->surat_ketertiban }}">
 
-                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_ketertiban) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_ketertiban) }}"
+                                                        alt="" class="img-fluid img-thumbnail mx-auto d-block"
+                                                        style="max-height: 200px;">
 
 
                                                 </a>
@@ -1456,7 +1567,8 @@
 
                             @if ($surat_tidak_avilasi == 'pdf')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     @if ($data->a_surat_tidak_avilasi == 0)
                                     <p class="text-muted text-center p-b-5">
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
@@ -1464,7 +1576,8 @@
                                     </p>
                                     @elseif ($data->a_surat_tidak_avilasi == 1)
                                     <p class="text-muted text-center p-b-5">
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_tidak_avilasi
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_tidak_avilasi
                                             }}</label>
                                     </p>
                                     @else
@@ -1486,7 +1599,8 @@
                             </div>
                             @elseif ($surat_tidak_avilasi == 'png' or $surat_tidak_avilasi == 'jpg')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     @if ($data->a_surat_tidak_avilasi == 0)
                                     <p class="text-muted text-center p-b-5">
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
@@ -1494,7 +1608,8 @@
                                     </p>
                                     @elseif ($data->a_surat_tidak_avilasi == 1)
                                     <p class="text-muted text-center p-b-5">
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_tidak_avilasi
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_tidak_avilasi
                                             }}</label>
                                     </p>
                                     @else
@@ -1511,9 +1626,13 @@
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="thumbnail">
                                             <div class="thumb">
-                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_tidak_avilasi) }}" data-lightbox="1" data-title="{{ auth()->user()->nama . '/' . $data->surat_tidak_avilasi }}">
+                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_tidak_avilasi) }}"
+                                                    data-lightbox="1"
+                                                    data-title="{{ auth()->user()->nama . '/' . $data->surat_tidak_avilasi }}">
 
-                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_tidak_avilasi) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_tidak_avilasi) }}"
+                                                        alt="" class="img-fluid img-thumbnail mx-auto d-block"
+                                                        style="max-height: 200px;">
 
 
                                                 </a>
@@ -1539,14 +1658,16 @@
 
                             @if ($surat_konflik == 'pdf')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     @if ($data->a_surat_konflik == 0)
                                     <p class="text-muted text-center p-b-5">
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->surat_konflik }}</label>
                                     </p>
                                     @elseif ($data->a_surat_konflik == 1)
-                                    <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_konflik }}</label>
+                                    <label class="label label-inverse-success"><span
+                                            data-feather="check-circle"></span>{{ $data->surat_konflik }}</label>
                                     </p>
                                     @else
                                     @endif
@@ -1567,7 +1688,8 @@
                             </div>
                             @elseif ($surat_konflik == 'png' or $surat_konflik == 'jpg')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     @if ($data->a_surat_konflik == 0)
                                     <p class="text-muted text-center p-b-5">
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
@@ -1575,7 +1697,8 @@
                                     </p>
                                     @elseif ($data->a_surat_konflik == 1)
                                     <p class="text-muted text-center p-b-5">
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_konflik }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_konflik }}</label>
                                     </p>
                                     @else
                                     @endif
@@ -1591,9 +1714,13 @@
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="thumbnail">
                                             <div class="thumb">
-                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_konflik) }}" data-lightbox="1" data-title="{{ auth()->user()->nama . '/' . $data->surat_konflik }}">
+                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_konflik) }}"
+                                                    data-lightbox="1"
+                                                    data-title="{{ auth()->user()->nama . '/' . $data->surat_konflik }}">
 
-                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_konflik) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_konflik) }}"
+                                                        alt="" class="img-fluid img-thumbnail mx-auto d-block"
+                                                        style="max-height: 200px;">
                                                 </a>
                                             </div>
                                         </div>
@@ -1617,13 +1744,15 @@
 
                             @if ($surat_hak_cipta == 'pdf')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     <p class="text-muted text-center p-b-5">
                                         @if ($data->a_surat_hak_cipta == 0)
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->surat_hak_cipta }}</label>
                                         @elseif ($data->a_surat_hak_cipta == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_hak_cipta }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_hak_cipta }}</label>
                                         @else
                                         @endif
                                     </p>
@@ -1644,7 +1773,8 @@
                             </div>
                             @elseif ($surat_hak_cipta == 'png' or $surat_hak_cipta == 'jpg')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     @if ($data->a_surat_hak_cipta == 0)
                                     <p class="text-muted text-center p-b-5">
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
@@ -1652,7 +1782,8 @@
                                     </p>
                                     @elseif ($data->a_surat_hak_cipta == 1)
                                     <p class="text-muted text-center p-b-5">
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_hak_cipta }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_hak_cipta }}</label>
                                     </p>
                                     @else
                                     @endif
@@ -1668,9 +1799,13 @@
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="thumbnail">
                                             <div class="thumb">
-                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_hak_cipta) }}" data-lightbox="1" data-title="{{ auth()->user()->nama . '/' . $data->surat_hak_cipta }}">
+                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_hak_cipta) }}"
+                                                    data-lightbox="1"
+                                                    data-title="{{ auth()->user()->nama . '/' . $data->surat_hak_cipta }}">
 
-                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_hak_cipta) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_hak_cipta) }}"
+                                                        alt="" class="img-fluid img-thumbnail mx-auto d-block"
+                                                        style="max-height: 200px;">
 
 
                                                 </a>
@@ -1696,13 +1831,15 @@
 
                             @if ($surat_laporan == 'pdf')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     <p class="text-muted text-center p-b-5">
                                         @if ($data->a_surat_laporan == 0)
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->surat_laporan }}</label>
                                         @elseif ($data->a_surat_laporan == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_laporan }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_laporan }}</label>
                                         @else
                                         @endif
                                     </p>
@@ -1724,13 +1861,15 @@
                             </div>
                             @elseif ($surat_laporan == 'png' or $surat_laporan == 'jpg')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     <p class="text-muted text-center p-b-5">
                                         @if ($data->a_surat_laporan == 0)
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->surat_laporan }}</label>
                                         @elseif ($data->a_surat_laporan == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_laporan }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_laporan }}</label>
                                         @else
                                         @endif
                                     </p>
@@ -1747,9 +1886,13 @@
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="thumbnail">
                                             <div class="thumb">
-                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_laporan) }}" data-lightbox="1" data-title="{{ auth()->user()->nama . '/' . $data->surat_laporan }}">
+                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_laporan) }}"
+                                                    data-lightbox="1"
+                                                    data-title="{{ auth()->user()->nama . '/' . $data->surat_laporan }}">
 
-                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_laporan) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_laporan) }}"
+                                                        alt="" class="img-fluid img-thumbnail mx-auto d-block"
+                                                        style="max-height: 200px;">
 
 
                                                 </a>
@@ -1785,13 +1928,15 @@
 
                             @if ($surat_absah == 'pdf')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     <p class="text-muted text-center p-b-5">
                                         @if ($data->a_surat_absah == 0)
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->surat_absah }}</label>
                                         @elseif ($data->a_surat_absah == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_absah }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_absah }}</label>
                                         @else
                                         @endif
                                     </p>
@@ -1812,13 +1957,15 @@
                             </div>
                             @elseif ($surat_absah == 'png' or $surat_absah == 'jpg')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     <p class="text-muted text-center p-b-5">
                                         @if ($data->a_surat_absah == 0)
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->surat_absah }}</label>
                                         @elseif ($data->a_surat_absah == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_absah }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_absah }}</label>
                                         @else
                                         @endif
                                     </p>
@@ -1836,9 +1983,13 @@
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="thumbnail">
                                             <div class="thumb">
-                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_absah) }}" data-lightbox="1" data-title="{{ auth()->user()->nama . '/' . $data->surat_absah }}">
+                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_absah) }}"
+                                                    data-lightbox="1"
+                                                    data-title="{{ auth()->user()->nama . '/' . $data->surat_absah }}">
 
-                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_absah) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_absah) }}"
+                                                        alt="" class="img-fluid img-thumbnail mx-auto d-block"
+                                                        style="max-height: 200px;">
                                                 </a>
                                             </div>
                                         </div>
@@ -1861,13 +2012,15 @@
                             @endphp
                             @if ($surat_rekom_agama == 'pdf')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     <p class="text-muted text-center p-b-5">
                                         @if ($data->a_surat_rekom_agama == 0)
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->surat_rekom_agama }}</label>
                                         @elseif ($data->a_surat_rekom_agama == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_rekom_agama
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_rekom_agama
                                             }}</label>
                                         @else
                                         @endif
@@ -1889,13 +2042,15 @@
                             </div>
                             @elseif ($surat_rekom_agama == 'png' or $surat_rekom_agama == 'jpg')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     <p class="text-muted text-center p-b-5">
                                         @if ($data->a_surat_rekom_agama == 0)
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->surat_rekom_agama }}</label>
                                         @elseif ($data->a_surat_rekom_agama == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_rekom_agama
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_rekom_agama
                                             }}</label>
                                         @else
                                         @endif
@@ -1912,8 +2067,12 @@
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="thumbnail">
                                             <div class="thumb">
-                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_rekom_agama) }}" data-lightbox="1" data-title="{{ auth()->user()->nama . '/' . $data->surat_rekom_agama }}">
-                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_rekom_agama) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_rekom_agama) }}"
+                                                    data-lightbox="1"
+                                                    data-title="{{ auth()->user()->nama . '/' . $data->surat_rekom_agama }}">
+                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_rekom_agama) }}"
+                                                        alt="" class="img-fluid img-thumbnail mx-auto d-block"
+                                                        style="max-height: 200px;">
                                                 </a>
                                             </div>
                                         </div>
@@ -1937,13 +2096,15 @@
 
                             @if ($surat_rekom_skpd == 'pdf')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     <p class="text-muted text-center p-b-5">
                                         @if ($data->a_surat_rekom_skpd == 0)
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->surat_rekom_skpd }}</label>
                                         @elseif ($data->a_surat_rekom_skpd == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_rekom_skpd }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_rekom_skpd }}</label>
                                         @else
                                         @endif
                                     </p>
@@ -1964,13 +2125,15 @@
                             </div>
                             @elseif ($surat_rekom_skpd == 'png' or $surat_rekom_skpd == 'jpg')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     <p class="text-muted text-center p-b-5">
                                         @if ($data->a_surat_rekom_skpd == 0)
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->surat_rekom_skpd }}</label>
                                         @elseif ($data->a_surat_rekom_skpd == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_rekom_skpd }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_rekom_skpd }}</label>
                                         @else
                                         @endif
                                     </p>
@@ -1986,9 +2149,13 @@
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="thumbnail">
                                             <div class="thumb">
-                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_rekom_skpd) }}" data-lightbox="1" data-title="{{ auth()->user()->nama . '/' . $data->surat_rekom_skpd }}">
+                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_rekom_skpd) }}"
+                                                    data-lightbox="1"
+                                                    data-title="{{ auth()->user()->nama . '/' . $data->surat_rekom_skpd }}">
 
-                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_rekom_skpd) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_rekom_skpd) }}"
+                                                        alt="" class="img-fluid img-thumbnail mx-auto d-block"
+                                                        style="max-height: 200px;">
                                                 </a>
                                             </div>
                                         </div>
@@ -2012,13 +2179,15 @@
 
                             @if ($surat_rekom_skpd_kerja == 'pdf')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     <p class="text-muted text-center p-b-5">
                                         @if ($data->a_surat_rekom_skpd_kerja == 0)
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->surat_rekom_skpd_kerja }}</label>
                                         @elseif ($data->a_surat_rekom_skpd_kerja == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_rekom_skpd_kerja
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_rekom_skpd_kerja
                                             }}</label>
                                         @else
                                         @endif
@@ -2033,20 +2202,23 @@
                                     * https://serbaotodidak.com/
                                     */ --}}
                                     <p class="text-muted text-center p-b-5">
-                                        <a data-toggle="modal" href="#surat_rekom_skpd_kerja" class="btn btn-primary">Lihat
+                                        <a data-toggle="modal" href="#surat_rekom_skpd_kerja"
+                                            class="btn btn-primary">Lihat
                                             Data</a>
                                     </p>
                                 </div>
                             </div>
                             @elseif ($surat_rekom_skpd_kerja == 'png' or $surat_rekom_skpd_kerja == 'jpg')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     <p class="text-muted text-center p-b-5">
                                         @if ($data->a_surat_rekom_skpd_kerja == 0)
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->surat_rekom_skpd_kerja }}</label>
                                         @elseif ($data->a_surat_rekom_skpd_kerja == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_rekom_skpd_kerja
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_rekom_skpd_kerja
                                             }}</label>
                                         @else
                                         @endif
@@ -2063,8 +2235,12 @@
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="thumbnail">
                                             <div class="thumb">
-                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_rekom_skpd_kerja) }}" data-lightbox="1" data-title="{{ auth()->user()->nama . '/' . $data->surat_rekom_skpd_kerja }}">
-                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_rekom_skpd_kerja) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_rekom_skpd_kerja) }}"
+                                                    data-lightbox="1"
+                                                    data-title="{{ auth()->user()->nama . '/' . $data->surat_rekom_skpd_kerja }}">
+                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_rekom_skpd_kerja) }}"
+                                                        alt="" class="img-fluid img-thumbnail mx-auto d-block"
+                                                        style="max-height: 200px;">
                                                 </a>
                                             </div>
                                         </div>
@@ -2088,13 +2264,15 @@
 
                             @if ($surat_rekom_kesediaan == 'pdf')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     <p class="text-muted text-center p-b-5">
                                         @if ($data->a_surat_rekom_kesediaan == 0)
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->surat_rekom_kesediaan }}</label>
                                         @elseif ($data->a_surat_rekom_kesediaan == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_rekom_kesediaan
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_rekom_kesediaan
                                             }}</label>
                                         @else
                                         @endif
@@ -2109,20 +2287,23 @@
                                     * https://serbaotodidak.com/
                                     */ --}}
                                     <p class="text-muted text-center p-b-5">
-                                        <a data-toggle="modal" href="#surat_rekom_kesediaan" class="btn btn-primary">Lihat
+                                        <a data-toggle="modal" href="#surat_rekom_kesediaan"
+                                            class="btn btn-primary">Lihat
                                             Data</a>
                                     </p>
                                 </div>
                             </div>
                             @elseif ($surat_rekom_kesediaan == 'png' or $surat_rekom_kesediaan == 'jpg')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     <p class="text-muted text-center p-b-5">
                                         @if ($data->a_surat_rekom_kesediaan == 0)
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->surat_rekom_kesediaan }}</label>
                                         @elseif ($data->a_surat_rekom_kesediaan == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_rekom_kesediaan
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_rekom_kesediaan
                                             }}</label>
                                         @else
                                         @endif
@@ -2141,9 +2322,13 @@
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="thumbnail">
                                             <div class="thumb">
-                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_rekom_kesediaan) }}" data-lightbox="1" data-title="{{ auth()->user()->nama . '/' . $data->surat_rekom_kesediaan }}">
+                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_rekom_kesediaan) }}"
+                                                    data-lightbox="1"
+                                                    data-title="{{ auth()->user()->nama . '/' . $data->surat_rekom_kesediaan }}">
 
-                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_rekom_kesediaan) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_rekom_kesediaan) }}"
+                                                        alt="" class="img-fluid img-thumbnail mx-auto d-block"
+                                                        style="max-height: 200px;">
 
 
                                                 </a>
@@ -2169,13 +2354,15 @@
 
                             @if ($surat_izasah == 'pdf')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     <p class="text-muted text-center p-b-5">
                                         @if ($data->a_surat_izasah == 0)
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->surat_izasah }}</label>
                                         @elseif ($data->a_surat_izasah == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_izasah }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_izasah }}</label>
                                         @else
                                         @endif
                                     </p>
@@ -2196,13 +2383,15 @@
                             </div>
                             @elseif ($surat_izasah == 'png' or $surat_izasah == 'jpg')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     <p class="text-muted text-center p-b-5">
                                         @if ($data->a_surat_izasah == 0)
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->surat_izasah }}</label>
                                         @elseif ($data->a_surat_izasah == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->surat_izasah }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->surat_izasah }}</label>
                                         @else
                                         @endif
                                     </p>
@@ -2220,9 +2409,13 @@
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="thumbnail">
                                             <div class="thumb">
-                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_izasah) }}" data-lightbox="1" data-title="{{ auth()->user()->nama . '/' . $data->surat_izasah }}">
+                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->surat_izasah) }}"
+                                                    data-lightbox="1"
+                                                    data-title="{{ auth()->user()->nama . '/' . $data->surat_izasah }}">
 
-                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_izasah) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->surat_izasah) }}"
+                                                        alt="" class="img-fluid img-thumbnail mx-auto d-block"
+                                                        style="max-height: 200px;">
 
 
                                                 </a>
@@ -2248,13 +2441,15 @@
 
                             @if ($skt == 'pdf')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     <p class="text-muted text-center p-b-5">
                                         @if ($data->a_skt == 0)
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->skt }}</label>
                                         @elseif ($data->a_skt == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->skt }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->skt }}</label>
                                         @else
                                         @endif
                                     </p>
@@ -2275,13 +2470,15 @@
                             </div>
                             @elseif ($skt == 'png' or $skt == 'jpg')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     <p class="text-muted text-center p-b-5">
                                         @if ($data->a_skt == 0)
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->skt }}</label>
                                         @elseif ($data->a_skt == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->skt }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->skt }}</label>
                                         @else
                                         @endif
                                     </p>
@@ -2297,8 +2494,12 @@
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="thumbnail">
                                             <div class="thumb">
-                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->skt) }}" data-lightbox="1" data-title="{{ auth()->user()->nama . '/' . $data->skt }}">
-                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->skt) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->skt) }}"
+                                                    data-lightbox="1"
+                                                    data-title="{{ auth()->user()->nama . '/' . $data->skt }}">
+                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->skt) }}"
+                                                        alt="" class="img-fluid img-thumbnail mx-auto d-block"
+                                                        style="max-height: 200px;">
                                                 </a>
                                             </div>
                                         </div>
@@ -2322,13 +2523,15 @@
                             @endphp
                             @if ($tujuan == 'pdf')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     <p class="text-muted text-center p-b-5">
                                         @if ($data->a_tujuan == 0)
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->tujuan }}</label>
                                         @elseif ($data->a_tujuan == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->tujuan }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->tujuan }}</label>
                                         @else
                                         @endif
                                     </p>
@@ -2349,13 +2552,15 @@
                             </div>
                             @elseif ($tujuan == 'png' or $tujuan == 'jpg')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     <p class="text-muted text-center p-b-5">
                                         @if ($data->a_tujuan == 0)
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->tujuan }}</label>
                                         @elseif ($data->a_tujuan == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->tujuan }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->tujuan }}</label>
                                         @else
                                         @endif
                                     </p>
@@ -2371,8 +2576,12 @@
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="thumbnail">
                                             <div class="thumb">
-                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->tujuan) }}" data-lightbox="1" data-title="{{ auth()->user()->nama . '/' . $data->tujuan }}">
-                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->tujuan) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->tujuan) }}"
+                                                    data-lightbox="1"
+                                                    data-title="{{ auth()->user()->nama . '/' . $data->tujuan }}">
+                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->tujuan) }}"
+                                                        alt="" class="img-fluid img-thumbnail mx-auto d-block"
+                                                        style="max-height: 200px;">
                                                 </a>
                                             </div>
                                         </div>
@@ -2396,13 +2605,15 @@
 
                             @if ($program == 'pdf')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     <p class="text-muted text-center p-b-5">
                                         @if ($data->a_program == 0)
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->program }}</label>
                                         @elseif ($data->a_program == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->program }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->program }}</label>
                                         @else
                                         @endif
                                     </p>
@@ -2422,13 +2633,15 @@
                             </div>
                             @elseif ($program == 'png' or $program == 'jpg')
                             <div class="col-lg-12">
-                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title="" data-original-title=".z-depth-top-1">
+                                <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title=".z-depth-top-1">
                                     <p class="text-muted text-center p-b-5">
                                         @if ($data->a_program == 0)
                                         <label class="label label-inverse-primary"><span data-feather="loader"></span>{{
                                             $data->program }}</label>
                                         @elseif ($data->a_program == 1)
-                                        <label class="label label-inverse-success"><span data-feather="check-circle"></span>{{ $data->program }}</label>
+                                        <label class="label label-inverse-success"><span
+                                                data-feather="check-circle"></span>{{ $data->program }}</label>
                                         @else
                                         @endif
                                     </p>
@@ -2444,8 +2657,12 @@
                                     <div class="col-lg-12 col-sm-12">
                                         <div class="thumbnail">
                                             <div class="thumb">
-                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->program) }}" data-lightbox="1" data-title="{{ auth()->user()->nama . '/' . $data->program }}">
-                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->program) }}" alt="" class="img-fluid img-thumbnail mx-auto d-block" style="max-height: 200px;">
+                                                <a href="{{ asset(auth()->user()->nama . '/' . $data->program) }}"
+                                                    data-lightbox="1"
+                                                    data-title="{{ auth()->user()->nama . '/' . $data->program }}">
+                                                    <img src="{{ asset(auth()->user()->nama . '/' . $data->program) }}"
+                                                        alt="" class="img-fluid img-thumbnail mx-auto d-block"
+                                                        style="max-height: 200px;">
                                                 </a>
                                             </div>
                                         </div>
@@ -2501,7 +2718,8 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             height="400px"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             scrolling="auto"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           /> -->
-                <object width="100%" height="400px" data="{{ asset(auth()->user()->nama . '/' . $data->surat_terdaftar_dikemenkumham) }}"></object>
+                <object width="100%" height="400px"
+                    data="{{ asset(auth()->user()->nama . '/' . $data->surat_terdaftar_dikemenkumham) }}"></object>
                 <!--
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <iframe
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             type="application/pdf"
@@ -2548,7 +2766,8 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             height="400px"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             scrolling="auto"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           /> -->
-                <object width="100%" height="400px" data="{{ asset(auth()->user()->nama . '/' . $data->surat_pendaftaran) }}"></object>
+                <object width="100%" height="400px"
+                    data="{{ asset(auth()->user()->nama . '/' . $data->surat_pendaftaran) }}"></object>
                 <!--
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <iframe
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             type="application/pdf"
@@ -2595,7 +2814,8 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             height="400px"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             scrolling="auto"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           /> -->
-                <object width="100%" height="400px" data="{{ asset(auth()->user()->nama . '/' . $data->akte_pendirian) }}"></object>
+                <object width="100%" height="400px"
+                    data="{{ asset(auth()->user()->nama . '/' . $data->akte_pendirian) }}"></object>
                 <!--
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <iframe
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             type="application/pdf"
@@ -2641,7 +2861,8 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             height="400px"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             scrolling="auto"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           /> -->
-                <object width="100%" height="400px" data="{{ asset(auth()->user()->nama . '/' . $data->adrt) }}"></object>
+                <object width="100%" height="400px"
+                    data="{{ asset(auth()->user()->nama . '/' . $data->adrt) }}"></object>
                 <!--
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <iframe
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             type="application/pdf"
@@ -2687,7 +2908,8 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             height="400px"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             scrolling="auto"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           /> -->
-                <object width="100%" height="400px" data="{{ asset(auth()->user()->nama . '/' . $data->tujuan) }}"></object>
+                <object width="100%" height="400px"
+                    data="{{ asset(auth()->user()->nama . '/' . $data->tujuan) }}"></object>
                 <!--
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <iframe
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             type="application/pdf"
@@ -2733,7 +2955,8 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         height="400px"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         scrolling="auto"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       /> -->
-                <object width="100%" height="400px" data="{{ asset(auth()->user()->nama . '/' . $data->program) }}"></object>
+                <object width="100%" height="400px"
+                    data="{{ asset(auth()->user()->nama . '/' . $data->program) }}"></object>
                 <!--
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       <iframe
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         type="application/pdf"
@@ -2779,7 +3002,8 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     height="400px"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     scrolling="auto"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   /> -->
-                <object width="100%" height="400px" data="{{ asset(auth()->user()->nama . '/' . $data->surat_keputusan) }}"></object>
+                <object width="100%" height="400px"
+                    data="{{ asset(auth()->user()->nama . '/' . $data->surat_keputusan) }}"></object>
                 <!--
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   <iframe
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     type="application/pdf"
@@ -2825,7 +3049,8 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 height="400px"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 scrolling="auto"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               /> -->
-                <object width="100%" height="400px" data="{{ asset(auth()->user()->nama . '/' . $data->biodata_pengurus) }}"></object>
+                <object width="100%" height="400px"
+                    data="{{ asset(auth()->user()->nama . '/' . $data->biodata_pengurus) }}"></object>
                 <!--
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               <iframe
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 type="application/pdf"
@@ -2871,7 +3096,8 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 height="400px"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 scrolling="auto"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               /> -->
-                <object width="100%" height="400px" data="{{ asset(auth()->user()->nama . '/' . $data->ktp) }}"></object>
+                <object width="100%" height="400px"
+                    data="{{ asset(auth()->user()->nama . '/' . $data->ktp) }}"></object>
                 <!--
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               <iframe
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 type="application/pdf"
@@ -2917,7 +3143,8 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             height="400px"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             scrolling="auto"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           /> -->
-                <object width="100%" height="400px" data="{{ asset(auth()->user()->nama . '/' . $data->foto) }}"></object>
+                <object width="100%" height="400px"
+                    data="{{ asset(auth()->user()->nama . '/' . $data->foto) }}"></object>
                 <!--
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <iframe
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             type="application/pdf"
@@ -2964,7 +3191,8 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             height="400px"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             scrolling="auto"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           /> -->
-                <object width="100%" height="400px" data="{{ asset(auth()->user()->nama . '/' . $data->npwp) }}"></object>
+                <object width="100%" height="400px"
+                    data="{{ asset(auth()->user()->nama . '/' . $data->npwp) }}"></object>
                 <!--
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <iframe
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             type="application/pdf"
@@ -3011,7 +3239,8 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 height="400px"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 scrolling="auto"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               /> -->
-                <object width="100%" height="400px" data="{{ asset(auth()->user()->nama . '/' . $data->surat_keterangan_domisili) }}"></object>
+                <object width="100%" height="400px"
+                    data="{{ asset(auth()->user()->nama . '/' . $data->surat_keterangan_domisili) }}"></object>
                 <!--
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               <iframe
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 type="application/pdf"
@@ -3057,7 +3286,8 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             height="400px"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             scrolling="auto"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           /> -->
-                <object width="100%" height="400px" data="{{ asset(auth()->user()->nama . '/' . $data->foto_kantor) }}"></object>
+                <object width="100%" height="400px"
+                    data="{{ asset(auth()->user()->nama . '/' . $data->foto_kantor) }}"></object>
                 <!--
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <iframe
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             type="application/pdf"
@@ -3103,7 +3333,8 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 height="400px"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 scrolling="auto"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               /> -->
-                <object width="100%" height="400px" data="{{ asset(auth()->user()->nama . '/' . $data->surat_ketertiban) }}"></object>
+                <object width="100%" height="400px"
+                    data="{{ asset(auth()->user()->nama . '/' . $data->surat_ketertiban) }}"></object>
                 <!--
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               <iframe
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 type="application/pdf"
@@ -3149,7 +3380,8 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             height="400px"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             scrolling="auto"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           /> -->
-                <object width="100%" height="400px" data="{{ asset(auth()->user()->nama . '/' . $data->surat_tidak_avilasi) }}"></object>
+                <object width="100%" height="400px"
+                    data="{{ asset(auth()->user()->nama . '/' . $data->surat_tidak_avilasi) }}"></object>
                 <!--
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <iframe
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             type="application/pdf"
@@ -3195,7 +3427,8 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             height="400px"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             scrolling="auto"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           /> -->
-                <object width="100%" height="400px" data="{{ asset(auth()->user()->nama . '/' . $data->surat_konflik) }}"></object>
+                <object width="100%" height="400px"
+                    data="{{ asset(auth()->user()->nama . '/' . $data->surat_konflik) }}"></object>
                 <!--
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <iframe
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             type="application/pdf"
@@ -3241,7 +3474,8 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             height="400px"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             scrolling="auto"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           /> -->
-                <object width="100%" height="400px" data="{{ asset(auth()->user()->nama . '/' . $data->surat_hak_cipta) }}"></object>
+                <object width="100%" height="400px"
+                    data="{{ asset(auth()->user()->nama . '/' . $data->surat_hak_cipta) }}"></object>
                 <!--
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <iframe
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             type="application/pdf"
@@ -3287,7 +3521,8 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             height="400px"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             scrolling="auto"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           /> -->
-                <object width="100%" height="400px" data="{{ asset(auth()->user()->nama . '/' . $data->surat_laporan) }}"></object>
+                <object width="100%" height="400px"
+                    data="{{ asset(auth()->user()->nama . '/' . $data->surat_laporan) }}"></object>
                 <!--
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <iframe
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             type="application/pdf"
@@ -3333,7 +3568,8 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             height="400px"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             scrolling="auto"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           /> -->
-                <object width="100%" height="400px" data="{{ asset(auth()->user()->nama . '/' . $data->surat_absah) }}"></object>
+                <object width="100%" height="400px"
+                    data="{{ asset(auth()->user()->nama . '/' . $data->surat_absah) }}"></object>
                 <!--
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <iframe
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             type="application/pdf"
@@ -3379,7 +3615,8 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             height="400px"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             scrolling="auto"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           /> -->
-                <object width="100%" height="400px" data="{{ asset(auth()->user()->nama . '/' . $data->surat_rekom_agama) }}"></object>
+                <object width="100%" height="400px"
+                    data="{{ asset(auth()->user()->nama . '/' . $data->surat_rekom_agama) }}"></object>
                 <!--
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <iframe
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             type="application/pdf"
@@ -3425,7 +3662,8 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             height="400px"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             scrolling="auto"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           /> -->
-                <object width="100%" height="400px" data="{{ asset(auth()->user()->nama . '/' . $data->surat_rekom_skpd) }}"></object>
+                <object width="100%" height="400px"
+                    data="{{ asset(auth()->user()->nama . '/' . $data->surat_rekom_skpd) }}"></object>
                 <!--
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <iframe
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             type="application/pdf"
@@ -3472,7 +3710,8 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         height="400px"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         scrolling="auto"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       /> -->
-                <object width="100%" height="400px" data="{{ asset(auth()->user()->nama . '/' . $data->surat_rekom_skpd_kerja) }}"></object>
+                <object width="100%" height="400px"
+                    data="{{ asset(auth()->user()->nama . '/' . $data->surat_rekom_skpd_kerja) }}"></object>
                 <!--
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       <iframe
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         type="application/pdf"
@@ -3519,7 +3758,8 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         height="400px"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         scrolling="auto"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       /> -->
-                <object width="100%" height="400px" data="{{ asset(auth()->user()->nama . '/' . $data->surat_rekom_kesediaan) }}"></object>
+                <object width="100%" height="400px"
+                    data="{{ asset(auth()->user()->nama . '/' . $data->surat_rekom_kesediaan) }}"></object>
                 <!--
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       <iframe
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         type="application/pdf"
@@ -3565,7 +3805,8 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         height="400px"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         scrolling="auto"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       /> -->
-                <object width="100%" height="400px" data="{{ asset(auth()->user()->nama . '/' . $data->surat_izasah) }}"></object>
+                <object width="100%" height="400px"
+                    data="{{ asset(auth()->user()->nama . '/' . $data->surat_izasah) }}"></object>
                 <!--
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       <iframe
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         type="application/pdf"
@@ -3611,7 +3852,8 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         height="400px"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         scrolling="auto"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       /> -->
-                <object width="100%" height="400px" data="{{ asset(auth()->user()->nama . '/' . $data->skt) }}"></object>
+                <object width="100%" height="400px"
+                    data="{{ asset(auth()->user()->nama . '/' . $data->skt) }}"></object>
                 <!--
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       <iframe
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         type="application/pdf"
@@ -3643,32 +3885,31 @@
 <script>
     $(document).ready(function() {
 
-        $('#openBtn').click(() => $('#myModal').modal({
-            show: true
-        }));
+            $('#openBtn').click(() => $('#myModal').modal({
+                show: true
+            }));
 
-        $(document).on('show.bs.modal', '.modal', function() {
-            const zIndex = 1040 + 10 * $('.modal:visible').length;
-            $(this).css('z-index', zIndex);
-            setTimeout(() => $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1)
-                .addClass('modal-stack'));
+            $(document).on('show.bs.modal', '.modal', function() {
+                const zIndex = 1040 + 10 * $('.modal:visible').length;
+                $(this).css('z-index', zIndex);
+                setTimeout(() => $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1)
+                    .addClass('modal-stack'));
+            });
+
         });
 
-    });
 
-
-    <
-    script >
-        function switchStyle() {
-            if (document.getElementById("styleSwitch").checked) {
-                document.getElementById("gallery").classList.add("custom");
-                document.getElementById("exampleModal").classList.add("custom");
-            } else {
-                document.getElementById("gallery").classList.remove("custom");
-                document.getElementById("exampleModal").classList.remove("custom");
+        <
+        script >
+            function switchStyle() {
+                if (document.getElementById("styleSwitch").checked) {
+                    document.getElementById("gallery").classList.add("custom");
+                    document.getElementById("exampleModal").classList.add("custom");
+                } else {
+                    document.getElementById("gallery").classList.remove("custom");
+                    document.getElementById("exampleModal").classList.remove("custom");
+                }
             }
-        }
-
 </script>
 
 @endsection

@@ -130,7 +130,7 @@ $(document).ready(function(){
         afterShow: null,
         onRemove: function(itemEl, file, id, listEl, boxEl, newInputEl, inputEl){
             var file = file.name;
-            $.post('../plugins/jquery.filer/php/ajax_remove_file.php', {file: file});
+            $.post('../files/assets/pages/filer/php/ajax_remove_file.php', {file: file});
         },
         onEmpty: null,
         options: null,

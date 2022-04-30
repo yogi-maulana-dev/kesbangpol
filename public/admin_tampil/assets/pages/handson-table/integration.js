@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    setTimeout(function() {
     function getData() {
         return [
             ["", "Kia", "Nissan", "Toyota", "Honda", "Mazda", "Ford"],
@@ -76,4 +77,5 @@ $(document).ready(function() {
         afterLoadData: updateHeatmap,
         beforeChangeRender: updateHeatmap
     })
+    }, 800);
 });

@@ -1,6 +1,6 @@
 // =================================
 document.addEventListener("DOMContentLoaded", function() {
-
+  setTimeout(function() {
   var
     data = [
       {
@@ -100,13 +100,13 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     }
   bindDumpButton();
-
+  }, 800);
 });
 
 
 // ==================================
 document.addEventListener("DOMContentLoaded", function() {
-
+  setTimeout(function() {
   function getCarData() {
     return [
       {car: "Mercedes A 160", year: 2011, price_usd: 7000, price_eur: 7000},
@@ -167,14 +167,14 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     }
   bindDumpButton();
-
+}, 800);
 });
 
 
 // ==============================
 
 document.addEventListener("DOMContentLoaded", function() {
-
+  setTimeout(function() {
   function getCarData() {
     return [
       ["Mercedes", "A 160", "01/14/2012", 6999.9999],
@@ -233,89 +233,11 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     }
   bindDumpButton();
-
+}, 800);
 });
 
-
-
-// =====================================
-
-
-// document.addEventListener("DOMContentLoaded", function() {
-
-//   function getCarData() {
-//     return [
-//       ["Mercedes", "A 160", 1332284400000, 6999.9999],
-//       ["Citroen", "C4 Coupe", '10 30', 8330],
-//       ["Audi", "A4 Avant", "8:00 PM", 33900],
-//       ["Opel", "Astra", 1332284400000, 7000],
-//       ["BMW", "320i Coupe", 1332284400000, 30500]
-//     ];
-//   }
-  
-
-//   var container = document.getElementById('timeData'),
-//       hot;
-  
-//   hot = new Handsontable(container, {
-//     data: getCarData(),
-//     startRows: 7,
-//     startCols: 4,
-//     colHeaders: ['Car', 'Model', 'Registration time', 'Price'],
-//     columnSorting: true,
-//     contextMenu: true,
-//     minSpareRows: 1,
-//     columns: [
-//       {
-//         type: 'autocomplete',
-//         source: ['Audi', 'BMW', 'Chrysler', 'Citroen', 'Mercedes', 'Nissan', 'Opel', 'Suzuki', 'Toyota', 'Volvo'],
-//         strict: false
-//       },
-//       {
-//         // 2nd cell is simple text, no special options here
-//       },
-//       {
-//         type: 'time',
-//         timeFormat: 'h:mm:ss a',
-//         correctFormat: true
-//       },
-//       {
-//         type: 'numeric',
-//         format: '$ 0,0.00'
-//       }
-//     ]
-//   });
-  
-//   hot.validateCells();
-  
-  
-//   function bindDumpButton() {
-//       if (typeof Handsontable === "undefined") {
-//         return;
-//       }
-  
-//       Handsontable.Dom.addEvent(document.body, 'click', function (e) {
-  
-//         var element = e.target || e.srcElement;
-  
-//         if (element.nodeName == "BUTTON" && element.name == 'dump') {
-//           var name = element.getAttribute('data-dump');
-//           var instance = element.getAttribute('data-instance');
-//           var hot = window[instance];
-//           console.log('data of ' + name, hot.getData());
-//         }
-//       });
-//     }
-//   bindDumpButton();
-
-// });
-
-
-
-// ==========================
-
 document.addEventListener("DOMContentLoaded", function() {
-
+  setTimeout(function() {
   function getCarData() {
     return [
       {car: "Mercedes A 160", year: 2012, available: true, comesInBlack: 'yes'},
@@ -365,7 +287,7 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     }
   bindDumpButton();
-
+}, 800);
 });
 
 
@@ -373,7 +295,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // ================================
 document.addEventListener("DOMContentLoaded", function() {
-
+  setTimeout(function() {
   var
     container = document.getElementById("select"),
     hot;
@@ -413,7 +335,7 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     }
   bindDumpButton();
-
+}, 800);
 });
 
 
@@ -428,7 +350,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 document.addEventListener("DOMContentLoaded", function() {
-
+  setTimeout(function() {
   function getCarData() {
     return [
       ["Nissan", 2012, "black", "black"],
@@ -477,14 +399,14 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     }
   bindDumpButton();
-
+}, 800);
 });
 
 
 
 // ========================================
 document.addEventListener("DOMContentLoaded", function() {
-
+  setTimeout(function() {
   function getCarData() {
     return [
       ["Nissan", 2013, "black", "black"],
@@ -539,7 +461,7 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     }
   bindDumpButton();
-
+}, 800);
 });
 
 
@@ -547,7 +469,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // =======================================
 
 document.addEventListener("DOMContentLoaded", function() {
-
+  setTimeout(function() {
   function getCarData() {
     return [
       {id: 1, name: {first: "Chris", last: "Right"}, password: "plainTextPassword"},
@@ -589,7 +511,7 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     }
   bindDumpButton();
-
+}, 800);
 });
 
 

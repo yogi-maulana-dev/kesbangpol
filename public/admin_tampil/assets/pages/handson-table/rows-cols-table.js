@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(function(){
+        setTimeout(function() {
+
     var hot1, example=document.getElementById("scrolling");
     hot1=new Handsontable(example, {
         data: Handsontable.helper.createSpreadsheetData(100, 100), height: 400, colWidths: 50, rowHeights: 32, rowHeaders: !0, colHeaders: !0
@@ -20,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
         data: Handsontable.helper.createSpreadsheetData(100, 20), rowHeaders: !0, colHeaders: !0, manualColumnMove: !0, manualRowMove: !0
     }
     )
-},50);
-}
 
+        }, 800);
+}
 );

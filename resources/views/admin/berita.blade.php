@@ -84,9 +84,13 @@
                                 <span class="form-bar"></span>
                             </div>
 
-                            <div class="form-group form-primary text-white">
+                            <div class="form-group text-white">
                                 <h4 class="sub-title">Loading With Array</h4>
-                                <select class="js-example-data-array"></select>
+                                <select class="js-example-data-array">
+                                    <option value="data1">Data 1</option>
+                                    <option value="data2">Data 2</option>
+                                </select>
+
                             </div>
 
 

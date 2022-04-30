@@ -1,10 +1,12 @@
 /*========= stroll js start ========= */
 'use strict';
 $(document).ready(function() {
+	setTimeout(function(){
     stroll.bind('.scroll-list');
     $("#dynamic-list-four-button, #dynamic-list-four-close").on("click", function() {
         $("#dynamic-list-four-slider-wrap").toggleClass("open");
     });
+
 
     $("#dynamic-list-five-button").on("click", function() {
         $(this)
@@ -64,6 +66,7 @@ $(document).ready(function() {
         allowPageScroll: false,
         color: '#000'
     });
+    },350);
 });
 /*========= stroll js end ========= */
 

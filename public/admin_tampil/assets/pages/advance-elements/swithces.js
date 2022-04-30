@@ -66,7 +66,7 @@ $(document).ready(function() {
 	var cities = new Bloodhound({
 		datumTokenizer: Bloodhound.tokenizers.obj.whitespace('text'),
 		queryTokenizer: Bloodhound.tokenizers.whitespace,
-		prefetch: '../files/assets/pages/advance-elements/cities.json'
+		prefetch: 'assets/pages/advance-elements/cities.json'
 	});
 	cities.initialize();
 

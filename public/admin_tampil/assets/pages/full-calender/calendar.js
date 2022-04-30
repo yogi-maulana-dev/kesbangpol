@@ -42,23 +42,23 @@
 	                title: 'Business Lunch',
 	                start: '2018-09-03T13:00:00',
 	                constraint: 'businessHours',
-					borderColor: '#FC6180',
-					backgroundColor: '#FC6180',
+					borderColor: '#ff5252',
+					backgroundColor: '#ff5252',
 					textColor: '#fff'
 	            }, {
 	                title: 'Meeting',
 	                start: '2018-09-13T11:00:00',
 	                constraint: 'availableForMeeting',
 	                editable: true,
-	                borderColor: '#4680ff',
-	                backgroundColor: '#4680ff',
+	                borderColor: '#448aff',
+	                backgroundColor: '#448aff',
 	                textColor: '#fff'
 	            }, {
 	                title: 'Conference',
 	                start: '2018-09-18',
 	                end: '2018-09-20',
-					borderColor: '#93BE52',
-					backgroundColor: '#93BE52',
+					borderColor: '#9ccc65',
+					backgroundColor: '#9ccc65',
 					textColor: '#fff'
 	            }, {
 	                title: 'Party',

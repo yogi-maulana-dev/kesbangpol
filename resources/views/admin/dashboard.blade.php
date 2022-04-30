@@ -1,7 +1,6 @@
 @extends('layouts.main_login_admin')
 
 @section('admin_dashboard')
-
 <style>
     .modal {
         overflow-y: auto;

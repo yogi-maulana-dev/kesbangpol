@@ -4,8 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\DataController;
-use App\Http\Controllers\MenudataController;
 
 
 /*
@@ -28,9 +26,6 @@ Route::get('/login',['App\Http\Controllers\AuthUser\LoginController', 'index'])-
 Route::post('/keluar',['App\Http\Controllers\AuthUser\LoginController', 'keluar'])->name('user.keluar');
 Route::post('/login',['App\Http\Controllers\AuthUser\LoginController', 'loginuser'])->name('user.login.save');
 Route::get('/dashboard',['App\Http\Controllers\AuthUser\AdminController', 'index'])->name('user.dashboard');
-Route::resource('/data',DataController::class);
-// Route::resource('/menudata',MenudataController::class);
-
 
 // router bagian loginuser
 
@@ -42,17 +37,16 @@ Route::view('/login','admin.login', ["judul" => "Home Admin "])->name('login');
 Route::post('/check',['App\Http\Controllers\AuthAdmin\LoginController', 'loginadmin'])->name('login.save');
 
 });
-
+Route::post('/logout',['App\Http\Controllers\AuthAdmin\LoginController', 'logout'])->name('logout');
 
 Route::middleware(['auth:admin','preventBackHistory'])->group(function(){
 Route::get('/dashboard',['App\Http\Controllers\AuthAdmin\AdminController', 'index'])->name('dashboard');
 Route::get('/berita',['App\Http\Controllers\AuthAdmin\BeritaController', 'index'])->name('berita');
 Route::post('/berita',['App\Http\Controllers\AuthAdmin\BeritaController', 'store'])->name('berita.save');
+Route::get('/menudata',['App\Http\Controllers\AuthAdmin\MenudataController', 'index'])->name('menudata');
 Route::post('/berita',['App\Http\Controllers\AuthAdmin\BeritaController', 'uploadimage'])->name('ckeditor.upload');
 
-Route::get('/menudata',['App\Http\Controllers\AuthAdmin\MenudataController', 'index'])->name('menudata');
 Route::get('/menudata/download/{nama}', ['App\Http\Controllers\AuthAdmin\MenudataController', 'download'])->name('download');
-Route::post('/logout',['App\Http\Controllers\AuthAdmin\LoginController', 'logout'])->name('logout');
 
 
 });

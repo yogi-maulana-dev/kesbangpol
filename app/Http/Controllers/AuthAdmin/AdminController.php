@@ -8,11 +8,13 @@ use Illuminate\Routing\Controller;
 use App\Models\Upload;
 
 
-
 class AdminController extends Controller
 {
+ public function __construct()
+ {
+ $this->middleware('auth');
 
-
+ }
       /**
     * Display a listing of the resource.
     *
@@ -21,7 +23,8 @@ class AdminController extends Controller
     public function index()
     {
     //
-    return view('admin.index', ["judul" => "Halaman Login Admin",
+    return view('admin.index', ["judul" => "Halaman dasdasd",
     'datas' => Upload::where('id_user', auth()->user()->id)->get()]);
     }
+
 }

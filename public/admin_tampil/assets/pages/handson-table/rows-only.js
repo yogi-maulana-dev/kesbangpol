@@ -1,5 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
     function isEmptyRow(instance, row) {
         for (var rowData = instance.getData()[row], i = 0, ilen = rowData.length; i < ilen; i++)
             if (null !== rowData[i]) return !1;
@@ -39,4 +40,5 @@ document.addEventListener("DOMContentLoaded", function() {
                     for (c = 0; c < clen; c++) rowColumnSeen[r + "/" + c] || changes.push([r, c, null, tpl[c]])
         }
     }), hot1.loadData(data)
+    }, 800);
 });

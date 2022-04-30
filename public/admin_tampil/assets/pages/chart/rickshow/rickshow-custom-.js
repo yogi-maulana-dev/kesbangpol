@@ -1,5 +1,6 @@
   "use strict";
   $(document).ready(function() {
+      setTimeout(function(){
       window.addEventListener('load', resizeGraph, false);
       window.addEventListener('resize', resizeGraph, false);
 
@@ -99,4 +100,5 @@
 
 
       resizeGraph();
+},150);
   });

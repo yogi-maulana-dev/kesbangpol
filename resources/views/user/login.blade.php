@@ -188,7 +188,7 @@
                             <div class="row">
                                 <div class="col-md-10">
                                     {{-- <p class="text-inverse text-left m-b-0">Thank you.</p> --}}
-                                    <p class="text-inverse text-left"><a href="index.html"><b>Kembali pada
+                                    <p class="text-inverse text-left"><a href="index.html"><b>Kembali padadadasd
                                                 dashboard</b></a>
                                     </p>
                                 </div>
