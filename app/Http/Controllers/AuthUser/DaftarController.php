@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\AuthAdmin;
+namespace App\Http\Controllers\AuthUser;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use App\Models\Berita;
-use Image;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 
-class BeritaController extends Controller
+class DaftarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class BeritaController extends Controller
     public function index()
     {
         //
-        return view('admin.berita', ['judul' => 'Halaman Berita Admin', 'beritas' => Berita::all()]);
+        return view('user.daftar', ['judul' => 'Halaman Daftar']);
     }
 
     /**
@@ -40,19 +40,32 @@ class BeritaController extends Controller
     {
         //
 
-        $simpan = $request->validate([
-            'judul' => 'required',
-            'judul' => 'required',
+        $validasi = $request->validate([
+            'nama' => 'required|max:255',
+            'alamat' => 'required|max:255',
+            'kodehp' => 'required',
+            'nohp' => 'required',
+            'username' => ['required', 'min:7', 'max:255', 'unique:users'],
+            'email' => 'required|email:dns|unique:users',
+            'password' => 'required|min:8|max:255',
         ]);
+
+        $validasi['password'] = Hash::make($validasi['password']);
+
+        User::create($validasi);
+
+        // $request->session()->flash('success', 'Pendaftaraan berhasil !!! Silakan login');
+
+        return redirect('/user')->with('success', 'Pendaftaraan berhasil !!! Silakan login');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Daftar  $daftar
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Daftar $daftar)
     {
         //
     }
@@ -60,10 +73,10 @@ class BeritaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Daftar  $daftar
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Daftar $daftar)
     {
         //
     }
@@ -72,10 +85,10 @@ class BeritaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Daftar  $daftar
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Daftar $daftar)
     {
         //
     }
@@ -83,16 +96,11 @@ class BeritaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Daftar  $daftar
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Daftar $daftar)
     {
         //
-    }
-
-    public function checkSlug(Reques $request)
-    {
-        $slug = SlugService::createSlug(Post::class, 'slug', $request->title);
     }
 }

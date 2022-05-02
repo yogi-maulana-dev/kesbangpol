@@ -15,5 +15,8 @@
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
         "prettier": "2.6.2"
+    },
+    "dependencies": {
+        "intl-tel-input": "^17.0.16"
     }
 }

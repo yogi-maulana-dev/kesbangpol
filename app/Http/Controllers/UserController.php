@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\AuthAdmin;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use App\Models\Berita;
-use Image;
+use Illuminate\Support\Facades\Auth;
 
-class BeritaController extends Controller
+
+
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +17,8 @@ class BeritaController extends Controller
      */
     public function index()
     {
+        return view('user', ["judul" => "Halaman Home"]);
         //
-        return view('admin.berita', ['judul' => 'Halaman Berita Admin', 'beritas' => Berita::all()]);
     }
 
     /**
@@ -25,10 +26,12 @@ class BeritaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         //
-    }
+
+
+}
 
     /**
      * Store a newly created resource in storage.
@@ -39,11 +42,6 @@ class BeritaController extends Controller
     public function store(Request $request)
     {
         //
-
-        $simpan = $request->validate([
-            'judul' => 'required',
-            'judul' => 'required',
-        ]);
     }
 
     /**
@@ -91,8 +89,32 @@ class BeritaController extends Controller
         //
     }
 
-    public function checkSlug(Reques $request)
+      public function authenticate(Request $request)
     {
-        $slug = SlugService::createSlug(Post::class, 'slug', $request->title);
+        //
+
+            $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            return redirect()->intended('/dashboard');
+        }
+
+    return back()->with('loginError','Login Gagal ! Email atau password salah');
     }
+
+    public function keluar()
+
+    {
+Auth::logout();
+request()->session()->invalidate();
+request()->session()->regenerateToken();
+return redirect('/');
+    }
+
+
 }
