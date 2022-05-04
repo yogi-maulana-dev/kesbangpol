@@ -17,7 +17,6 @@ class Categori extends Model
      *
      * @var array<int, string>
      */
-    protected $guard = 'categoris';
 
     // protected $fillable = [
     // 'username',
@@ -27,6 +26,11 @@ class Categori extends Model
     // ];
 
     protected $guarded = ['id'];
+
+    public function berita()
+    {
+        return $this->hasMany(Berita::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\AuthAdmin;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use App\Models\Berita;
+use App\Models\Categori;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 use Image;
 
 class BeritaController extends Controller
@@ -17,7 +19,7 @@ class BeritaController extends Controller
     public function index()
     {
         //
-        return view('admin.berita', ['judul' => 'Halaman Berita Admin', 'beritas' => Berita::all()]);
+        return view('admin.berita', ['judul' => 'Halaman Berita Admin', 'beritas' => Berita::all(), 'categoris' => Categori::all()]);
     }
 
     /**
@@ -91,8 +93,9 @@ class BeritaController extends Controller
         //
     }
 
-    public function checkSlug(Reques $request)
+    public function checkSlug(Request $request)
     {
-        $slug = SlugService::createSlug(Post::class, 'slug', $request->title);
+        $slug = SlugService::createSlug(Berita::class, 'slug', $request->title);
+        return response()->json(['slug' => $slug]);
     }
 }

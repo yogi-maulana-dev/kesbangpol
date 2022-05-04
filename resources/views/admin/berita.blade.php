@@ -72,11 +72,32 @@
                                 class="md-float-material form-material" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <p class="text-muted text-center p-b-5">Form Posting Berita</p>
-                                <div class="form-group form-primary">
-                                    <input type="text" name="judul" class="form-control" required="">
+                                <div class="form-group">
+                                    <input type="text" name="title" id="title"
+                                        class="form-control @error('title') is-valid @enderror" required=""
+                                        value="{{ old('title') }}">
                                     <span class="form-bar"></span>
                                     <label class="float-label">Judul</label>
+                                    @error('title')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
+
+                                <div class="form-group">
+                                    <input type="text" name="slug" id="slug"
+                                        class="form-control @error('slug') is-valid @enderror" required=""
+                                        value="{{ old('slug') }}">
+                                    <span class="form-bar"></span>
+                                    <label class="float-label">Slug</label>
+                                    @error('slug')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+
                                 <div class="form-group form-primary">
                                     <label class="col-sm-4 col-form-label">Gambar Berita</label>
                                     <input type="file" name="gambar" class="form-control" required="">
@@ -86,15 +107,26 @@
                                 <div class="form-group text-white">
                                     <h4 class="sub-title">Kategori</h4>
                                     <select name="kategori" class="js-example-data-array">
-                                        <option value="data1">Data 1</option>
-                                        <option value="data2">Data 2</option>
+                                        @foreach ($categoris as $categori)
+                                            @if (old('kategori') === $categori->id)
+                                                <option value="{{ $categori->id }}" select>{{ $categori->name }}
+                                                </option>
+                                            @else
+                                                <option value="{{ $categori->id }}">{{ $categori->name }}
+                                                </option>
+                                            @endif
+                                        @endforeach
                                     </select>
 
                                 </div>
 
                                 <div class="form-group form-primary">
                                     <label class="col-sm-4 col-form-label">Isi berita</label>
-                                    <textarea class="form-control editor" rows="100" cols="300" id="editor" name="editor"></textarea>
+                                    <textarea class="form-control @error('body') is-valid @enderror editor" rows="100" cols="300" id="editor"
+                                        name="editor">{{ old('body') }}</textarea>
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
                                 </div>
 
                                 <div class="row m-t-30">
@@ -142,17 +174,6 @@ console.error(error);
     <script src="/admin_tampil/ckeditor5/ckeditor.js"></script>
     <script src="/admin_tampil/imageresize/plugin.js"></script>
 
-    <script>
-        const judul = document.querySelector('#judul');
-        const slug = document.querySelector('#slug');
-
-        judul.addEventListener('change', function() {
-            fetch('/berita/berita/createSlug?judul='
-                    judul.value)
-                .then(response => response.json())
-                .then(data => slug.value = data.slug)
-        });
-    </script>
 
 
     <script src="https://ckeditor.com/apps/ckfinder/3.5.0/ckfinder.js"></script>

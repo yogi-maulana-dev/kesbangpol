@@ -1086,6 +1086,19 @@
     </script>
 
     <script>
+        const title = document.querySelector('#title');
+        const slug = document.querySelector('#slug');
+
+        title.addEventListener('change', function() {
+            fetch('/admin/berita/checkSlug?title=' +
+                    title.value)
+                .then(response => response.json())
+                .then(data => slug.value = data.slug)
+        });
+    </script>
+
+
+    <script>
         // In your Javascript (external .js resource or <script>
         $(document).ready(function() {
             $('.js-example-data-array').select2();

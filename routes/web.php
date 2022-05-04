@@ -32,6 +32,7 @@ use App\Models\Categori;
 
 // Route::get('/',[HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::resource('/data', DataController::class);
 
 // router bagian loginuser
 Route::get('/login', ['App\Http\Controllers\AuthUser\LoginController', 'index'])->name('user.login');
@@ -42,15 +43,7 @@ Route::get('/dashboard', ['App\Http\Controllers\AuthUser\AdminController', 'inde
 Route::get('/daftar', ['App\Http\Controllers\AuthUser\DaftarController', 'index'])->middleware('guest');
 Route::post('/daftar', ['App\Http\Controllers\AuthUser\DaftarController', 'store'])->name('user.daftar');
 
-Router::get('/berita', ['App\Http\Controller\AuthUser\Berita', 'index'])->middleware('guest');
-Router::get('/berita/{berita:slug}', ['App\Http\Controller\AuthUser\Berita', 'show'])->middleware('guest');
-Router::get('/categori/{categori:slug}', function (Categori $categori) {
-    return view('categori', [
-        'title' => $categori->name,
-        'beritas' => $categori->beritas,
-        'categori' => $categori->name,
-    ]);
-});
+Route::get('/berita', ['App\Http\Controller\AuthUser\BeritaController', 'index']);
 
 // router bagian loginuser
 
@@ -68,6 +61,7 @@ Route::prefix('admin')
             Route::get('/dashboard', ['App\Http\Controllers\AuthAdmin\AdminController', 'index'])->name('dashboard');
             Route::get('/berita', ['App\Http\Controllers\AuthAdmin\BeritaController', 'index'])->name('berita');
             Route::post('/berita', ['App\Http\Controllers\AuthAdmin\BeritaController', 'store'])->name('berita.store');
+            Route::get('/berita/checkSlug', ['App\Http\Controllers\AuthAdmin\BeritaController', 'checkSlug'])->name('berita.checkSlug');
             Route::get('/menudata', ['App\Http\Controllers\AuthAdmin\MenudataController', 'index'])->name('menudata');
             Route::post('/editor', ['App\Http\Controllers\AuthAdmin\EditorController', 'uploadimage'])->name('ckeditor.upload');
 

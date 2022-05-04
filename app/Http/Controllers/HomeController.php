@@ -5,16 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use App\Http\Controllers\HomeController;
+use App\Models\Home;
 
 class HomeController extends Controller
 {
-// public function __construct()
-// {
-// $this->middleware('auth');
+    // public function __construct()
+    // {
+    // $this->middleware('auth');
 
-// }
-
-
+    // }
 
     /**
      * Display a listing of the resource.
@@ -24,7 +23,7 @@ class HomeController extends Controller
     public function index()
     {
         //
-        return view('home', ["judul" => "Halaman Home"]);
+        return view('home', ['judul' => 'Halaman Berita', 'beritas' => Home::all()]);
     }
 
     /**
