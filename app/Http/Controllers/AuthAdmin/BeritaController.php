@@ -7,7 +7,11 @@ use Illuminate\Routing\Controller;
 use App\Models\Berita;
 use App\Models\Categori;
 use Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Str;
 use Image;
+use File;
+use Illuminate\Support\Facades\Storage;
+
 
 class BeritaController extends Controller
 {
@@ -41,11 +45,23 @@ class BeritaController extends Controller
     public function store(Request $request)
     {
         //
-
-        $simpan = $request->validate([
-            'judul' => 'required',
-            'judul' => 'required',
+        $validasi = $request->validate([
+            'categori_id' => 'required',
+            'title' => 'required|max:255',
+            'slug' => 'required|unique:beritas',
+            'body' => 'required',
+            'gambar' => 'required',
         ]);
+
+        $gambar = $request->file('gambar');
+        $nama_dokumen1 = 'gambar' . date('Ymdhis') . '.' . $request->file('gambar')->getClientOriginalExtension();
+        $gambar->move('gambarberita/', $nama_dokumen1);
+
+        $validasi['excerpt'] = Str::limit(strip_tags($request->body, 200));
+        $validasi['gambar'] = $nama_dokumen1;
+        Berita::create($validasi);
+
+        return redirect('/admin/berita')->with('success', 'Berhasil data berita dimasukan');
     }
 
     /**
@@ -77,9 +93,48 @@ class BeritaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Berita $berita)
     {
         //
+
+        $anugambar = 'gambarberita/' . $request->filegambar;
+
+  if($request->file('gambar') == "") {
+
+    $berita = Berita::where('id', $request->berita)
+    ->update([
+    'title' => $request->title,
+    'slug' => $request->slug,
+    'body' => $request->body,
+    'excerpt'=> Str::limit(strip_tags($request->body, 200)),
+    ]);
+
+
+  } else {
+  //hapus old image
+
+
+       if(File::exists($anugambar)){
+       File::delete($anugambar);
+
+       }
+
+        $gambar = $request->file('gambar');
+        $nama_dokumen1 = 'gambar' . date('Ymdhis') . '.' . $request->file('gambar')->getClientOriginalExtension();
+        $gambar->move('gambarberita/', $nama_dokumen1);
+
+     $berita = Berita::where('id', $request->berita)
+     ->update([
+     'title' => $request->title,
+     'slug' => $request->slug,
+     'body' => $request->body,
+     'excerpt'=> Str::limit(strip_tags($request->body, 200)),
+     'gambar' => $nama_dokumen1,
+     ]);
+  }
+
+
+        return redirect('/admin/berita')->with('success', 'Berhasil di Update data');
     }
 
     /**

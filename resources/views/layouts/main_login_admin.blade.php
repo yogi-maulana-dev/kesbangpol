@@ -1044,6 +1044,7 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
+
     <script>
         $(document).ready(function() {
 
@@ -1096,6 +1097,7 @@
                 .then(data => slug.value = data.slug)
         });
     </script>
+
 
 
     <script>

@@ -61,8 +61,10 @@ Route::prefix('admin')
             Route::get('/dashboard', ['App\Http\Controllers\AuthAdmin\AdminController', 'index'])->name('dashboard');
             Route::get('/berita', ['App\Http\Controllers\AuthAdmin\BeritaController', 'index'])->name('berita');
             Route::post('/berita', ['App\Http\Controllers\AuthAdmin\BeritaController', 'store'])->name('berita.store');
-            Route::get('/berita/checkSlug', ['App\Http\Controllers\AuthAdmin\BeritaController', 'checkSlug'])->name('berita.checkSlug');
+           Route::post('/berita/update', ['App\Http\Controllers\AuthAdmin\BeritaController', 'update'])->name('berita.update');
+            Route::get('/berita/checkSlug', ['App\Http\Controllers\AuthAdmin\BeritaController', 'checkSlug']);
             Route::get('/menudata', ['App\Http\Controllers\AuthAdmin\MenudataController', 'index'])->name('menudata');
+            Route::post('/menudata', ['App\Http\Controllers\AuthAdmin\MenudataController', 'update'])->name('menudata.update');
             Route::post('/editor', ['App\Http\Controllers\AuthAdmin\EditorController', 'uploadimage'])->name('ckeditor.upload');
 
             Route::get('/menudata/download/{nama}', ['App\Http\Controllers\AuthAdmin\MenudataController', 'download'])->name('download');

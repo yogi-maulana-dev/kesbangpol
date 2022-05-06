@@ -185,7 +185,7 @@ class MenudataController extends Controller
     'ket' => $request->ket,
     ]);
 
-    return redirect('/menudata') ;
+    return redirect('/admin/menudata') ;
 
 
     }
