@@ -16,10 +16,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description"
-        content="Gradient Able Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
-    <meta name="keywords"
-        content="Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+    <meta name="description" content="Gradient Able Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
+    <meta name="keywords" content="Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
     <meta name="author" content="Phoenixcoded" />
     <!-- Favicon icon -->
     <link rel="icon" href="http://html.phoenixcoded.net/mega-able/assets/images/favicon.ico" type="image/x-icon">
@@ -34,8 +32,7 @@
     <!-- ico font -->
     <link rel="stylesheet" type="text/css" href="/admin_tampil/assets/icofont/icofont.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Syntax highlighter Prism css -->
     <link rel="stylesheet" type="text/css" href="/admin_tampil/assets/pages/prism/prism.css">
@@ -54,17 +51,13 @@
 
     <!-- jquery file upload Frame work -->
     <link href="/admin_tampil/assets/pages/jquery.filer/css/jquery.filer.css" type="text/css" rel="stylesheet" />
-    <link href="/admin_tampil/assets/pages/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css" type="text/css"
-        rel="stylesheet" />
+    <link href="/admin_tampil/assets/pages/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css" type="text/css" rel="stylesheet" />
 
     <!-- Data Table Css -->
-    <link rel="stylesheet" type="text/css"
-        href="/admin_tampil/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="/admin_tampil/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="/admin_tampil/assets/pages/data-table/css/buttons.dataTables.min.css">
-    <link rel="stylesheet" type="text/css"
-        href="/admin_tampil/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css"
-        href="/admin_tampil/assets/pages/data-table/extensions/responsive/css/responsive.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="/admin_tampil/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="/admin_tampil/assets/pages/data-table/extensions/responsive/css/responsive.dataTables.css">
 
     <link rel="stylesheet" type="text/css" href="/admin_tampil/bower_components/lightbox2/css/lightbox.min.css" />
     <!-- Style.css -->
@@ -72,15 +65,13 @@
     <!-- Select 2 css -->
     <link rel="stylesheet" href="/admin_tampil/bower_components/select2/css/select2.min.css" />
     <!-- Multi Select css -->
-    <link rel="stylesheet" type="text/css"
-        href="/admin_tampil/bower_components/bootstrap-multiselect/css/bootstrap-multiselect.css" />
+    <link rel="stylesheet" type="text/css" href="/admin_tampil/bower_components/bootstrap-multiselect/css/bootstrap-multiselect.css" />
     <link rel="stylesheet" type="text/css" href="/admin_tampil/bower_components/multiselect/css/multi-select.css" />
 
     <!-- Switch component css -->
     <link rel="stylesheet" type="text/css" href="/admin_tampil/bower_components/switchery/css/switchery.min.css">
     <!-- Tags css -->
-    <link rel="stylesheet" type="text/css"
-        href="/admin_tampil/bower_components/bootstrap-tagsinput/css/bootstrap-tagsinput.css" />
+    <link rel="stylesheet" type="text/css" href="/admin_tampil/bower_components/bootstrap-tagsinput/css/bootstrap-tagsinput.css" />
 
 </head>
 <!-- Menu horizontal icon fixed -->
@@ -154,11 +145,9 @@
                             <div class="header-search">
                                 <div class="main-search morphsearch-search">
                                     <div class="input-group">
-                                        <span class="input-group-prepend search-close"><i
-                                                class="ti-close input-group-text"></i></span>
+                                        <span class="input-group-prepend search-close"><i class="ti-close input-group-text"></i></span>
                                         <input type="text" class="form-control" placeholder="Enter Keyword">
-                                        <span class="input-group-append search-btn"><i
-                                                class="ti-search input-group-text"></i></span>
+                                        <span class="input-group-append search-btn"><i class="ti-search input-group-text"></i></span>
                                     </div>
                                 </div>
                             </div>
@@ -174,18 +163,15 @@
                     <div class="navbar-container container-fluid">
                         <ul class="nav-left">
                             <li>
-                                <div class="sidebar_toggle"><a href="javascript:void(0)"><i
-                                            class="ti-menu"></i></a>
+                                <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a>
                                 </div>
                             </li>
                             <li class="header-search">
                                 <div class="main-search morphsearch-search">
                                     <div class="input-group">
-                                        <span class="input-group-prepend search-close"><i
-                                                class="ti-close input-group-text"></i></span>
+                                        <span class="input-group-prepend search-close"><i class="ti-close input-group-text"></i></span>
                                         <input type="text" class="form-control" placeholder="Enter Keyword">
-                                        <span class="input-group-append search-btn"><i
-                                                class="ti-search input-group-text"></i></span>
+                                        <span class="input-group-append search-btn"><i class="ti-search input-group-text"></i></span>
                                     </div>
                                 </div>
                             </li>
@@ -208,9 +194,7 @@
                                     </li>
                                     <li class="waves-effect waves-light">
                                         <div class="media">
-                                            <img class="d-flex align-self-center img-radius"
-                                                src="/admin_tampil/assets/images/avatar-2.jpg"
-                                                alt="Generic placeholder image">
+                                            <img class="d-flex align-self-center img-radius" src="/admin_tampil/assets/images/avatar-2.jpg" alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h5 class="notification-user">John Doe</h5>
                                                 <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
@@ -221,9 +205,7 @@
                                     </li>
                                     <li class="waves-effect waves-light">
                                         <div class="media">
-                                            <img class="d-flex align-self-center img-radius"
-                                                src="/admin_tampil/assets/images/avatar-4.jpg"
-                                                alt="Generic placeholder image">
+                                            <img class="d-flex align-self-center img-radius" src="/admin_tampil/assets/images/avatar-4.jpg" alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h5 class="notification-user">Joseph William</h5>
                                                 <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
@@ -234,9 +216,7 @@
                                     </li>
                                     <li class="waves-effect waves-light">
                                         <div class="media">
-                                            <img class="d-flex align-self-center img-radius"
-                                                src="/admin_tampil/assets/images/avatar-3.jpg"
-                                                alt="Generic placeholder image">
+                                            <img class="d-flex align-self-center img-radius" src="/admin_tampil/assets/images/avatar-3.jpg" alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h5 class="notification-user">Sara Soudein</h5>
                                                 <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
@@ -255,8 +235,7 @@
                             </li>
                             <li class="user-profile header-notification">
                                 <a href="#!" class="waves-effect waves-light">
-                                    <img src="/admin_tampil/assets/images/avatar-4.jpg" class="img-radius"
-                                        alt="User-Profile-Image">
+                                    <img src="/admin_tampil/assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
                                     <span></span>
                                     <i class="ti-angle-down"></i>
                                 </a>
@@ -312,8 +291,7 @@
                                 <div class="right-icon-control">
                                     <form class="form-material">
                                         <div class="form-group form-primary">
-                                            <input type="text" name="footer-email" class="form-control"
-                                                id="search-friends" required="">
+                                            <input type="text" name="footer-email" class="form-control" id="search-friends" required="">
                                             <span class="form-bar"></span>
                                             <label class="float-label"><i class="fa fa-search m-r-10"></i>Search
                                                 Friend</label>
@@ -322,65 +300,45 @@
                                 </div>
                             </div>
                             <div class="main-friend-list">
-                                <div class="media userlist-box waves-effect waves-light" data-id="1"
-                                    data-status="online" data-username="Josephin Doe" data-toggle="tooltip"
-                                    data-placement="left" title="Josephin Doe">
+                                <div class="media userlist-box waves-effect waves-light" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
                                     <a class="media-left" href="#!">
-                                        <img class="media-object img-radius img-radius"
-                                            src="/admin_tampil/assets/images/avatar-3.jpg"
-                                            alt="Generic placeholder image ">
+                                        <img class="media-object img-radius img-radius" src="/admin_tampil/assets/images/avatar-3.jpg" alt="Generic placeholder image ">
                                         <div class="live-status bg-success"></div>
                                     </a>
                                     <div class="media-body">
                                         <div class="f-13 chat-header">Josephin Doe</div>
                                     </div>
                                 </div>
-                                <div class="media userlist-box waves-effect waves-light" data-id="2"
-                                    data-status="online" data-username="Lary Doe" data-toggle="tooltip"
-                                    data-placement="left" title="Lary Doe">
+                                <div class="media userlist-box waves-effect waves-light" data-id="2" data-status="online" data-username="Lary Doe" data-toggle="tooltip" data-placement="left" title="Lary Doe">
                                     <a class="media-left" href="#!">
-                                        <img class="media-object img-radius"
-                                            src="/admin_tampil/assets/images/avatar-2.jpg"
-                                            alt="Generic placeholder image">
+                                        <img class="media-object img-radius" src="/admin_tampil/assets/images/avatar-2.jpg" alt="Generic placeholder image">
                                         <div class="live-status bg-success"></div>
                                     </a>
                                     <div class="media-body">
                                         <div class="f-13 chat-header">Lary Doe</div>
                                     </div>
                                 </div>
-                                <div class="media userlist-box waves-effect waves-light" data-id="3"
-                                    data-status="online" data-username="Alice" data-toggle="tooltip"
-                                    data-placement="left" title="Alice">
+                                <div class="media userlist-box waves-effect waves-light" data-id="3" data-status="online" data-username="Alice" data-toggle="tooltip" data-placement="left" title="Alice">
                                     <a class="media-left" href="#!">
-                                        <img class="media-object img-radius"
-                                            src="/admin_tampil/assets/images/avatar-4.jpg"
-                                            alt="Generic placeholder image">
+                                        <img class="media-object img-radius" src="/admin_tampil/assets/images/avatar-4.jpg" alt="Generic placeholder image">
                                         <div class="live-status bg-success"></div>
                                     </a>
                                     <div class="media-body">
                                         <div class="f-13 chat-header">Alice</div>
                                     </div>
                                 </div>
-                                <div class="media userlist-box waves-effect waves-light" data-id="4"
-                                    data-status="online" data-username="Alia" data-toggle="tooltip"
-                                    data-placement="left" title="Alia">
+                                <div class="media userlist-box waves-effect waves-light" data-id="4" data-status="online" data-username="Alia" data-toggle="tooltip" data-placement="left" title="Alia">
                                     <a class="media-left" href="#!">
-                                        <img class="media-object img-radius"
-                                            src="/admin_tampil/assets/images/avatar-3.jpg"
-                                            alt="Generic placeholder image">
+                                        <img class="media-object img-radius" src="/admin_tampil/assets/images/avatar-3.jpg" alt="Generic placeholder image">
                                         <div class="live-status bg-success"></div>
                                     </a>
                                     <div class="media-body">
                                         <div class="f-13 chat-header">Alia</div>
                                     </div>
                                 </div>
-                                <div class="media userlist-box waves-effect waves-light" data-id="5"
-                                    data-status="online" data-username="Suzen" data-toggle="tooltip"
-                                    data-placement="left" title="Suzen">
+                                <div class="media userlist-box waves-effect waves-light" data-id="5" data-status="online" data-username="Suzen" data-toggle="tooltip" data-placement="left" title="Suzen">
                                     <a class="media-left" href="#!">
-                                        <img class="media-object img-radius"
-                                            src="/admin_tampil/assets/images/avatar-2.jpg"
-                                            alt="Generic placeholder image">
+                                        <img class="media-object img-radius" src="/admin_tampil/assets/images/avatar-2.jpg" alt="Generic placeholder image">
                                         <div class="live-status bg-success"></div>
                                     </a>
                                     <div class="media-body">
@@ -401,8 +359,7 @@
                 </div>
                 <div class="media chat-messages">
                     <a class="media-left photo-table" href="#!">
-                        <img class="media-object img-radius img-radius m-t-5"
-                            src="/admin_tampil/assets/images/avatar-3.jpg" alt="Generic placeholder image">
+                        <img class="media-object img-radius img-radius m-t-5" src="/admin_tampil/assets/images/avatar-3.jpg" alt="Generic placeholder image">
                     </a>
                     <div class="media-body chat-menu-content">
                         <div class="">
@@ -422,8 +379,7 @@
                     </div>
                     <div class="media-right photo-table">
                         <a href="#!">
-                            <img class="media-object img-radius img-radius m-t-5"
-                                src="/admin_tampil/assets/images/avatar-4.jpg" alt="Generic placeholder image">
+                            <img class="media-object img-radius img-radius m-t-5" src="/admin_tampil/assets/images/avatar-4.jpg" alt="Generic placeholder image">
                         </a>
                     </div>
                 </div>
@@ -679,34 +635,29 @@
                                                 <ul class="pcoded-submenu">
                                                     <li class="">
                                                         <a href="ck-editor.html" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
+                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                             <span class="pcoded-mtext">CK-Editor</span>
                                                             <span class="pcoded-mcaret"></span>
                                                         </a>
                                                     </li>
                                                     <li class="">
                                                         <a href="wysiwyg-editor.html" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
+                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                             <span class="pcoded-mtext">WYSIWYG Editor</span>
                                                             <span class="pcoded-mcaret"></span>
                                                         </a>
                                                     </li>
                                                     <li class="">
                                                         <a href="ace-editor.html" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
+                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                             <span class="pcoded-mtext">Ace Editor</span>
                                                             <span class="pcoded-mcaret"></span>
                                                         </a>
                                                     </li>
 
                                                     <li class="">
-                                                        <a href="long-press-editor.html"
-                                                            class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
+                                                        <a href="long-press-editor.html" class="waves-effect waves-dark">
+                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                             <span class="pcoded-mtext">Long Press Editor</span>
                                                             <span class="pcoded-mcaret"></span>
                                                         </a>
@@ -715,32 +666,28 @@
                                             </li>
                                             <li class="pcoded-hasmenu ">
                                                 <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i
-                                                            class="ti-layout-media-right"></i></span>
+                                                    <span class="pcoded-micon"><i class="ti-layout-media-right"></i></span>
                                                     <span class="pcoded-mtext">Invoice</span>
                                                     <span class="pcoded-mcaret"></span>
                                                 </a>
                                                 <ul class="pcoded-submenu">
                                                     <li class="">
                                                         <a href="invoice.html" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
+                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                             <span class="pcoded-mtext">Invoice</span>
                                                             <span class="pcoded-mcaret"></span>
                                                         </a>
                                                     </li>
                                                     <li class="">
                                                         <a href="invoice-summary.html" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
+                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                             <span class="pcoded-mtext">Invoice Summary</span>
                                                             <span class="pcoded-mcaret"></span>
                                                         </a>
                                                     </li>
                                                     <li class="">
                                                         <a href="invoice-list.html" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
+                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                             <span class="pcoded-mtext">Invoice List</span>
                                                             <span class="pcoded-mcaret"></span>
                                                         </a>
@@ -755,18 +702,15 @@
                                                 </a>
                                                 <ul class="pcoded-submenu">
                                                     <li class="">
-                                                        <a href="event-full-calender.html"
-                                                            class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
+                                                        <a href="event-full-calender.html" class="waves-effect waves-dark">
+                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                             <span class="pcoded-mtext">Full Calendar</span>
                                                             <span class="pcoded-mcaret"></span>
                                                         </a>
                                                     </li>
                                                     <li class="">
                                                         <a href="event-clndr.html" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
+                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                             <span class="pcoded-mtext">CLNDER</span>
                                                             <span class="pcoded-badge label label-info">NEW</span>
                                                             <span class="pcoded-mcaret"></span>
@@ -823,16 +767,14 @@
                                             </li>
                                             <li class="pcoded-hasmenu ">
                                                 <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i
-                                                            class="ti-direction-alt"></i></span>
+                                                    <span class="pcoded-micon"><i class="ti-direction-alt"></i></span>
                                                     <span class="pcoded-mtext">Menu Level 2.2</span>
                                                     <span class="pcoded-mcaret"></span>
                                                 </a>
                                                 <ul class="pcoded-submenu">
                                                     <li class="">
                                                         <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                            <span class="pcoded-micon"><i
-                                                                    class="ti-angle-right"></i></span>
+                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                             <span class="pcoded-mtext">Menu Level 3.1</span>
                                                             <span class="pcoded-mcaret"></span>
                                                         </a>
@@ -849,8 +791,7 @@
                                         </ul>
                                     </li>
                                     <li class="">
-                                        <a href="javascript:void(0)" class="disabled"
-                                            class="waves-effect waves-dark">
+                                        <a href="javascript:void(0)" class="disabled" class="waves-effect waves-dark">
                                             <span class="pcoded-micon"><i class="ti-na"></i></span>
                                             <span class="pcoded-mtext">Disabled Menu</span>
                                             <span class="pcoded-mcaret"></span>
@@ -879,8 +820,7 @@
                                             </li>
                                             <li class="">
                                                 <a href="#" target="_blank" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i
-                                                            class="ti-layout-list-post"></i></span>
+                                                    <span class="pcoded-micon"><i class="ti-layout-list-post"></i></span>
                                                     <span class="pcoded-mtext">Submit Issue</span>
                                                     <span class="pcoded-mcaret"></span>
                                                 </a>
@@ -987,8 +927,7 @@
     <script type="text/javascript" src="/admin_tampil/bower_components/i18next/js/i18next.min.js"></script>
     <script type="text/javascript" src="/admin_tampil/bower_components/i18next-xhr-backend/js/i18nextXHRBackend.min.js">
     </script>
-    <script type="text/javascript"
-        src="/admin_tampil/bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js">
+    <script type="text/javascript" src="/admin_tampil/bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js">
     </script>
     <script type="text/javascript" src="/admin_tampil/bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
 
@@ -1060,6 +999,7 @@
             });
 
         });
+
     </script>
 
     <script>
@@ -1072,18 +1012,21 @@
                 document.getElementById("exampleModal").classList.remove("custom");
             }
         }
+
     </script>
 
 
     <script>
         feather.replace()
+
     </script>
 
     <script>
         lightbox.option({
-            'resizeDuration': 200,
-            'wrapAround': true
+            'resizeDuration': 200
+            , 'wrapAround': true
         })
+
     </script>
 
     <script>
@@ -1096,9 +1039,8 @@
                 .then(response => response.json())
                 .then(data => slug.value = data.slug)
         });
+
     </script>
-
-
 
     <script>
         // In your Javascript (external .js resource or <script>
@@ -1106,6 +1048,7 @@
             $('.js-example-data-array').select2();
 
         });
+
     </script>
 
 

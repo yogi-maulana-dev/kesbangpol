@@ -22,7 +22,6 @@
     "[blade]": {
         "breadcrumbs.showBooleans": true,
         "breadcrumbs.showArrays": true,
-        "editor.autoClosingBrackets": "always",
         "editor.defaultFormatter": "amirmarmul.laravel-blade-vscode"
     },
     "files.associations": {
@@ -36,8 +35,5 @@
     "html.format.indentInnerHtml": true,
     "editor.fontLigatures": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
     "editor.formatOnSaveMode": "modifications"
 }
