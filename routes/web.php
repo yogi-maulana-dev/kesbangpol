@@ -18,6 +18,7 @@ use App\Models\Dashboard;
 use Illuminate\Http\Request;
 use App\Models\Upload;
 use App\Models\Categori;
+use App\Models\Home;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,10 @@ use App\Models\Categori;
 
 // Route::get('/',[HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home/{home:slug}', [HomeController::class, 'show']);
+// Route::get('/home/{slug}', function () {
+//     return view('berita_single', ['judul' => 'Single Berita']);
+// });
 Route::resource('/data', DataController::class);
 
 // router bagian loginuser
@@ -61,7 +66,8 @@ Route::prefix('admin')
             Route::get('/dashboard', ['App\Http\Controllers\AuthAdmin\AdminController', 'index'])->name('dashboard');
             Route::get('/berita', ['App\Http\Controllers\AuthAdmin\BeritaController', 'index'])->name('berita');
             Route::post('/berita', ['App\Http\Controllers\AuthAdmin\BeritaController', 'store'])->name('berita.store');
-           Route::post('/berita/update', ['App\Http\Controllers\AuthAdmin\BeritaController', 'update'])->name('berita.update');
+            Route::post('/berita/update', ['App\Http\Controllers\AuthAdmin\BeritaController', 'update'])->name('berita.update');
+            Route::post('/berita/destroy/{id}', ['App\Http\Controllers\AuthAdmin\BeritaController', 'destroy']);
             Route::get('/berita/checkSlug', ['App\Http\Controllers\AuthAdmin\BeritaController', 'checkSlug']);
             Route::get('/menudata', ['App\Http\Controllers\AuthAdmin\MenudataController', 'index'])->name('menudata');
             Route::post('/menudata', ['App\Http\Controllers\AuthAdmin\MenudataController', 'update'])->name('menudata.update');

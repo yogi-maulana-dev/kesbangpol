@@ -32,6 +32,11 @@ class Categori extends Model
         return $this->hasMany(Berita::class);
     }
 
+    public function home()
+    {
+        return $this->hasMany(Home::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

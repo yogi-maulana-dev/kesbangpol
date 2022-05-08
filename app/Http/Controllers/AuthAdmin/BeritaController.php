@@ -11,7 +11,7 @@ use Illuminate\Support\Str;
 use Image;
 use File;
 use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Support\Facades\DB;
 
 class BeritaController extends Controller
 {
@@ -57,7 +57,7 @@ class BeritaController extends Controller
         $nama_dokumen1 = 'gambar' . date('Ymdhis') . '.' . $request->file('gambar')->getClientOriginalExtension();
         $gambar->move('gambarberita/', $nama_dokumen1);
 
-        $validasi['excerpt'] = Str::limit(strip_tags($request->body, 200));
+        $validasi['excerpt'] = Str::limit(strip_tags($request->body, 400));
         $validasi['gambar'] = $nama_dokumen1;
         Berita::create($validasi);
 
@@ -99,40 +99,32 @@ class BeritaController extends Controller
 
         $anugambar = 'gambarberita/' . $request->filegambar;
 
-  if($request->file('gambar') == "") {
+        if ($request->file('gambar') == '') {
+            $berita = Berita::where('id', $request->berita)->update([
+                'categori_id' => $request->categori_id,
+                'title' => $request->title,
+                'slug' => $request->slug,
+                'excerpt' => Str::limit(strip_tags($request->body, 400)),
+            ]);
+        } else {
+            //hapus old image
 
-    $berita = Berita::where('id', $request->berita)
-    ->update([
-    'title' => $request->title,
-    'slug' => $request->slug,
-    'body' => $request->body,
-    'excerpt'=> Str::limit(strip_tags($request->body, 200)),
-    ]);
+            if (File::exists($anugambar)) {
+                File::delete($anugambar);
+            }
 
+            $gambar = $request->file('gambar');
+            $nama_dokumen1 = 'gambar' . date('Ymdhis') . '.' . $request->file('gambar')->getClientOriginalExtension();
+            $gambar->move('gambarberita/', $nama_dokumen1);
 
-  } else {
-  //hapus old image
-
-
-       if(File::exists($anugambar)){
-       File::delete($anugambar);
-
-       }
-
-        $gambar = $request->file('gambar');
-        $nama_dokumen1 = 'gambar' . date('Ymdhis') . '.' . $request->file('gambar')->getClientOriginalExtension();
-        $gambar->move('gambarberita/', $nama_dokumen1);
-
-     $berita = Berita::where('id', $request->berita)
-     ->update([
-     'title' => $request->title,
-     'slug' => $request->slug,
-     'body' => $request->body,
-     'excerpt'=> Str::limit(strip_tags($request->body, 200)),
-     'gambar' => $nama_dokumen1,
-     ]);
-  }
-
+            $berita = Berita::where('id', $request->berita)->update([
+                'categori_id' => $request->categori_id,
+                'title' => $request->title,
+                'slug' => $request->slug,
+                'excerpt' => Str::limit(strip_tags($request->body, 400)),
+                'gambar' => $nama_dokumen1,
+            ]);
+        }
 
         return redirect('/admin/berita')->with('success', 'Berhasil di Update data');
     }
@@ -143,9 +135,21 @@ class BeritaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         //
+
+        $anugambar = 'gambarberita/' . $request->hapusgambar;
+
+        if (File::exists($anugambar)) {
+            File::delete($anugambar);
+        }
+
+        DB::table('beritas')
+            ->where('id', $id)
+            ->delete();
+
+        return redirect('/admin/berita')->with('success', 'Data Berita Berhasil Dihapus');
     }
 
     public function checkSlug(Request $request)

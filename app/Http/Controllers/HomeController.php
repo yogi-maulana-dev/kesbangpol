@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use App\Http\Controllers\HomeController;
 use App\Models\Home;
+use App\Models\Categori;
 
 class HomeController extends Controller
 {
@@ -23,7 +24,7 @@ class HomeController extends Controller
     public function index()
     {
         //
-        return view('home', ['judul' => 'Halaman Berita', 'beritas' => Home::all()]);
+        return view('home', ['judul' => 'Halaman Berita', 'beritas' => Home::all(), 'categoris' => categori::all()]);
     }
 
     /**
@@ -53,9 +54,10 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Home $home)
     {
         //
+        return view('berita_single', ['judul' => 'Berita Single', 'berita' => $home, 'categoris' => categori::all()]);
     }
 
     /**

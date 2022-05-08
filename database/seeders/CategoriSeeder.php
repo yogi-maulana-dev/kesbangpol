@@ -16,12 +16,12 @@ class CategoriSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+     \App\Models\Categori::factory(10)->create();
 
-         $categori = new Categori;
-         $categori->name = "Berita";
-         $categori->slug = "Berita";
-         $categori->save();
+        //  $categori = new Categori;
+        //  $categori->name = "Judul Berita 1";
+        //  $categori->slug = "Judul-Berita-1";
+        //  $categori->save();
 
 
     }
