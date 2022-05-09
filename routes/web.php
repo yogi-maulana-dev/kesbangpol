@@ -13,6 +13,8 @@ use App\Http\Controllers\LoginadminController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\MenudataController;
 use App\Http\Controllers\SendMailController;
+use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\ResetPasswordController;
 
 use App\Models\Dashboard;
 use Illuminate\Http\Request;
@@ -30,13 +32,20 @@ use App\Models\Home;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// ----------------------------- forget password ----------------------------//
+Route::get('forget-password', [App\Http\Controllers\AuthUser\ForgotPasswordController::class, 'getEmail'])->name('forget-password');
+Route::post('forget-password', [App\Http\Controllers\AuthUser\ForgotPasswordController::class, 'postEmail'])->name('forget-password');
+
+// ----------------------------- reset password -----------------------------//
+Route::get('reset-password/{token}', [App\Http\Controllers\AuthUser\ResetPasswordController::class, 'getPassword']);
+Route::post('reset-password', [App\Http\Controllers\AuthUser\ResetPasswordController::class, 'updatePassword']);
 
 // Route::get('/',[HomeController::class, 'index']);
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index']);
 Route::get('/home/{home:slug}', [HomeController::class, 'show']);
-// Route::get('/home/{slug}', function () {
-//     return view('berita_single', ['judul' => 'Single Berita']);
-// });
+Route::get('/categori/{categori:id}', function (Categori $categori) {
+    return view('categori_berita', ['judul' => 'Categori Berita', 'beritas' => $categori->home, 'categoris' => $categori->name]);
+});
 Route::resource('/data', DataController::class);
 
 // router bagian loginuser
@@ -61,6 +70,8 @@ Route::prefix('admin')
             Route::post('/check', ['App\Http\Controllers\AuthAdmin\LoginController', 'loginadmin'])->name('login.save');
         });
         Route::post('/logout', ['App\Http\Controllers\AuthAdmin\LoginController', 'logout'])->name('logout');
+
+        Route::get('/send/mail', ['App\Http\Controllers\SendMailController', 'send_mail'])->name('send_mail');
 
         Route::middleware(['auth:admin', 'preventBackHistory'])->group(function () {
             Route::get('/dashboard', ['App\Http\Controllers\AuthAdmin\AdminController', 'index'])->name('dashboard');

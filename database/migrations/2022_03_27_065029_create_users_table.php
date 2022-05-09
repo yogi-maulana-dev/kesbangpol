@@ -22,6 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('alamat');
             $table->string('kodehp');
             $table->string('nohp');
+            $table->boolean('token_aja')->default(false);
+            $table->string('iniVeri')->nullable();
             $table->rememberToken();
             // $table->timestamp('publish')->nullable();
             $table->timestamps();

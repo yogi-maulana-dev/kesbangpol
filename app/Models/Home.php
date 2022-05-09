@@ -10,6 +10,7 @@ class Home extends Model
     use HasFactory;
 
     protected $table = 'beritas';
+    protected $with = ['categori'];
 
     //    protected $fillable = [
     //       'username',
@@ -19,6 +20,13 @@ class Home extends Model
     //     ];
 
     protected $guarded = ['id'];
+
+    public function scopeFilter($query, array $filters)
+    {
+        if (isset($filters['cari']) ? $filters['cari'] : false) {
+            return $query->where('title', 'like', '%' . $filters['cari'] . '%');
+        }
+    }
 
     public function categori()
     {

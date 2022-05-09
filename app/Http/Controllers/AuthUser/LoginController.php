@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers\AuthUser;
 
-
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
-
-
+use Illuminate\Validation\Rule;
 
 class LoginController extends Controller
 {
@@ -22,11 +20,9 @@ class LoginController extends Controller
      */
     public function index()
     {
-        return view('user.login', ["judul" => "Halaman Login Aplikasi Orkesmas"]);
+        return view('user.login', ['judul' => 'Halaman Login Aplikasi Orkesmas']);
         //
     }
-
-
 
     /**
      * Show the form for creating a new resource.
@@ -36,9 +32,7 @@ class LoginController extends Controller
     public function create(Request $request)
     {
         //
-
-
-}
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -96,35 +90,57 @@ class LoginController extends Controller
         //
     }
 
-      public function loginuser(Request $request)
+    public function loginuser(Request $request)
     {
-    //
+        //
 
-    $credentials = $request->validate([
-    'email' => ['required', 'email'],
-    'password' => ['required'],
-    ]);
+        $credentials = $request->validate([
+            'email' => ['required', 'email', Rule::exists('users')->where(function ($query) {
+                        $query->where('iniVeri', true);
+                    })
+                ],
+            'password' => 'required',
+        ],[
+            'email'.'.exists' =>'Email anda belum diaktifkan, silakan cek email untuk mengaktifkan'
+        ]);
 
-    if (Auth::guard('web')->attempt($credentials)) {
-    $request->session()->regenerate();
+        if (Auth::guard('web')->attempt($credentials)) {
+            $request->session()->regenerate();
 
-    return redirect()->intended(route('user.dashboard'));
+            return redirect()->intended(route('user.dashboard'));
+        }
 
-
+        return back()->with('loginError', 'Login Gagal ! Email atau password salah');
     }
-
-    return back()->with('loginError','Login Gagal ! Email atau password salah');
-    }
-
 
     public function keluar()
-
     {
-Auth::logout();
-request()->session()->invalidate();
-request()->session()->regenerateToken();
-return redirect('/login');
+        Auth::logout();
+        request()
+            ->session()
+            ->invalidate();
+        request()
+            ->session()
+            ->regenerateToken();
+        return redirect('/login');
     }
 
-
+    protected function validateLogin(Request $request)
+    {
+        $request->validate(
+            [
+                $this->email() => [
+                    'required',
+                    Rule::exists('users')->where(function ($query) {
+                        $query->where('iniVeri', true);
+                    }),
+                ],
+                'password' => 'required|string',
+            ],
+            [
+                $this->email() . '.exists' => 'Email Anda belum aktif, silakan Aktifivasi terlebih dahulu',
+            ],
+        );
+    }
+    //tutup
 }

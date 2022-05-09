@@ -24,7 +24,16 @@ class HomeController extends Controller
     public function index()
     {
         //
-        return view('home', ['judul' => 'Halaman Berita', 'beritas' => Home::all(), 'categoris' => categori::all()]);
+
+        return view('home', [
+            'judul' => 'Halaman Berita',
+            'beritas' => Home::all(),
+            'categoris' => categori::all(),
+            'beritas' => Home::latest()
+                ->filter(request(['cari']))
+                ->paginate(6)
+                ->withQueryString(),
+        ]);
     }
 
     /**

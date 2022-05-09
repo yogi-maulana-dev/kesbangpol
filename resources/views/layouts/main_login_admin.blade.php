@@ -846,6 +846,7 @@
                                                 <!-- Default card start -->
                                                 @yield('admin_dashboard')
                                                 @yield('menudata_dashboard')
+                                                @yield('reset_email')
                                                 @yield('berita')
                                                 <!-- Default card end -->
                                             </div>

@@ -50,16 +50,12 @@
                             </div>
 
                             <div class="entry-footer">
-                                <i class="bi bi-folder"></i>
-                                <ul class="cats">
-                                    <li><a href="#">Business</a></li>
-                                </ul>
+
 
                                 <i class="bi bi-tags"></i>
                                 <ul class="tags">
-                                    <li><a href="#">Creative</a></li>
-                                    <li><a href="#">Tips</a></li>
-                                    <li><a href="#">Marketing</a></li>
+                                    <li><a href="/categori/{{ $berita->categori->id }}">
+                                            {{ $berita->categori->name }}</a></li>
                                 </ul>
                             </div>
 

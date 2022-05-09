@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Illuminate\Support\Str;
 
 class DaftarController extends Controller
 {
@@ -51,12 +52,14 @@ class DaftarController extends Controller
         ]);
 
         $validasi['password'] = Hash::make($validasi['password']);
+        $validasi['token_aja'] = Str::random(8);
+        $validasi['iniVeri'] = false;
 
         User::create($validasi);
 
         // $request->session()->flash('success', 'Pendaftaraan berhasil !!! Silakan login');
 
-        return redirect('/user')->with('success', 'Pendaftaraan berhasil !!! Silakan login');
+        return redirect('/login')->with('success', 'Pendaftaraan berhasil !!! Silakan login');
     }
 
     /**

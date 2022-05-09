@@ -54,7 +54,7 @@
                             </td>
 
                             <td>
-                                <form method="post" action="/admin/send/mail">
+                                <form action="/admin/send/mail">
                                     @csrf
                                     <input class="form-control" type="text" name="nama" value="{{ $data->nama }}">
                                     <input class="form-control" type="text" name="email" value="{{ $data->email }}">

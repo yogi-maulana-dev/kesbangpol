@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\AuthUser;
 
 use App\Models\Data;
 use Illuminate\Http\Request;
@@ -207,7 +207,7 @@ class DataController extends Controller
         $nama_dokumen24 = 'keabsahan_kantor' . date('Ymdhis') . '.' . $request->file('keabsahan_kantor')->getClientOriginalExtension();
         $keabsahan_kantor->move($tes . '/', $nama_dokumen24);
 
-         $surat_terdaftar_dikemenkumham = $request->file('surat_terdaftar_dikemenkumham');
+        $surat_terdaftar_dikemenkumham = $request->file('surat_terdaftar_dikemenkumham');
         $nama_dokumen25 = 'surat_terdaftar_dikemenkumham' . date('Ymdhis') . '.' . $request->file('surat_terdaftar_dikemenkumham')->getClientOriginalExtension();
         $surat_terdaftar_dikemenkumham->move($tes . '/', $nama_dokumen25);
 
@@ -243,13 +243,13 @@ class DataController extends Controller
 
         Data::create($validasi);
 
-    //     dump($request->all()); // melihat data yang disubmit
-    // $post = Post::create($request->all());
-    // dump($post); // Melihat apakah model benar-benar berhasil dibuat.
-    // $subscribers = User::subscribing($post->creator)->get();
-    // dd($subscribers); // Melihat data yang diambil dan berhenti eksekusi.
-    // Notification::send($subscribers, NewPostNotification($post));
-    // return response()->json(['data' => $post]);
+        //     dump($request->all()); // melihat data yang disubmit
+        // $post = Post::create($request->all());
+        // dump($post); // Melihat apakah model benar-benar berhasil dibuat.
+        // $subscribers = User::subscribing($post->creator)->get();
+        // dd($subscribers); // Melihat data yang diambil dan berhenti eksekusi.
+        // Notification::send($subscribers, NewPostNotification($post));
+        // return response()->json(['data' => $post]);
 
         return redirect('/dashboard')->with('success', 'Berhasil di tambah data');
 
@@ -301,29 +301,29 @@ class DataController extends Controller
         $tes = auth()->user()->nama;
         $anusurat_terdaftar_dikemenkumham = $tes . '/' . $data->surat_terdaftar_dikemenkumham;
         $anusurat_pendaftaran = $tes . '/' . $data->surat_pendaftaran;
-        $anuakte_pendirian =  $tes . '/' . $data->akte_pendirian;
+        $anuakte_pendirian = $tes . '/' . $data->akte_pendirian;
         $anuadrt = $tes . '/' . $data->adrt;
         $anukeabsahan_kantor = $tes . '/' . $data->keabsahan_kantor;
         $anuprogram = $tes . '/' . $data->program;
-        $anusurat_keputusan =  $tes . '/' . $data->surat_keputusan;
-        $anubiodata_pengurus =  $tes . '/' . $data->biodata_pengurus;
-        $anuktp =  $tes . '/' . $data->ktp;
-        $anufoto =  $tes . '/' . $data->foto;
-        $anusurat_keterangan_domisili =  $tes . '/' . $data->surat_keterangan_domisili;
-        $anunpwp =  $tes . '/' . $data->npwp;
-        $anufoto_kantor =  $tes . '/' . $data->foto_kantor;
-        $anusurat_ketertiban =  $tes . '/' . $data->surat_ketertiban;
+        $anusurat_keputusan = $tes . '/' . $data->surat_keputusan;
+        $anubiodata_pengurus = $tes . '/' . $data->biodata_pengurus;
+        $anuktp = $tes . '/' . $data->ktp;
+        $anufoto = $tes . '/' . $data->foto;
+        $anusurat_keterangan_domisili = $tes . '/' . $data->surat_keterangan_domisili;
+        $anunpwp = $tes . '/' . $data->npwp;
+        $anufoto_kantor = $tes . '/' . $data->foto_kantor;
+        $anusurat_ketertiban = $tes . '/' . $data->surat_ketertiban;
         $anusurat_tidak_avilasi = $tes . '/' . $data->surat_tidak_avilasi;
-        $anusurat_konflik =  $tes . '/' . $data->surat_konflik;
-        $anusurat_hak_cipta =  $tes . '/' . $data->surat_hak_cipta;
-        $anusurat_laporan =  $tes . '/' . $data->surat_laporan;
+        $anusurat_konflik = $tes . '/' . $data->surat_konflik;
+        $anusurat_hak_cipta = $tes . '/' . $data->surat_hak_cipta;
+        $anusurat_laporan = $tes . '/' . $data->surat_laporan;
         $anusurat_absah = $tes . '/' . $data->surat_absah;
-        $anusurat_rekom_agama =  $tes . '/' . $data->surat_rekom_agama;
+        $anusurat_rekom_agama = $tes . '/' . $data->surat_rekom_agama;
         $anusurat_rekom_skpd = $tes . '/' . $data->surat_rekom_skpd;
-        $anusurat_rekom_skpd_kerja =  $tes . '/' . $data->surat_rekom_skpd_kerja;
-        $anusurat_rekom_kesediaan =  $tes . '/' . $data->surat_rekom_kesediaan;
-        $anusurat_izasah =  $tes . '/' . $data->surat_izasah;
-        $anuskt =  $tes . '/' . $data->skt;
+        $anusurat_rekom_skpd_kerja = $tes . '/' . $data->surat_rekom_skpd_kerja;
+        $anusurat_rekom_kesediaan = $tes . '/' . $data->surat_rekom_kesediaan;
+        $anusurat_izasah = $tes . '/' . $data->surat_izasah;
+        $anuskt = $tes . '/' . $data->skt;
         // return $request->file('image')->store($tes);
 
         $validasi = $request->validate([
@@ -362,26 +362,23 @@ class DataController extends Controller
              */
         ]);
 
-            if ($request->hasFile('surat_terdaftar_dikemenkumham')) {
-
+        if ($request->hasFile('surat_terdaftar_dikemenkumham')) {
             // cek jika ada
-          if(File::exists($anusurat_terdaftar_dikemenkumham)){
-            File::delete($anusurat_terdaftar_dikemenkumham);
-        }
+            if (File::exists($anusurat_terdaftar_dikemenkumham)) {
+                File::delete($anusurat_terdaftar_dikemenkumham);
+            }
 
-             $surat_terdaftar_dikemenkumham = $request->file('surat_terdaftar_dikemenkumham');
+            $surat_terdaftar_dikemenkumham = $request->file('surat_terdaftar_dikemenkumham');
             $nama_dokumen25 = 'surat_terdaftar_dikemenkumham' . date('Ymdhis') . '.' . $request->file('surat_terdaftar_dikemenkumham')->getClientOriginalExtension();
             $surat_terdaftar_dikemenkumham->move($tes . '/', $nama_dokumen25);
             $validasi['surat_terdaftar_dikemenkumham'] = $nama_dokumen25;
         }
 
         if ($request->hasFile('surat_pendaftaran')) {
-
-
-              // cek jika ada
-          if(File::exists($anusurat_pendaftaran)){
-            File::delete($anusurat_pendaftaran);
-        }
+            // cek jika ada
+            if (File::exists($anusurat_pendaftaran)) {
+                File::delete($anusurat_pendaftaran);
+            }
 
             $surat_pendaftaran = $request->file('surat_pendaftaran');
             $nama_dokumen1 = 'surat_pendaftaran' . date('Ymdhis') . '.' . $request->file('surat_pendaftaran')->getClientOriginalExtension();
@@ -390,10 +387,10 @@ class DataController extends Controller
         }
 
         if ($request->hasFile('akte_pendirian')) {
-                  // cek jika ada
-          if(File::exists($anuakte_pendirian)){
-            File::delete($anuakte_pendirian);
-        }
+            // cek jika ada
+            if (File::exists($anuakte_pendirian)) {
+                File::delete($anuakte_pendirian);
+            }
 
             $akte_pendirian = $request->file('akte_pendirian');
 
@@ -404,10 +401,10 @@ class DataController extends Controller
         }
 
         if ($request->hasFile('adrt')) {
-             // cek jika ada
-          if(File::exists($anuadrt)){
-            File::delete($anuadrt);
-        }
+            // cek jika ada
+            if (File::exists($anuadrt)) {
+                File::delete($anuadrt);
+            }
 
             $adrt = $request->file('adrt');
 
@@ -418,10 +415,10 @@ class DataController extends Controller
         }
 
         if ($request->hasFile('surat_keputusan')) {
-                    // cek jika ada
-          if(File::exists($anusurat_keputusan)){
-            File::delete($anusurat_keputusan);
-        }
+            // cek jika ada
+            if (File::exists($anusurat_keputusan)) {
+                File::delete($anusurat_keputusan);
+            }
 
             $nama_dokumen4 = 'surat_keputusan' . date('Ymdhis') . '.' . $request->file('surat_keputusan')->getClientOriginalExtension();
             $surat_keputusan->move($tes . '/', $nama_dokumen4);
@@ -429,11 +426,10 @@ class DataController extends Controller
         }
 
         if ($request->hasFile('biodata_pengurus')) {
-
-              // cek jika ada
-          if(File::exists($anubiodata_pengurus)){
-            File::delete($anubiodata_pengurus);
-        }
+            // cek jika ada
+            if (File::exists($anubiodata_pengurus)) {
+                File::delete($anubiodata_pengurus);
+            }
 
             $biodata_pengurus = $request->file('biodata_pengurus');
 
@@ -452,10 +448,10 @@ class DataController extends Controller
         }
 
         if ($request->hasFile('ktp')) {
-               // cek jika ada
-          if(File::exists($anuktp)){
-            File::delete($anuktp);
-        }
+            // cek jika ada
+            if (File::exists($anuktp)) {
+                File::delete($anuktp);
+            }
             $KTP = $request->file('ktp');
             $nama_dokumen6 = 'KTP' . date('Ymdhis') . '.' . $request->file('ktp')->getClientOriginalExtension();
             $KTP->move($tes . '/', $nama_dokumen6);
@@ -470,9 +466,9 @@ class DataController extends Controller
         }
 
         if ($request->hasFile('foto')) {
-               if(File::exists($anufoto)){
-            File::delete($anufoto);
-        }
+            if (File::exists($anufoto)) {
+                File::delete($anufoto);
+            }
 
             $foto = $request->file('foto');
             $nama_dokumen7 = 'foto' . date('Ymdhis') . '.' . $request->file('foto')->getClientOriginalExtension();
@@ -488,11 +484,9 @@ class DataController extends Controller
         }
 
         if ($request->hasFile('npwp')) {
-
-               if(File::exists($anunpwp)){
-            File::delete($anunpwp);
-        }
-
+            if (File::exists($anunpwp)) {
+                File::delete($anunpwp);
+            }
 
             $npwp = $request->file('npwp');
             $nama_dokumen8 = 'npwp' . date('Ymdhis') . '.' . $request->file('npwp')->getClientOriginalExtension();
@@ -508,10 +502,9 @@ class DataController extends Controller
         }
 
         if ($request->hasFile('foto_kantor')) {
-              if(File::exists($anufoto_kantor)){
-            File::delete($anufoto_kantor);
-        }
-
+            if (File::exists($anufoto_kantor)) {
+                File::delete($anufoto_kantor);
+            }
 
             $foto_kantor = $request->file('foto_kantor');
             $nama_dokumen9 = 'foto_kantor' . date('Ymdhis') . '.' . $request->file('foto_kantor')->getClientOriginalExtension();
@@ -527,11 +520,9 @@ class DataController extends Controller
         }
 
         if ($request->hasFile('surat_ketertiban')) {
-
-             if(File::exists($anusurat_ketertiban)){
-            File::delete($anusurat_ketertiban);
-        }
-
+            if (File::exists($anusurat_ketertiban)) {
+                File::delete($anusurat_ketertiban);
+            }
 
             $surat_ketertiban = $request->file('surat_ketertiban');
             $nama_dokumen10 = 'surat_ketertiban' . date('Ymdhis') . '.' . $request->file('surat_ketertiban')->getClientOriginalExtension();
@@ -555,10 +546,9 @@ class DataController extends Controller
          */
 
         if ($request->hasFile('surat_tidak_avilasi')) {
-
-                  if(File::exists($anusurat_tidak_avilasi)){
-            File::delete($anusurat_tidak_avilasi);
-        }
+            if (File::exists($anusurat_tidak_avilasi)) {
+                File::delete($anusurat_tidak_avilasi);
+            }
 
             $surat_tidak_avilasi = $request->file('surat_tidak_avilasi');
             $nama_dokumen11 = 'surat_tidak_avilasi' . date('Ymdhis') . '.' . $request->file('surat_tidak_avilasi')->getClientOriginalExtension();
@@ -574,10 +564,9 @@ class DataController extends Controller
         }
 
         if ($request->hasFile('surat_konflik')) {
-
-                  if(File::exists($anusurat_konflik)){
-            File::delete($anusurat_konflik);
-        }
+            if (File::exists($anusurat_konflik)) {
+                File::delete($anusurat_konflik);
+            }
 
             $surat_konflik = $request->file('surat_konflik');
             $nama_dokumen12 = 'surat_konflik' . date('Ymdhis') . '.' . $request->file('surat_konflik')->getClientOriginalExtension();
@@ -593,10 +582,9 @@ class DataController extends Controller
         }
 
         if ($request->hasFile('surat_hak_cipta')) {
-
-              if(File::exists($anusurat_hak_cipta)){
-            File::delete($anusurat_hak_cipta);
-        }
+            if (File::exists($anusurat_hak_cipta)) {
+                File::delete($anusurat_hak_cipta);
+            }
 
             $surat_hak_cipta = $request->file('surat_hak_cipta');
             $nama_dokumen13 = 'surat_hak_cipta' . date('Ymdhis') . '.' . $request->file('surat_hak_cipta')->getClientOriginalExtension();
@@ -612,10 +600,9 @@ class DataController extends Controller
         }
 
         if ($request->hasFile('surat_laporan')) {
-
-             if(File::exists($anusurat_laporan)){
-            File::delete($anusurat_laporan);
-        }
+            if (File::exists($anusurat_laporan)) {
+                File::delete($anusurat_laporan);
+            }
 
             $surat_laporan = $request->file('surat_laporan');
             $nama_dokumen14 = 'surat_laporan' . date('Ymdhis') . '.' . $request->file('surat_laporan')->getClientOriginalExtension();
@@ -631,10 +618,9 @@ class DataController extends Controller
         }
 
         if ($request->hasFile('surat_absah')) {
-
-             if(File::exists($anusurat_absah)){
-            File::delete($anusurat_absah);
-        }
+            if (File::exists($anusurat_absah)) {
+                File::delete($anusurat_absah);
+            }
 
             $surat_absah = $request->file('surat_absah');
             $nama_dokumen15 = 'surat_absah' . date('Ymdhis') . '.' . $request->file('surat_absah')->getClientOriginalExtension();
@@ -650,10 +636,9 @@ class DataController extends Controller
         }
 
         if ($request->hasFile('surat_rekom_agama')) {
-
-            if(File::exists($anusurat_rekom_agama)){
-            File::delete($anusurat_rekom_agama);
-        }
+            if (File::exists($anusurat_rekom_agama)) {
+                File::delete($anusurat_rekom_agama);
+            }
 
             $surat_rekom_agama = $request->file('surat_rekom_agama');
             $nama_dokumen16 = 'surat_rekom_agama' . date('Ymdhis') . '.' . $request->file('surat_rekom_agama')->getClientOriginalExtension();
@@ -669,10 +654,9 @@ class DataController extends Controller
         }
 
         if ($request->hasFile('surat_rekom_skpd')) {
-
-            if(File::exists($anusurat_rekom_skpd)){
-            File::delete($anusurat_rekom_skpd);
-        }
+            if (File::exists($anusurat_rekom_skpd)) {
+                File::delete($anusurat_rekom_skpd);
+            }
 
             $surat_rekom_skpd = $request->file('surat_rekom_skpd');
             $nama_dokumen17 = 'surat_rekom_skpd' . date('Ymdhis') . '.' . $request->file('surat_rekom_skpd')->getClientOriginalExtension();
@@ -688,10 +672,9 @@ class DataController extends Controller
         }
 
         if ($request->hasFile('surat_rekom_skpd_kerja')) {
-
-              if(File::exists($anusurat_rekom_skpd_kerja)){
-            File::delete($anusurat_rekom_skpd_kerja);
-        }
+            if (File::exists($anusurat_rekom_skpd_kerja)) {
+                File::delete($anusurat_rekom_skpd_kerja);
+            }
 
             $surat_rekom_skpd = $request->file('surat_rekom_skpd_kerja');
             $nama_dokumen18 = 'surat_rekom_skpd_kerja' . date('Ymdhis') . '.' . $request->file('surat_rekom_skpd_kerja')->getClientOriginalExtension();
@@ -707,10 +690,9 @@ class DataController extends Controller
         }
 
         if ($request->hasFile('surat_rekom_kesediaan')) {
-
-             if(File::exists($anusurat_rekom_kesediaan)){
-            File::delete($anusurat_rekom_kesediaan);
-        }
+            if (File::exists($anusurat_rekom_kesediaan)) {
+                File::delete($anusurat_rekom_kesediaan);
+            }
 
             $surat_rekom_kesediaan = $request->file('surat_rekom_kesediaan');
             $nama_dokumen19 = 'surat_rekom_kesediaan' . date('Ymdhis') . '.' . $request->file('surat_rekom_kesediaan')->getClientOriginalExtension();
@@ -726,10 +708,9 @@ class DataController extends Controller
         }
 
         if ($request->hasFile('surat_izasah')) {
-
-             if(File::exists($anusurat_izasah)){
-            File::delete($anusurat_izasah);
-        }
+            if (File::exists($anusurat_izasah)) {
+                File::delete($anusurat_izasah);
+            }
 
             $izasah = $request->file('surat_izasah');
             $nama_dokumen20 = 'surat_izasah' . date('Ymdhis') . '.' . $request->file('surat_izasah')->getClientOriginalExtension();
@@ -745,10 +726,9 @@ class DataController extends Controller
         }
 
         if ($request->hasFile('skt')) {
-
-              if(File::exists($anuskt)){
-            File::delete($anuskt);
-        }
+            if (File::exists($anuskt)) {
+                File::delete($anuskt);
+            }
 
             $skt = $request->file('skt');
             $nama_dokumen21 = 'skt' . date('Ymdhis') . '.' . $request->file('skt')->getClientOriginalExtension();
@@ -764,11 +744,9 @@ class DataController extends Controller
         }
 
         if ($request->hasFile('surat_keterangan_domisili')) {
-
-            if(File::exists($anusurat_keterangan_domisili)){
-            File::delete($anusurat_keterangan_domisili);
-        }
-
+            if (File::exists($anusurat_keterangan_domisili)) {
+                File::delete($anusurat_keterangan_domisili);
+            }
 
             $surat_keterangan_domisili = $request->file('surat_keterangan_domisili');
             $nama_dokumen22 = 'surat_keterangan_domisili' . date('Ymdhis') . '.' . $request->file('surat_keterangan_domisili')->getClientOriginalExtension();
@@ -784,11 +762,9 @@ class DataController extends Controller
         }
 
         if ($request->hasFile('program')) {
-
-               if(File::exists($anuprogram)){
-            File::delete($anuprogram);
-        }
-
+            if (File::exists($anuprogram)) {
+                File::delete($anuprogram);
+            }
 
             $program = $request->file('program');
             $nama_dokumen23 = 'program' . date('Ymdhis') . '.' . $request->file('program')->getClientOriginalExtension();
@@ -804,10 +780,9 @@ class DataController extends Controller
         }
 
         if ($request->hasFile('keabsahan_kantor')) {
-
-                  if(File::exists($anukeabsahan_kantor)){
-            File::delete($anukeabsahan_kantor);
-        }
+            if (File::exists($anukeabsahan_kantor)) {
+                File::delete($anukeabsahan_kantor);
+            }
 
             $keabsahan_kantor = $request->file('keabsahan_kantor');
             $nama_dokumen24 = 'keabsahan_kantor' . date('Ymdhis') . '.' . $request->file('keabsahan_kantor')->getClientOriginalExtension();
@@ -822,7 +797,7 @@ class DataController extends Controller
              */
         }
 
-            //   $validasi['surat_terdaftar_dikemenkumham'] = $anusurat_terdaftar_dikemenkumham;
+        //   $validasi['surat_terdaftar_dikemenkumham'] = $anusurat_terdaftar_dikemenkumham;
         // $validasi['akte_pendirian'] = $nama_dokumen2;
         // $validasi['adrt'] = $nama_dokumen3;
         // $validasi['surat_keputusan'] = $nama_dokumen4;
