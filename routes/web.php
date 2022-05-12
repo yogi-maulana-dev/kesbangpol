@@ -13,8 +13,9 @@ use App\Http\Controllers\LoginadminController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\MenudataController;
 use App\Http\Controllers\SendMailController;
-use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\VerifikasiController;
+use App\Http\Controllers\ProfilController;
 
 use App\Models\Dashboard;
 use Illuminate\Http\Request;
@@ -32,16 +33,30 @@ use App\Models\Home;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+/**
+ * Show the form for creating a new resource.
+ * Whatapps 6289631031237
+ * email : yogimaulana100@gmail.com
+ * https://github.com/Ays1234
+ * https://serbaotodidak.com/
+ */
+
 // ----------------------------- forget password ----------------------------//
-Route::get('forget-password', [App\Http\Controllers\AuthUser\ForgotPasswordController::class, 'getEmail'])->name('forget-password');
-Route::post('forget-password', [App\Http\Controllers\AuthUser\ForgotPasswordController::class, 'postEmail'])->name('forget-password');
+Route::get('/reset-password', [App\Http\Controllers\AuthUser\ResetPasswordController::class, 'index'])->name('reset-password');
+Route::post('/reset-password', [App\Http\Controllers\AuthUser\ResetPasswordController::class, 'reset-password'])->name('user.reset-password');
+
+Route::get('/verifikasi', [App\Http\Controllers\AuthUser\VerifikasiController::class, 'index'])->name('user.verifikasi');
+Route::post('/verifikasi/verifikasi', [App\Http\Controllers\AuthUser\VerifikasiController::class, 'verifikasi'])->name('user.add.verifikasi');
+Route::post('/verifikasi/reset', [App\Http\Controllers\AuthUser\VerifikasiController::class, 'reset'])->name('user.reset.verifikasi');
 
 // ----------------------------- reset password -----------------------------//
 Route::get('reset-password/{token}', [App\Http\Controllers\AuthUser\ResetPasswordController::class, 'getPassword']);
 Route::post('reset-password', [App\Http\Controllers\AuthUser\ResetPasswordController::class, 'updatePassword']);
 
-// Route::get('/',[HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
+
 Route::get('/home/{home:slug}', [HomeController::class, 'show']);
 Route::get('/categori/{categori:id}', function (Categori $categori) {
     return view('categori_berita', ['judul' => 'Categori Berita', 'beritas' => $categori->home, 'categoris' => $categori->name]);
@@ -75,6 +90,7 @@ Route::prefix('admin')
 
         Route::middleware(['auth:admin', 'preventBackHistory'])->group(function () {
             Route::get('/dashboard', ['App\Http\Controllers\AuthAdmin\AdminController', 'index'])->name('dashboard');
+            Route::get('/profil', ['App\Http\Controllers\AuthAdmin\ProfilController', 'index'])->name('profil');
             Route::get('/berita', ['App\Http\Controllers\AuthAdmin\BeritaController', 'index'])->name('berita');
             Route::post('/berita', ['App\Http\Controllers\AuthAdmin\BeritaController', 'store'])->name('berita.store');
             Route::post('/berita/update', ['App\Http\Controllers\AuthAdmin\BeritaController', 'update'])->name('berita.update');

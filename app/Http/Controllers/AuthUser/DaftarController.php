@@ -7,6 +7,10 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Illuminate\Support\Str;
+use App\Events\Auth\UserActivationEmail;
+use Mail;
+use Session;
+use App\Mail\SendDemoMail;
 
 class DaftarController extends Controller
 {
@@ -41,6 +45,8 @@ class DaftarController extends Controller
     {
         //
 
+        $token = Str::random(17);
+
         $validasi = $request->validate([
             'nama' => 'required|max:255',
             'alamat' => 'required|max:255',
@@ -52,10 +58,17 @@ class DaftarController extends Controller
         ]);
 
         $validasi['password'] = Hash::make($validasi['password']);
-        $validasi['token_aja'] = Str::random(8);
+        $validasi['token_aja'] = $token;
         $validasi['iniVeri'] = false;
 
         User::create($validasi);
+
+        $maildata = [
+            'email' => $request->email,
+            'token_aja' => $token,
+        ];
+
+        Mail::to($request->email)->send(new SendDemoMail($maildata));
 
         // $request->session()->flash('success', 'Pendaftaraan berhasil !!! Silakan login');
 

@@ -3,7 +3,7 @@
 <!-- Mirrored from ableproadmin.com/7.0/default/auth-sign-up.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 16 Apr 2022 13:57:29 GMT -->
 
 <head>
-    <title>Ablepro v7.0 bootstrap admin template by Phoenixcoded</title>
+    <title>{{ $judul }}</title>
     <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 10]>
@@ -195,13 +195,13 @@
                                     <input type="hidden" name="kodehp" id="address-country">
                                     <input id="phone" type="tel"
                                         class="form-control @error('nohp') is-invalid @enderror" name="nohp"
-                                        value="{{ old('nohp') }}" /> @error('nama')
+                                        value="{{ old('nohp') }}" /> @error('nohp')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
-                                    <div class="row m-t-25 text-left">
-                                        {{-- <div class="col-md-12">
+                                </div>
+                                {{-- <div class="col-md-12">
                                                     <div class="checkbox-fade fade-in-primary">
                                                         <label>
                                                     <input
@@ -244,36 +244,36 @@
                                                 </label>
                                                     </div>
                                                 </div> --}}
+
+                                <div class="row m-t-30">
+                                    <div class="col-md-12">
+                                        <button type="submit"
+                                            class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">
+                                            Daftarkan Sekarang
+                                        </button>
                                     </div>
-                                    <div class="row m-t-30">
-                                        <div class="col-md-12">
-                                            <button type="submit"
-                                                class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">
-                                                Daftarkan Sekarang
-                                            </button>
-                                        </div>
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <p class="text-inverse text-left">
+                                            <a href="/"><b>Kembali ke halaman
+                                                    awal</b></a>
+                                        </p>
                                     </div>
-                                    <hr />
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <p class="text-inverse text-left">
-                                                <a href="/"><b>Kembali ke halaman
-                                                        awal</b></a>
-                                            </p>
-                                        </div>
-                                        <div class="col-md-5">
-                                            <p class="text-inverse text-right">
-                                                <a href="index.html"><b>Login aku sudah ada
-                                                        !</b></a>
-                                            </p>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <img src="/admin_tampil/assets/images/auth/Logo-small-bottom.png"
-                                                alt="small-logo.png" />
-                                        </div>
+                                    <div class="col-md-5">
+                                        <p class="text-inverse text-right">
+                                            <a href="index.html"><b>Login akun sudah ada
+                                                    !</b></a>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <img src="/admin_tampil/assets/images/auth/Logo-small-bottom.png"
+                                            alt="small-logo.png" />
                                     </div>
                                 </div>
                             </div>
+                        </div>
                     </form>
                 </div>
                 <!-- end of col-sm-12 -->

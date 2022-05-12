@@ -122,8 +122,7 @@
                                             data-bs-dismiss="alert" role="alert">
                                             {{ session('success') }}</strong>
                                             <button type="button" class="x-square" data-bs-dismiss="alert"
-                                                aria-label="Close">
-                                                <i class="icofont" data-feather="x-square"></i></button>
+                                                aria-label="Close"></button>
                                         </div>
                                     @endif
 
@@ -140,35 +139,21 @@
                                 </div>
                             </div>
 
-                            <form action="{{ route('user.login.save') }}" method="post"
+                            <form action="{{ route('user.add.verifikasi') }}" method="post"
                                 class="md-float-material form-material">
 
                                 {{ csrf_field() }}
-
-
                                 <div class="form-group form-primary">
-                                    <input type="text" name="email"
-                                        class="form-control @error('email') is-invalid @enderror" required=""
-                                        value="{{ old('email') }}" autofocus>
-                                    @error('email')
+                                    <input type="text" name="token_aja"
+                                        class="form-control @error('token_aja') is-invalid @enderror" required=""
+                                        value="{{ old('token_aja') }}" autofocus>
+                                    @error('token_aja')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                     <span class="form-bar"></span>
-                                    <label class="float-label">Alamat email</label>
-                                </div>
-                                <div class="form-group form-primary">
-                                    <input type="password" name="password"
-                                        class="form-control @error('password') is-invalid @enderror" id="Password"
-                                        placeholder="" required="">
-                                    @error('password')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                    <span class="form-bar"></span>
-                                    <label class="float-label">Password</label>
+                                    <label class="float-label">Kode verifikasi</label>
                                 </div>
                                 <div class="row m-t-25 text-left">
                                     <div class="col-12">
@@ -189,7 +174,7 @@
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
                                         <button type="submit"
-                                            class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Masuk
+                                            class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Kirim
                                         </button>
                                     </div>
                                 </div>
@@ -200,14 +185,16 @@
                             <div class="row">
                                 <div class="col-md-10">
                                     {{-- <p class="text-inverse text-left m-b-0">Thank you.</p> --}}
-                                    <p class="text-inverse text-left"><a href="/home"><b>Kembali pada
-                                                Home</b></a>
+                                    <p class="text-inverse text-left"><a href="/login"><b>Kembali pada
+                                                Login</b></a>
                                     </p>
                                 </div>
 
                                 <div class="col-md-10">
                                     {{-- <p class="text-inverse text-right m-b-0">Thank you.</p> --}}
-                                    <p class="text-inverse text-right"><a href="/daftar"><b>DAFTAR</b></a>
+                                    <p class="text-inverse text-right" data-toggle="modal"
+                                        data-target="#ModalKirimulang">
+                                        <b>Kirim Ulang Kode</b>
                                     </p>
                                 </div>
 
@@ -224,6 +211,68 @@
                 <!-- end of col-sm-12 -->
             </div>
             <!-- end of row -->
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="ModalKirimulang" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Kirim Ulang Kode Verifikasi</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/verifikasi/reset" method="post" class="md-float-material form-material">
+
+                            {{ csrf_field() }}
+                            <div class="form-group form-primary">
+                                <input type="text" name="email"
+                                    class="form-control @error('email') is-invalid @enderror" required=""
+                                    value="{{ old('email') }}" autofocus>
+                                @error('email')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                                <span class="form-bar"></span>
+                                <label class="float-label">Email verifikasi</label>
+                            </div>
+                            <div class="row m-t-25 text-left">
+                                <div class="col-12">
+                                    {{-- <div class="checkbox-fade fade-in-primary d-">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                                <span class="cr"><i
+                                                        class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                                <span class="text-inverse">Remember me</span>
+                                            </label>
+                                        </div> --}}
+                                    {{-- <div class="forgot-phone text-right float-right">
+                                            <a href="auth-reset-password.html" class="text-right f-w-600"> Forgot
+                                                Password?</a>
+                                        </div> --}}
+                                </div>
+                            </div>
+                            <div class="row m-t-30">
+                                <div class="col-md-12">
+                                    <button type="submit"
+                                        class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Kirim
+                                        Ulang
+                                    </button>
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- end of container-fluid -->
     </section>

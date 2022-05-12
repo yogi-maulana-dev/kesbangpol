@@ -21,15 +21,14 @@ class RedirectIfAuthenticated
     {
         $guards = empty($guards) ? [null] : $guards;
 
+        $user = \App\Models\User::where('email', $request->email)->first();
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                if($guard ==='admin'){
-                     return redirect()->route('admin.dashboard');
-
-
+                if ($guard === 'admin') {
+                    return redirect()->route('admin.dashboard');
+                } elseif ($user->iniVeri == '1') {
+                    return redirect()->route('user.dashboard');
                 }
-               return redirect()->route('user.dashboard');
-
             }
         }
 
