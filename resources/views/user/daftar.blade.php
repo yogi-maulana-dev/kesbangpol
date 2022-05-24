@@ -146,7 +146,7 @@
                                 <div class="form-group form-primary">
                                     <input type="text" class="form-control @error('email') is-invalid @enderror"
                                         name="email" id="Email" placeholder="" value="{{ old('email') }}" />
-                                    @error('password')
+                                    @error('email')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
@@ -192,11 +192,12 @@
 
 
                                 <div class="form-group form-primary">
-                                    <input type="hidden" name="kodehp" id="address-country">
+                                    <input type="hidden" name="kodehp" id="address-country"
+                                        value="{{ old('kodehp') }}">
                                     <input id="phone" type="tel"
                                         class="form-control @error('nohp') is-invalid @enderror" name="nohp"
                                         value="{{ old('nohp') }}" /> @error('nohp')
-                                        <div class="invalid-feedback">
+                                        <div class="invalid-feedback" requried="">
                                             {{ $message }}
                                         </div>
                                     @enderror

@@ -127,6 +127,7 @@
                                         </div>
                                     @endif
 
+
                                     @if (session()->has('loginError'))
                                         <div class="alert alert-warning x-square">
                                             <button type="button" class="close" data-dismiss="alert"
@@ -148,7 +149,7 @@
 
                                 <div class="form-group form-primary">
                                     <input type="text" name="email"
-                                        class="form-control @error('email') is-invalid @enderror" required=""
+                                        class="form-control @error('email') is-invalid @enderror"
                                         value="{{ old('email') }}" autofocus>
                                     @error('email')
                                         <div class="invalid-feedback">
@@ -161,7 +162,7 @@
                                 <div class="form-group form-primary">
                                     <input type="password" name="password"
                                         class="form-control @error('password') is-invalid @enderror" id="Password"
-                                        placeholder="" required="">
+                                        placeholder="Password">
                                     @error('password')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -198,23 +199,27 @@
 
                             <hr />
                             <div class="row">
-                                <div class="col-md-10">
+                                <div class="col-md-6">
                                     {{-- <p class="text-inverse text-left m-b-0">Thank you.</p> --}}
-                                    <p class="text-inverse text-left"><a href="/home"><b>Kembali pada
-                                                Home</b></a>
-                                    </p>
+                                    <div class="col-md-12">
+                                        <a href="/home"
+                                            class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20"
+                                            style="width: 130px;">Home
+                                        </a>
+                                    </div>
                                 </div>
 
-                                <div class="col-md-10">
+                                <div class="col-md-6">
                                     {{-- <p class="text-inverse text-right m-b-0">Thank you.</p> --}}
-                                    <p class="text-inverse text-right"><a href="/daftar"><b>DAFTAR</b></a>
-                                    </p>
+                                    <div class="col-md-12">
+                                        <a href="/daftar"
+                                            class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20 "
+                                            style="width: 130px;">Daftar
+                                        </a>
+                                    </div>
                                 </div>
 
-                                <div class="col-md-2">
-                                    <img src="/admin_tampil/assets/images/auth/Logo-small-bottom.png"
-                                        alt="small-logo.png">
-                                </div>
+
                             </div>
                         </div>
                     </div>

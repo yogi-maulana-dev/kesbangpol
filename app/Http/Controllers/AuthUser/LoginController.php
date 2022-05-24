@@ -94,15 +94,21 @@ class LoginController extends Controller
     {
         //
 
-        $credentials = $request->validate([
-            'email' => ['required', 'email', Rule::exists('users')->where(function ($query) {
+        $credentials = $request->validate(
+            [
+                'email' => [
+                    'required',
+                    'email',
+                    Rule::exists('users')->where(function ($query) {
                         $query->where('iniVeri', true);
-                    })
+                    }),
                 ],
-            'password' => 'required',
-        ],[
-            'email'.'.exists' =>'Email anda belum diaktifkan, silakan cek email untuk mengaktifkan'
-        ]);
+                'password' => 'required',
+            ],
+            [
+                'email' . '.exists' => 'Email anda belum diaktifkan, silakan cek email untuk mengaktifkan',
+            ],
+        );
 
         if (Auth::guard('web')->attempt($credentials)) {
             $request->session()->regenerate();

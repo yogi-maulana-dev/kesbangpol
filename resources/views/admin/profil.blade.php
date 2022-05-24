@@ -65,6 +65,10 @@
                                                 Data Admin
                                             </a>
                                             <div class="slide"></div>
+
+
+                                            <h3 class="text-center">{{ $judul }} Aplikasi</h3>
+
                                         </li>
                                         {{-- <li class="nav-item">
                                             <a class="nav-link" data-toggle="tab" href="#binfo" role="tab">User's
@@ -83,6 +87,24 @@
                                         </li> --}}
                                     </ul>
                                 </div>
+
+                                @if (session()->has('success'))
+                                    <div class="alert alert-success alert-dismissible fade show" data-bs-dismiss="alert"
+                                        role="alert">
+                                        {{ session('success') }}</strong>
+                                    </div>
+                                @endif
+
+                                @if (session()->has('loginError'))
+                                    <div class="alert alert-warning x-square">
+                                        <button type="button" class="close" data-dismiss="alert"
+                                            aria-label="Close">
+                                            <i class="icofont" data-feather="x-square"></i>
+                                        </button>
+                                        <p><strong>{{ session('loginError') }}!</strong>
+                                    </div>
+                                @endif
+
                                 <!-- tab header end -->
                                 <!-- tab content start -->
                                 <div class="tab-content">
@@ -96,6 +118,9 @@
                                                     class="btn btn-sm btn-primary waves-effect waves-light f-right">
                                                     <i class="icofont icofont-edit"></i>
                                                 </button>
+
+
+
                                             </div>
                                             <div class="card-block">
                                                 <div class="view-info">
@@ -155,85 +180,56 @@
                                                             <div class="general-info form-material">
                                                                 <div class="row">
                                                                     <div class="col-lg-6 ">
-
-                                                                        <div class="material-group">
-                                                                            <div class="material-addone">
-                                                                                <i class="icofont icofont-user"></i>
+                                                                        <form method="POST"
+                                                                            action="{{ route('admin.update.profil') }}">
+                                                                            @csrf
+                                                                            <input type="hidden" name="profil"
+                                                                                value="{{ Auth::guard('admin')->user()->id }}">
+                                                                            <div class="material-group">
+                                                                                <div class="material-addone">
+                                                                                    <i class="icofont icofont-user"></i>
+                                                                                </div>
+                                                                                <div class="form-group form-primary">
+                                                                                    <input type="text" name="nama"
+                                                                                        class="form-control" required=""
+                                                                                        value="{{ Auth::guard('admin')->user()->nama }}">
+                                                                                    <span class="form-bar"></span>
+                                                                                    <label class="float-label">Nama
+                                                                                        Lengkap
+                                                                                    </label>
+                                                                                </div>
                                                                             </div>
-                                                                            <div class="form-group form-primary">
-                                                                                <input type="text" name="nama"
-                                                                                    class="form-control" required=""
-                                                                                    value="{{ Auth::guard('admin')->user()->nama }}">
-                                                                                <span class="form-bar"></span>
-                                                                                <label class="float-label">Nama Lengkap
-                                                                                </label>
+
+                                                                            <div class="material-group">
+                                                                                <div class="material-addone">
+                                                                                    <i class="icofont icofont-user"></i>
+                                                                                </div>
+                                                                                <div class="form-group form-primary">
+                                                                                    <input type="text" name="username"
+                                                                                        class="form-control" required=""
+                                                                                        value="{{ Auth::guard('admin')->user()->username }}">
+                                                                                    <span class="form-bar"></span>
+                                                                                    <label class="float-label">Username
+                                                                                    </label>
+                                                                                </div>
                                                                             </div>
-                                                                        </div>
 
-                                                                        <div class="material-group">
-                                                                            <div class="material-addone">
-                                                                                <i class="icofont icofont-user"></i>
+                                                                            <div class="material-group">
+                                                                                <div class="material-addone">
+                                                                                    <i class="icofont icofont-email"></i>
+                                                                                </div>
+                                                                                <div class="form-group form-primary">
+                                                                                    <input type="text" name="email"
+                                                                                        class="form-control" required=""
+                                                                                        value="{{ Auth::guard('admin')->user()->email }}">
+                                                                                    <span class="form-bar"></span>
+                                                                                    <label class="float-label">Email
+                                                                                    </label>
+                                                                                </div>
                                                                             </div>
-                                                                            <div class="form-group form-primary">
-                                                                                <input type="text" name="username"
-                                                                                    class="form-control" required=""
-                                                                                    value="{{ Auth::guard('admin')->user()->username }}">
-                                                                                <span class="form-bar"></span>
-                                                                                <label class="float-label">Username
-                                                                                </label>
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <div class="material-group">
-                                                                            <div class="material-addone">
-                                                                                <i class="icofont icofont-email"></i>
-                                                                            </div>
-                                                                            <div class="form-group form-primary">
-                                                                                <input type="text" name="email"
-                                                                                    class="form-control" required=""
-                                                                                    value="{{ Auth::guard('admin')->user()->email }}">
-                                                                                <span class="form-bar"></span>
-                                                                                <label class="float-label">Email
-                                                                                </label>
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <div class="material-group">
-                                                                            <div class="material-addone">
-                                                                                <span id="mybutton" onclick="change()"
-                                                                                    class="input-group-text">
-                                                                                    <!-- icon mata bawaan bootstrap  -->
-                                                                                    <svg width="0.8em" height="0.8em"
-                                                                                        viewBox="0 0 15 16"
-                                                                                        class="bi bi-eye-fill"
-                                                                                        fill="currentColor"
-                                                                                        xmlns="http://www.w3.org/2000/svg">
-                                                                                        <path
-                                                                                            d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
-                                                                                        <path fill-rule="evenodd"
-                                                                                            d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
-                                                                                    </svg>
-                                                                                </span>
-                                                                            </div>
-                                                                            <div class="form-group form-primary">
-
-                                                                                <input type="password" id="pass"
-                                                                                    class="form-control"
-                                                                                    value="Crypt::decryptString('your_encrypted_string_here');{{ $password }}">
 
 
-                                                                                <!-- kita pasang onclick untuk merubah icon buka/tutup mata setiap diklik  -->
-
-
-
-
-                                                                                <label class="float-label">Password
-                                                                                </label>
-                                                                            </div>
-                                                                        </div>
-
-
-                                                                        <div class="material-group">
+                                                                            {{-- <div class="material-group">
                                                                             <div class="material-addone">
                                                                                 <i class="fa fa-heart"></i>
                                                                             </div>
@@ -250,98 +246,63 @@
                                                                                 <span class="form-bar"></span>
 
                                                                             </div>
-                                                                        </div>
+                                                                        </div> --}}
 
 
+                                                                    </div>
+                                                                    <!-- end of table col-lg-6 -->
+                                                                    <div class="col-lg-6">
+                                                                        {{-- <div class="material-group">
+                                                                            <div class="material-addone">
+                                                                                <i class="icofont-ui-password"></i>
+                                                                            </div>
+                                                                            <div class="form-group form-primary">
+                                                                                <input type="text" name="password"
+                                                                                    class="form-control">
+                                                                                <span class="form-bar"></span>
+                                                                                <label class="float-label">Password
+                                                                                </label>
+                                                                            </div>
+                                                                        </div> --}}
 
                                                                         <div class="material-group">
                                                                             <div class="material-addone">
                                                                                 <i class="icofont icofont-location-pin"></i>
                                                                             </div>
                                                                             <div class="form-group form-primary">
-                                                                                <input type="text" name="footer-email"
-                                                                                    class="form-control" required="">
+                                                                                <input type="text" name="alamat"
+                                                                                    class="form-control" required=""
+                                                                                    value="{{ Auth::guard('admin')->user()->alamat }}">
                                                                                 <span class="form-bar"></span>
-                                                                                <label
-                                                                                    class="float-label">Address</label>
-                                                                            </div>
-                                                                        </div>
-
-
-                                                                    </div>
-                                                                    <!-- end of table col-lg-6 -->
-                                                                    <div class="col-lg-6">
-
-                                                                        <div class="material-group">
-                                                                            <div class="material-addone">
-                                                                                <i
-                                                                                    class="icofont icofont-mobile-phone"></i>
-                                                                            </div>
-                                                                            <div class="form-group form-primary">
-                                                                                <input type="text" name="footer-email"
-                                                                                    class="form-control" required="">
-                                                                                <span class="form-bar"></span>
-                                                                                <label class="float-label">Mobile
-                                                                                    Number</label>
+                                                                                <label class="float-label">Alamat</label>
                                                                             </div>
                                                                         </div>
 
 
                                                                         <div class="material-group">
                                                                             <div class="material-addone">
-                                                                                <i
-                                                                                    class="icofont icofont-social-twitter"></i>
+                                                                                <i class="icofont icofont-mobile-phone"></i>
                                                                             </div>
                                                                             <div class="form-group form-primary">
-                                                                                <input type="text" name="footer-email"
-                                                                                    class="form-control" required="">
+                                                                                <input type="text" name="nohp"
+                                                                                    class="form-control" required=""
+                                                                                    value="{{ Auth::guard('admin')->user()->nohp }}">
                                                                                 <span class="form-bar"></span>
-                                                                                <label class="float-label">Twitter
-                                                                                    Id</label>
+                                                                                <label class="float-label">Nomor
+                                                                                    Handphone
+                                                                                </label>
                                                                             </div>
                                                                         </div>
-
-
-
-                                                                        <div class="material-group">
-                                                                            <div class="material-addone">
-                                                                                <i
-                                                                                    class="icofont icofont-social-skype"></i>
-                                                                            </div>
-                                                                            <div class="form-group form-primary">
-                                                                                <input type="text" name="footer-email"
-                                                                                    class="form-control" required="">
-                                                                                <span class="form-bar"></span>
-                                                                                <label class="float-label">Skype
-                                                                                    Id</label>
-                                                                            </div>
-                                                                        </div>
-
-
-
-
-                                                                        <div class="material-group">
-                                                                            <div class="material-addone">
-                                                                                <i class="icofont icofont-earth"></i>
-                                                                            </div>
-                                                                            <div class="form-group form-primary">
-                                                                                <input type="text" name="footer-email"
-                                                                                    class="form-control" required="">
-                                                                                <span class="form-bar"></span>
-                                                                                <label
-                                                                                    class="float-label">website</label>
-                                                                            </div>
-                                                                        </div>
-
-
 
                                                                     </div>
                                                                     <!-- end of table col-lg-6 -->
                                                                 </div>
                                                                 <!-- end of row -->
                                                                 <div class="text-center">
-                                                                    <a href="#!"
-                                                                        class="btn btn-primary waves-effect waves-light m-r-20">Save</a>
+                                                                    <button
+                                                                        class="btn btn-primary waves-effect waves-light m-r-20">Simpan
+                                                                        Edit
+                                                                        Data</button>
                                                                     <a href="#!" id="edit-cancel"
                                                                         class="btn btn-default waves-effect">Cancel</a>
                                                                 </div>
@@ -356,7 +317,7 @@
                                             </div>
                                             <!-- end of card-block -->
                                         </div>
-                                        <div class="row">
+                                        {{-- <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="card">
                                                     <div class="card-header">
@@ -434,7 +395,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <!-- personal card end-->
                                     </div>
                                     <!-- tab pane personal end -->

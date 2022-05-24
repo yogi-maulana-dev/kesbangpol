@@ -39,7 +39,7 @@ class DataController extends Controller
     {
         //
         //
-        $tes = auth()->user()->nama;
+        $tes = auth()->user()->email;
         // $anusurat_terdaftar_dikemenkumham = '/' . $tes . '/' . $data->surat_terdaftar_dikemenkumham;
         // $anusurat_pendaftaran = '/' . $tes . '/' . $data->surat_pendaftaran;
         // $anuakte_pendirian = '/' . $tes . '/' . $data->akte_pendirian;
@@ -67,41 +67,70 @@ class DataController extends Controller
         // $anuskt = '/' . $tes . '/' . $data->skt;
         // return $request->file('image')->store($tes);
 
-        $validasi = $request->validate([
-            'surat_terdaftar_dikemenkumham' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
-            'surat_pendaftaran' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
-            'akte_pendirian' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
-            'adrt' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
-            'keabsahan_kantor' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
-            'program' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
-            'surat_keputusan' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
-            'biodata_pengurus' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
-            'ktp' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
-            'foto' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
-            'surat_keterangan_domisili' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
-            'npwp' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
-            'foto_kantor' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
-            'surat_ketertiban' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
-            'surat_tidak_avilasi' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
-            'surat_konflik' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
-            'surat_hak_cipta' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
-            'surat_laporan' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
-            'surat_absah' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
-            'surat_rekom_agama' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
-            'surat_rekom_skpd' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
-            'surat_rekom_skpd_kerja' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
-            'surat_rekom_kesediaan' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
-            'surat_izasah' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
-            'skt' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024',
+        $validasi = $request->validate(
+            [
+                'surat_terdaftar_dikemenkumham' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,surat_terdaftar_dikemenkumham',
+                'surat_pendaftaran' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,surat_pendaftaran',
+                'akte_pendirian' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,akte_pendirian',
+                'adrt' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,adrt',
+                'keabsahan_kantor' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,keabsahan_kantor',
+                'program' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,program',
+                'surat_keputusan' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,surat_keputusan',
+                'biodata_pengurus' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,biodata_pengurus',
+                'ktp' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,ktp',
+                'foto' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,foto',
+                'surat_keterangan_domisili' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,surat_keterangan_domisili',
+                'npwp' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,npwp',
+                'foto_kantor' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,foto_kantor',
+                'surat_ketertiban' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,surat_ketertiban',
+                'surat_tidak_avilasi' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,surat_tidak_avilasi',
+                'surat_konflik' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,surat_konflik',
+                'surat_hak_cipta' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,surat_hak_cipta',
+                'surat_laporan' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,surat_laporan',
+                'surat_absah' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,surat_absah',
+                'surat_rekom_agama' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,',
+                'surat_rekom_skpd' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,surat_rekom_skpd',
+                'surat_rekom_skpd_kerja' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,surat_rekom_skpd_kerja',
+                'surat_rekom_kesediaan' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,surat_rekom_kesediaan',
+                'surat_izasah' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,surat_izasah',
+                'skt' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,skt',
 
-            /**
-             * Show the form for creating a new resource.
-             * Whatapps 6289631031237
-             * email : yogimaulana100@gmail.com
-             * https://github.com/Ays1234
-             * https://serbaotodidak.com/
-             */
-        ]);
+                /**
+                 * Show the form for creating a new resource.
+                 * Whatapps 6289631031237
+                 * email : yogimaulana100@gmail.com
+                 * https://github.com/Ays1234
+                 * https://serbaotodidak.com/
+                 */
+            ],
+            // [
+            //     'surat_terdaftar_dikemenkumham.max' => 'Anda harus upload data max:1024 mb',
+            //     'surat_pendaftaran.max' => 'Anda harus upload data max:1024 mb',
+            //     'akte_pendirian.max' => 'Anda harus upload data max:1024 mb',
+            //     'adrt.max' => 'Anda harus upload data max:1024 mb',
+            //     'keabsahan_kantor.max' => 'Anda harus upload data max:1024 mb',
+            //     'program.max' => 'Anda harus upload data max:1024 mb',
+            //     'surat_keputusan.max' => 'Anda harus upload data max:1024 mb',
+            //     'biodata_pengurus.max' => 'Anda harus upload data max:1024 mb',
+            //     'ktp.max' => 'Anda harus upload data max:1024 mb',
+            //     'foto.max' => 'Anda harus upload data max:1024 mb',
+            //     'surat_keterangan_domisili.max' => 'Anda harus upload data max:1024 mb',
+            //     'npwp.max' => 'Anda harus upload data max:1024 mb',
+            //     'foto_kantor.max' => 'Anda harus upload data max:1024 mb',
+            //     'surat_ketertiban.max' => 'Anda harus upload data max:1024 mb',
+            //     'surat_tidak_avilasi.max' => 'Anda harus upload data max:1024 mb',
+            //     'surat_konflik.max' => 'Anda harus upload data max:1024 mb',
+            //     'surat_hak_cipta.max' => 'Anda harus upload data max:1024 mb',
+            //     'surat_laporan.max' => 'Anda harus upload data max:1024 mb',
+            //     'surat_absah.max' => 'Anda harus upload data max:1024 mb',
+            //     'surat_rekom_agama.max' => 'Anda harus upload data max:1024 mb',
+            //     'surat_rekom_skpd.max' => 'Anda harus upload data max:1024 mb',
+            //     'surat_rekom_skpd_kerja.max' => 'Anda harus upload data max:1024 mb',
+            //     'surat_rekom_kesediaan.max' => 'Anda harus upload data max:1024 mb',
+            //     'surat_izasah.max' => 'Anda harus upload data max:1024 mb',
+            //     'skt.max' => 'Anda harus upload data max:1024 mb',
+            // ],
+        );
 
         $surat_pendaftaran = $request->file('surat_pendaftaran');
         $nama_dokumen1 = 'surat_pendaftaran' . date('Ymdhis') . '.' . $request->file('surat_pendaftaran')->getClientOriginalExtension();
@@ -298,7 +327,7 @@ class DataController extends Controller
 
         //
         //
-        $tes = auth()->user()->nama;
+        $tes = auth()->user()->email;
         $anusurat_terdaftar_dikemenkumham = $tes . '/' . $data->surat_terdaftar_dikemenkumham;
         $anusurat_pendaftaran = $tes . '/' . $data->surat_pendaftaran;
         $anuakte_pendirian = $tes . '/' . $data->akte_pendirian;

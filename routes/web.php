@@ -16,6 +16,7 @@ use App\Http\Controllers\SendMailController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\VerifikasiController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\PerpanjanganController;
 
 use App\Models\Dashboard;
 use Illuminate\Http\Request;
@@ -68,6 +69,9 @@ Route::get('/login', ['App\Http\Controllers\AuthUser\LoginController', 'index'])
 Route::post('/keluar', ['App\Http\Controllers\AuthUser\LoginController', 'keluar'])->name('user.keluar');
 Route::post('/login', ['App\Http\Controllers\AuthUser\LoginController', 'loginuser'])->name('user.login.save');
 Route::get('/dashboard', ['App\Http\Controllers\AuthUser\AdminController', 'index'])->name('user.dashboard');
+Route::get('/perpanjangan', ['App\Http\Controllers\AuthUser\PerpanjangController', 'index'])->name('user.perpanjang');
+Route::get('/profil', ['App\Http\Controllers\AuthUser\ProfilController', 'index'])->name('profil');
+Route::post('/profil/update', ['App\Http\Controllers\AuthUser\ProfilController', 'update'])->name('user.update.profil');
 
 Route::get('/daftar', ['App\Http\Controllers\AuthUser\DaftarController', 'index'])->middleware('guest');
 Route::post('/daftar', ['App\Http\Controllers\AuthUser\DaftarController', 'store'])->name('user.daftar');
@@ -91,6 +95,7 @@ Route::prefix('admin')
         Route::middleware(['auth:admin', 'preventBackHistory'])->group(function () {
             Route::get('/dashboard', ['App\Http\Controllers\AuthAdmin\AdminController', 'index'])->name('dashboard');
             Route::get('/profil', ['App\Http\Controllers\AuthAdmin\ProfilController', 'index'])->name('profil');
+            Route::post('/profil/update', ['App\Http\Controllers\AuthAdmin\ProfilController', 'update'])->name('update.profil');
             Route::get('/berita', ['App\Http\Controllers\AuthAdmin\BeritaController', 'index'])->name('berita');
             Route::post('/berita', ['App\Http\Controllers\AuthAdmin\BeritaController', 'store'])->name('berita.store');
             Route::post('/berita/update', ['App\Http\Controllers\AuthAdmin\BeritaController', 'update'])->name('berita.update');

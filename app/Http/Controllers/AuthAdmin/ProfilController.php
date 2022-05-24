@@ -3,27 +3,50 @@
 namespace App\Http\Controllers\AuthAdmin;
 
 use Illuminate\Http\Request;
-use App\Models\Menudata;
-use App\Models\Upload;
-use App\Models\User;
-use File;
-use ZipArchive;
-use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Crypt;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
+use DB;
+use Carbon\Carbon;
+use App\Mail\MainReset;
+use Illuminate\Support\Facades\Mail;
+use App\Models\Admin;
+use App\Mail\SendDemoMail;
+use Illuminate\Support\Facades\Hash;
 
 class ProfilController extends Controller
 {
     //
     public function index()
     {
-        //
+        return view('admin.profil', ['judul' => 'Halaman Profil']);
+    }
 
-        return view('admin.profil', [
-            'judul' => 'Halaman Profil',
-            'password' => Auth::guard('admin')->user()->password,
-            'datas' => Upload::join('users', 'uploads.id_user', '=', 'users.id')->get(),
-            'datacuk' => Upload::all(),
+    public function update(Request $request)
+    {
+        // $user = User::where('id', $request->id)->first();
+
+        // $validasi['password'] = Hash::make($validasi['password']);
+
+        // $user->update([
+        //     'nama' => $request->nama,
+        //     'alamat' => $request->alamat,
+        //     'nohp' => $request->nohp,
+        //     'username' => $request->username,
+        //     'email' => $request->email,
+        //     'password' => Hash::make($request->password),
+        // ]);
+
+        // $user->save();
+
+        $user = Admin::where('id', $request->profil)->update([
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+            'nohp' => $request->nohp,
+            'username' => $request->username,
+            'email' => $request->email,
+            // 'password' => Hash::make($request->password),
         ]);
+
+        return redirect('/admin/profil')->with('success', 'Data Profil Berhasil diedit');
     }
 }

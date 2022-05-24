@@ -164,7 +164,8 @@
                             </div>
                         </div>
                         <a href="index-2.html">
-                            <img class="img-fluid" src="/admin_tampil/assets/images/logo.png" alt="Theme-Logo" />
+                            <img class="img-fluid" src="/admin_tampil/assets/images/logokecil.png"
+                                alt="Theme-Logo" />
                         </a>
                         <a class="mobile-options waves-effect waves-light">
                             <i class="ti-more"></i>
@@ -196,13 +197,13 @@
                             </li>
                         </ul>
                         <ul class="nav-right">
-                            <li class="header-notification">
+                            {{-- <li class="header-notification">
                                 <a href="#!" class="waves-effect waves-light">
                                     <i class="ti-bell"></i>
                                     <span class="badge bg-c-red"></span>
                                 </a>
-                                <ul class="show-notification">
-                                    <li>
+                                <ul class="show-notification"> --}}
+                            {{-- <li>
                                         <h6>Notifications</h6>
                                         <label class="label label-danger">New</label>
                                     </li>
@@ -231,8 +232,8 @@
                                                 <span class="notification-time">30 minutes ago</span>
                                             </div>
                                         </div>
-                                    </li>
-                                    <li class="waves-effect waves-light">
+                                    </li> --}}
+                            {{-- <li class="waves-effect waves-light">
                                         <div class="media">
                                             <img class="d-flex align-self-center img-radius"
                                                 src="/admin_tampil/assets/images/avatar-3.jpg"
@@ -244,15 +245,15 @@
                                                 <span class="notification-time">30 minutes ago</span>
                                             </div>
                                         </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="">
+                                    </li> --}}
+                            {{-- </ul>
+                            </li> --}}
+                            {{-- <li class="">
                                 <a href="#!" class="displayChatbox waves-effect waves-light">
                                     <i class="ti-comments"></i>
                                     <span class="badge bg-c-green"></span>
                                 </a>
-                            </li>
+                            </li> --}}
                             <li class="user-profile header-notification">
                                 <a href="#!" class="waves-effect waves-light">
                                     <img src="/admin_tampil/assets/images/avatar-4.jpg" class="img-radius"
@@ -267,11 +268,11 @@
                                         </a>
                                     </li>
                                     <li class="waves-effect waves-light">
-                                        <a href="/profil">
+                                        <a href="/admin/profil">
                                             <i class="ti-user"></i> Profile
                                         </a>
                                     </li>
-                                    <li class="waves-effect waves-light">
+                                    {{-- <li class="waves-effect waves-light">
                                         <a href="email-inbox.html">
                                             <i class="ti-email"></i> My Messages
                                         </a>
@@ -280,7 +281,7 @@
                                         <a href="auth-lock-screen.html">
                                             <i class="ti-lock"></i> Lock Screen
                                         </a>
-                                    </li>
+                                    </li> --}}
                                     <form action="{{ route('admin.logout') }}" method="post">
 
                                         {{ csrf_field() }}
@@ -457,13 +458,13 @@
                                     <span class="pcoded-mcaret"></span>
                                 </a>
                             </li>
-                            <li class="pcoded-hasmenu">
+                            {{-- <li class="pcoded-hasmenu">
                                 <a href="/admin/berita" class="waves-effect waves-dark">
                                     <span class="pcoded-micon"><i class="ti-gift "></i><b>U</b></span>
                                     <span class="pcoded-mtext">Berita</span>
                                     <span class="pcoded-mcaret"></span>
                                 </a>
-                            </li>
+                            </li> --}}
                             <li class="pcoded-hasmenu">
                                 <a href="/admin/menudata" class="waves-effect waves-dark">
                                     <span class="pcoded-micon"><i class="ti-comments"></i><b>A</b></span>
@@ -491,6 +492,8 @@
                                                 @yield('reset_email')
                                                 @yield('berita')
                                                 @yield('profil')
+                                                @yield('perpanjangan')
+                                                @yield('tutorial')
                                                 <!-- Default card end -->
                                             </div>
                                         </div>
@@ -714,6 +717,23 @@
     <script src="/admin_tampil/assets/pages/user-profile.js"></script>
     {{-- <!-- Custom js -->
     <script type="text/javascript" src="/admin_tampil/assets/pages/advance-elements/select2-custom.js"></script> --}}
+
+    {{-- <script>
+        var total = 0;
+
+        function UpdateBenar(elem1) {
+
+            if (elem1.checked == true) {
+                if (elem1.value == 2) {
+                    total += Number(elem1.value);
+                }
+            } else {
+                total -= Number(elem1.value);
+            }
+
+            document.getElementById('total').value = total.toFixed(0);
+        }
+    </script> --}}
 
 </body>
 

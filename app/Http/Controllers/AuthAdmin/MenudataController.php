@@ -147,6 +147,10 @@ class MenudataController extends Controller
         // $datax->lengkap=$request->lengkap;
         // $datax['ket'] = $request->ket;
         // $datax->update();
+        $lengkap = $request->a_surat_terdaftar_dikemenkumham + $request->a_surat_pendaftaran + $request->a_akte_pendirian + $request->a_adrt + $request->a_biodata_pengurus
+        + $request->a_program + $request->a_ktp + $request->a_foto + $request->a_surat_keterangan_domisili+$request->a_npwp+$request->a_foto_kantor+$request->a_surat_ketertiban
+        +$request->a_surat_tidak_avilasi+$request->a_surat_konflik+$request->a_surat_hak_cipta+$request->a_biodata_pengurus+$request->a_surat_absah+$request->a_surat_rekom_agama+$request->a_surat_rekom_skpd
+        +$request->a_surat_rekom_skpd_kerja+$request->a_surat_izasah+$request->a_skt+$request->a_surat_rekom_kesediaan+$request->a_surat_laporan+$request->a_keabsahan_kantor;
 
         $menudata = Upload::where('id', $request->id)->update([
             'a_surat_terdaftar_dikemenkumham' => $request->a_surat_terdaftar_dikemenkumham,
@@ -166,7 +170,7 @@ class MenudataController extends Controller
             'a_surat_tidak_avilasi' => $request->a_surat_tidak_avilasi,
             'a_surat_konflik' => $request->a_surat_konflik,
             'a_surat_hak_cipta' => $request->a_surat_hak_cipta,
-            'a_biodata_pengurus' => $request->a_biodata_pengurus,
+            'a_surat_laporan' => $request->a_surat_laporan,
             'a_surat_absah' => $request->a_surat_absah,
             'a_surat_rekom_agama' => $request->a_surat_rekom_agama,
             'a_surat_rekom_skpd' => $request->a_surat_rekom_skpd,
@@ -176,6 +180,7 @@ class MenudataController extends Controller
             'a_surat_rekom_kesediaan' => $request->a_surat_rekom_kesediaan,
             // 'lengkap' => $request->lengkap,
             'ket' => $request->ket,
+            'lengkap' => $lengkap,
         ]);
 
         return redirect('/admin/menudata');

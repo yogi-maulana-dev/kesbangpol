@@ -13,12 +13,12 @@ namespace App\Http\Controllers\AuthUser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
-use DB;
 use Carbon\Carbon;
 use App\Mail\MainReset;
 use Illuminate\Support\Facades\Mail;
 use App\Models\User;
 use App\Mail\SendDemoMail;
+use Illuminate\Support\Facades\DB;
 
 class VerifikasiController extends Controller
 {

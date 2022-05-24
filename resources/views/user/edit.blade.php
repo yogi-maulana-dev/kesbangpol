@@ -32,15 +32,15 @@
 
                 {{-- ini adalah penutup a_surat_terdaftar_dikemenkumham --}}
 
-                @if ($data->a_tujuan == 0)
+                @if ($data->a_keabsahan_kantor == 0)
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Tujuan Organisasi </label>
+                        <label class="col-sm-3 col-form-label">keabsahan_kantor Organisasi </label>
                         <div class="col-sm-8">
                             {{-- <img class="img-fluid " id="gambar" src="#" alt="Pilih Gambar" OnError=" $(this).hide();" /> --}}
-                            <input type="file" name="tujuan" id="upload"
-                                class="form-control upload @error('tujuan') is-invalid @enderror" onchange="showFile()"
-                                accept="image/*, application/pdf">
-                            @error('tujuan')
+                            <input type="file" name="keabsahan_kantor" id="upload"
+                                class="form-control upload @error('keabsahan_kantor') is-invalid @enderror"
+                                onchange="showFile()" accept="image/*, application/pdf">
+                            @error('keabsahan_kantor')
                                 <div class="invalid-feedback">
 
                                     {{ $message }}
@@ -51,7 +51,7 @@
                 @else
                 @endif
 
-                {{-- ini adalah penutup a_tujuan --}}
+                {{-- ini adalah penutup a_keabsahan_kantor --}}
 
                 @if ($data->a_program == 0)
                     <div class="form-group row">
@@ -180,34 +180,39 @@
 
                 {{-- ini adalah penutup a_biodata_pengurus --}}
 
-                <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">KTP</label>
-                    <div class="col-sm-8">
-                        <input type="file" name="ktp" class="form-control @error('ktp') is-invalid @enderror">
+                {{-- ini adalah penutup a_ktp --}}
+                @if ($data->a_ktp == 0)
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">KTP</label>
+                        <div class="col-sm-8">
+                            <input type="file" name="ktp" class="form-control @error('ktp') is-invalid @enderror">
 
-                        @error('ktp')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
+                            @error('ktp')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
 
+                        </div>
                     </div>
-                </div>
+                @else
+                @endif
 
+                @if ($data->a_foto == 0)
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Foto</label>
+                        <div class="col-sm-8">
+                            <input type="file" name="foto" class="form-control @error('foto') is-invalid @enderror">
 
-                <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Foto</label>
-                    <div class="col-sm-8">
-                        <input type="file" name="foto" class="form-control @error('foto') is-invalid @enderror">
-
-                        @error('foto')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
+                            @error('foto')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
                     </div>
-                </div>
-
+                @else
+                @endif
 
                 {{-- ini adalah penutup a_surat_keterangan_domisili --}}
 
@@ -230,32 +235,43 @@
 
                 {{-- ini adalah penutup a_surat_keterangan_domisili --}}
 
-                <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">NPWP Organisasi</label>
-                    <div class="col-sm-8">
-                        <input type="file" name="npwp" class="form-control @error('npwp') is-invalid @enderror">
+                @if ($data->a_npwp == 0)
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">NPWP Organisasi</label>
+                        <div class="col-sm-8">
+                            <input type="file" name="npwp" class="form-control @error('npwp') is-invalid @enderror">
 
-                        @error('npwp')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
+                            @error('npwp')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
                     </div>
-                </div>
+                @else
+                @endif
 
-                <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Foto Kantor Tampak Depan papan nama organisasi</label>
-                    <div class="col-sm-8">
-                        <input type="file" name="foto_kantor"
-                            class="form-control @error('foto_kantor') is-invalid @enderror">
+                {{-- ini adalah penutup a_npwp --}}
 
-                        @error('foto_kantor')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
+                {{-- ini adalah penutup a_foto_kantor --}}
+
+                @if ($data->a_foto_kantor == 0)
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Foto Kantor Tampak Depan papan nama organisasi</label>
+                        <div class="col-sm-8">
+                            <input type="file" name="foto_kantor"
+                                class="form-control @error('foto_kantor') is-invalid @enderror">
+
+                            @error('foto_kantor')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
                     </div>
-                </div>
+                @else
+                @endif
+
 
 
                 {{-- ini adalah penutup a_surat_ketertiban --}}
@@ -309,7 +325,8 @@
                             ketua</label>
                         <div class="col-sm-8">
                             <input type="file" name="surat_konflik"
-                                class="form-control @error('surat_konflik') is-invalid @enderror"> @error('surat_konflik')
+                                class="form-control @error('surat_konflik') is-invalid @enderror">
+                            @error('surat_konflik')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
@@ -326,7 +343,8 @@
 
                 @if ($data->a_surat_hak_cipta == 0)
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Surat Pernyataan Hak Cipta Simbol Organisasi ditanda tangani
+                        <label class="col-sm-3 col-form-label">Surat Pernyataan Hak Cipta Simbol Organisasi ditanda
+                            tangani
                             ketua
                             dan seketaris</label>
                         <div class="col-sm-8">
@@ -349,11 +367,13 @@
 
                 @if ($data->a_surat_laporan == 0)
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Surat Pernyataan sanggup menyampaikan laporan ditanda tangani
+                        <label class="col-sm-3 col-form-label">Surat Pernyataan sanggup menyampaikan laporan ditanda
+                            tangani
                             ketua</label>
                         <div class="col-sm-8">
                             <input type="file" name="surat_laporan"
-                                class="form-control @error('surat_laporan') is-invalid @enderror"> @error('surat_laporan')
+                                class="form-control @error('surat_laporan') is-invalid @enderror">
+                            @error('surat_laporan')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
@@ -412,7 +432,8 @@
 
                 @if ($data->a_surat_rekom_skpd == 0)
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Surat Rekomendasi dari kementrian dan SKPD bidang kebudayaan
+                        <label class="col-sm-3 col-form-label">Surat Rekomendasi dari kementrian dan SKPD bidang
+                            kebudayaan
                             khusus
                             kepercayaan pada tuhan yang Maha Esa</label>
                         <div class="col-sm-8">
@@ -457,7 +478,8 @@
 
                 @if ($data->a_surat_rekom_kesediaan == 0)
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Surat pernyataan persetujuan, untuk menyantumkan nama
+                        <label class="col-sm-3 col-form-label">Surat pernyataan persekeabsahan_kantor, untuk menyantumkan
+                            nama
                             anggota nama
                             pejabat negara, pemerintahan, dan tokoh masyarakt</label>
                         <div class="col-sm-8">
@@ -483,7 +505,8 @@
 
                 @if ($data->a_surat_izasah == 0)
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Surat pernyataan persetujuan, untuk menyantumkan nama
+                        <label class="col-sm-3 col-form-label">Surat pernyataan persekeabsahan_kantor, untuk menyantumkan
+                            nama
                             anggota nama
                             pejabat negara, pemerintahan, dan tokoh masyarakt</label>
                         <div class="col-sm-8">

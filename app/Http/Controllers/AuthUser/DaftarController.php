@@ -47,15 +47,22 @@ class DaftarController extends Controller
 
         $token = Str::random(17);
 
-        $validasi = $request->validate([
-            'nama' => 'required|max:255',
-            'alamat' => 'required|max:255',
-            'kodehp' => 'required',
-            'nohp' => 'required',
-            'username' => ['required', 'min:7', 'max:255', 'unique:users'],
-            'email' => 'required|email:dns|unique:users',
-            'password' => 'required|min:8|max:255',
-        ]);
+        $validasi = $request->validate(
+            [
+                'nama' => 'required|max:255',
+                'alamat' => 'required|max:255',
+                'kodehp' => 'required',
+                'nohp' => 'required',
+                'username' => 'required|min:7|max:255|unique:users,username',
+                'email' => 'required|email:dns|unique:users,email',
+                'password' => 'required|min:8,password|max:255',
+            ],
+            [
+                'username.unique' => 'Username sudah terdaftar, silakan coba yang lain',
+                'email.unique' => 'Email sudah terdaftar, silakan coba yang lain',
+                'password.min' => 'Password Minimal 8 digit',
+            ],
+        );
 
         $validasi['password'] = Hash::make($validasi['password']);
         $validasi['token_aja'] = $token;
@@ -72,7 +79,7 @@ class DaftarController extends Controller
 
         // $request->session()->flash('success', 'Pendaftaraan berhasil !!! Silakan login');
 
-        return redirect('/login')->with('success', 'Pendaftaraan berhasil !!! Silakan login');
+        return redirect('/login')->with('success', 'Silakan cek email yang sudah didaftarkan untuk verifikasi akun!!!');
     }
 
     /**

@@ -16,8 +16,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="Gradient Able Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
-    <meta name="keywords" content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
+    <meta name="description"
+        content="Gradient Able Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
+    <meta name="keywords"
+        content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
     <meta name="author" content="Phoenixcoded" />
     <!-- Favicon icon -->
 
@@ -116,44 +118,53 @@
                                     <h3 class="text-center">{{ $judul }} Aplikasi</h3>
 
                                     @if (session()->has('success'))
-                                    <div class="alert alert-success alert-dismissible fade show" data-bs-dismiss="alert" role="alert">
-                                        {{ session('success') }}ddasd</strong>
-                                        <button type="button" class="x-square" data-bs-dismiss="alert" aria-label="Close"></button>
-                                    </div>
+                                        <div class="alert alert-success alert-dismissible fade show"
+                                            data-bs-dismiss="alert" role="alert">
+                                            {{ session('success') }}</strong>
+                                            <button type="button" class="x-square" data-bs-dismiss="alert"
+                                                aria-label="Close"> <i class="icofont"
+                                                    data-feather="x-square"></i></button>
+                                        </div>
                                     @endif
 
                                     @if (session()->has('loginError'))
-                                    <div class="alert alert-warning x-square">
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <i class="icofont" data-feather="x-square"></i>
-                                        </button>
-                                        <p><strong>{{ session('loginError') }}!</strong>
-                                    </div>
+                                        <div class="alert alert-warning x-square">
+                                            <button type="button" class="close" data-dismiss="alert"
+                                                aria-label="Close">
+                                                <i class="icofont" data-feather="x-square"></i>
+                                            </button>
+                                            <p><strong>{{ session('loginError') }}!</strong>
+                                        </div>
                                     @endif
 
                                 </div>
                             </div>
 
-                            <form action="{{ route('admin.login.save') }}" method="post" class="md-float-material form-material">
+                            <form action="{{ route('admin.login.save') }}" method="post"
+                                class="md-float-material form-material">
 
                                 {{ csrf_field() }}
 
                                 <div class="form-group form-primary">
-                                    <input type="text" name="email" class="form-control @error('email') is-invalid @enderror" required="" value="{{ old('email') }}" autofocus>
+                                    <input type="text" name="email"
+                                        class="form-control @error('email') is-invalid @enderror" required=""
+                                        value="{{ old('email') }}" autofocus>
                                     @error('email')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
                                     @enderror
                                     <span class="form-bar"></span>
                                     <label class="float-label">Alamat email</label>
                                 </div>
                                 <div class="form-group form-primary">
-                                    <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="Password" placeholder="" required="">
+                                    <input type="password" name="password"
+                                        class="form-control @error('password') is-invalid @enderror" id="Password"
+                                        placeholder="" required="">
                                     @error('password')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
                                     @enderror
                                     <span class="form-bar"></span>
                                     <label class="float-label">Password</label>
@@ -176,7 +187,8 @@
                                 </div>
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
-                                        <button type="submit" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Masuk
+                                        <button type="submit"
+                                            class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Masuk
                                         </button>
                                     </div>
                                 </div>
@@ -192,7 +204,8 @@
                                     </p>
                                 </div>
                                 <div class="col-md-2">
-                                    <img src="/admin_tampil/assets/images/auth/Logo-small-bottom.png" alt="small-logo.png">
+                                    <img src="/admin_tampil/assets/images/auth/Logo-small-bottom.png"
+                                        alt="small-logo.png">
                                 </div>
                             </div>
                         </div>
@@ -222,8 +235,11 @@
     <script type="text/javascript" src="/admin_tampil/bower_components/modernizr/js/css-scrollbars.js"></script>
     <!-- i18next.min.js -->
     <script type="text/javascript" src="/admin_tampil/bower_components/i18next/js/i18next.min.js"></script>
-    <script type="text/javascript" src="/admin_tampil/bower_components/i18next-xhr-backend/js/i18nextXHRBackend.min.js"></script>
-    <script type="text/javascript" src="/admin_tampil/bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js"></script>
+    <script type="text/javascript" src="/admin_tampil/bower_components/i18next-xhr-backend/js/i18nextXHRBackend.min.js">
+    </script>
+    <script type="text/javascript"
+        src="/admin_tampil/bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js">
+    </script>
     <script type="text/javascript" src="/admin_tampil/bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
     <script type="text/javascript" src="/admin_tampil/assets/js/common-pages.js"></script>
     <script type="text/javascript" src="/admin_tampil/assets/js/analytics.js"></script>
@@ -244,7 +260,6 @@
 
 <script>
     feather.replace()
-
 </script>
 
 <!-- Mirrored from ableproadmin.com/7.0/default/auth-normal-sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 16 Apr 2022 13:54:43 GMT -->

@@ -22,7 +22,7 @@
         content="Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
     <meta name="author" content="Phoenixcoded" />
     <!-- Favicon icon -->
-    <link rel="icon" href="http://html.phoenixcoded.net/mega-able/files/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://html.phoenixcoded.net/mega-able/assets/images/favicon.ico" type="image/x-icon">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
     <!-- Required Fremwork -->
@@ -32,7 +32,7 @@
     <!-- themify-icons line icon -->
     <link rel="stylesheet" type="text/css" href="/admin_tampil/assets/icon/themify-icons/themify-icons.css">
     <!-- ico font -->
-    <link rel="stylesheet" type="text/css" href="/admin_tampil/assets/icon/icofont/css/icofont.css">
+    <link rel="stylesheet" type="text/css" href="/admin_tampil/assets/icofont/icofont.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -41,6 +41,8 @@
     <link rel="stylesheet" type="text/css" href="/admin_tampil/assets/pages/prism/prism.css">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="/admin_tampil/assets/css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="/admin_tampil/assets/css/widget.css">
 
 
     <link rel="stylesheet" type="text/css" href="/admin_tampil/assets/css/jquery.mCustomScrollbar.css">
@@ -66,6 +68,19 @@
 
     <link rel="stylesheet" type="text/css" href="/admin_tampil/bower_components/lightbox2/css/lightbox.min.css" />
     <!-- Style.css -->
+
+    <!-- Select 2 css -->
+    <link rel="stylesheet" href="/admin_tampil/bower_components/select2/css/select2.min.css" />
+    <!-- Multi Select css -->
+    <link rel="stylesheet" type="text/css"
+        href="/admin_tampil/bower_components/bootstrap-multiselect/css/bootstrap-multiselect.css" />
+    <link rel="stylesheet" type="text/css" href="/admin_tampil/bower_components/multiselect/css/multi-select.css" />
+
+    <!-- Switch component css -->
+    <link rel="stylesheet" type="text/css" href="/admin_tampil/bower_components/switchery/css/switchery.min.css">
+    <!-- Tags css -->
+    <link rel="stylesheet" type="text/css"
+        href="/admin_tampil/bower_components/bootstrap-tagsinput/css/bootstrap-tagsinput.css" />
 </head>
 <!-- Menu horizontal icon fixed -->
 
@@ -180,7 +195,7 @@
                             </li>
                         </ul>
                         <ul class="nav-right">
-                            <li class="header-notification">
+                            {{-- <li class="header-notification">
                                 <a href="#!" class="waves-effect waves-light">
                                     <i class="ti-bell"></i>
                                     <span class="badge bg-c-red"></span>
@@ -229,19 +244,19 @@
                                             </div>
                                         </div>
                                     </li>
-                                </ul>
+                                </ul> --}}
                             </li>
-                            <li class="">
+                            {{-- <li class="">
                                 <a href="#!" class="displayChatbox waves-effect waves-light">
                                     <i class="ti-comments"></i>
                                     <span class="badge bg-c-green"></span>
                                 </a>
-                            </li>
+                            </li> --}}
                             <li class="user-profile header-notification">
                                 <a href="#!" class="waves-effect waves-light">
                                     <img src="/admin_tampil/assets/images/avatar-4.jpg" class="img-radius"
                                         alt="User-Profile-Image">
-                                    <span>{{ auth()->user()->nama }}</span>
+                                    <span>{{ auth()->user()->email }}</span>
                                     <i class="ti-angle-down"></i>
                                 </a>
                                 <ul class="show-notification profile-notification">
@@ -251,7 +266,7 @@
                                         </a>
                                     </li>
                                     <li class="waves-effect waves-light">
-                                        <a href="user-profile.html">
+                                        <a href="/profil">
                                             <i class="ti-user"></i> Profile
                                         </a>
                                     </li>
@@ -266,7 +281,6 @@
                                         </a>
                                     </li>
                                     <form action="/keluar" method="post">
-
 
                                         @csrf
                                         <button type="submit" class="waves-effect waves-light">
@@ -435,24 +449,34 @@
                     <div class="pcoded-inner-navbar">
                         <ul class="pcoded-item pcoded-left-item">
                             <li class="pcoded-hasmenu">
-                                <a href="/dashboard" class="waves-effect waves-dark">
+                                <a href="/tutorial" class="waves-effect waves-dark">
                                     <span class="pcoded-micon"><i class="ti-layout-cta-right"></i><b>D</b></span>
-                                    <span class="pcoded-mtext">Dasboard</span>
+                                    <span class="pcoded-mtext">Tutorial</span>
                                     <span class="pcoded-mcaret"></span>
                                 </a>
-
-
                         </ul>
                         </li>
-                        <!--<li class="pcoded-hasmenu">-->
-                        <!--    <a href="javascript:void(0)" class="waves-effect waves-dark">-->
-                        <!--        <span class="pcoded-micon"><i class="ti-gift "></i><b>U</b></span>-->
-                        <!--        <span class="pcoded-mtext">UI Element</span>-->
-                        <!--        <span class="pcoded-mcaret"></span>-->
-                        <!--    </a>-->
-                        <!--</li>-->
 
+                        <ul class="pcoded-item pcoded-left-item">
+                            <li class="pcoded-hasmenu is-hover" subitem-icon="style6" dropdown-icon="style1">
+                                <a href="/dashboard" class="waves-effect waves-dark">
+                                    <span class="pcoded-micon"><i class="ti-layout-cta-right"></i><b>D</b></span>
+                                    <span class="pcoded-mtext">Pendaftaran</span>
+                                    <span class="pcoded-mcaret"></span>
+                                </a>
+                            </li>
                         </ul>
+
+                        <ul class="pcoded-item pcoded-left-item">
+                            <li class="pcoded-hasmenu is-hover" subitem-icon="style6" dropdown-icon="style1">
+                                <a href="/perpanjangan" class="waves-effect waves-dark">
+                                    <span class="pcoded-micon"><i class="ti-layout-cta-right"></i><b>D</b></span>
+                                    <span class="pcoded-mtext">Pepanjangan</span>
+                                    <span class="pcoded-mcaret"></span>
+                                </a>
+                            </li>
+                        </ul>
+
                     </div>
                 </nav>
                 <div class="pcoded-wrapper">
@@ -468,6 +492,9 @@
                                             <div class="col-lg-12">
                                                 <!-- Default card start -->
                                                 @yield('dashboard')
+                                                @yield('profil')
+                                                @yield('perpanjangan')
+                                                @yield('tutorial')
                                                 <!-- Default card end -->
                                             </div>
                                         </div>
@@ -594,6 +621,7 @@
     <!-- choose one -->
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="/admin_tampil/assets/pages/user-profile.js"></script>
 
     <script>
         feather.replace()
