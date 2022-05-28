@@ -492,7 +492,7 @@
                                                 @yield('reset_email')
                                                 @yield('berita')
                                                 @yield('profil')
-                                                @yield('perpanjangan')
+                                                @yield('perpanjang')
                                                 @yield('tutorial')
                                                 <!-- Default card end -->
                                             </div>

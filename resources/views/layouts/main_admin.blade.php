@@ -493,7 +493,7 @@
                                                 <!-- Default card start -->
                                                 @yield('dashboard')
                                                 @yield('profil')
-                                                @yield('perpanjangan')
+                                                @yield('perpanjang')
                                                 @yield('tutorial')
                                                 <!-- Default card end -->
                                             </div>

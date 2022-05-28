@@ -16,7 +16,7 @@ use App\Http\Controllers\SendMailController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\VerifikasiController;
 use App\Http\Controllers\ProfilController;
-use App\Http\Controllers\PerpanjanganController;
+use App\Http\Controllers\PerpanjangController;
 
 use App\Models\Dashboard;
 use Illuminate\Http\Request;
@@ -63,13 +63,15 @@ Route::get('/categori/{categori:id}', function (Categori $categori) {
     return view('categori_berita', ['judul' => 'Categori Berita', 'beritas' => $categori->home, 'categoris' => $categori->name]);
 });
 Route::resource('/data', DataController::class);
+// Route::resource('/perpanjang', PerpanjangController::class);
 
 // router bagian loginuser
 Route::get('/login', ['App\Http\Controllers\AuthUser\LoginController', 'index'])->name('user.login');
 Route::post('/keluar', ['App\Http\Controllers\AuthUser\LoginController', 'keluar'])->name('user.keluar');
 Route::post('/login', ['App\Http\Controllers\AuthUser\LoginController', 'loginuser'])->name('user.login.save');
 Route::get('/dashboard', ['App\Http\Controllers\AuthUser\AdminController', 'index'])->name('user.dashboard');
-Route::get('/perpanjangan', ['App\Http\Controllers\AuthUser\PerpanjangController', 'index'])->name('user.perpanjang');
+Route::get('/perpanjang', ['App\Http\Controllers\AuthUser\PerpanjangController', 'index'])->name('user.perpanjang');
+Route::post('/perpanjang', ['App\Http\Controllers\AuthUser\PerpanjangController', 'store'])->name('user.perpanjang.save');
 Route::get('/profil', ['App\Http\Controllers\AuthUser\ProfilController', 'index'])->name('profil');
 Route::post('/profil/update', ['App\Http\Controllers\AuthUser\ProfilController', 'update'])->name('user.update.profil');
 
