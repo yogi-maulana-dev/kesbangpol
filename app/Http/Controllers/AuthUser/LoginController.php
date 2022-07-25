@@ -113,7 +113,7 @@ class LoginController extends Controller
         if (Auth::guard('web')->attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended(route('user.dashboard'));
+            return redirect()->intended(route('user.awal'));
         }
 
         return back()->with('loginError', 'Login Gagal ! Email atau password salah');

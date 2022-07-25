@@ -175,8 +175,7 @@
                     <div class="navbar-container container-fluid">
                         <ul class="nav-left">
                             <li>
-                                <div class="sidebar_toggle"><a href="javascript:void(0)"><i
-                                            class="ti-menu"></i></a>
+                                <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a>
                                 </div>
                             </li>
                             <li class="header-search">
@@ -191,7 +190,8 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="#!" onclick="javascript:toggleFullScreen()" class="waves-effect waves-light">
+                                <a href="#!" onclick="javascript:toggleFullScreen()"
+                                    class="waves-effect waves-light">
                                     <i class="ti-fullscreen"></i>
                                 </a>
                             </li>
@@ -468,7 +468,21 @@
                             <li class="pcoded-hasmenu">
                                 <a href="/admin/menudata" class="waves-effect waves-dark">
                                     <span class="pcoded-micon"><i class="ti-comments"></i><b>A</b></span>
-                                    <span class="pcoded-mtext">Menu Data Orkemas</span>
+                                    <span class="pcoded-mtext">Pendaftaraan</span>
+                                    <span class="pcoded-mcaret"></span>
+                                </a>
+                            </li>
+                            <li class="pcoded-hasmenu">
+                                <a href="/admin/perpanjang" class="waves-effect waves-dark">
+                                    <span class="pcoded-micon"><i class="ti-comments"></i><b>A</b></span>
+                                    <span class="pcoded-mtext">Perpanjang</span>
+                                    <span class="pcoded-mcaret"></span>
+                                </a>
+                            </li>
+                            <li class="pcoded-hasmenu">
+                                <a href="/admin/pembaruan" class="waves-effect waves-dark">
+                                    <span class="pcoded-micon"><i class="ti-comments"></i><b>A</b></span>
+                                    <span class="pcoded-mtext">Perubahan</span>
                                     <span class="pcoded-mcaret"></span>
                                 </a>
                             </li>
@@ -494,6 +508,7 @@
                                                 @yield('profil')
                                                 @yield('perpanjang')
                                                 @yield('tutorial')
+                                                @yield('pembaruan')
                                                 <!-- Default card end -->
                                             </div>
                                         </div>

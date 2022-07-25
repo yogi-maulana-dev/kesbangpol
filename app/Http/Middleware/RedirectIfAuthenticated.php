@@ -27,7 +27,7 @@ class RedirectIfAuthenticated
                 if ($guard === 'admin') {
                     return redirect()->route('admin.dashboard');
                 } elseif ($user->iniVeri == '1') {
-                    return redirect()->route('user.dashboard');
+                    return redirect()->route('user.awal');
                 }
             }
         }

@@ -5,7 +5,6 @@
         .modal {
             overflow-y: auto;
         }
-
     </style>
 
 
@@ -38,41 +37,32 @@
                                     <td>{{ $data->email }}</td>
 
                                     <td>
-                                        @if ($data->lengkap == 0)
-                                            {{-- <a href="/data/{{ $data->id }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a> --}}
+
+                                        <button
+                                            class="btn waves-effect waves-dark btn-primary btn-outline-primary badge bg-info"
+                                            data-target="#tabbed-form-{{ $data->id }}" data-titleku="DataOrkemas"
+                                            data-toggle="modal"><span data-feather="eye"></span></button>
+
+                                    </td>
+
+
+                                    <td>
+                                        @if ($data->lengkap >= 30)
+                                            <div class="label-main">
+                                                <label class="label label-lg label-success"><i class="fa fas fa-check"></i>
+                                                    Data sudah lengkap</label>
+                                            </div>
+                                        @else
                                             <div class="label-main">
                                                 <label class="label label-lg label-primary"><i class="fa fa-spinner"></i>
                                                     Proses</label>
 
                                             </div>
-                                        @else
-                                            <button
-                                                class="btn waves-effect waves-dark btn-primary btn-outline-primary badge bg-info"
-                                                data-target="#tabbed-form-{{ $data->id }}" data-titleku="DataOrkemas"
-                                                data-toggle="modal"><span data-feather="eye"></span></button>
                                         @endif
                                     </td>
 
                                     <td>
-                                  @if ($data->lengkap == 50)
-
-                                                <div class="label-main">
-                                                    <label class="label label-lg label-success"><i
-                                                            class="fa fas fa-check"></i>
-                                                        Data sudah lengkap</label>
-                                                </div>
-                                            @else
-   <div class="label-main">
-                                                    <label class="label label-lg label-primary"><i
-                                                            class="fa fa-spinner"></i>
-                                                        Proses</label>
-
-                                                </div>
-                                            @endif
-                                    </td>
-
-                                    <td>
-                                        @if ($data->lengkap == 50)
+                                        @if ($data->lengkap >= 30)
                                             <form action="/admin/send/mail">
                                                 @csrf
                                                 <input class="form-control" type="hidden" name="nama"
@@ -89,15 +79,15 @@
                                         @else
                                             <p>Datang belum lengkap</p>
                                         @endif
-                                        {{-- <a href="{{ route('download', $data->email) }}" target="_blank" rel="noopener"
+                                        {{-- <a href="/admin/menudata/download/{{$data->id}}" target="_blank" rel="noopener"
                                 class="btn btn-primary btn-sm text-white">
                                 Download
                                 </a> --}}
 
                                     </td>
                                     <td>
-                                        @if ($data->lengkap == 50)
-                                            <a href="{{ route('admin.download', $data->email) }}" target="_blank"
+                                        @if ($data->lengkap >= 30)
+                                            <a href="/admin/menudata/download/{{ $data->email }}" target="_blank"
                                                 rel="noopener" class="btn btn-success btn-sm text-white">
                                                 Download
                                             </a>
@@ -127,8 +117,8 @@
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs md-tabs nav-justified" role="tablist">
                             <li class="nav-item waves-effect waves-dark">
-                                <a class="nav-link active" data-toggle="tab"
-                                    href="#{{ $data->surat_terdaftar_dikemenkumham }}" role="tab">
+                                <a class="nav-link active" data-toggle="tab" href="#{{ $data->surat_kemenkumham }}"
+                                    role="tab">
                                     <h6 class="m-b-0">Data 1</h6>
                                 </a>
                                 <div class="slide"></div>
@@ -142,8 +132,7 @@
                             </li>
 
                             <li class="nav-item waves-effect waves-dark">
-                                <a class="nav-link" data-toggle="tab" href="#{{ $data->akte_pendirian }}"
-                                    role="tab">
+                                <a class="nav-link" data-toggle="tab" href="#{{ $data->ktp }}" role="tab">
                                     <h6 class="m-b-0">Data 3</h6>
                                 </a>
                                 <div class="slide"></div>
@@ -159,7 +148,7 @@
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content p-t-30">
-                            <div class="tab-pane active" id="{{ $data->surat_terdaftar_dikemenkumham }}" role="tabpanel">
+                            <div class="tab-pane active" id="{{ $data->surat_kemenkumham }}" role="tabpanel">
 
 
                                 <form method="post" action="{{ route('admin.menudata.update') }}"
@@ -169,318 +158,7 @@
                                         <input type="hidden" name="id" value="{{ $menudata->id }}">
                                     @endforeach
 
-                                    {{-- kodong data surat_terdaftar_dikemenkumham --}}
-
-
-
-                                    @if (!empty($data->surat_terdaftar_dikemenkumham))
-                                        @php
-                                            $pecah = explode('.', $data->surat_terdaftar_dikemenkumham);
-                                            $surat_terdaftar_dikemenkumham = $pecah[1];
-                                        @endphp
-
-
-                                        @if ($surat_terdaftar_dikemenkumham == 'pdf')
-                                            <div class="col-lg-12">
-                                                <div class="p-20 z-depth-bottom-1">
-
-                                                    {{-- aktif a_surat_terdaftar_dikemenkumham --}}
-                                                    @if ($data->a_surat_terdaftar_dikemenkumham == 0)
-                                                        <p class="text-muted text-center"><label
-                                                                class="label label-inverse-primary"><span
-                                                                    data-feather="loader"></span>{{ $data->surat_terdaftar_dikemenkumham }}</label>
-                                                        </p>
-
-                                                        <p class="text-muted text-center">
-                                                            <a class="btn btn-primary" data-toggle="modal"
-                                                                href="#surat_terdaftar_dikemenkumham-{{ $data->id }}">Lihat
-                                                                Data
-                                                            </a>
-                                                        </p>
-
-                                                        <div class="card-block">
-                                                            <div class="form-group row">
-                                                                <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah surat keterangan
-                                                                        terdaftar dikementrian
-                                                                        hukum dan ham,
-                                                                        tervalidasi ?</label>
-                                                                </p>
-                                                                <p class="text-muted text-center">
-                                                                <div class="col-sm-12">
-                                                                    <div class="checkbox-fade fade-in-primary">
-                                                                        <label>
-                                                                            <input type="checkbox"
-                                                                                id="a_surat_terdaftar_dikemenkumham"
-                                                                                name="a_surat_terdaftar_dikemenkumham"
-                                                                                value="2"
-                                                                                {{ $data->a_surat_terdaftar_dikemenkumham == 2 ? 'checked' : '' }}>
-                                                                            <span class="cr">
-                                                                                <i
-                                                                                    class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                            </span>
-                                                                            <span
-                                                                                class="label label-lg label-success">Lengkap</span>
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="checkbox-fade fade-in-primary">
-                                                                        <label>
-                                                                            <input type="checkbox"
-                                                                                id="a_surat_terdaftar_dikemenkumham"
-                                                                                name="a_surat_terdaftar_dikemenkumham"
-                                                                                value="0"
-                                                                                {{ $data->a_surat_terdaftar_dikemenkumham == 0 ? 'checked' : '' }}>
-                                                                            <span class="cr">
-                                                                                <i
-                                                                                    class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                            </span>
-                                                                            <span
-                                                                                class="label label-lg label-danger">Tidak</span>
-                                                                        </label>
-                                                                    </div>
-                                                                    <span class="messages"></span>
-                                                                </div>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    @elseif ($data->a_surat_terdaftar_dikemenkumham == 2)
-                                                        <p class="text-muted text-center p-b-5">
-                                                            <label class="label label-inverse-success"><span
-                                                                    data-feather="check-circle"></span>{{ $data->surat_terdaftar_dikemenkumham }}</label>
-                                                        </p>
-
-                                                        <p class="text-muted text-center">
-                                                            <a class="btn btn-primary" data-toggle="modal"
-                                                                href="#surat_terdaftar_dikemenkumham-{{ $data->id }}">Lihat
-                                                                Data
-                                                            </a>
-                                                        </p>
-
-                                                        <div class="card-block">
-                                                            <div class="form-group row">
-                                                                <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah surat keterangan
-                                                                        terdaftar dikementrian
-                                                                        hukum dan ham,
-                                                                        tervalidasi ?</label>
-                                                                </p>
-                                                                <p class="text-muted text-center">
-                                                                <div class="col-sm-12">
-                                                                    <div class="checkbox-fade fade-in-primary">
-                                                                        <label>
-                                                                            <input type="checkbox"
-                                                                                id="a_surat_terdaftar_dikemenkumham"
-                                                                                name="a_surat_terdaftar_dikemenkumham"
-                                                                                value="2"
-                                                                                {{ $data->a_surat_terdaftar_dikemenkumham == 2 ? 'checked' : '' }}>
-                                                                            <span class="cr">
-                                                                                <i
-                                                                                    class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                            </span>
-                                                                            <span
-                                                                                class="label label-lg label-success">Lengkap</span>
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="checkbox-fade fade-in-primary">
-                                                                        <label>
-                                                                            <input type="checkbox"
-                                                                                id="a_surat_terdaftar_dikemenkumham"
-                                                                                name="a_surat_terdaftar_dikemenkumham"
-                                                                                value="0"
-                                                                                {{ $data->a_surat_terdaftar_dikemenkumham == 0 ? 'checked' : '' }}>
-                                                                            <span class="cr">
-                                                                                <i
-                                                                                    class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                            </span>
-                                                                            <span
-                                                                                class="label label-lg label-danger">Tidak</span>
-                                                                        </label>
-                                                                    </div>
-                                                                    <span class="messages"></span>
-                                                                </div>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    @else
-                                                        <p class="text-muted text-center p-b-5">
-                                                            <label class="label label-inverse-danger"><span
-                                                                    data-feather="x-circle"></span>{{ $data->surat_terdaftar_dikemenkumham }}</label>
-                                                        </p>
-
-                                                        <p class="text-muted text-center">
-                                                            <label class="col-sm-12">Data tidak lengkap yang dikirim,
-                                                                tunggu
-                                                                sampai pengguna memperbaiki</label>
-                                                        </p>
-                                                    @endif
-
-                                                </div>
-                                            </div>
-
-                                            {{-- tutup aktif a_surat_terdaftar_dikemenkumham --}}
-
-                                            {{-- buka JPG --}}
-                                        @elseif ($surat_terdaftar_dikemenkumham == 'png' or $surat_terdaftar_dikemenkumham == 'jpg')
-                                            <div class="col-lg-12">
-                                                <div class="p-20 z-depth-bottom-1">
-
-                                                    {{-- aktif a_surat_terdaftar_dikemenkumham JPG --}}
-                                                    @if ($data->a_surat_terdaftar_dikemenkumham == 0)
-                                                        <p class="text-muted text-center"><label
-                                                                class="label label-inverse-primary"><span
-                                                                    data-feather="loader"></span>{{ $data->surat_terdaftar_dikemenkumham }}</label>
-                                                        </p>
-
-                                                        {{-- tutup status data surat_terdaftar_dikemenkumham
-                                    /**
-                                    * Show the form for creating a new resource.
-                                    * Whatapps 6289631031237
-                                    * email : yogimaulana100@gmail.com
-                                    * https://github.com/Ays1234
-                                    * https://serbaotodidak.com/
-                                    */ --}}
-                                                        <div class="col-lg-12 col-sm-12">
-                                                            <div class="thumbnail">
-                                                                <div class="thumb">
-                                                                    <a href="{{ asset($data->email . '/' . $data->surat_terdaftar_dikemenkumham) }}"
-                                                                        data-lightbox="1"
-                                                                        data-title="{{ $data->email . '/' . $data->surat_terdaftar_dikemenkumham }}">
-
-                                                                        <img src="{{ asset($data->email . '/' . $data->surat_terdaftar_dikemenkumham) }}"
-                                                                            alt=""
-                                                                            class="img-fluid img-thumbnail mx-auto d-block"
-                                                                            style="max-height: 200px;">
-
-
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="card-block">
-                                                            <div class="form-group row">
-                                                                <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah surat keterangan
-                                                                        terdaftar dikementrian
-                                                                        hukum dan ham,
-                                                                        tervalidasi ?</label>
-                                                                </p>
-                                                                <p class="text-muted text-center">
-                                                                <div class="col-sm-12">
-                                                                    <div class="checkbox-fade fade-in-primary">
-                                                                        <label>
-                                                                            <input type="checkbox"
-                                                                                id="a_surat_terdaftar_dikemenkumham"
-                                                                                name="a_surat_terdaftar_dikemenkumham"
-                                                                                value="2"
-                                                                                {{ $data->a_surat_terdaftar_dikemenkumham == 2 ? 'checked' : '' }}>
-                                                                            <span class="cr">
-                                                                                <i
-                                                                                    class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                            </span>
-                                                                            <span
-                                                                                class="label label-lg label-success">Lengkap</span>
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="checkbox-fade fade-in-primary">
-                                                                        <label>
-                                                                            <input type="checkbox"
-                                                                                id="a_surat_terdaftar_dikemenkumham"
-                                                                                name="a_surat_terdaftar_dikemenkumham"
-                                                                                value="0"
-                                                                                {{ $data->a_surat_terdaftar_dikemenkumham == 0 ? 'checked' : '' }}>
-                                                                            <span class="cr">
-                                                                                <i
-                                                                                    class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                            </span>
-                                                                            <span
-                                                                                class="label label-lg label-danger">Tidak</span>
-                                                                        </label>
-                                                                    </div>
-                                                                    <span class="messages"></span>
-                                                                </div>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    @elseif ($data->a_surat_terdaftar_dikemenkumham == 2)
-                                                        <p class="text-muted text-center p-b-5">
-                                                            <label class="label label-inverse-success"><span
-                                                                    data-feather="check-circle"></span>{{ $data->surat_terdaftar_dikemenkumham }}</label>
-                                                        </p>
-
-                                                        <div class="card-block">
-                                                            <div class="form-group row">
-                                                                <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah surat keterangan
-                                                                        terdaftar dikementrian
-                                                                        hukum dan ham,
-                                                                        tervalidasi ?</label>
-                                                                </p>
-                                                                <p class="text-muted text-center">
-                                                                <div class="col-sm-12">
-                                                                    <div class="checkbox-fade fade-in-primary">
-                                                                        <label>
-                                                                            <input type="checkbox"
-                                                                                id="a_surat_terdaftar_dikemenkumham"
-                                                                                name="a_surat_terdaftar_dikemenkumham"
-                                                                                value="2"
-                                                                                {{ $data->a_surat_terdaftar_dikemenkumham == 2 ? 'checked' : '' }}>
-                                                                            <span class="cr">
-                                                                                <i
-                                                                                    class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                            </span>
-                                                                            <span
-                                                                                class="label label-lg label-success">Lengkap</span>
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="checkbox-fade fade-in-primary">
-                                                                        <label>
-                                                                            <input type="checkbox"
-                                                                                id="a_surat_terdaftar_dikemenkumham"
-                                                                                name="a_surat_terdaftar_dikemenkumham"
-                                                                                value="0"
-                                                                                {{ $data->a_surat_terdaftar_dikemenkumham == 0 ? 'checked' : '' }}>
-                                                                            <span class="cr">
-                                                                                <i
-                                                                                    class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                            </span>
-                                                                            <span
-                                                                                class="label label-lg label-danger">Tidak</span>
-                                                                        </label>
-                                                                    </div>
-                                                                    <span class="messages"></span>
-                                                                </div>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    @else
-                                                        <p class="text-muted text-center p-b-5">
-                                                            <label class="label label-inverse-danger"><span
-                                                                    data-feather="x-circle"></span>{{ $data->surat_terdaftar_dikemenkumham }}</label>
-                                                        </p>
-
-                                                        <p class="text-muted text-center">
-                                                            <label class="col-sm-12">Data tidak lengkap yang dikirim,
-                                                                tunggu
-                                                                sampai pengguna memperbaiki</label>
-                                                        </p>
-                                                    @endif
-
-                                                    {{-- tutup aktif a_surat_terdaftar_dikemenkumham JPG --}}
-
-                                                    {{-- TUTUP jpg --}}
-
-                                                </div>
-                                            </div>
-                                        @else
-                                            {{-- SELAIN PDF DAN JPG HAH KOSONG --}}
-                                        @endif
-
-                                        {{-- tutup pdf --}}
-                                    @else
-                                    @endif
-                                    {{-- tutup kodong data surat_terdaftar_dikemenkumham --}}
-
+                                    {{-- kodong data surat_kemenkumham --}}
 
 
                                     {{-- kodong data surat_pendaftaran --}}
@@ -511,8 +189,8 @@
                                                         <div class="card-block">
                                                             <div class="form-group row">
                                                                 <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah data surat
-                                                                        permohonan terdaftar,
+                                                                    <label class="col-sm-12">1. Surat Permohonan
+                                                                        Pendaftaran,
                                                                         tervalidasi ?</label>
                                                                 </p>
                                                                 <p class="text-muted text-center">
@@ -532,7 +210,8 @@
                                                                     </div>
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_surat_pendaftaran"
+                                                                            <input type="checkbox"
+                                                                                id="a_surat_pendaftaran"
                                                                                 name="a_surat_pendaftaran" value="0"
                                                                                 {{ $data->a_surat_pendaftaran == 0 ? 'checked' : '' }}>
                                                                             <span class="cr">
@@ -564,15 +243,16 @@
                                                         <div class="card-block">
                                                             <div class="form-group row">
                                                                 <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah data surat
-                                                                        permohonan terdaftar,
+                                                                    <label class="col-sm-12">1. Surat Permohonan
+                                                                        Pendaftaran,
                                                                         tervalidasi ?</label>
                                                                 </p>
                                                                 <p class="text-muted text-center">
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_surat_pendaftaran"
+                                                                            <input type="checkbox"
+                                                                                id="a_surat_pendaftaran"
                                                                                 name="a_surat_pendaftaran" value="2"
                                                                                 {{ $data->a_surat_pendaftaran == 2 ? 'checked' : '' }}>
                                                                             <span class="cr">
@@ -585,7 +265,8 @@
                                                                     </div>
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_surat_pendaftaran"
+                                                                            <input type="checkbox"
+                                                                                id="a_surat_pendaftaran"
                                                                                 name="a_surat_pendaftaran" value="0"
                                                                                 {{ $data->a_surat_pendaftaran == 0 ? 'checked' : '' }}>
                                                                             <span class="cr">
@@ -659,15 +340,16 @@
                                                         <div class="card-block">
                                                             <div class="form-group row">
                                                                 <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah data surat
-                                                                        permohonan terdaftar,
+                                                                    <label class="col-sm-12">1. Surat Permohonan
+                                                                        Pendaftaran,
                                                                         tervalidasi ?</label>
                                                                 </p>
                                                                 <p class="text-muted text-center">
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_surat_pendaftaran"
+                                                                            <input type="checkbox"
+                                                                                id="a_surat_pendaftaran"
                                                                                 name="a_surat_pendaftaran" value="2"
                                                                                 {{ $data->a_surat_pendaftaran == 2 ? 'checked' : '' }}>
                                                                             <span class="cr">
@@ -680,7 +362,8 @@
                                                                     </div>
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_surat_pendaftaran"
+                                                                            <input type="checkbox"
+                                                                                id="a_surat_pendaftaran"
                                                                                 name="a_surat_pendaftaran" value="0"
                                                                                 {{ $data->a_surat_pendaftaran == 0 ? 'checked' : '' }}>
                                                                             <span class="cr">
@@ -731,15 +414,16 @@
                                                         <div class="card-block">
                                                             <div class="form-group row">
                                                                 <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah data surat
-                                                                        permohonan terdaftar,
+                                                                    <label class="col-sm-12">1. Surat Permohonan
+                                                                        Pendaftaran,
                                                                         tervalidasi ?</label>
                                                                 </p>
                                                                 <p class="text-muted text-center">
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_surat_pendaftaran"
+                                                                            <input type="checkbox"
+                                                                                id="a_surat_pendaftaran"
                                                                                 name="a_surat_pendaftaran" value="2"
                                                                                 {{ $data->a_surat_pendaftaran == 2 ? 'checked' : '' }}>
                                                                             <span class="cr">
@@ -752,7 +436,8 @@
                                                                     </div>
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_surat_pendaftaran"
+                                                                            <input type="checkbox"
+                                                                                id="a_surat_pendaftaran"
                                                                                 name="a_surat_pendaftaran" value="0"
                                                                                 {{ $data->a_surat_pendaftaran == 0 ? 'checked' : '' }}>
                                                                             <span class="cr">
@@ -796,27 +481,28 @@
                                     @endif
                                     {{-- tutup kodong data surat_pendaftaran --}}
 
-                                    {{-- kodong data program --}}
-                                    @if (!empty($data->program))
+
+                                    {{-- kodong data akte_pendirian --}}
+                                    @if (!empty($data->akte_pendirian))
                                         @php
-                                            $pecah = explode('.', $data->program);
-                                            $program = $pecah[1];
+                                            $pecah = explode('.', $data->akte_pendirian);
+                                            $akte_pendirian = $pecah[1];
                                         @endphp
 
-                                        @if ($program == 'pdf')
+                                        @if ($akte_pendirian == 'pdf')
                                             <div class="col-lg-12">
                                                 <div class="p-20 z-depth-bottom-1">
 
-                                                    {{-- aktif a_program --}}
-                                                    @if ($data->a_program == 0)
+                                                    {{-- aktif a_akte_pendirian --}}
+                                                    @if ($data->a_akte_pendirian == 0)
                                                         <p class="text-muted text-center"><label
                                                                 class="label label-inverse-primary"><span
-                                                                    data-feather="loader"></span>{{ $data->program }}</label>
+                                                                    data-feather="loader"></span>{{ $data->akte_pendirian }}</label>
                                                         </p>
 
                                                         <p class="text-muted text-center">
                                                             <a class="btn btn-primary" data-toggle="modal"
-                                                                href="#program-{{ $data->id }}">Lihat
+                                                                href="#akte_pendirian-{{ $data->id }}">Lihat
                                                                 Data
                                                             </a>
                                                         </p>
@@ -824,18 +510,17 @@
                                                         <div class="card-block">
                                                             <div class="form-group row">
                                                                 <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah data program dan
-                                                                        tujuan organisasi
-                                                                        sesusai,
+                                                                    <label class="col-sm-12">2. Akte Pendirian Ormas Atau
+                                                                        Status Yang Disahkan Oleh Notaris,
                                                                         tervalidasi ?</label>
                                                                 </p>
                                                                 <p class="text-muted text-center">
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_program"
-                                                                                name="a_program" value="2"
-                                                                                {{ $data->a_program == 2 ? 'checked' : '' }}>
+                                                                            <input type="checkbox" id="a_akte_pendirian"
+                                                                                name="a_akte_pendirian" value="2"
+                                                                                {{ $data->a_akte_pendirian == 2 ? 'checked' : '' }}>
                                                                             <span class="cr">
                                                                                 <i
                                                                                     class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -846,9 +531,9 @@
                                                                     </div>
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_program"
-                                                                                name="a_program" value="0"
-                                                                                {{ $data->a_program == 0 ? 'checked' : '' }}>
+                                                                            <input type="checkbox" id="a_akte_pendirian"
+                                                                                name="a_akte_pendirian" value="0"
+                                                                                {{ $data->a_akte_pendirian == 0 ? 'checked' : '' }}>
                                                                             <span class="cr">
                                                                                 <i
                                                                                     class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -862,15 +547,15 @@
                                                                 </p>
                                                             </div>
                                                         </div>
-                                                    @elseif ($data->a_program == 2)
+                                                    @elseif ($data->a_akte_pendirian == 2)
                                                         <p class="text-muted text-center p-b-5">
                                                             <label class="label label-inverse-success"><span
-                                                                    data-feather="check-circle"></span>{{ $data->program }}</label>
+                                                                    data-feather="check-circle"></span>{{ $data->akte_pendirian }}</label>
                                                         </p>
 
                                                         <p class="text-muted text-center">
                                                             <a class="btn btn-primary" data-toggle="modal"
-                                                                href="#program-{{ $data->id }}">Lihat
+                                                                href="#akte_pendirian-{{ $data->id }}">Lihat
                                                                 Data
                                                             </a>
                                                         </p>
@@ -878,18 +563,17 @@
                                                         <div class="card-block">
                                                             <div class="form-group row">
                                                                 <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah data program dan
-                                                                        tujuan organisasi
-                                                                        sesusai,
+                                                                    <label class="col-sm-12">2. Akte Pendirian Ormas Atau
+                                                                        Status Yang Disahkan Oleh Notaris,
                                                                         tervalidasi ?</label>
                                                                 </p>
                                                                 <p class="text-muted text-center">
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_program"
-                                                                                name="a_program" value="2"
-                                                                                {{ $data->a_program == 2 ? 'checked' : '' }}>
+                                                                            <input type="checkbox" id="a_akte_pendirian"
+                                                                                name="a_akte_pendirian" value="2"
+                                                                                {{ $data->a_akte_pendirian == 2 ? 'checked' : '' }}>
                                                                             <span class="cr">
                                                                                 <i
                                                                                     class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -900,9 +584,9 @@
                                                                     </div>
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_program"
-                                                                                name="a_program" value="0"
-                                                                                {{ $data->a_program == 0 ? 'checked' : '' }}>
+                                                                            <input type="checkbox" id="a_akte_pendirian"
+                                                                                name="a_akte_pendirian" value="0"
+                                                                                {{ $data->a_akte_pendirian == 0 ? 'checked' : '' }}>
                                                                             <span class="cr">
                                                                                 <i
                                                                                     class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -919,7 +603,7 @@
                                                     @else
                                                         <p class="text-muted text-center p-b-5">
                                                             <label class="label label-inverse-danger"><span
-                                                                    data-feather="x-circle"></span>{{ $data->program }}</label>
+                                                                    data-feather="x-circle"></span>{{ $data->akte_pendirian }}</label>
                                                         </p>
 
                                                         <p class="text-muted text-center">
@@ -932,20 +616,20 @@
                                                 </div>
                                             </div>
 
-                                            {{-- tutup aktif a_program --}}
+                                            {{-- tutup aktif a_akte_pendirian --}}
 
                                             {{-- buka JPG --}}
-                                        @elseif ($program == 'png' or $program == 'jpg')
+                                        @elseif ($akte_pendirian == 'png' or $akte_pendirian == 'jpg')
                                             <div class="col-lg-12">
                                                 <div class="p-20 z-depth-bottom-1">
 
-                                                    {{-- aktif a_program JPG --}}
-                                                    @if ($data->a_program == 0)
+                                                    {{-- aktif a_akte_pendirian JPG --}}
+                                                    @if ($data->a_akte_pendirian == 0)
                                                         <p class="text-muted text-center"><label
                                                                 class="label label-inverse-primary"><span
-                                                                    data-feather="loader"></span>{{ $data->program }}</label>
+                                                                    data-feather="loader"></span>{{ $data->akte_pendirian }}</label>
                                                         </p>
-                                                        {{-- tutup status data program
+                                                        {{-- tutup status data akte_pendirian
                                     /**
                                     * Show the form for creating a new resource.
                                     * Whatapps 6289631031237
@@ -956,11 +640,11 @@
                                                         <div class="col-lg-12 col-sm-12">
                                                             <div class="thumbnail">
                                                                 <div class="thumb">
-                                                                    <a href="{{ asset($data->email . '/' . $data->program) }}"
+                                                                    <a href="{{ asset($data->email . '/' . $data->akte_pendirian) }}"
                                                                         data-lightbox="1"
-                                                                        data-title="{{ $data->email . '/' . $data->program }}">
+                                                                        data-title="{{ $data->email . '/' . $data->akte_pendirian }}">
 
-                                                                        <img src="{{ asset($data->email . '/' . $data->program) }}"
+                                                                        <img src="{{ asset($data->email . '/' . $data->akte_pendirian) }}"
                                                                             alt=""
                                                                             class="img-fluid img-thumbnail mx-auto d-block"
                                                                             style="max-height: 200px;">
@@ -974,18 +658,17 @@
                                                         <div class="card-block">
                                                             <div class="form-group row">
                                                                 <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah data program dan
-                                                                        tujuan organisasi
-                                                                        sesusai,
+                                                                    <label class="col-sm-12">2. Akte Pendirian Ormas Atau
+                                                                        Status Yang Disahkan Oleh Notaris,
                                                                         tervalidasi ?</label>
                                                                 </p>
                                                                 <p class="text-muted text-center">
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_program"
-                                                                                name="a_program" value="2"
-                                                                                {{ $data->a_program == 2 ? 'checked' : '' }}>
+                                                                            <input type="checkbox" id="a_akte_pendirian"
+                                                                                name="a_akte_pendirian" value="2"
+                                                                                {{ $data->a_akte_pendirian == 2 ? 'checked' : '' }}>
                                                                             <span class="cr">
                                                                                 <i
                                                                                     class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -996,9 +679,9 @@
                                                                     </div>
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_program"
-                                                                                name="a_program" value="0"
-                                                                                {{ $data->a_program == 0 ? 'checked' : '' }}>
+                                                                            <input type="checkbox" id="a_akte_pendirian"
+                                                                                name="a_akte_pendirian" value="0"
+                                                                                {{ $data->a_akte_pendirian == 0 ? 'checked' : '' }}>
                                                                             <span class="cr">
                                                                                 <i
                                                                                     class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -1012,13 +695,13 @@
                                                                 </p>
                                                             </div>
                                                         </div>
-                                                    @elseif ($data->a_program == 2)
+                                                    @elseif ($data->a_akte_pendirian == 2)
                                                         <p class="text-muted text-center p-b-5">
                                                             <label class="label label-inverse-success"><span
-                                                                    data-feather="check-circle"></span>{{ $data->program }}</label>
+                                                                    data-feather="check-circle"></span>{{ $data->akte_pendirian }}</label>
                                                         </p>
 
-                                                        {{-- tutup status data program
+                                                        {{-- tutup status data akte_pendirian
                                     /**
                                     * Show the form for creating a new resource.
                                     * Whatapps 6289631031237
@@ -1029,11 +712,11 @@
                                                         <div class="col-lg-12 col-sm-12">
                                                             <div class="thumbnail">
                                                                 <div class="thumb">
-                                                                    <a href="{{ asset($data->email . '/' . $data->program) }}"
+                                                                    <a href="{{ asset($data->email . '/' . $data->akte_pendirian) }}"
                                                                         data-lightbox="1"
-                                                                        data-title="{{ $data->email . '/' . $data->program }}">
+                                                                        data-title="{{ $data->email . '/' . $data->akte_pendirian }}">
 
-                                                                        <img src="{{ asset($data->email . '/' . $data->program) }}"
+                                                                        <img src="{{ asset($data->email . '/' . $data->akte_pendirian) }}"
                                                                             alt=""
                                                                             class="img-fluid img-thumbnail mx-auto d-block"
                                                                             style="max-height: 200px;">
@@ -1047,18 +730,17 @@
                                                         <div class="card-block">
                                                             <div class="form-group row">
                                                                 <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah data program dan
-                                                                        tujuan organisasi
-                                                                        sesusai,
+                                                                    <label class="col-sm-12">2. Akte Pendirian Ormas Atau
+                                                                        Status Yang Disahkan Oleh Notaris,
                                                                         tervalidasi ?</label>
                                                                 </p>
                                                                 <p class="text-muted text-center">
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_program"
-                                                                                name="a_program" value="2"
-                                                                                {{ $data->a_program == 2 ? 'checked' : '' }}>
+                                                                            <input type="checkbox" id="a_akte_pendirian"
+                                                                                name="a_akte_pendirian" value="2"
+                                                                                {{ $data->a_akte_pendirian == 2 ? 'checked' : '' }}>
                                                                             <span class="cr">
                                                                                 <i
                                                                                     class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -1069,9 +751,9 @@
                                                                     </div>
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_program"
-                                                                                name="a_program" value="0"
-                                                                                {{ $data->a_program == 0 ? 'checked' : '' }}>
+                                                                            <input type="checkbox" id="a_akte_pendirian"
+                                                                                name="a_akte_pendirian" value="0"
+                                                                                {{ $data->a_akte_pendirian == 0 ? 'checked' : '' }}>
                                                                             <span class="cr">
                                                                                 <i
                                                                                     class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -1088,7 +770,7 @@
                                                     @else
                                                         <p class="text-muted text-center p-b-5">
                                                             <label class="label label-inverse-danger"><span
-                                                                    data-feather="x-circle"></span>{{ $data->program }}</label>
+                                                                    data-feather="x-circle"></span>{{ $data->akte_pendirian }}</label>
                                                         </p>
 
                                                         <p class="text-muted text-center">
@@ -1098,7 +780,7 @@
                                                         </p>
                                                     @endif
 
-                                                    {{-- tutup aktif a_program JPG --}}
+                                                    {{-- tutup aktif a_akte_pendirian JPG --}}
 
                                                     {{-- TUTUP jpg --}}
 
@@ -1111,7 +793,9 @@
                                         {{-- tutup pdf --}}
                                     @else
                                     @endif
-                                    {{-- tutup kodong data program --}}
+                                    {{-- tutup kodong data akte_pendirian --}}
+
+
 
                                     {{-- kodong data adrt --}}
                                     @if (!empty($data->adrt))
@@ -1141,16 +825,17 @@
                                                         <div class="card-block">
                                                             <div class="form-group row">
                                                                 <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah data anggaran
-                                                                        rumah dasar,
+                                                                    <label class="col-sm-12">3. Anggaran Dasar (AD)
+                                                                        Anggaran Rumah Tangga (ART) Yang Disahkan Oleh
+                                                                        Notaris ,
                                                                         tervalidasi ?</label>
                                                                 </p>
                                                                 <p class="text-muted text-center">
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_adrt" name="a_adrt"
-                                                                                value="2"
+                                                                            <input type="checkbox" id="a_adrt"
+                                                                                name="a_adrt" value="2"
                                                                                 {{ $data->a_adrt == 2 ? 'checked' : '' }}>
                                                                             <span class="cr">
                                                                                 <i
@@ -1162,8 +847,8 @@
                                                                     </div>
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_adrt" name="a_adrt"
-                                                                                value="0"
+                                                                            <input type="checkbox" id="a_adrt"
+                                                                                name="a_adrt" value="0"
                                                                                 {{ $data->a_adrt == 0 ? 'checked' : '' }}>
                                                                             <span class="cr">
                                                                                 <i
@@ -1194,16 +879,17 @@
                                                         <div class="card-block">
                                                             <div class="form-group row">
                                                                 <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah data anggaran
-                                                                        rumah dasar,
+                                                                    <label class="col-sm-12">3. Anggaran Dasar (AD)
+                                                                        Anggaran Rumah Tangga (ART) Yang Disahkan Oleh
+                                                                        Notaris ,
                                                                         tervalidasi ?</label>
                                                                 </p>
                                                                 <p class="text-muted text-center">
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_adrt" name="a_adrt"
-                                                                                value="2"
+                                                                            <input type="checkbox" id="a_adrt"
+                                                                                name="a_adrt" value="2"
                                                                                 {{ $data->a_adrt == 2 ? 'checked' : '' }}>
                                                                             <span class="cr">
                                                                                 <i
@@ -1215,8 +901,8 @@
                                                                     </div>
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_adrt" name="a_adrt"
-                                                                                value="0"
+                                                                            <input type="checkbox" id="a_adrt"
+                                                                                name="a_adrt" value="0"
                                                                                 {{ $data->a_adrt == 0 ? 'checked' : '' }}>
                                                                             <span class="cr">
                                                                                 <i
@@ -1289,16 +975,17 @@
                                                         <div class="card-block">
                                                             <div class="form-group row">
                                                                 <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah data anggaran
-                                                                        rumah dasar,
+                                                                    <label class="col-sm-12">3. Anggaran Dasar (AD)
+                                                                        Anggaran Rumah Tangga (ART) Yang Disahkan Oleh
+                                                                        Notaris ,
                                                                         tervalidasi ?</label>
                                                                 </p>
                                                                 <p class="text-muted text-center">
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_adrt" name="a_adrt"
-                                                                                value="2"
+                                                                            <input type="checkbox" id="a_adrt"
+                                                                                name="a_adrt" value="2"
                                                                                 {{ $data->a_adrt == 2 ? 'checked' : '' }}>
                                                                             <span class="cr">
                                                                                 <i
@@ -1310,8 +997,8 @@
                                                                     </div>
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_adrt" name="a_adrt"
-                                                                                value="0"
+                                                                            <input type="checkbox" id="a_adrt"
+                                                                                name="a_adrt" value="0"
                                                                                 {{ $data->a_adrt == 0 ? 'checked' : '' }}>
                                                                             <span class="cr">
                                                                                 <i
@@ -1361,16 +1048,17 @@
                                                         <div class="card-block">
                                                             <div class="form-group row">
                                                                 <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah data anggaran
-                                                                        rumah dasar,
+                                                                    <label class="col-sm-12">3. Anggaran Dasar (AD)
+                                                                        Anggaran Rumah Tangga (ART) Yang Disahkan Oleh
+                                                                        Notaris ,
                                                                         tervalidasi ?</label>
                                                                 </p>
                                                                 <p class="text-muted text-center">
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_adrt" name="a_adrt"
-                                                                                value="2"
+                                                                            <input type="checkbox" id="a_adrt"
+                                                                                name="a_adrt" value="2"
                                                                                 {{ $data->a_adrt == 2 ? 'checked' : '' }}>
                                                                             <span class="cr">
                                                                                 <i
@@ -1382,8 +1070,8 @@
                                                                     </div>
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_adrt" name="a_adrt"
-                                                                                value="0"
+                                                                            <input type="checkbox" id="a_adrt"
+                                                                                name="a_adrt" value="0"
                                                                                 {{ $data->a_adrt == 0 ? 'checked' : '' }}>
                                                                             <span class="cr">
                                                                                 <i
@@ -1427,27 +1115,29 @@
                                     {{-- tutup kodong data adrt --}}
 
 
-                                    {{-- kodong data akte_pendirian --}}
-                                    @if (!empty($data->akte_pendirian))
+
+
+                                    {{-- kodong data tujuan --}}
+                                    @if (!empty($data->tujuan))
                                         @php
-                                            $pecah = explode('.', $data->akte_pendirian);
-                                            $akte_pendirian = $pecah[1];
+                                            $pecah = explode('.', $data->tujuan);
+                                            $tujuan = $pecah[1];
                                         @endphp
 
-                                        @if ($akte_pendirian == 'pdf')
+                                        @if ($tujuan == 'pdf')
                                             <div class="col-lg-12">
                                                 <div class="p-20 z-depth-bottom-1">
 
-                                                    {{-- aktif a_akte_pendirian --}}
-                                                    @if ($data->a_akte_pendirian == 0)
+                                                    {{-- aktif a_tujuan --}}
+                                                    @if ($data->a_tujuan == 0)
                                                         <p class="text-muted text-center"><label
                                                                 class="label label-inverse-primary"><span
-                                                                    data-feather="loader"></span>{{ $data->akte_pendirian }}</label>
+                                                                    data-feather="loader"></span>{{ $data->tujuan }}</label>
                                                         </p>
 
                                                         <p class="text-muted text-center">
                                                             <a class="btn btn-primary" data-toggle="modal"
-                                                                href="#akte_pendirian-{{ $data->id }}">Lihat
+                                                                href="#tujuan-{{ $data->id }}">Lihat
                                                                 Data
                                                             </a>
                                                         </p>
@@ -1455,18 +1145,17 @@
                                                         <div class="card-block">
                                                             <div class="form-group row">
                                                                 <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah akte pendirian
-                                                                        orkemas yang disahkan
-                                                                        notaris,
+                                                                    <label class="col-sm-12">4. Tujuan Dan Program kerja
+                                                                        Organisasi,
                                                                         tervalidasi ?</label>
                                                                 </p>
                                                                 <p class="text-muted text-center">
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_akte_pendirian"
-                                                                                name="a_akte_pendirian" value="2"
-                                                                                {{ $data->a_akte_pendirian == 2 ? 'checked' : '' }}>
+                                                                            <input type="checkbox" id="a_tujuan"
+                                                                                name="a_tujuan" value="2"
+                                                                                {{ $data->a_tujuan == 2 ? 'checked' : '' }}>
                                                                             <span class="cr">
                                                                                 <i
                                                                                     class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -1477,9 +1166,9 @@
                                                                     </div>
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_akte_pendirian"
-                                                                                name="a_akte_pendirian" value="0"
-                                                                                {{ $data->a_akte_pendirian == 0 ? 'checked' : '' }}>
+                                                                            <input type="checkbox" id="a_tujuan"
+                                                                                name="a_tujuan" value="0"
+                                                                                {{ $data->a_tujuan == 0 ? 'checked' : '' }}>
                                                                             <span class="cr">
                                                                                 <i
                                                                                     class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -1493,15 +1182,15 @@
                                                                 </p>
                                                             </div>
                                                         </div>
-                                                    @elseif ($data->a_akte_pendirian == 2)
+                                                    @elseif ($data->a_tujuan == 2)
                                                         <p class="text-muted text-center p-b-5">
                                                             <label class="label label-inverse-success"><span
-                                                                    data-feather="check-circle"></span>{{ $data->akte_pendirian }}</label>
+                                                                    data-feather="check-circle"></span>{{ $data->tujuan }}</label>
                                                         </p>
 
                                                         <p class="text-muted text-center">
                                                             <a class="btn btn-primary" data-toggle="modal"
-                                                                href="#akte_pendirian-{{ $data->id }}">Lihat
+                                                                href="#tujuan-{{ $data->id }}">Lihat
                                                                 Data
                                                             </a>
                                                         </p>
@@ -1509,18 +1198,17 @@
                                                         <div class="card-block">
                                                             <div class="form-group row">
                                                                 <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah akte pendirian
-                                                                        orkemas yang disahkan
-                                                                        notaris,
+                                                                    <label class="col-sm-12">4. Tujuan Dan Program kerja
+                                                                        Organisasi,
                                                                         tervalidasi ?</label>
                                                                 </p>
                                                                 <p class="text-muted text-center">
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_akte_pendirian"
-                                                                                name="a_akte_pendirian" value="2"
-                                                                                {{ $data->a_akte_pendirian == 2 ? 'checked' : '' }}>
+                                                                            <input type="checkbox" id="a_tujuan"
+                                                                                name="a_tujuan" value="2"
+                                                                                {{ $data->a_tujuan == 2 ? 'checked' : '' }}>
                                                                             <span class="cr">
                                                                                 <i
                                                                                     class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -1531,9 +1219,9 @@
                                                                     </div>
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_akte_pendirian"
-                                                                                name="a_akte_pendirian" value="0"
-                                                                                {{ $data->a_akte_pendirian == 0 ? 'checked' : '' }}>
+                                                                            <input type="checkbox" id="a_tujuan"
+                                                                                name="a_tujuan" value="0"
+                                                                                {{ $data->a_tujuan == 0 ? 'checked' : '' }}>
                                                                             <span class="cr">
                                                                                 <i
                                                                                     class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -1550,7 +1238,7 @@
                                                     @else
                                                         <p class="text-muted text-center p-b-5">
                                                             <label class="label label-inverse-danger"><span
-                                                                    data-feather="x-circle"></span>{{ $data->akte_pendirian }}</label>
+                                                                    data-feather="x-circle"></span>{{ $data->tujuan }}</label>
                                                         </p>
 
                                                         <p class="text-muted text-center">
@@ -1559,23 +1247,24 @@
                                                                 sampai pengguna memperbaiki</label>
                                                         </p>
                                                     @endif
+
                                                 </div>
                                             </div>
-                                            {{-- tutup aktif a_akte_pendirian --}}
+
+                                            {{-- tutup aktif a_tujuan --}}
 
                                             {{-- buka JPG --}}
-                                        @elseif ($akte_pendirian == 'png' or $akte_pendirian == 'jpg')
+                                        @elseif ($tujuan == 'png' or $tujuan == 'jpg')
                                             <div class="col-lg-12">
                                                 <div class="p-20 z-depth-bottom-1">
 
-                                                    {{-- aktif a_akte_pendirian JPG --}}
-                                                    @if ($data->a_akte_pendirian == 0)
+                                                    {{-- aktif a_tujuan JPG --}}
+                                                    @if ($data->a_tujuan == 0)
                                                         <p class="text-muted text-center"><label
                                                                 class="label label-inverse-primary"><span
-                                                                    data-feather="loader"></span>{{ $data->akte_pendirian }}</label>
+                                                                    data-feather="loader"></span>{{ $data->tujuan }}</label>
                                                         </p>
-
-                                                        {{-- tutup status data akte_pendirian
+                                                        {{-- tutup status data tujuan
                                     /**
                                     * Show the form for creating a new resource.
                                     * Whatapps 6289631031237
@@ -1586,11 +1275,11 @@
                                                         <div class="col-lg-12 col-sm-12">
                                                             <div class="thumbnail">
                                                                 <div class="thumb">
-                                                                    <a href="{{ asset($data->email . '/' . $data->akte_pendirian) }}"
+                                                                    <a href="{{ asset($data->email . '/' . $data->tujuan) }}"
                                                                         data-lightbox="1"
-                                                                        data-title="{{ $data->email . '/' . $data->akte_pendirian }}">
+                                                                        data-title="{{ $data->email . '/' . $data->tujuan }}">
 
-                                                                        <img src="{{ asset($data->email . '/' . $data->akte_pendirian) }}"
+                                                                        <img src="{{ asset($data->email . '/' . $data->tujuan) }}"
                                                                             alt=""
                                                                             class="img-fluid img-thumbnail mx-auto d-block"
                                                                             style="max-height: 200px;">
@@ -1604,18 +1293,17 @@
                                                         <div class="card-block">
                                                             <div class="form-group row">
                                                                 <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah akte pendirian
-                                                                        orkemas yang disahkan
-                                                                        notaris,
+                                                                    <label class="col-sm-12">4. Tujuan Dan Program kerja
+                                                                        Organisasi,
                                                                         tervalidasi ?</label>
                                                                 </p>
                                                                 <p class="text-muted text-center">
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_akte_pendirian"
-                                                                                name="a_akte_pendirian" value="2"
-                                                                                {{ $data->a_akte_pendirian == 2 ? 'checked' : '' }}>
+                                                                            <input type="checkbox" id="a_tujuan"
+                                                                                name="a_tujuan" value="2"
+                                                                                {{ $data->a_tujuan == 2 ? 'checked' : '' }}>
                                                                             <span class="cr">
                                                                                 <i
                                                                                     class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -1626,9 +1314,9 @@
                                                                     </div>
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_akte_pendirian"
-                                                                                name="a_akte_pendirian" value="0"
-                                                                                {{ $data->a_akte_pendirian == 0 ? 'checked' : '' }}>
+                                                                            <input type="checkbox" id="a_tujuan"
+                                                                                name="a_tujuan" value="0"
+                                                                                {{ $data->a_tujuan == 0 ? 'checked' : '' }}>
                                                                             <span class="cr">
                                                                                 <i
                                                                                     class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -1642,13 +1330,13 @@
                                                                 </p>
                                                             </div>
                                                         </div>
-                                                    @elseif ($data->a_akte_pendirian == 2)
+                                                    @elseif ($data->a_tujuan == 2)
                                                         <p class="text-muted text-center p-b-5">
                                                             <label class="label label-inverse-success"><span
-                                                                    data-feather="check-circle"></span>{{ $data->akte_pendirian }}</label>
+                                                                    data-feather="check-circle"></span>{{ $data->tujuan }}</label>
                                                         </p>
 
-                                                        {{-- tutup status data akte_pendirian
+                                                        {{-- tutup status data tujuan
                                     /**
                                     * Show the form for creating a new resource.
                                     * Whatapps 6289631031237
@@ -1659,11 +1347,11 @@
                                                         <div class="col-lg-12 col-sm-12">
                                                             <div class="thumbnail">
                                                                 <div class="thumb">
-                                                                    <a href="{{ asset($data->email . '/' . $data->akte_pendirian) }}"
+                                                                    <a href="{{ asset($data->email . '/' . $data->tujuan) }}"
                                                                         data-lightbox="1"
-                                                                        data-title="{{ $data->email . '/' . $data->akte_pendirian }}">
+                                                                        data-title="{{ $data->email . '/' . $data->tujuan }}">
 
-                                                                        <img src="{{ asset($data->email . '/' . $data->akte_pendirian) }}"
+                                                                        <img src="{{ asset($data->email . '/' . $data->tujuan) }}"
                                                                             alt=""
                                                                             class="img-fluid img-thumbnail mx-auto d-block"
                                                                             style="max-height: 200px;">
@@ -1677,18 +1365,17 @@
                                                         <div class="card-block">
                                                             <div class="form-group row">
                                                                 <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah akte pendirian
-                                                                        orkemas yang disahkan
-                                                                        notaris,
+                                                                    <label class="col-sm-12">4. Tujuan Dan Program kerja
+                                                                        Organisasi,
                                                                         tervalidasi ?</label>
                                                                 </p>
                                                                 <p class="text-muted text-center">
                                                                 <div class="col-sm-12">
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_akte_pendirian"
-                                                                                name="a_akte_pendirian" value="2"
-                                                                                {{ $data->a_akte_pendirian == 2 ? 'checked' : '' }}>
+                                                                            <input type="checkbox" id="a_tujuan"
+                                                                                name="a_tujuan" value="2"
+                                                                                {{ $data->a_tujuan == 2 ? 'checked' : '' }}>
                                                                             <span class="cr">
                                                                                 <i
                                                                                     class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -1699,9 +1386,9 @@
                                                                     </div>
                                                                     <div class="checkbox-fade fade-in-primary">
                                                                         <label>
-                                                                            <input type="checkbox" id="a_akte_pendirian"
-                                                                                name="a_akte_pendirian" value="0"
-                                                                                {{ $data->a_akte_pendirian == 0 ? 'checked' : '' }}>
+                                                                            <input type="checkbox" id="a_tujuan"
+                                                                                name="a_tujuan" value="0"
+                                                                                {{ $data->a_tujuan == 0 ? 'checked' : '' }}>
                                                                             <span class="cr">
                                                                                 <i
                                                                                     class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -1718,7 +1405,7 @@
                                                     @else
                                                         <p class="text-muted text-center p-b-5">
                                                             <label class="label label-inverse-danger"><span
-                                                                    data-feather="x-circle"></span>{{ $data->akte_pendirian }}</label>
+                                                                    data-feather="x-circle"></span>{{ $data->tujuan }}</label>
                                                         </p>
 
                                                         <p class="text-muted text-center">
@@ -1728,10 +1415,12 @@
                                                         </p>
                                                     @endif
 
-                                                    {{-- tutup aktif a_akte_pendirian JPG --}}
+                                                    {{-- tutup aktif a_tujuan JPG --}}
+
+                                                    {{-- TUTUP jpg --}}
+
                                                 </div>
                                             </div>
-                                            {{-- TUTUP jpg --}}
                                         @else
                                             {{-- SELAIN PDF DAN JPG HAH KOSONG --}}
                                         @endif
@@ -1739,322 +1428,9 @@
                                         {{-- tutup pdf --}}
                                     @else
                                     @endif
-                                    {{-- tutup kodong data akte_pendirian --}}
+                                    {{-- tutup kodong data tujuan --}}
 
 
-                                    {{-- kodong data keabsahan_kantor --}}
-                                    @if (!empty($data->keabsahan_kantor))
-                                        @php
-                                            $pecah = explode('.', $data->keabsahan_kantor);
-                                            $keabsahan_kantor = $pecah[1];
-                                        @endphp
-
-                                        @if ($keabsahan_kantor == 'pdf')
-                                            <div class="col-lg-12">
-                                                <div class="p-20 z-depth-bottom-1">
-
-                                                    {{-- aktif a_keabsahan_kantor --}}
-                                                    @if ($data->a_keabsahan_kantor == 0)
-                                                        <p class="text-muted text-center"><label
-                                                                class="label label-inverse-primary"><span
-                                                                    data-feather="loader"></span>{{ $data->keabsahan_kantor }}</label>
-                                                        </p>
-
-                                                        <p class="text-muted text-center">
-                                                            <a class="btn btn-primary" data-toggle="modal"
-                                                                href="#keabsahan_kantor-{{ $data->id }}">Lihat
-                                                                Data
-                                                            </a>
-                                                        </p>
-
-                                                        <div class="card-block">
-                                                            <div class="form-group row">
-                                                                <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah lampiran bukti
-                                                                        kepemilikan kantor atau
-                                                                        kontrak,
-                                                                        tervalidasi ?</label>
-                                                                </p>
-                                                                <p class="text-muted text-center">
-                                                                <div class="col-sm-12">
-                                                                    <div class="checkbox-fade fade-in-primary">
-                                                                        <label>
-                                                                            <input type="checkbox" id="a_keabsahan_kantor"
-                                                                                name="a_keabsahan_kantor" value="2"
-                                                                                {{ $data->a_keabsahan_kantor == 2 ? 'checked' : '' }}>
-                                                                            <span class="cr">
-                                                                                <i
-                                                                                    class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                            </span>
-                                                                            <span
-                                                                                class="label label-lg label-success">Lengkap</span>
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="checkbox-fade fade-in-primary">
-                                                                        <label>
-                                                                            <input type="checkbox" id="a_keabsahan_kantor"
-                                                                                name="a_keabsahan_kantor" value="0"
-                                                                                {{ $data->a_keabsahan_kantor == 0 ? 'checked' : '' }}>
-                                                                            <span class="cr">
-                                                                                <i
-                                                                                    class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                            </span>
-                                                                            <span
-                                                                                class="label label-lg label-danger">Tidak</span>
-                                                                        </label>
-                                                                    </div>
-                                                                    <span class="messages"></span>
-                                                                </div>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    @elseif($data->a_keabsahan_kantor == 2)
-                                                        <p class="text-muted text-center p-b-5">
-                                                            <label class="label label-inverse-success"><span
-                                                                    data-feather="check-circle"></span>{{ $data->keabsahan_kantor }}</label>
-                                                        </p>
-
-                                                        <p class="text-muted text-center">
-                                                            <a class="btn btn-primary" data-toggle="modal"
-                                                                href="#keabsahan_kantor-{{ $data->id }}">Lihat
-                                                                Data
-                                                            </a>
-                                                        </p>
-
-                                                        <div class="card-block">
-                                                            <div class="form-group row">
-                                                                <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah data keabsahan
-                                                                        kepemilikan disertai
-                                                                        bukti,
-                                                                        tervalidasi ?</label>
-                                                                </p>
-                                                                <p class="text-muted text-center">
-                                                                <div class="col-sm-12">
-                                                                    <div class="checkbox-fade fade-in-primary">
-                                                                        <label>
-                                                                            <input type="checkbox" id="a_keabsahan_kantor"
-                                                                                name="a_keabsahan_kantor" value="2"
-                                                                                {{ $data->a_keabsahan_kantor == 2 ? 'checked' : '' }}>
-                                                                            <span class="cr">
-                                                                                <i
-                                                                                    class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                            </span>
-                                                                            <span
-                                                                                class="label label-lg label-success">Lengkap</span>
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="checkbox-fade fade-in-primary">
-                                                                        <label>
-                                                                            <input type="checkbox" id="a_keabsahan_kantor"
-                                                                                name="a_keabsahan_kantor" value="0"
-                                                                                {{ $data->a_keabsahan_kantor == 0 ? 'checked' : '' }}>
-                                                                            <span class="cr">
-                                                                                <i
-                                                                                    class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                            </span>
-                                                                            <span
-                                                                                class="label label-lg label-danger">Tidak</span>
-                                                                        </label>
-                                                                    </div>
-                                                                    <span class="messages"></span>
-                                                                </div>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    @else
-                                                        <p class="text-muted text-center p-b-5">
-                                                            <label class="label label-inverse-danger"><span
-                                                                    data-feather="x-circle"></span>{{ $data->keabsahan_kantor }}</label>
-                                                        </p>
-
-                                                        <p class="text-muted text-center">
-                                                            <label class="col-sm-12">Data tidak lengkap yang dikirim,
-                                                                tunggu
-                                                                sampai pengguna memperbaiki</label>
-                                                        </p>
-                                                    @endif
-                                                </div>
-                                            </div>
-                                            {{-- tutup aktif a_keabsahan_kantor --}}
-
-                                            {{-- buka JPG --}}
-                                        @elseif($keabsahan_kantor == 'png' or $keabsahan_kantor == 'jpg')
-                                            <div class="col-lg-12">
-                                                <div class="p-20 z-depth-bottom-1">
-
-                                                    {{-- aktif a_keabsahan_kantor JPG --}}
-                                                    @if ($data->a_keabsahan_kantor == 0)
-                                                        <p class="text-muted text-center"><label
-                                                                class="label label-inverse-primary"><span
-                                                                    data-feather="loader"></span>{{ $data->keabsahan_kantor }}</label>
-                                                        </p>
-
-                                                        {{-- tutup status data keabsahan_kantor
-                                    /**
-                                    * Show the form for creating a new resource.
-                                    * Whatapps 6289631031237
-                                    * email : yogimaulana100@gmail.com
-                                    * https://github.com/Ays1234
-                                    * https://serbaotodidak.com/
-                                    */ --}}
-                                                        <div class="col-lg-12 col-sm-12">
-                                                            <div class="thumbnail">
-                                                                <div class="thumb">
-                                                                    <a href="{{ asset($data->email . '/' . $data->keabsahan_kantor) }}"
-                                                                        data-lightbox="1"
-                                                                        data-title="{{ $data->email . '/' . $data->keabsahan_kantor }}">
-
-                                                                        <img src="{{ asset($data->email . '/' . $data->keabsahan_kantor) }}"
-                                                                            alt=""
-                                                                            class="img-fluid img-thumbnail mx-auto d-block"
-                                                                            style="max-height: 200px;">
-
-
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="card-block">
-                                                            <div class="form-group row">
-                                                                <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah lampiran bukti
-                                                                        kepemilikan kantor atau
-                                                                        kontrak,
-                                                                        tervalidasi ?</label>
-                                                                </p>
-                                                                <p class="text-muted text-center">
-                                                                <div class="col-sm-12">
-                                                                    <div class="checkbox-fade fade-in-primary">
-                                                                        <label>
-                                                                            <input type="checkbox" id="a_keabsahan_kantor"
-                                                                                name="a_keabsahan_kantor" value="2"
-                                                                                {{ $data->a_keabsahan_kantor == 2 ? 'checked' : '' }}>
-                                                                            <span class="cr">
-                                                                                <i
-                                                                                    class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                            </span>
-                                                                            <span
-                                                                                class="label label-lg label-success">Lengkap</span>
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="checkbox-fade fade-in-primary">
-                                                                        <label>
-                                                                            <input type="checkbox" id="a_keabsahan_kantor"
-                                                                                name="a_keabsahan_kantor" value="0"
-                                                                                {{ $data->a_keabsahan_kantor == 0 ? 'checked' : '' }}>
-                                                                            <span class="cr">
-                                                                                <i
-                                                                                    class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                            </span>
-                                                                            <span
-                                                                                class="label label-lg label-danger">Tidak</span>
-                                                                        </label>
-                                                                    </div>
-                                                                    <span class="messages"></span>
-                                                                </div>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    @elseif($data->a_keabsahan_kantor == 2)
-                                                        <p class="text-muted text-center p-b-5">
-                                                            <label class="label label-inverse-success"><span
-                                                                    data-feather="check-circle"></span>{{ $data->keabsahan_kantor }}</label>
-                                                        </p>
-
-                                                        {{-- tutup status data keabsahan_kantor
-                                    /**
-                                    * Show the form for creating a new resource.
-                                    * Whatapps 6289631031237
-                                    * email : yogimaulana100@gmail.com
-                                    * https://github.com/Ays1234
-                                    * https://serbaotodidak.com/
-                                    */ --}}
-                                                        <div class="col-lg-12 col-sm-12">
-                                                            <div class="thumbnail">
-                                                                <div class="thumb">
-                                                                    <a href="{{ asset($data->email . '/' . $data->keabsahan_kantor) }}"
-                                                                        data-lightbox="1"
-                                                                        data-title="{{ $data->email . '/' . $data->keabsahan_kantor }}">
-
-                                                                        <img src="{{ asset($data->email . '/' . $data->keabsahan_kantor) }}"
-                                                                            alt=""
-                                                                            class="img-fluid img-thumbnail mx-auto d-block"
-                                                                            style="max-height: 200px;">
-
-
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="card-block">
-                                                            <div class="form-group row">
-                                                                <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah lampiran bukti
-                                                                        kepemilikan kantor atau
-                                                                        kontrak,
-                                                                        tervalidasi ?</label>
-                                                                </p>
-                                                                <p class="text-muted text-center">
-                                                                <div class="col-sm-12">
-                                                                    <div class="checkbox-fade fade-in-primary">
-                                                                        <label>
-                                                                            <input type="checkbox" id="a_keabsahan_kantor"
-                                                                                name="a_keabsahan_kantor" value="2"
-                                                                                {{ $data->a_keabsahan_kantor == 2 ? 'checked' : '' }}>
-                                                                            <span class="cr">
-                                                                                <i
-                                                                                    class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                            </span>
-                                                                            <span
-                                                                                class="label label-lg label-success">Lengkap</span>
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="checkbox-fade fade-in-primary">
-                                                                        <label>
-                                                                            <input type="checkbox" id="a_keabsahan_kantor"
-                                                                                name="a_keabsahan_kantor" value="0"
-                                                                                {{ $data->a_keabsahan_kantor == 0 ? 'checked' : '' }}>
-                                                                            <span class="cr">
-                                                                                <i
-                                                                                    class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                            </span>
-                                                                            <span
-                                                                                class="label label-lg label-danger">Tidak</span>
-                                                                        </label>
-                                                                    </div>
-                                                                    <span class="messages"></span>
-                                                                </div>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    @else
-                                                        <p class="text-muted text-center p-b-5">
-                                                            <label class="label label-inverse-danger"><span
-                                                                    data-feather="x-circle"></span>{{ $data->keabsahan_kantor }}</label>
-                                                        </p>
-
-                                                        <p class="text-muted text-center">
-                                                            <label class="col-sm-12">Data tidak lengkap yang dikirim,
-                                                                tunggu
-                                                                sampai pengguna memperbaiki</label>
-                                                        </p>
-                                                    @endif
-
-                                                    {{-- tutup aktif a_keabsahan_kantor JPG --}}
-                                                </div>
-                                            </div>
-                                            {{-- TUTUP jpg --}}
-                                        @else
-                                            {{-- SELAIN PDF DAN JPG HAH KOSONG --}}
-                                        @endif
-
-                                        {{-- tutup pdf --}}
-                                    @else
-                                    @endif
-                                    {{-- tutup kodong data keabsahan_kantor --}}
 
                                     {{-- kodong data surat_keputusan --}}
                                     @if (!empty($data->surat_keputusan))
@@ -2084,9 +1460,8 @@
                                                         <div class="card-block">
                                                             <div class="form-group row">
                                                                 <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah data surat
-                                                                        keputusan pengurus orkemas
-                                                                        lengkap secara sah sesuai,</label>
+                                                                    <label class="col-sm-12">5. Surat Keputusan Tentang
+                                                                        Susunan Pengurus Ormas, sesuai ?</label>
                                                                 </p>
                                                                 <p class="text-muted text-center">
                                                                 <div class="col-sm-12">
@@ -2137,9 +1512,8 @@
                                                         <div class="card-block">
                                                             <div class="form-group row">
                                                                 <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah data surat
-                                                                        keputusan pengurus orkemas
-                                                                        lengkap secara sah sesuai,
+                                                                    <label class="col-sm-12">5. Surat Keputusan Tentang
+                                                                        Susunan Pengurus Ormas, sesuai
                                                                         tervalidasi ?</label>
                                                                 </p>
                                                                 <p class="text-muted text-center">
@@ -2232,9 +1606,8 @@
                                                         <div class="card-block">
                                                             <div class="form-group row">
                                                                 <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah data surat
-                                                                        keputusan pengurus orkemas
-                                                                        lengkap secara sah sesuai,
+                                                                    <label class="col-sm-12">5. Surat Keputusan Tentang
+                                                                        Susunan Pengurus Ormas sesuai,
                                                                         tervalidasi ?</label>
                                                                 </p>
                                                                 <p class="text-muted text-center">
@@ -2305,9 +1678,8 @@
                                                         <div class="card-block">
                                                             <div class="form-group row">
                                                                 <p class="text-muted text-center">
-                                                                    <label class="col-sm-12">Apakah data surat
-                                                                        keputusan pengurus orkemas
-                                                                        lengkap secara sah sesuai,
+                                                                    <label class="col-sm-12">5. Surat Keputusan Tentang
+                                                                        Susunan Pengurus Ormas sesuai,
                                                                         tervalidasi ?</label>
                                                                 </p>
                                                                 <p class="text-muted text-center">
@@ -2401,8 +1773,9 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah biodata ketua dan
-                                                                    anggota orkemas lengkap,
+                                                                <label class="col-sm-12">6. Biodata Pangurus Organisasi
+                                                                    (ketua, sekretaris dan bendahara atau sebutan lainnya)
+                                                                    ,
                                                                     tervalidasi ?</label>
                                                             </p>
                                                             <p class="text-muted text-center">
@@ -2454,8 +1827,8 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah biodata ketua dan
-                                                                    anggota orkemas lengkap,
+                                                                <label class="col-sm-12">6. Biodata Pangurus Organisasi
+                                                                    (ketua, sekretaris dan bendahara atau sebutan lainnya),
                                                                     tervalidasi ?</label>
                                                             </p>
                                                             <p class="text-muted text-center">
@@ -2548,8 +1921,8 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah biodata ketua dan
-                                                                    anggota orkemas lengkap,
+                                                                <label class="col-sm-12">6. Biodata Pangurus Organisasi
+                                                                    (ketua, sekretaris dan bendahara atau sebutan lainnya),
                                                                     tervalidasi ?</label>
                                                             </p>
                                                             <p class="text-muted text-center">
@@ -2620,8 +1993,8 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah biodata ketua dan
-                                                                    anggota orkemas lengkap,
+                                                                <label class="col-sm-12">6. Biodata Pangurus Organisasi
+                                                                    (ketua, sekretaris dan bendahara atau sebutan lainnya),
                                                                     tervalidasi ?</label>
                                                             </p>
                                                             <p class="text-muted text-center">
@@ -2711,16 +2084,16 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah data ktp ketua atau
-                                                                    sekataris,
+                                                                <label class="col-sm-12">7. Kartu Tanda Penduduk (Mesuji)
+                                                                    Pengurus Organisasi,
                                                                     tervalidasi ?</label>
                                                             </p>
                                                             <p class="text-muted text-center">
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_ktp" name="a_ktp"
-                                                                            value="2"
+                                                                        <input type="checkbox" id="a_ktp"
+                                                                            name="a_ktp" value="2"
                                                                             {{ $data->a_ktp == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -2732,8 +2105,8 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_ktp" name="a_ktp"
-                                                                            value="0"
+                                                                        <input type="checkbox" id="a_ktp"
+                                                                            name="a_ktp" value="0"
                                                                             {{ $data->a_ktp == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -2764,16 +2137,16 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah data ktp ketua atau
-                                                                    sekataris,
+                                                                <label class="col-sm-12">7. Kartu Tanda Penduduk (Mesuji)
+                                                                    Pengurus Organisasi,
                                                                     tervalidasi ?</label>
                                                             </p>
                                                             <p class="text-muted text-center">
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_ktp" name="a_ktp"
-                                                                            value="2"
+                                                                        <input type="checkbox" id="a_ktp"
+                                                                            name="a_ktp" value="2"
                                                                             {{ $data->a_ktp == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -2785,8 +2158,8 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_ktp" name="a_ktp"
-                                                                            value="0"
+                                                                        <input type="checkbox" id="a_ktp"
+                                                                            name="a_ktp" value="0"
                                                                             {{ $data->a_ktp == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -2858,16 +2231,16 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah data ktp ketua atau
-                                                                    sekataris,
+                                                                <label class="col-sm-12">7. Kartu Tanda Penduduk (Mesuji)
+                                                                    Pengurus Organisasi,
                                                                     tervalidasi ?</label>
                                                             </p>
                                                             <p class="text-muted text-center">
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_ktp" name="a_ktp"
-                                                                            value="2"
+                                                                        <input type="checkbox" id="a_ktp"
+                                                                            name="a_ktp" value="2"
                                                                             {{ $data->a_ktp == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -2879,8 +2252,8 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_ktp" name="a_ktp"
-                                                                            value="0"
+                                                                        <input type="checkbox" id="a_ktp"
+                                                                            name="a_ktp" value="0"
                                                                             {{ $data->a_ktp == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -2930,16 +2303,16 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah data ktp ketua atau
-                                                                    sekataris,
+                                                                <label class="col-sm-12">7. Kartu Tanda Penduduk (Mesuji)
+                                                                    Pengurus Organisasi,
                                                                     tervalidasi ?</label>
                                                             </p>
                                                             <p class="text-muted text-center">
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_ktp" name="a_ktp"
-                                                                            value="2"
+                                                                        <input type="checkbox" id="a_ktp"
+                                                                            name="a_ktp" value="2"
                                                                             {{ $data->a_ktp == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -2951,8 +2324,8 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_ktp" name="a_ktp"
-                                                                            value="0"
+                                                                        <input type="checkbox" id="a_ktp"
+                                                                            name="a_ktp" value="0"
                                                                             {{ $data->a_ktp == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -3021,7 +2394,8 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah data foto kantor
+                                                                <label class="col-sm-12">8. Pas Foto Ketua Organisasi
+                                                                    Berwarna Terbaru
                                                                     sesuai,
                                                                     tervalidasi ?</label>
                                                             </p>
@@ -3029,8 +2403,8 @@
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_foto" name="a_foto"
-                                                                            value="2"
+                                                                        <input type="checkbox" id="a_foto"
+                                                                            name="a_foto" value="2"
                                                                             {{ $data->a_foto == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -3042,8 +2416,8 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_foto" name="a_foto"
-                                                                            value="0"
+                                                                        <input type="checkbox" id="a_foto"
+                                                                            name="a_foto" value="0"
                                                                             {{ $data->a_foto == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -3074,7 +2448,8 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah data foto kantor
+                                                                <label class="col-sm-12">8. Pas Foto Ketua Organisasi
+                                                                    Berwarna Terbaru
                                                                     sesuai,
                                                                     tervalidasi ?</label>
                                                             </p>
@@ -3082,8 +2457,8 @@
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_foto" name="a_foto"
-                                                                            value="2"
+                                                                        <input type="checkbox" id="a_foto"
+                                                                            name="a_foto" value="2"
                                                                             {{ $data->a_foto == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -3095,8 +2470,8 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_foto" name="a_foto"
-                                                                            value="0"
+                                                                        <input type="checkbox" id="a_foto"
+                                                                            name="a_foto" value="0"
                                                                             {{ $data->a_foto == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -3168,7 +2543,8 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah data foto kantor
+                                                                <label class="col-sm-12">8. Pas Foto Ketua Organisasi
+                                                                    Berwarna Terbaru
                                                                     sesuai,
                                                                     tervalidasi ?</label>
                                                             </p>
@@ -3176,8 +2552,8 @@
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_foto" name="a_foto"
-                                                                            value="2"
+                                                                        <input type="checkbox" id="a_foto"
+                                                                            name="a_foto" value="2"
                                                                             {{ $data->a_foto == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -3189,8 +2565,8 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_foto" name="a_foto"
-                                                                            value="0"
+                                                                        <input type="checkbox" id="a_foto"
+                                                                            name="a_foto" value="0"
                                                                             {{ $data->a_foto == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -3240,7 +2616,8 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah data foto kantor
+                                                                <label class="col-sm-12">8. Pas Foto Ketua Organisasi
+                                                                    Berwarna Terbaru
                                                                     sesuai,
                                                                     tervalidasi ?</label>
                                                             </p>
@@ -3248,8 +2625,8 @@
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_foto" name="a_foto"
-                                                                            value="2"
+                                                                        <input type="checkbox" id="a_foto"
+                                                                            name="a_foto" value="2"
                                                                             {{ $data->a_foto == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -3261,8 +2638,8 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_foto" name="a_foto"
-                                                                            value="0"
+                                                                        <input type="checkbox" id="a_foto"
+                                                                            name="a_foto" value="0"
                                                                             {{ $data->a_foto == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -3331,8 +2708,9 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat keterangan
-                                                                    domisili kantor sesuai
+                                                                <label class="col-sm-12">9. Surat Keterangan Domisili
+                                                                    Sekretariat Omas Yang Diterbitkan Olah Lurah / Kepala
+                                                                    Desa / Camat
                                                                     tervalidasi ?</label>
                                                             </p>
                                                             <p class="text-muted text-center">
@@ -3341,7 +2719,8 @@
                                                                     <label>
                                                                         <input type="checkbox"
                                                                             id="a_surat_keterangan_domisili"
-                                                                            name="a_surat_keterangan_domisili" value="2"
+                                                                            name="a_surat_keterangan_domisili"
+                                                                            value="2"
                                                                             {{ $data->a_surat_keterangan_domisili == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -3355,7 +2734,8 @@
                                                                     <label>
                                                                         <input type="checkbox"
                                                                             id="a_surat_keterangan_domisili"
-                                                                            name="a_surat_keterangan_domisili" value="0"
+                                                                            name="a_surat_keterangan_domisili"
+                                                                            value="0"
                                                                             {{ $data->a_surat_keterangan_domisili == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -3386,8 +2766,9 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat keterangan
-                                                                    domisili kantor sesuai
+                                                                <label class="col-sm-12">9. Surat Keterangan Domisili
+                                                                    Sekretariat Omas Yang Diterbitkan Olah Lurah / Kepala
+                                                                    Desa / Camat sesuai,
                                                                     tervalidasi ?</label>
                                                             </p>
                                                             <p class="text-muted text-center">
@@ -3396,7 +2777,8 @@
                                                                     <label>
                                                                         <input type="checkbox"
                                                                             id="a_surat_keterangan_domisili"
-                                                                            name="a_surat_keterangan_domisili" value="2"
+                                                                            name="a_surat_keterangan_domisili"
+                                                                            value="2"
                                                                             {{ $data->a_surat_keterangan_domisili == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -3410,7 +2792,8 @@
                                                                     <label>
                                                                         <input type="checkbox"
                                                                             id="a_surat_keterangan_domisili"
-                                                                            name="a_surat_keterangan_domisili" value="0"
+                                                                            name="a_surat_keterangan_domisili"
+                                                                            value="0"
                                                                             {{ $data->a_surat_keterangan_domisili == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -3482,8 +2865,9 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat keterangan
-                                                                    domisili kantor sesuai
+                                                                <label class="col-sm-12">9. Surat Keterangan Domisili
+                                                                    Sekretariat Omas Yang Diterbitkan Olah Lurah / Kepala
+                                                                    Desa / Camat
                                                                     tervalidasi ?</label>
                                                             </p>
                                                             <p class="text-muted text-center">
@@ -3492,7 +2876,8 @@
                                                                     <label>
                                                                         <input type="checkbox"
                                                                             id="a_surat_keterangan_domisili"
-                                                                            name="a_surat_keterangan_domisili" value="2"
+                                                                            name="a_surat_keterangan_domisili"
+                                                                            value="2"
                                                                             {{ $data->a_surat_keterangan_domisili == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -3506,7 +2891,8 @@
                                                                     <label>
                                                                         <input type="checkbox"
                                                                             id="a_surat_keterangan_domisili"
-                                                                            name="a_surat_keterangan_domisili" value="0"
+                                                                            name="a_surat_keterangan_domisili"
+                                                                            value="0"
                                                                             {{ $data->a_surat_keterangan_domisili == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -3556,8 +2942,9 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat keterangan
-                                                                    domisili kantor sesuai
+                                                                <label class="col-sm-12">9. Surat Keterangan Domisili
+                                                                    Sekretariat Omas Yang Diterbitkan Olah Lurah / Kepala
+                                                                    Desa / Camat
                                                                     tervalidasi ?</label>
                                                             </p>
                                                             <p class="text-muted text-center">
@@ -3566,7 +2953,8 @@
                                                                     <label>
                                                                         <input type="checkbox"
                                                                             id="a_surat_keterangan_domisili"
-                                                                            name="a_surat_keterangan_domisili" value="2"
+                                                                            name="a_surat_keterangan_domisili"
+                                                                            value="2"
                                                                             {{ $data->a_surat_keterangan_domisili == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -3580,7 +2968,8 @@
                                                                     <label>
                                                                         <input type="checkbox"
                                                                             id="a_surat_keterangan_domisili"
-                                                                            name="a_surat_keterangan_domisili" value="0"
+                                                                            name="a_surat_keterangan_domisili"
+                                                                            value="0"
                                                                             {{ $data->a_surat_keterangan_domisili == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -3650,16 +3039,16 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah Nomor Pokok Wajib
-                                                                    Pajak sesuai,
+                                                                <label class="col-sm-12">10. Nomor Pokolk Wajib Pajak Atas
+                                                                    Nama Organisasi sesuai,
                                                                     tervalidasi ?</label>
                                                             </p>
                                                             <p class="text-muted text-center">
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_npwp" name="a_npwp"
-                                                                            value="2"
+                                                                        <input type="checkbox" id="a_npwp"
+                                                                            name="a_npwp" value="2"
                                                                             {{ $data->a_npwp == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -3671,8 +3060,8 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_npwp" name="a_npwp"
-                                                                            value="0"
+                                                                        <input type="checkbox" id="a_npwp"
+                                                                            name="a_npwp" value="0"
                                                                             {{ $data->a_npwp == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -3703,16 +3092,16 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah Nomor Pokok Wajib
-                                                                    Pajak sesuai,
+                                                                <label class="col-sm-12">10. Nomor Pokolk Wajib Pajak Atas
+                                                                    Nama Organisasi sesuai,
                                                                     tervalidasi ?</label>
                                                             </p>
                                                             <p class="text-muted text-center">
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_npwp" name="a_npwp"
-                                                                            value="2"
+                                                                        <input type="checkbox" id="a_npwp"
+                                                                            name="a_npwp" value="2"
                                                                             {{ $data->a_npwp == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -3724,8 +3113,8 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_npwp" name="a_npwp"
-                                                                            value="0"
+                                                                        <input type="checkbox" id="a_npwp"
+                                                                            name="a_npwp" value="0"
                                                                             {{ $data->a_npwp == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -3797,16 +3186,16 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah Nomor Pokok Wajib
-                                                                    Pajak sesuai,
+                                                                <label class="col-sm-12">10. Nomor Pokolk Wajib Pajak Atas
+                                                                    Nama Organisasi sesuai,
                                                                     tervalidasi ?</label>
                                                             </p>
                                                             <p class="text-muted text-center">
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_npwp" name="a_npwp"
-                                                                            value="2"
+                                                                        <input type="checkbox" id="a_npwp"
+                                                                            name="a_npwp" value="2"
                                                                             {{ $data->a_npwp == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -3818,8 +3207,8 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_npwp" name="a_npwp"
-                                                                            value="0"
+                                                                        <input type="checkbox" id="a_npwp"
+                                                                            name="a_npwp" value="0"
                                                                             {{ $data->a_npwp == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -3869,16 +3258,16 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah Nomor Pokok Wajib
-                                                                    Pajak sesuai,
+                                                                <label class="col-sm-12">10. Nomor Pokolk Wajib Pajak Atas
+                                                                    Nama Organisasi sesuai,
                                                                     tervalidasi ?</label>
                                                             </p>
                                                             <p class="text-muted text-center">
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_npwp" name="a_npwp"
-                                                                            value="2"
+                                                                        <input type="checkbox" id="a_npwp"
+                                                                            name="a_npwp" value="2"
                                                                             {{ $data->a_npwp == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -3890,8 +3279,8 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_npwp" name="a_npwp"
-                                                                            value="0"
+                                                                        <input type="checkbox" id="a_npwp"
+                                                                            name="a_npwp" value="0"
                                                                             {{ $data->a_npwp == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -3960,9 +3349,8 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah Foto kantor kantor
-                                                                    atau kesetariantan tampak
-                                                                    depan papan nama
+                                                                <label class="col-sm-12">11. Foto Kantor Atau Sekretariat
+                                                                    Ormas, Tampak Depan Yang Memuat Papan Nama
                                                                     sesuai,
                                                                     tervalidasi ?</label>
                                                             </p>
@@ -4015,9 +3403,8 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah Foto kantor kantor
-                                                                    atau kesetariantan tampak
-                                                                    depan papan nama
+                                                                <label class="col-sm-12">11. Foto Kantor Atau Sekretariat
+                                                                    Ormas, Tampak Depan Yang Memuat Papan Nama
                                                                     sesuai,
                                                                     tervalidasi ?</label>
                                                             </p>
@@ -4111,9 +3498,8 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah Foto kantor kantor
-                                                                    atau kesetariantan tampak
-                                                                    depan papan nama
+                                                                <label class="col-sm-12">11. Foto Kantor Atau Sekretariat
+                                                                    Ormas, Tampak Depan Yang Memuat Papan Nama
                                                                     sesuai,
                                                                     tervalidasi ?</label>
                                                             </p>
@@ -4185,9 +3571,8 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah Foto kantor kantor
-                                                                    atau kesetariantan tampak
-                                                                    depan papan nama
+                                                                <label class="col-sm-12">11. Foto Kantor Atau Sekretariat
+                                                                    Ormas, Tampak Depan Yang Memuat Papan Nama
                                                                     sesuai,
                                                                     tervalidasi ?</label>
                                                             </p>
@@ -4250,27 +3635,27 @@
                                 @endif
                                 {{-- tutup kodong data foto_kantor --}}
 
-                                {{-- kodong data surat_absah --}}
-                                @if (!empty($data->surat_absah))
+                                {{-- kodong data keabsahan_kantor --}}
+                                @if (!empty($data->keabsahan_kantor))
                                     @php
-                                        $pecah = explode('.', $data->surat_absah);
-                                        $surat_absah = $pecah[1];
+                                        $pecah = explode('.', $data->keabsahan_kantor);
+                                        $keabsahan_kantor = $pecah[1];
                                     @endphp
 
-                                    @if ($surat_absah == 'pdf')
+                                    @if ($keabsahan_kantor == 'pdf')
                                         <div class="col-lg-12">
                                             <div class="p-20 z-depth-bottom-1">
 
-                                                {{-- aktif a_surat_absah --}}
-                                                @if ($data->a_surat_absah == 0)
+                                                {{-- aktif a_keabsahan_kantor --}}
+                                                @if ($data->a_keabsahan_kantor == 0)
                                                     <p class="text-muted text-center"><label
                                                             class="label label-inverse-primary"><span
-                                                                data-feather="loader"></span>{{ $data->surat_absah }}</label>
+                                                                data-feather="loader"></span>{{ $data->keabsahan_kantor }}</label>
                                                     </p>
 
                                                     <p class="text-muted text-center">
                                                         <a class="btn btn-primary" data-toggle="modal"
-                                                            href="#surat_absah-{{ $data->id }}">Lihat
+                                                            href="#keabsahan_kantor-{{ $data->id }}">Lihat
                                                             Data
                                                         </a>
                                                     </p>
@@ -4278,17 +3663,19 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat pertanggung
-                                                                    jawaban absah data sesuai,
+                                                                <label class="col-sm-12">12. Keabsahan Kantor Atau
+                                                                    Sekretariat Ormas Dilampiri Bukti Kepemilikan, atau
+                                                                    Surat Perjanjian Kontrak Atau Ijin Pakai Dari
+                                                                    Pemilik/Pengelola,
                                                                     tervalidasi ?</label>
                                                             </p>
                                                             <p class="text-muted text-center">
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_absah"
-                                                                            name="a_surat_absah" value="2"
-                                                                            {{ $data->a_surat_absah == 2 ? 'checked' : '' }}>
+                                                                        <input type="checkbox" id="a_keabsahan_kantor"
+                                                                            name="a_keabsahan_kantor" value="2"
+                                                                            {{ $data->a_keabsahan_kantor == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
                                                                                 class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -4299,9 +3686,9 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_absah"
-                                                                            name="a_surat_absah" value="0"
-                                                                            {{ $data->a_surat_absah == 0 ? 'checked' : '' }}>
+                                                                        <input type="checkbox" id="a_keabsahan_kantor"
+                                                                            name="a_keabsahan_kantor" value="0"
+                                                                            {{ $data->a_keabsahan_kantor == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
                                                                                 class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -4315,15 +3702,15 @@
                                                             </p>
                                                         </div>
                                                     </div>
-                                                @elseif($data->a_surat_absah == 2)
+                                                @elseif ($data->a_keabsahan_kantor == 2)
                                                     <p class="text-muted text-center p-b-5">
                                                         <label class="label label-inverse-success"><span
-                                                                data-feather="check-circle"></span>{{ $data->surat_absah }}</label>
+                                                                data-feather="check-circle"></span>{{ $data->keabsahan_kantor }}</label>
                                                     </p>
 
                                                     <p class="text-muted text-center">
                                                         <a class="btn btn-primary" data-toggle="modal"
-                                                            href="#surat_absah-{{ $data->id }}">Lihat
+                                                            href="#keabsahan_kantor-{{ $data->id }}">Lihat
                                                             Data
                                                         </a>
                                                     </p>
@@ -4331,17 +3718,19 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat pertanggung
-                                                                    jawaban absah data sesuai,
+                                                                <label class="col-sm-12">12. Keabsahan Kantor Atau
+                                                                    Sekretariat Ormas Dilampiri Bukti Kepemilikan, atau
+                                                                    Surat Perjanjian Kontrak Atau Ijin Pakai Dari
+                                                                    Pemilik/Pengelola,
                                                                     tervalidasi ?</label>
                                                             </p>
                                                             <p class="text-muted text-center">
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_absah"
-                                                                            name="a_surat_absah" value="2"
-                                                                            {{ $data->a_surat_absah == 2 ? 'checked' : '' }}>
+                                                                        <input type="checkbox" id="a_keabsahan_kantor"
+                                                                            name="a_keabsahan_kantor" value="2"
+                                                                            {{ $data->a_keabsahan_kantor == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
                                                                                 class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -4352,9 +3741,9 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_absah"
-                                                                            name="a_surat_absah" value="0"
-                                                                            {{ $data->a_surat_absah == 0 ? 'checked' : '' }}>
+                                                                        <input type="checkbox" id="a_keabsahan_kantor"
+                                                                            name="a_keabsahan_kantor" value="0"
+                                                                            {{ $data->a_keabsahan_kantor == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
                                                                                 class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -4371,7 +3760,7 @@
                                                 @else
                                                     <p class="text-muted text-center p-b-5">
                                                         <label class="label label-inverse-danger"><span
-                                                                data-feather="x-circle"></span>{{ $data->surat_absah }}</label>
+                                                                data-feather="x-circle"></span>{{ $data->keabsahan_kantor }}</label>
                                                     </p>
 
                                                     <p class="text-muted text-center">
@@ -4380,38 +3769,39 @@
                                                             sampai pengguna memperbaiki</label>
                                                     </p>
                                                 @endif
+
                                             </div>
                                         </div>
-                                        {{-- tutup aktif a_surat_absah --}}
+
+                                        {{-- tutup aktif a_keabsahan_kantor --}}
 
                                         {{-- buka JPG --}}
-                                    @elseif($surat_absah == 'png' or $surat_absah == 'jpg')
+                                    @elseif ($keabsahan_kantor == 'png' or $keabsahan_kantor == 'jpg')
                                         <div class="col-lg-12">
                                             <div class="p-20 z-depth-bottom-1">
 
-                                                {{-- aktif a_surat_absah JPG --}}
-                                                @if ($data->a_surat_absah == 0)
+                                                {{-- aktif a_keabsahan_kantor JPG --}}
+                                                @if ($data->a_keabsahan_kantor == 0)
                                                     <p class="text-muted text-center"><label
                                                             class="label label-inverse-primary"><span
-                                                                data-feather="loader"></span>{{ $data->surat_absah }}</label>
+                                                                data-feather="loader"></span>{{ $data->keabsahan_kantor }}</label>
                                                     </p>
-
-                                                    {{-- tutup status data surat_absah
-                                /**
-                                * Show the form for creating a new resource.
-                                * Whatapps 6289631031237
-                                * email : yogimaulana100@gmail.com
-                                * https://github.com/Ays1234
-                                * https://serbaotodidak.com/
-                                */ --}}
+                                                    {{-- tutup status data keabsahan_kantor
+                                    /**
+                                    * Show the form for creating a new resource.
+                                    * Whatapps 6289631031237
+                                    * email : yogimaulana100@gmail.com
+                                    * https://github.com/Ays1234
+                                    * https://serbaotodidak.com/
+                                    */ --}}
                                                     <div class="col-lg-12 col-sm-12">
                                                         <div class="thumbnail">
                                                             <div class="thumb">
-                                                                <a href="{{ asset($data->email . '/' . $data->surat_absah) }}"
+                                                                <a href="{{ asset($data->email . '/' . $data->keabsahan_kantor) }}"
                                                                     data-lightbox="1"
-                                                                    data-title="{{ $data->email . '/' . $data->surat_absah }}">
+                                                                    data-title="{{ $data->email . '/' . $data->keabsahan_kantor }}">
 
-                                                                    <img src="{{ asset($data->email . '/' . $data->surat_absah) }}"
+                                                                    <img src="{{ asset($data->email . '/' . $data->keabsahan_kantor) }}"
                                                                         alt=""
                                                                         class="img-fluid img-thumbnail mx-auto d-block"
                                                                         style="max-height: 200px;">
@@ -4425,17 +3815,19 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat pertanggung
-                                                                    jawaban absah data sesuai,
+                                                                <label class="col-sm-12">12. Keabsahan Kantor Atau
+                                                                    Sekretariat Ormas Dilampiri Bukti Kepemilikan, atau
+                                                                    Surat Perjanjian Kontrak Atau Ijin Pakai Dari
+                                                                    Pemilik/Pengelola,
                                                                     tervalidasi ?</label>
                                                             </p>
                                                             <p class="text-muted text-center">
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_absah"
-                                                                            name="a_surat_absah" value="2"
-                                                                            {{ $data->a_surat_absah == 2 ? 'checked' : '' }}>
+                                                                        <input type="checkbox" id="a_keabsahan_kantor"
+                                                                            name="a_keabsahan_kantor" value="2"
+                                                                            {{ $data->a_keabsahan_kantor == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
                                                                                 class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -4446,9 +3838,9 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_absah"
-                                                                            name="a_surat_absah" value="0"
-                                                                            {{ $data->a_surat_absah == 0 ? 'checked' : '' }}>
+                                                                        <input type="checkbox" id="a_keabsahan_kantor"
+                                                                            name="a_keabsahan_kantor" value="0"
+                                                                            {{ $data->a_keabsahan_kantor == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
                                                                                 class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -4462,28 +3854,28 @@
                                                             </p>
                                                         </div>
                                                     </div>
-                                                @elseif($data->a_surat_absah == 2)
+                                                @elseif ($data->a_keabsahan_kantor == 2)
                                                     <p class="text-muted text-center p-b-5">
                                                         <label class="label label-inverse-success"><span
-                                                                data-feather="check-circle"></span>{{ $data->surat_absah }}</label>
+                                                                data-feather="check-circle"></span>{{ $data->keabsahan_kantor }}</label>
                                                     </p>
 
-                                                    {{-- tutup status data surat_absah
-                                /**
-                                * Show the form for creating a new resource.
-                                * Whatapps 6289631031237
-                                * email : yogimaulana100@gmail.com
-                                * https://github.com/Ays1234
-                                * https://serbaotodidak.com/
-                                */ --}}
+                                                    {{-- tutup status data keabsahan_kantor
+                                    /**
+                                    * Show the form for creating a new resource.
+                                    * Whatapps 6289631031237
+                                    * email : yogimaulana100@gmail.com
+                                    * https://github.com/Ays1234
+                                    * https://serbaotodidak.com/
+                                    */ --}}
                                                     <div class="col-lg-12 col-sm-12">
                                                         <div class="thumbnail">
                                                             <div class="thumb">
-                                                                <a href="{{ asset($data->email . '/' . $data->surat_absah) }}"
+                                                                <a href="{{ asset($data->email . '/' . $data->keabsahan_kantor) }}"
                                                                     data-lightbox="1"
-                                                                    data-title="{{ $data->email . '/' . $data->surat_absah }}">
+                                                                    data-title="{{ $data->email . '/' . $data->keabsahan_kantor }}">
 
-                                                                    <img src="{{ asset($data->email . '/' . $data->surat_absah) }}"
+                                                                    <img src="{{ asset($data->email . '/' . $data->keabsahan_kantor) }}"
                                                                         alt=""
                                                                         class="img-fluid img-thumbnail mx-auto d-block"
                                                                         style="max-height: 200px;">
@@ -4497,17 +3889,19 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat pertanggung
-                                                                    jawaban absah data sesuai,
+                                                                <label class="col-sm-12">12. Keabsahan Kantor Atau
+                                                                    Sekretariat Ormas Dilampiri Bukti Kepemilikan, atau
+                                                                    Surat Perjanjian Kontrak Atau Ijin Pakai Dari
+                                                                    Pemilik/Pengelola,
                                                                     tervalidasi ?</label>
                                                             </p>
                                                             <p class="text-muted text-center">
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_absah"
-                                                                            name="a_surat_absah" value="2"
-                                                                            {{ $data->a_surat_absah == 2 ? 'checked' : '' }}>
+                                                                        <input type="checkbox" id="a_keabsahan_kantor"
+                                                                            name="a_keabsahan_kantor" value="2"
+                                                                            {{ $data->a_keabsahan_kantor == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
                                                                                 class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -4518,9 +3912,9 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_absah"
-                                                                            name="a_surat_absah" value="0"
-                                                                            {{ $data->a_surat_absah == 0 ? 'checked' : '' }}>
+                                                                        <input type="checkbox" id="a_keabsahan_kantor"
+                                                                            name="a_keabsahan_kantor" value="0"
+                                                                            {{ $data->a_keabsahan_kantor == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
                                                                                 class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -4537,7 +3931,7 @@
                                                 @else
                                                     <p class="text-muted text-center p-b-5">
                                                         <label class="label label-inverse-danger"><span
-                                                                data-feather="x-circle"></span>{{ $data->surat_absah }}</label>
+                                                                data-feather="x-circle"></span>{{ $data->keabsahan_kantor }}</label>
                                                     </p>
 
                                                     <p class="text-muted text-center">
@@ -4547,10 +3941,12 @@
                                                     </p>
                                                 @endif
 
-                                                {{-- tutup aktif a_surat_absah JPG --}}
+                                                {{-- tutup aktif a_keabsahan_kantor JPG --}}
+
+                                                {{-- TUTUP jpg --}}
+
                                             </div>
                                         </div>
-                                        {{-- TUTUP jpg --}}
                                     @else
                                         {{-- SELAIN PDF DAN JPG HAH KOSONG --}}
                                     @endif
@@ -4558,7 +3954,363 @@
                                     {{-- tutup pdf --}}
                                 @else
                                 @endif
-                                {{-- tutup kodong data surat_absah --}}
+                                {{-- tutup kodong data keabsahan_kantor --}}
+
+                                {{-- kodong data surat_memuat --}}
+                                @if (!empty($data->surat_memuat))
+                                    @php
+                                        $pecah = explode('.', $data->surat_memuat);
+                                        $surat_memuat = $pecah[1];
+                                    @endphp
+
+                                    @if ($surat_memuat == 'pdf')
+                                        <div class="col-lg-12">
+                                            <div class="p-20 z-depth-bottom-1">
+
+                                                {{-- aktif a_surat_memuat --}}
+                                                @if ($data->a_surat_memuat == 0)
+                                                    <p class="text-muted text-center"><label
+                                                            class="label label-inverse-primary"><span
+                                                                data-feather="loader"></span>{{ $data->surat_memuat }}</label>
+                                                    </p>
+
+                                                    <p class="text-muted text-center">
+                                                        <a class="btn btn-primary" data-toggle="modal"
+                                                            href="#surat_memuat-{{ $data->id }}">Lihat
+                                                            Data
+                                                        </a>
+                                                    </p>
+
+                                                    <div class="card-block">
+                                                        <div class="form-group row">
+                                                            <p class="text-muted text-center">
+                                                                <label class="col-sm-12">13. Surat Pernyataan Yang Memuat
+                                                                    : 1. Pernyataan Tidak Terjadi Konflik Kepengurusan Dan
+                                                                    Perkara Pengadilan, 2. Pernyataan Bahwa Nama, Lambang,
+                                                                    Bendera, Tanda Gambar, Simbol, Atribut, Cap Stempel Yang
+                                                                    Digunakan Belum Menjadi Hak Paten Atau Hak Cipta Pihak
+                                                                    Lain, 3. Pernyataan Kesanggupan Menyampaikan Laporan
+                                                                    Perkembangan Dan Kegiatan Ormas Setiap Akhir Tahun, 4.
+                                                                    Surat Pernyataan Bahwa Bertanggung Jawab Terhadap
+                                                                    Keabsahan Seluruh Isi, Data, Dan Informasi Dokumen Atau
+                                                                    Berkas Yang Diserahkan, Dan Bersedia Dituntut Secara
+                                                                    Hukum. (Di Tanda Tangani Ketua Dan Sekretaris) sesuai,
+                                                                    tervalidasi ?</label>
+                                                            </p>
+                                                            <p class="text-muted text-center">
+                                                            <div class="col-sm-12">
+                                                                <div class="checkbox-fade fade-in-primary">
+                                                                    <label>
+                                                                        <input type="checkbox" id="a_surat_memuat"
+                                                                            name="a_surat_memuat" value="2"
+                                                                            {{ $data->a_surat_memuat == 2 ? 'checked' : '' }}>
+                                                                        <span class="cr">
+                                                                            <i
+                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                                                        </span>
+                                                                        <span
+                                                                            class="label label-lg label-success">Lengkap</span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="checkbox-fade fade-in-primary">
+                                                                    <label>
+                                                                        <input type="checkbox" id="a_surat_memuat"
+                                                                            name="a_surat_memuat" value="0"
+                                                                            {{ $data->a_surat_memuat == 0 ? 'checked' : '' }}>
+                                                                        <span class="cr">
+                                                                            <i
+                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                                                        </span>
+                                                                        <span
+                                                                            class="label label-lg label-danger">Tidak</span>
+                                                                    </label>
+                                                                </div>
+                                                                <span class="messages"></span>
+                                                            </div>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                @elseif ($data->a_surat_memuat == 2)
+                                                    <p class="text-muted text-center p-b-5">
+                                                        <label class="label label-inverse-success"><span
+                                                                data-feather="check-circle"></span>{{ $data->surat_memuat }}</label>
+                                                    </p>
+
+                                                    <p class="text-muted text-center">
+                                                        <a class="btn btn-primary" data-toggle="modal"
+                                                            href="#surat_memuat-{{ $data->id }}">Lihat
+                                                            Data
+                                                        </a>
+                                                    </p>
+
+                                                    <div class="card-block">
+                                                        <div class="form-group row">
+                                                            <p class="text-muted text-center">
+                                                                <label class="col-sm-12">13. Surat Pernyataan Yang Memuat
+                                                                    : 1. Pernyataan Tidak Terjadi Konflik Kepengurusan Dan
+                                                                    Perkara Pengadilan, 2. Pernyataan Bahwa Nama, Lambang,
+                                                                    Bendera, Tanda Gambar, Simbol, Atribut, Cap Stempel Yang
+                                                                    Digunakan Belum Menjadi Hak Paten Atau Hak Cipta Pihak
+                                                                    Lain, 3. Pernyataan Kesanggupan Menyampaikan Laporan
+                                                                    Perkembangan Dan Kegiatan Ormas Setiap Akhir Tahun, 4.
+                                                                    Surat Pernyataan Bahwa Bertanggung Jawab Terhadap
+                                                                    Keabsahan Seluruh Isi, Data, Dan Informasi Dokumen Atau
+                                                                    Berkas Yang Diserahkan, Dan Bersedia Dituntut Secara
+                                                                    Hukum. (Di Tanda Tangani Ketua Dan Sekretaris) sesuai,
+                                                                    tervalidasi ?</label>
+                                                            </p>
+                                                            <p class="text-muted text-center">
+                                                            <div class="col-sm-12">
+                                                                <div class="checkbox-fade fade-in-primary">
+                                                                    <label>
+                                                                        <input type="checkbox" id="a_surat_memuat"
+                                                                            name="a_surat_memuat" value="2"
+                                                                            {{ $data->a_surat_memuat == 2 ? 'checked' : '' }}>
+                                                                        <span class="cr">
+                                                                            <i
+                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                                                        </span>
+                                                                        <span
+                                                                            class="label label-lg label-success">Lengkap</span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="checkbox-fade fade-in-primary">
+                                                                    <label>
+                                                                        <input type="checkbox" id="a_surat_memuat"
+                                                                            name="a_surat_memuat" value="0"
+                                                                            {{ $data->a_surat_memuat == 0 ? 'checked' : '' }}>
+                                                                        <span class="cr">
+                                                                            <i
+                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                                                        </span>
+                                                                        <span
+                                                                            class="label label-lg label-danger">Tidak</span>
+                                                                    </label>
+                                                                </div>
+                                                                <span class="messages"></span>
+                                                            </div>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                @else
+                                                    <p class="text-muted text-center p-b-5">
+                                                        <label class="label label-inverse-danger"><span
+                                                                data-feather="x-circle"></span>{{ $data->surat_memuat }}</label>
+                                                    </p>
+
+                                                    <p class="text-muted text-center">
+                                                        <label class="col-sm-12">Data tidak lengkap yang dikirim,
+                                                            tunggu
+                                                            sampai pengguna memperbaiki</label>
+                                                    </p>
+                                                @endif
+
+                                            </div>
+                                        </div>
+
+                                        {{-- tutup aktif a_surat_memuat --}}
+
+                                        {{-- buka JPG --}}
+                                    @elseif ($surat_memuat == 'png' or $surat_memuat == 'jpg')
+                                        <div class="col-lg-12">
+                                            <div class="p-20 z-depth-bottom-1">
+
+                                                {{-- aktif a_surat_memuat JPG --}}
+                                                @if ($data->a_surat_memuat == 0)
+                                                    <p class="text-muted text-center"><label
+                                                            class="label label-inverse-primary"><span
+                                                                data-feather="loader"></span>{{ $data->surat_memuat }}</label>
+                                                    </p>
+                                                    {{-- tutup status data surat_memuat
+                                    /**
+                                    * Show the form for creating a new resource.
+                                    * Whatapps 6289631031237
+                                    * email : yogimaulana100@gmail.com
+                                    * https://github.com/Ays1234
+                                    * https://serbaotodidak.com/
+                                    */ --}}
+                                                    <div class="col-lg-12 col-sm-12">
+                                                        <div class="thumbnail">
+                                                            <div class="thumb">
+                                                                <a href="{{ asset($data->email . '/' . $data->surat_memuat) }}"
+                                                                    data-lightbox="1"
+                                                                    data-title="{{ $data->email . '/' . $data->surat_memuat }}">
+
+                                                                    <img src="{{ asset($data->email . '/' . $data->surat_memuat) }}"
+                                                                        alt=""
+                                                                        class="img-fluid img-thumbnail mx-auto d-block"
+                                                                        style="max-height: 200px;">
+
+
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="card-block">
+                                                        <div class="form-group row">
+                                                            <p class="text-muted text-center">
+                                                                <label class="col-sm-12">13. Surat Pernyataan Yang Memuat
+                                                                    : <br>1. Pernyataan Tidak Terjadi Konflik Kepengurusan
+                                                                    Dan
+                                                                    Perkara Pengadilan, <br>2. Pernyataan Bahwa Nama,
+                                                                    Lambang,
+                                                                    Bendera, Tanda Gambar, Simbol, Atribut, Cap Stempel Yang
+                                                                    Digunakan Belum Menjadi Hak Paten Atau Hak Cipta Pihak
+                                                                    Lain, <br>3. Pernyataan Kesanggupan Menyampaikan Laporan
+                                                                    Perkembangan Dan Kegiatan Ormas Setiap Akhir Tahun,
+                                                                    <br>4.
+                                                                    Surat Pernyataan Bahwa Bertanggung Jawab Terhadap
+                                                                    Keabsahan Seluruh Isi, Data, Dan Informasi Dokumen Atau
+                                                                    Berkas Yang Diserahkan, Dan Bersedia Dituntut Secara
+                                                                    Hukum. (Di Tanda Tangani Ketua Dan Sekretaris) sesuai,
+                                                                    tervalidasi ?</label>
+                                                            </p>
+                                                            <p class="text-muted text-center">
+                                                            <div class="col-sm-12">
+                                                                <div class="checkbox-fade fade-in-primary">
+                                                                    <label>
+                                                                        <input type="checkbox" id="a_surat_memuat"
+                                                                            name="a_surat_memuat" value="2"
+                                                                            {{ $data->a_surat_memuat == 2 ? 'checked' : '' }}>
+                                                                        <span class="cr">
+                                                                            <i
+                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                                                        </span>
+                                                                        <span
+                                                                            class="label label-lg label-success">Lengkap</span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="checkbox-fade fade-in-primary">
+                                                                    <label>
+                                                                        <input type="checkbox" id="a_surat_memuat"
+                                                                            name="a_surat_memuat" value="0"
+                                                                            {{ $data->a_surat_memuat == 0 ? 'checked' : '' }}>
+                                                                        <span class="cr">
+                                                                            <i
+                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                                                        </span>
+                                                                        <span
+                                                                            class="label label-lg label-danger">Tidak</span>
+                                                                    </label>
+                                                                </div>
+                                                                <span class="messages"></span>
+                                                            </div>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                @elseif ($data->a_surat_memuat == 2)
+                                                    <p class="text-muted text-center p-b-5">
+                                                        <label class="label label-inverse-success"><span
+                                                                data-feather="check-circle"></span>{{ $data->surat_memuat }}</label>
+                                                    </p>
+
+                                                    {{-- tutup status data surat_memuat
+                                    /**
+                                    * Show the form for creating a new resource.
+                                    * Whatapps 6289631031237
+                                    * email : yogimaulana100@gmail.com
+                                    * https://github.com/Ays1234
+                                    * https://serbaotodidak.com/
+                                    */ --}}
+                                                    <div class="col-lg-12 col-sm-12">
+                                                        <div class="thumbnail">
+                                                            <div class="thumb">
+                                                                <a href="{{ asset($data->email . '/' . $data->surat_memuat) }}"
+                                                                    data-lightbox="1"
+                                                                    data-title="{{ $data->email . '/' . $data->surat_memuat }}">
+
+                                                                    <img src="{{ asset($data->email . '/' . $data->surat_memuat) }}"
+                                                                        alt=""
+                                                                        class="img-fluid img-thumbnail mx-auto d-block"
+                                                                        style="max-height: 200px;">
+
+
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="card-block">
+                                                        <div class="form-group row">
+                                                            <p class="text-muted text-center">
+                                                                <label class="col-sm-12">13. Surat Pernyataan Yang Memuat
+                                                                    : <br>1. Pernyataan Tidak Terjadi Konflik Kepengurusan
+                                                                    Dan
+                                                                    Perkara Pengadilan, <br>2. Pernyataan Bahwa Nama,
+                                                                    Lambang,
+                                                                    Bendera, Tanda Gambar, Simbol, Atribut, Cap Stempel Yang
+                                                                    Digunakan Belum Menjadi Hak Paten Atau Hak Cipta Pihak
+                                                                    Lain, <br>3. Pernyataan Kesanggupan Menyampaikan Laporan
+                                                                    Perkembangan Dan Kegiatan Ormas Setiap Akhir Tahun,
+                                                                    <br>4.
+                                                                    Surat Pernyataan Bahwa Bertanggung Jawab Terhadap
+                                                                    Keabsahan Seluruh Isi, Data, Dan Informasi Dokumen Atau
+                                                                    Berkas Yang Diserahkan, Dan Bersedia Dituntut Secara
+                                                                    Hukum. (Di Tanda Tangani Ketua Dan Sekretaris) sesuai,
+                                                                    tervalidasi ?</label>
+                                                            </p>
+                                                            <p class="text-muted text-center">
+                                                            <div class="col-sm-12">
+                                                                <div class="checkbox-fade fade-in-primary">
+                                                                    <label>
+                                                                        <input type="checkbox" id="a_surat_memuat"
+                                                                            name="a_surat_memuat" value="2"
+                                                                            {{ $data->a_surat_memuat == 2 ? 'checked' : '' }}>
+                                                                        <span class="cr">
+                                                                            <i
+                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                                                        </span>
+                                                                        <span
+                                                                            class="label label-lg label-success">Lengkap</span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="checkbox-fade fade-in-primary">
+                                                                    <label>
+                                                                        <input type="checkbox" id="a_surat_memuat"
+                                                                            name="a_surat_memuat" value="0"
+                                                                            {{ $data->a_surat_memuat == 0 ? 'checked' : '' }}>
+                                                                        <span class="cr">
+                                                                            <i
+                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                                                        </span>
+                                                                        <span
+                                                                            class="label label-lg label-danger">Tidak</span>
+                                                                    </label>
+                                                                </div>
+                                                                <span class="messages"></span>
+                                                            </div>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                @else
+                                                    <p class="text-muted text-center p-b-5">
+                                                        <label class="label label-inverse-danger"><span
+                                                                data-feather="x-circle"></span>{{ $data->surat_memuat }}</label>
+                                                    </p>
+
+                                                    <p class="text-muted text-center">
+                                                        <label class="col-sm-12">Data tidak lengkap yang dikirim,
+                                                            tunggu
+                                                            sampai pengguna memperbaiki</label>
+                                                    </p>
+                                                @endif
+
+                                                {{-- tutup aktif a_surat_memuat JPG --}}
+
+                                                {{-- TUTUP jpg --}}
+
+                                            </div>
+                                        </div>
+                                    @else
+                                        {{-- SELAIN PDF DAN JPG HAH KOSONG --}}
+                                    @endif
+
+                                    {{-- tutup pdf --}}
+                                @else
+                                @endif
+                                {{-- tutup kodong data surat_memuat --}}
+
 
                                 {{-- kodong data surat_rekom_kesediaan --}}
                                 @if (!empty($data->surat_rekom_kesediaan))
@@ -4588,19 +4340,20 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat pernyataan
-                                                                    kesediaan atau persetujuan,
-                                                                    orkemas untuk
-                                                                    mencantumkan nama pejabat pemerintah dan tokoh
-                                                                    masyarakat
+                                                                <label class="col-sm-12">17. Surat Pernyataan Kesediaan
+                                                                    Atau Persetujuan Untuk Ormas Yang Dalam Kepengurusannya
+                                                                    Mencantumkan Nama Dari Pajabat Negara, Pejabat
+                                                                    Pemerintah, Dan Tokoh Masyarakat **
                                                                     tervalidasi ?</label>
                                                             </p>
                                                             <p class="text-muted text-center">
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_rekom_kesediaan"
-                                                                            name="a_surat_rekom_kesediaan" value="2"
+                                                                        <input type="checkbox"
+                                                                            id="a_surat_rekom_kesediaan"
+                                                                            name="a_surat_rekom_kesediaan"
+                                                                            value="2"
                                                                             {{ $data->a_surat_rekom_kesediaan == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -4612,8 +4365,10 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_rekom_kesediaan"
-                                                                            name="a_surat_rekom_kesediaan" value="0"
+                                                                        <input type="checkbox"
+                                                                            id="a_surat_rekom_kesediaan"
+                                                                            name="a_surat_rekom_kesediaan"
+                                                                            value="0"
                                                                             {{ $data->a_surat_rekom_kesediaan == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -4644,19 +4399,20 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat pernyataan
-                                                                    kesediaan atau persetujuan,
-                                                                    orkemas untuk
-                                                                    mencantumkan nama pejabat pemerintah dan tokoh
-                                                                    masyarakat
+                                                                <label class="col-sm-12">17. Surat Pernyataan Kesediaan
+                                                                    Atau Persetujuan Untuk Ormas Yang Dalam Kepengurusannya
+                                                                    Mencantumkan Nama Dari Pajabat Negara, Pejabat
+                                                                    Pemerintah, Dan Tokoh Masyarakat **
                                                                     tervalidasi ?</label>
                                                             </p>
                                                             <p class="text-muted text-center">
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_rekom_kesediaan"
-                                                                            name="a_surat_rekom_kesediaan" value="2"
+                                                                        <input type="checkbox"
+                                                                            id="a_surat_rekom_kesediaan"
+                                                                            name="a_surat_rekom_kesediaan"
+                                                                            value="2"
                                                                             {{ $data->a_surat_rekom_kesediaan == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -4668,8 +4424,10 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_rekom_kesediaan"
-                                                                            name="a_surat_rekom_kesediaan" value="0"
+                                                                        <input type="checkbox"
+                                                                            id="a_surat_rekom_kesediaan"
+                                                                            name="a_surat_rekom_kesediaan"
+                                                                            value="0"
                                                                             {{ $data->a_surat_rekom_kesediaan == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -4741,19 +4499,20 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat pernyataan
-                                                                    kesediaan atau persetujuan,
-                                                                    orkemas untuk
-                                                                    mencantumkan nama pejabat pemerintah dan tokoh
-                                                                    masyarakat
+                                                                <label class="col-sm-12">17. Surat Pernyataan Kesediaan
+                                                                    Atau Persetujuan Untuk Ormas Yang Dalam Kepengurusannya
+                                                                    Mencantumkan Nama Dari Pajabat Negara, Pejabat
+                                                                    Pemerintah, Dan Tokoh Masyarakat **
                                                                     tervalidasi ?</label>
                                                             </p>
                                                             <p class="text-muted text-center">
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_rekom_kesediaan"
-                                                                            name="a_surat_rekom_kesediaan" value="2"
+                                                                        <input type="checkbox"
+                                                                            id="a_surat_rekom_kesediaan"
+                                                                            name="a_surat_rekom_kesediaan"
+                                                                            value="2"
                                                                             {{ $data->a_surat_rekom_kesediaan == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -4765,8 +4524,10 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_rekom_kesediaan"
-                                                                            name="a_surat_rekom_kesediaan" value="0"
+                                                                        <input type="checkbox"
+                                                                            id="a_surat_rekom_kesediaan"
+                                                                            name="a_surat_rekom_kesediaan"
+                                                                            value="0"
                                                                             {{ $data->a_surat_rekom_kesediaan == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -4816,19 +4577,20 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat pernyataan
-                                                                    kesediaan atau persetujuan,
-                                                                    orkemas untuk
-                                                                    mencantumkan nama pejabat pemerintah dan tokoh
-                                                                    masyarakat
+                                                                <label class="col-sm-12">17. Surat Pernyataan Kesediaan
+                                                                    Atau Persetujuan Untuk Ormas Yang Dalam Kepengurusannya
+                                                                    Mencantumkan Nama Dari Pajabat Negara, Pejabat
+                                                                    Pemerintah, Dan Tokoh Masyarakat **
                                                                     tervalidasi ?</label>
                                                             </p>
                                                             <p class="text-muted text-center">
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_rekom_kesediaan"
-                                                                            name="a_surat_rekom_kesediaan" value="2"
+                                                                        <input type="checkbox"
+                                                                            id="a_surat_rekom_kesediaan"
+                                                                            name="a_surat_rekom_kesediaan"
+                                                                            value="2"
                                                                             {{ $data->a_surat_rekom_kesediaan == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -4840,8 +4602,10 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_rekom_kesediaan"
-                                                                            name="a_surat_rekom_kesediaan" value="0"
+                                                                        <input type="checkbox"
+                                                                            id="a_surat_rekom_kesediaan"
+                                                                            name="a_surat_rekom_kesediaan"
+                                                                            value="0"
                                                                             {{ $data->a_surat_rekom_kesediaan == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -4883,29 +4647,30 @@
                                 {{-- tutup kodong data surat_rekom_kesediaan --}}
                             </div>
 
-                            <div class="tab-pane" id="{{ $data->akte_pendirian }}" role="tabpanel">
 
-                                {{-- kodong data surat_ketertiban --}}
-                                @if (!empty($data->surat_ketertiban))
+
+                            <div class="tab-pane" id="{{ $data->adrt }}" role="tabpanel">
+
+                                @if (!empty($data->surat_rekom_skpd_kepercayaan))
                                     @php
-                                        $pecah = explode('.', $data->surat_ketertiban);
-                                        $surat_ketertiban = $pecah[1];
+                                        $pecah = explode('.', $data->surat_rekom_skpd_kepercayaan);
+                                        $surat_rekom_skpd_kepercayaan = $pecah[1];
                                     @endphp
 
-                                    @if ($surat_ketertiban == 'pdf')
+                                    @if ($surat_rekom_skpd_kepercayaan == 'pdf')
                                         <div class="col-lg-12">
                                             <div class="p-20 z-depth-bottom-1">
 
-                                                {{-- aktif a_surat_ketertiban --}}
-                                                @if ($data->a_surat_ketertiban == 0)
+                                                {{-- aktif a_surat_rekom_skpd_kepercayaan --}}
+                                                @if ($data->a_surat_rekom_skpd_kepercayaan == 0)
                                                     <p class="text-muted text-center"><label
                                                             class="label label-inverse-primary"><span
-                                                                data-feather="loader"></span>{{ $data->surat_ketertiban }}</label>
+                                                                data-feather="loader"></span>{{ $data->surat_rekom_skpd_kepercayaan }}</label>
                                                     </p>
 
                                                     <p class="text-muted text-center">
                                                         <a class="btn btn-primary" data-toggle="modal"
-                                                            href="#surat_ketertiban-{{ $data->id }}">Lihat
+                                                            href="#surat_rekom_skpd_kepercayaan-{{ $data->id }}">Lihat
                                                             Data
                                                         </a>
                                                     </p>
@@ -4913,17 +4678,20 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat pernyataan
-                                                                    untuk menertibkan orkemas
-                                                                    tervalidasi ?</label>
+                                                                <label class="col-sm-12">15. Rekomendasi Dari SKPD Yang
+                                                                    Membidangi Urusan Kebudayaan Untuk Ormas Yang Memiliki
+                                                                    Kekhususan Bidang Kepercayaan Kepada Tuhan Yang Maha Esa
+                                                                    ** sesuai,</label>
                                                             </p>
                                                             <p class="text-muted text-center">
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_ketertiban"
-                                                                            name="a_surat_ketertiban" value="2"
-                                                                            {{ $data->a_surat_ketertiban == 2 ? 'checked' : '' }}>
+                                                                        <input type="checkbox"
+                                                                            id="a_surat_rekom_skpd_kepercayaan"
+                                                                            name="a_surat_rekom_skpd_kepercayaan"
+                                                                            value="2"
+                                                                            {{ $data->a_surat_rekom_skpd_kepercayaan == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
                                                                                 class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -4934,9 +4702,11 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_ketertiban"
-                                                                            name="a_surat_ketertiban" value="0"
-                                                                            {{ $data->a_surat_ketertiban == 0 ? 'checked' : '' }}>
+                                                                        <input type="checkbox"
+                                                                            id="a_surat_rekom_skpd_kepercayaan"
+                                                                            name="a_surat_rekom_skpd_kepercayaan"
+                                                                            value="0"
+                                                                            {{ $data->a_surat_rekom_skpd_kepercayaan == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
                                                                                 class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -4950,15 +4720,15 @@
                                                             </p>
                                                         </div>
                                                     </div>
-                                                @elseif($data->a_surat_ketertiban == 2)
+                                                @elseif($data->a_surat_rekom_skpd_kepercayaan == 2)
                                                     <p class="text-muted text-center p-b-5">
                                                         <label class="label label-inverse-success"><span
-                                                                data-feather="check-circle"></span>{{ $data->surat_ketertiban }}</label>
+                                                                data-feather="check-circle"></span>{{ $data->surat_rekom_skpd_kepercayaan }}</label>
                                                     </p>
 
                                                     <p class="text-muted text-center">
                                                         <a class="btn btn-primary" data-toggle="modal"
-                                                            href="#surat_rekom_kesediaan-{{ $data->id }}">Lihat
+                                                            href="#surat_rekom_skpd_kepercayaan-{{ $data->id }}">Lihat
                                                             Data
                                                         </a>
                                                     </p>
@@ -4966,17 +4736,20 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat pernyataan
-                                                                    untuk menertibkan orkemas
-                                                                    tervalidasi ?</label>
+                                                                <label class="col-sm-12">15. Rekomendasi Dari SKPD Yang
+                                                                    Membidangi Urusan Kebudayaan Untuk Ormas Yang Memiliki
+                                                                    Kekhususan Bidang Kepercayaan Kepada Tuhan Yang Maha Esa
+                                                                    ** sesuai,</label>
                                                             </p>
                                                             <p class="text-muted text-center">
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_ketertiban"
-                                                                            name="a_surat_ketertiban" value="2"
-                                                                            {{ $data->a_surat_ketertiban == 2 ? 'checked' : '' }}>
+                                                                        <input type="checkbox"
+                                                                            id="a_surat_rekom_skpd_kepercayaan"
+                                                                            name="a_surat_rekom_skpd_kepercayaan"
+                                                                            value="2"
+                                                                            {{ $data->a_surat_rekom_skpd_kepercayaan == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
                                                                                 class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -4987,9 +4760,11 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_ketertiban"
-                                                                            name="a_surat_ketertiban" value="0"
-                                                                            {{ $data->a_surat_ketertiban == 0 ? 'checked' : '' }}>
+                                                                        <input type="checkbox"
+                                                                            id="a_surat_rekom_skpd_kepercayaan"
+                                                                            name="a_surat_rekom_skpd_kepercayaan"
+                                                                            value="0"
+                                                                            {{ $data->a_surat_rekom_skpd_kepercayaan == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
                                                                                 class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -5006,7 +4781,7 @@
                                                 @else
                                                     <p class="text-muted text-center p-b-5">
                                                         <label class="label label-inverse-danger"><span
-                                                                data-feather="x-circle"></span>{{ $data->surat_ketertiban }}</label>
+                                                                data-feather="x-circle"></span>{{ $data->surat_rekom_skpd_kepercayaan }}</label>
                                                     </p>
 
                                                     <p class="text-muted text-center">
@@ -5017,21 +4792,21 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        {{-- tutup aktif a_surat_ketertiban --}}
+                                        {{-- tutup aktif a_surat_rekom_skpd_kepercayaan --}}
 
                                         {{-- buka JPG --}}
-                                    @elseif($surat_ketertiban == 'png' or $surat_ketertiban == 'jpg')
+                                    @elseif($surat_rekom_skpd_kepercayaan == 'png' or $surat_rekom_skpd_kepercayaan == 'jpg')
                                         <div class="col-lg-12">
                                             <div class="p-20 z-depth-bottom-1">
 
-                                                {{-- aktif a_surat_ketertiban JPG --}}
-                                                @if ($data->a_surat_ketertiban == 0)
+                                                {{-- aktif a_surat_rekom_skpd_kepercayaan JPG --}}
+                                                @if ($data->a_surat_rekom_skpd_kepercayaan == 0)
                                                     <p class="text-muted text-center"><label
                                                             class="label label-inverse-primary"><span
-                                                                data-feather="loader"></span>{{ $data->surat_ketertiban }}</label>
+                                                                data-feather="loader"></span>{{ $data->surat_rekom_skpd_kepercayaan }}</label>
                                                     </p>
 
-                                                    {{-- tutup status data surat_ketertiban
+                                                    {{-- tutup status data surat_rekom_skpd_kepercayaan
                                 /**
                                 * Show the form for creating a new resource.
                                 * Whatapps 6289631031237
@@ -5042,11 +4817,11 @@
                                                     <div class="col-lg-12 col-sm-12">
                                                         <div class="thumbnail">
                                                             <div class="thumb">
-                                                                <a href="{{ asset($data->email . '/' . $data->surat_ketertiban) }}"
+                                                                <a href="{{ asset($data->email . '/' . $data->surat_rekom_skpd_kepercayaan) }}"
                                                                     data-lightbox="1"
-                                                                    data-title="{{ $data->email . '/' . $data->surat_ketertiban }}">
+                                                                    data-title="{{ $data->email . '/' . $data->surat_rekom_skpd_kepercayaan }}">
 
-                                                                    <img src="{{ asset($data->email . '/' . $data->surat_ketertiban) }}"
+                                                                    <img src="{{ asset($data->email . '/' . $data->surat_rekom_skpd_kepercayaan) }}"
                                                                         alt=""
                                                                         class="img-fluid img-thumbnail mx-auto d-block"
                                                                         style="max-height: 200px;">
@@ -5060,17 +4835,20 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat pernyataan
-                                                                    untuk menertibkan orkemas
-                                                                    tervalidasi ?</label>
+                                                                <label class="col-sm-12">15. Rekomendasi Dari SKPD Yang
+                                                                    Membidangi Urusan Kebudayaan Untuk Ormas Yang Memiliki
+                                                                    Kekhususan Bidang Kepercayaan Kepada Tuhan Yang Maha Esa
+                                                                    ** sesuai,</label>
                                                             </p>
                                                             <p class="text-muted text-center">
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_ketertiban"
-                                                                            name="a_surat_ketertiban" value="2"
-                                                                            {{ $data->a_surat_ketertiban == 2 ? 'checked' : '' }}>
+                                                                        <input type="checkbox"
+                                                                            id="a_surat_rekom_skpd_kepercayaan"
+                                                                            name="a_surat_rekom_skpd_kepercayaan"
+                                                                            value="2"
+                                                                            {{ $data->a_surat_rekom_skpd_kepercayaan == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
                                                                                 class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -5081,9 +4859,11 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_ketertiban"
-                                                                            name="a_surat_ketertiban" value="0"
-                                                                            {{ $data->a_surat_ketertiban == 0 ? 'checked' : '' }}>
+                                                                        <input type="checkbox"
+                                                                            id="a_surat_rekom_skpd_kepercayaan"
+                                                                            name="a_surat_rekom_skpd_kepercayaan"
+                                                                            value="0"
+                                                                            {{ $data->a_surat_rekom_skpd_kepercayaan == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
                                                                                 class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -5097,13 +4877,13 @@
                                                             </p>
                                                         </div>
                                                     </div>
-                                                @elseif($data->a_surat_ketertiban == 2)
+                                                @elseif($data->a_surat_rekom_skpd_kepercayaan == 2)
                                                     <p class="text-muted text-center p-b-5">
                                                         <label class="label label-inverse-success"><span
-                                                                data-feather="check-circle"></span>{{ $data->surat_ketertiban }}</label>
+                                                                data-feather="check-circle"></span>{{ $data->surat_rekom_skpd_kepercayaan }}</label>
                                                     </p>
 
-                                                    {{-- tutup status data surat_ketertiban
+                                                    {{-- tutup status data surat_rekom_skpd_kepercayaan
                                 /**
                                 * Show the form for creating a new resource.
                                 * Whatapps 6289631031237
@@ -5114,11 +4894,11 @@
                                                     <div class="col-lg-12 col-sm-12">
                                                         <div class="thumbnail">
                                                             <div class="thumb">
-                                                                <a href="{{ asset($data->email . '/' . $data->surat_ketertiban) }}"
+                                                                <a href="{{ asset($data->email . '/' . $data->surat_rekom_skpd_kepercayaan) }}"
                                                                     data-lightbox="1"
-                                                                    data-title="{{ $data->email . '/' . $data->surat_ketertiban }}">
+                                                                    data-title="{{ $data->email . '/' . $data->surat_rekom_skpd_kepercayaan }}">
 
-                                                                    <img src="{{ asset($data->email . '/' . $data->surat_ketertiban) }}"
+                                                                    <img src="{{ asset($data->email . '/' . $data->surat_rekom_skpd_kepercayaan) }}"
                                                                         alt=""
                                                                         class="img-fluid img-thumbnail mx-auto d-block"
                                                                         style="max-height: 200px;">
@@ -5132,17 +4912,20 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat pernyataan
-                                                                    untuk menertibkan orkemas
-                                                                    tervalidasi ?</label>
+                                                                <label class="col-sm-12">15. Rekomendasi Dari SKPD Yang
+                                                                    Membidangi Urusan Kebudayaan Untuk Ormas Yang Memiliki
+                                                                    Kekhususan Bidang Kepercayaan Kepada Tuhan Yang Maha Esa
+                                                                    ** sesuai,</label>
                                                             </p>
                                                             <p class="text-muted text-center">
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_ketertiban"
-                                                                            name="a_surat_ketertiban" value="2"
-                                                                            {{ $data->a_surat_ketertiban == 2 ? 'checked' : '' }}>
+                                                                        <input type="checkbox"
+                                                                            id="a_surat_rekom_skpd_kepercayaan"
+                                                                            name="a_surat_rekom_skpd_kepercayaan"
+                                                                            value="2"
+                                                                            {{ $data->a_surat_rekom_skpd_kepercayaan == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
                                                                                 class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -5153,9 +4936,11 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_ketertiban"
-                                                                            name="a_surat_ketertiban" value="0"
-                                                                            {{ $data->a_surat_ketertiban == 0 ? 'checked' : '' }}>
+                                                                        <input type="checkbox"
+                                                                            id="a_surat_rekom_skpd_kepercayaan"
+                                                                            name="a_surat_rekom_skpd_kepercayaan"
+                                                                            value="0"
+                                                                            {{ $data->a_surat_rekom_skpd_kepercayaan == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
                                                                                 class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -5172,7 +4957,7 @@
                                                 @else
                                                     <p class="text-muted text-center p-b-5">
                                                         <label class="label label-inverse-danger"><span
-                                                                data-feather="x-circle"></span>{{ $data->surat_ketertiban }}</label>
+                                                                data-feather="x-circle"></span>{{ $data->surat_rekom_skpd_kepercayaan }}</label>
                                                     </p>
 
                                                     <p class="text-muted text-center">
@@ -5182,7 +4967,7 @@
                                                     </p>
                                                 @endif
 
-                                                {{-- tutup aktif a_surat_ketertiban JPG --}}
+                                                {{-- tutup aktif a_surat_rekom_skpd_kepercayaan JPG --}}
                                             </div>
                                         </div>
                                         {{-- TUTUP jpg --}}
@@ -5193,1265 +4978,9 @@
                                     {{-- tutup pdf --}}
                                 @else
                                 @endif
-                                {{-- tutup kodong data surat_ketertiban --}}
+                                {{-- tutup kodong data surat_rekom_skpd_kepercayaan --}}
 
-                                {{-- kodong data surat_tidak_avilasi --}}
-                                @if (!empty($data->surat_tidak_avilasi))
-                                    @php
-                                        $pecah = explode('.', $data->surat_tidak_avilasi);
-                                        $surat_tidak_avilasi = $pecah[1];
-                                    @endphp
 
-                                    @if ($surat_tidak_avilasi == 'pdf')
-                                        <div class="col-lg-12">
-                                            <div class="p-20 z-depth-bottom-1">
-
-                                                {{-- aktif a_surat_tidak_avilasi --}}
-                                                @if ($data->a_surat_tidak_avilasi == 0)
-                                                    <p class="text-muted text-center"><label
-                                                            class="label label-inverse-primary"><span
-                                                                data-feather="loader"></span>{{ $data->surat_tidak_avilasi }}</label>
-                                                    </p>
-
-                                                    <p class="text-muted text-center">
-                                                        <a class="btn btn-primary" data-toggle="modal"
-                                                            href="#surat_tidak_avilasi-{{ $data->id }}">Lihat
-                                                            Data
-                                                        </a>
-                                                    </p>
-
-                                                    <div class="card-block">
-                                                        <div class="form-group row">
-                                                            <p class="text-muted text-center">
-                                                                <label class="col-sm-12">
-                                                                    Apakah surat pernyataan tidak terafiliasi dengan partai
-                                                                    politik sesuai,
-                                                                    tervalidasi ?</label>
-                                                            </p>
-                                                            <p class="text-muted text-center">
-                                                            <div class="col-sm-12">
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_tidak_avilasi"
-                                                                            name="a_surat_tidak_avilasi" value="2"
-                                                                            {{ $data->a_surat_tidak_avilasi == 2 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-success">Lengkap</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_tidak_avilasi"
-                                                                            name="a_surat_tidak_avilasi" value="0"
-                                                                            {{ $data->a_surat_tidak_avilasi == 0 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-danger">Tidak</span>
-                                                                    </label>
-                                                                </div>
-                                                                <span class="messages"></span>
-                                                            </div>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                @elseif($data->a_surat_tidak_avilasi == 2)
-                                                    <p class="text-muted text-center p-b-5">
-                                                        <label class="label label-inverse-success"><span
-                                                                data-feather="check-circle"></span>{{ $data->surat_tidak_avilasi }}</label>
-                                                    </p>
-
-                                                    <p class="text-muted text-center">
-                                                        <a class="btn btn-primary" data-toggle="modal"
-                                                            href="#surat_tidak_avilasi-{{ $data->id }}">Lihat
-                                                            Data
-                                                        </a>
-                                                    </p>
-
-                                                    <div class="card-block">
-                                                        <div class="form-group row">
-                                                            <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat penyataan tidak
-                                                                    ada konflik di orkemas
-                                                                    sesuai,
-                                                                    tervalidasi ?</label>
-                                                            </p>
-                                                            <p class="text-muted text-center">
-                                                            <div class="col-sm-12">
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_tidak_avilasi"
-                                                                            name="a_surat_tidak_avilasi" value="2"
-                                                                            {{ $data->a_surat_tidak_avilasi == 2 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-success">Lengkap</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_tidak_avilasi"
-                                                                            name="a_surat_tidak_avilasi" value="0"
-                                                                            {{ $data->a_surat_tidak_avilasi == 0 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-danger">Tidak</span>
-                                                                    </label>
-                                                                </div>
-                                                                <span class="messages"></span>
-                                                            </div>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                @else
-                                                    <p class="text-muted text-center p-b-5">
-                                                        <label class="label label-inverse-danger"><span
-                                                                data-feather="x-circle"></span>{{ $data->surat_tidak_avilasi }}</label>
-                                                    </p>
-
-                                                    <p class="text-muted text-center">
-                                                        <label class="col-sm-12">Data tidak lengkap yang dikirim,
-                                                            tunggu
-                                                            sampai pengguna memperbaiki</label>
-                                                    </p>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        {{-- tutup aktif a_surat_tidak_avilasi --}}
-
-                                        {{-- buka JPG --}}
-                                    @elseif($surat_tidak_avilasi == 'png' or $surat_tidak_avilasi == 'jpg')
-                                        <div class="col-lg-12">
-                                            <div class="p-20 z-depth-bottom-1">
-
-                                                {{-- aktif a_surat_tidak_avilasi JPG --}}
-                                                @if ($data->a_surat_tidak_avilasi == 0)
-                                                    <p class="text-muted text-center"><label
-                                                            class="label label-inverse-primary"><span
-                                                                data-feather="loader"></span>{{ $data->surat_tidak_avilasi }}</label>
-                                                    </p>
-
-                                                    {{-- tutup status data surat_tidak_avilasi
-                                /**
-                                * Show the form for creating a new resource.
-                                * Whatapps 6289631031237
-                                * email : yogimaulana100@gmail.com
-                                * https://github.com/Ays1234
-                                * https://serbaotodidak.com/
-                                */ --}}
-                                                    <div class="col-lg-12 col-sm-12">
-                                                        <div class="thumbnail">
-                                                            <div class="thumb">
-                                                                <a href="{{ asset($data->email . '/' . $data->surat_tidak_avilasi) }}"
-                                                                    data-lightbox="1"
-                                                                    data-title="{{ $data->email . '/' . $data->surat_tidak_avilasi }}">
-
-                                                                    <img src="{{ asset($data->email . '/' . $data->surat_tidak_avilasi) }}"
-                                                                        alt=""
-                                                                        class="img-fluid img-thumbnail mx-auto d-block"
-                                                                        style="max-height: 200px;">
-
-
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="card-block">
-                                                        <div class="form-group row">
-                                                            <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat penyataan tidak
-                                                                    ada konflik di orkemas
-                                                                    sesuai,
-                                                                    tervalidasi ?</label>
-                                                            </p>
-                                                            <p class="text-muted text-center">
-                                                            <div class="col-sm-12">
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_tidak_avilasi"
-                                                                            name="a_surat_tidak_avilasi" value="2"
-                                                                            {{ $data->a_surat_tidak_avilasi == 2 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-success">Lengkap</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_tidak_avilasi"
-                                                                            name="a_surat_tidak_avilasi" value="0"
-                                                                            {{ $data->a_surat_tidak_avilasi == 0 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-danger">Tidak</span>
-                                                                    </label>
-                                                                </div>
-                                                                <span class="messages"></span>
-                                                            </div>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                @elseif($data->a_surat_tidak_avilasi == 2)
-                                                    <p class="text-muted text-center p-b-5">
-                                                        <label class="label label-inverse-success"><span
-                                                                data-feather="check-circle"></span>{{ $data->surat_tidak_avilasi }}</label>
-                                                    </p>
-
-                                                    {{-- tutup status data surat_tidak_avilasi
-                                /**
-                                * Show the form for creating a new resource.
-                                * Whatapps 6289631031237
-                                * email : yogimaulana100@gmail.com
-                                * https://github.com/Ays1234
-                                * https://serbaotodidak.com/
-                                */ --}}
-                                                    <div class="col-lg-12 col-sm-12">
-                                                        <div class="thumbnail">
-                                                            <div class="thumb">
-                                                                <a href="{{ asset($data->email . '/' . $data->surat_tidak_avilasi) }}"
-                                                                    data-lightbox="1"
-                                                                    data-title="{{ $data->email . '/' . $data->surat_tidak_avilasi }}">
-
-                                                                    <img src="{{ asset($data->email . '/' . $data->surat_tidak_avilasi) }}"
-                                                                        alt=""
-                                                                        class="img-fluid img-thumbnail mx-auto d-block"
-                                                                        style="max-height: 200px;">
-
-
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="card-block">
-                                                        <div class="form-group row">
-                                                            <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat penyataan tidak
-                                                                    ada konflik di orkemas
-                                                                    sesuai,
-                                                                    tervalidasi ?</label>
-                                                            </p>
-                                                            <p class="text-muted text-center">
-                                                            <div class="col-sm-12">
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_tidak_avilasi"
-                                                                            name="a_surat_tidak_avilasi" value="2"
-                                                                            {{ $data->a_surat_tidak_avilasi == 2 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-success">Lengkap</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_tidak_avilasi"
-                                                                            name="a_surat_tidak_avilasi" value="0"
-                                                                            {{ $data->a_surat_tidak_avilasi == 0 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-danger">Tidak</span>
-                                                                    </label>
-                                                                </div>
-                                                                <span class="messages"></span>
-                                                            </div>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                @else
-                                                    <p class="text-muted text-center p-b-5">
-                                                        <label class="label label-inverse-danger"><span
-                                                                data-feather="x-circle"></span>{{ $data->surat_tidak_avilasi }}</label>
-                                                    </p>
-
-                                                    <p class="text-muted text-center">
-                                                        <label class="col-sm-12">Data tidak lengkap yang dikirim,
-                                                            tunggu
-                                                            sampai pengguna memperbaiki</label>
-                                                    </p>
-                                                @endif
-
-                                                {{-- tutup aktif a_surat_tidak_avilasi JPG --}}
-                                            </div>
-                                        </div>
-                                        {{-- TUTUP jpg --}}
-                                    @else
-                                        {{-- SELAIN PDF DAN JPG HAH KOSONG --}}
-                                    @endif
-
-                                    {{-- tutup pdf --}}
-                                @else
-                                @endif
-                                {{-- tutup kodong data surat_tidak_avilasi --}}
-
-                                {{-- kodong data surat_konflik --}}
-                                @if (!empty($data->surat_konflik))
-                                    @php
-                                        $pecah = explode('.', $data->surat_konflik);
-                                        $surat_konflik = $pecah[1];
-                                    @endphp
-
-                                    @if ($surat_konflik == 'pdf')
-                                        <div class="col-lg-12">
-                                            <div class="p-20 z-depth-bottom-1">
-
-                                                {{-- aktif a_surat_konflik --}}
-                                                @if ($data->a_surat_konflik == 0)
-                                                    <p class="text-muted text-center"><label
-                                                            class="label label-inverse-primary"><span
-                                                                data-feather="loader"></span>{{ $data->surat_konflik }}</label>
-                                                    </p>
-
-                                                    <p class="text-muted text-center">
-                                                        <a class="btn btn-primary" data-toggle="modal"
-                                                            href="#surat_konflik-{{ $data->id }}">Lihat
-                                                            Data
-                                                        </a>
-                                                    </p>
-
-                                                    <div class="card-block">
-                                                        <div class="form-group row">
-                                                            <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat penyataan tidak
-                                                                    ada konflik di orkemas
-                                                                    sesuai,
-                                                                    tervalidasi ?</label>
-                                                            </p>
-                                                            <p class="text-muted text-center">
-                                                            <div class="col-sm-12">
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_konflik"
-                                                                            name="a_surat_konflik" value="2"
-                                                                            {{ $data->a_surat_konflik == 2 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-success">Lengkap</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_konflik"
-                                                                            name="a_surat_konflik" value="0"
-                                                                            {{ $data->a_surat_konflik == 0 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-danger">Tidak</span>
-                                                                    </label>
-                                                                </div>
-                                                                <span class="messages"></span>
-                                                            </div>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                @elseif($data->a_surat_konflik == 2)
-                                                    <p class="text-muted text-center p-b-5">
-                                                        <label class="label label-inverse-success"><span
-                                                                data-feather="check-circle"></span>{{ $data->surat_konflik }}</label>
-                                                    </p>
-
-                                                    <p class="text-muted text-center">
-                                                        <a class="btn btn-primary" data-toggle="modal"
-                                                            href="#surat_konflik-{{ $data->id }}">Lihat
-                                                            Data
-                                                        </a>
-                                                    </p>
-
-                                                    <div class="card-block">
-                                                        <div class="form-group row">
-                                                            <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat pernyataan
-                                                                    tidak ada konflik pada
-                                                                    orkemas sesuai,
-                                                                    tervalidasi ?</label>
-                                                            </p>
-                                                            <p class="text-muted text-center">
-                                                            <div class="col-sm-12">
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_konflik"
-                                                                            name="a_surat_konflik" value="2"
-                                                                            {{ $data->a_surat_konflik == 2 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-success">Lengkap</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_konflik"
-                                                                            name="a_surat_konflik" value="0"
-                                                                            {{ $data->a_surat_konflik == 0 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-danger">Tidak</span>
-                                                                    </label>
-                                                                </div>
-                                                                <span class="messages"></span>
-                                                            </div>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                @else
-                                                    <p class="text-muted text-center p-b-5">
-                                                        <label class="label label-inverse-danger"><span
-                                                                data-feather="x-circle"></span>{{ $data->surat_konflik }}</label>
-                                                    </p>
-
-                                                    <p class="text-muted text-center">
-                                                        <label class="col-sm-12">Data tidak lengkap yang dikirim,
-                                                            tunggu
-                                                            sampai pengguna memperbaiki</label>
-                                                    </p>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        {{-- tutup aktif a_surat_konflik --}}
-
-                                        {{-- buka JPG --}}
-                                    @elseif($surat_konflik == 'png' or $surat_konflik == 'jpg')
-                                        <div class="col-lg-12">
-                                            <div class="p-20 z-depth-bottom-1">
-
-                                                {{-- aktif a_surat_konflik JPG --}}
-                                                @if ($data->a_surat_konflik == 0)
-                                                    <p class="text-muted text-center"><label
-                                                            class="label label-inverse-primary"><span
-                                                                data-feather="loader"></span>{{ $data->surat_konflik }}</label>
-                                                    </p>
-
-                                                    {{-- tutup status data surat_konflik
-                                /**
-                                * Show the form for creating a new resource.
-                                * Whatapps 6289631031237
-                                * email : yogimaulana100@gmail.com
-                                * https://github.com/Ays1234
-                                * https://serbaotodidak.com/
-                                */ --}}
-                                                    <div class="col-lg-12 col-sm-12">
-                                                        <div class="thumbnail">
-                                                            <div class="thumb">
-                                                                <a href="{{ asset($data->email . '/' . $data->surat_konflik) }}"
-                                                                    data-lightbox="1"
-                                                                    data-title="{{ $data->email . '/' . $data->surat_konflik }}">
-
-                                                                    <img src="{{ asset($data->email . '/' . $data->surat_konflik) }}"
-                                                                        alt=""
-                                                                        class="img-fluid img-thumbnail mx-auto d-block"
-                                                                        style="max-height: 200px;">
-
-
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="card-block">
-                                                        <div class="form-group row">
-                                                            <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat pernyataan
-                                                                    tidak ada konflik pada
-                                                                    orkemas sesuai,
-                                                                    tervalidasi ?</label>
-                                                            </p>
-                                                            <p class="text-muted text-center">
-                                                            <div class="col-sm-12">
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_konflik"
-                                                                            name="a_surat_konflik" value="2"
-                                                                            {{ $data->a_surat_konflik == 2 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-success">Lengkap</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_konflik"
-                                                                            name="a_surat_konflik" value="0"
-                                                                            {{ $data->a_surat_konflik == 0 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-danger">Tidak</span>
-                                                                    </label>
-                                                                </div>
-                                                                <span class="messages"></span>
-                                                            </div>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                @elseif($data->a_surat_konflik == 2)
-                                                    <p class="text-muted text-center p-b-5">
-                                                        <label class="label label-inverse-success"><span
-                                                                data-feather="check-circle"></span>{{ $data->surat_konflik }}</label>
-                                                    </p>
-
-                                                    {{-- tutup status data surat_konflik
-                                /**
-                                * Show the form for creating a new resource.
-                                * Whatapps 6289631031237
-                                * email : yogimaulana100@gmail.com
-                                * https://github.com/Ays1234
-                                * https://serbaotodidak.com/
-                                */ --}}
-                                                    <div class="col-lg-12 col-sm-12">
-                                                        <div class="thumbnail">
-                                                            <div class="thumb">
-                                                                <a href="{{ asset($data->email . '/' . $data->surat_konflik) }}"
-                                                                    data-lightbox="1"
-                                                                    data-title="{{ $data->email . '/' . $data->surat_konflik }}">
-
-                                                                    <img src="{{ asset($data->email . '/' . $data->surat_konflik) }}"
-                                                                        alt=""
-                                                                        class="img-fluid img-thumbnail mx-auto d-block"
-                                                                        style="max-height: 200px;">
-
-
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="card-block">
-                                                        <div class="form-group row">
-                                                            <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat pernyataan
-                                                                    tidak ada konflik pada
-                                                                    orkemas sesuai,
-                                                                    tervalidasi ?</label>
-                                                            </p>
-                                                            <p class="text-muted text-center">
-                                                            <div class="col-sm-12">
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_konflik"
-                                                                            name="a_surat_konflik" value="2"
-                                                                            {{ $data->a_surat_konflik == 2 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-success">Lengkap</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_konflik"
-                                                                            name="a_surat_konflik" value="0"
-                                                                            {{ $data->a_surat_konflik == 0 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-danger">Tidak</span>
-                                                                    </label>
-                                                                </div>
-                                                                <span class="messages"></span>
-                                                            </div>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                @else
-                                                    <p class="text-muted text-center p-b-5">
-                                                        <label class="label label-inverse-danger"><span
-                                                                data-feather="x-circle"></span>{{ $data->surat_konflik }}</label>
-                                                    </p>
-
-                                                    <p class="text-muted text-center">
-                                                        <label class="col-sm-12">Data tidak lengkap yang dikirim,
-                                                            tunggu
-                                                            sampai pengguna memperbaiki</label>
-                                                    </p>
-                                                @endif
-
-                                                {{-- tutup aktif a_surat_konflik JPG --}}
-                                            </div>
-                                        </div>
-                                        {{-- TUTUP jpg --}}
-                                    @else
-                                        {{-- SELAIN PDF DAN JPG HAH KOSONG --}}
-                                    @endif
-
-                                    {{-- tutup pdf --}}
-                                @else
-                                @endif
-                                {{-- tutup kodong data surat_konflik --}}
-
-                                {{-- kodong data surat_hak_cipta --}}
-                                @if (!empty($data->surat_hak_cipta))
-                                    @php
-                                        $pecah = explode('.', $data->surat_hak_cipta);
-                                        $surat_hak_cipta = $pecah[1];
-                                    @endphp
-
-                                    @if ($surat_hak_cipta == 'pdf')
-                                        <div class="col-lg-12">
-                                            <div class="p-20 z-depth-bottom-1">
-
-                                                {{-- aktif a_surat_hak_cipta --}}
-                                                @if ($data->a_surat_hak_cipta == 0)
-                                                    <p class="text-muted text-center"><label
-                                                            class="label label-inverse-primary"><span
-                                                                data-feather="loader"></span>{{ $data->surat_hak_cipta }}</label>
-                                                    </p>
-
-                                                    <p class="text-muted text-center">
-                                                        <a class="btn btn-primary" data-toggle="modal"
-                                                            href="#surat_hak_cipta-{{ $data->id }}">Lihat
-                                                            Data
-                                                        </a>
-                                                    </p>
-
-                                                    <div class="card-block">
-                                                        <div class="form-group row">
-                                                            <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat pernyataan
-                                                                    bahwa lambang,simbol, nama,
-                                                                    bendera memiliki hak paten,
-                                                                    tervalidasi ?</label>
-                                                            </p>
-                                                            <p class="text-muted text-center">
-                                                            <div class="col-sm-12">
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_hak_cipta"
-                                                                            name="a_surat_hak_cipta" value="2"
-                                                                            {{ $data->a_surat_hak_cipta == 2 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-success">Lengkap</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_hak_cipta"
-                                                                            name="a_surat_hak_cipta" value="0"
-                                                                            {{ $data->a_surat_hak_cipta == 0 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-danger">Tidak</span>
-                                                                    </label>
-                                                                </div>
-                                                                <span class="messages"></span>
-                                                            </div>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                @elseif($data->a_surat_hak_cipta == 2)
-                                                    <p class="text-muted text-center p-b-5">
-                                                        <label class="label label-inverse-success"><span
-                                                                data-feather="check-circle"></span>{{ $data->surat_hak_cipta }}</label>
-                                                    </p>
-
-                                                    <p class="text-muted text-center">
-                                                        <a class="btn btn-primary" data-toggle="modal"
-                                                            href="#surat_hak_cipta-{{ $data->id }}">Lihat
-                                                            Data
-                                                        </a>
-                                                    </p>
-
-                                                    <div class="card-block">
-                                                        <div class="form-group row">
-                                                            <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat pernyataan
-                                                                    bahwa lambang,simbol, nama,
-                                                                    bendera memiliki hak paten,
-                                                                    tervalidasi ?</label>
-                                                            </p>
-                                                            <p class="text-muted text-center">
-                                                            <div class="col-sm-12">
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_hak_cipta"
-                                                                            name="a_surat_hak_cipta" value="2"
-                                                                            {{ $data->a_surat_hak_cipta == 2 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-success">Lengkap</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_hak_cipta"
-                                                                            name="a_surat_hak_cipta" value="0"
-                                                                            {{ $data->a_surat_hak_cipta == 0 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-danger">Tidak</span>
-                                                                    </label>
-                                                                </div>
-                                                                <span class="messages"></span>
-                                                            </div>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                @else
-                                                    <p class="text-muted text-center p-b-5">
-                                                        <label class="label label-inverse-danger"><span
-                                                                data-feather="x-circle"></span>{{ $data->surat_hak_cipta }}</label>
-                                                    </p>
-
-                                                    <p class="text-muted text-center">
-                                                        <label class="col-sm-12">Data tidak lengkap yang dikirim,
-                                                            tunggu
-                                                            sampai pengguna memperbaiki</label>
-                                                    </p>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        {{-- tutup aktif a_surat_hak_cipta --}}
-
-                                        {{-- buka JPG --}}
-                                    @elseif($surat_hak_cipta == 'png' or $surat_hak_cipta == 'jpg')
-                                        <div class="col-lg-12">
-                                            <div class="p-20 z-depth-bottom-1">
-
-                                                {{-- aktif a_surat_hak_cipta JPG --}}
-                                                @if ($data->a_surat_hak_cipta == 0)
-                                                    <p class="text-muted text-center"><label
-                                                            class="label label-inverse-primary"><span
-                                                                data-feather="loader"></span>{{ $data->surat_hak_cipta }}</label>
-                                                    </p>
-
-                                                    {{-- tutup status data surat_hak_cipta
-                                /**
-                                * Show the form for creating a new resource.
-                                * Whatapps 6289631031237
-                                * email : yogimaulana100@gmail.com
-                                * https://github.com/Ays1234
-                                * https://serbaotodidak.com/
-                                */ --}}
-                                                    <div class="col-lg-12 col-sm-12">
-                                                        <div class="thumbnail">
-                                                            <div class="thumb">
-                                                                <a href="{{ asset($data->email . '/' . $data->surat_hak_cipta) }}"
-                                                                    data-lightbox="1"
-                                                                    data-title="{{ $data->email . '/' . $data->surat_hak_cipta }}">
-
-                                                                    <img src="{{ asset($data->email . '/' . $data->surat_hak_cipta) }}"
-                                                                        alt=""
-                                                                        class="img-fluid img-thumbnail mx-auto d-block"
-                                                                        style="max-height: 200px;">
-
-
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="card-block">
-                                                        <div class="form-group row">
-                                                            <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat pernyataan
-                                                                    bahwa lambang,simbol, nama,
-                                                                    bendera memiliki hak paten,
-                                                                    tervalidasi ?</label>
-                                                            </p>
-                                                            <p class="text-muted text-center">
-                                                            <div class="col-sm-12">
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_hak_cipta"
-                                                                            name="a_surat_hak_cipta" value="2"
-                                                                            {{ $data->a_surat_hak_cipta == 2 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-success">Lengkap</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_hak_cipta"
-                                                                            name="a_surat_hak_cipta" value="0"
-                                                                            {{ $data->a_surat_hak_cipta == 0 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-danger">Tidak</span>
-                                                                    </label>
-                                                                </div>
-                                                                <span class="messages"></span>
-                                                            </div>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                @elseif($data->a_surat_hak_cipta == 2)
-                                                    <p class="text-muted text-center p-b-5">
-                                                        <label class="label label-inverse-success"><span
-                                                                data-feather="check-circle"></span>{{ $data->surat_hak_cipta }}</label>
-                                                    </p>
-
-                                                    {{-- tutup status data surat_hak_cipta
-                                /**
-                                * Show the form for creating a new resource.
-                                * Whatapps 6289631031237
-                                * email : yogimaulana100@gmail.com
-                                * https://github.com/Ays1234
-                                * https://serbaotodidak.com/
-                                */ --}}
-                                                    <div class="col-lg-12 col-sm-12">
-                                                        <div class="thumbnail">
-                                                            <div class="thumb">
-                                                                <a href="{{ asset($data->email . '/' . $data->surat_hak_cipta) }}"
-                                                                    data-lightbox="1"
-                                                                    data-title="{{ $data->email . '/' . $data->surat_hak_cipta }}">
-
-                                                                    <img src="{{ asset($data->email . '/' . $data->surat_hak_cipta) }}"
-                                                                        alt=""
-                                                                        class="img-fluid img-thumbnail mx-auto d-block"
-                                                                        style="max-height: 200px;">
-
-
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="card-block">
-                                                        <div class="form-group row">
-                                                            <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat pernyataan
-                                                                    bahwa lambang,simbol, nama,
-                                                                    bendera memiliki hak paten,
-                                                                    tervalidasi ?</label>
-                                                            </p>
-                                                            <p class="text-muted text-center">
-                                                            <div class="col-sm-12">
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_hak_cipta"
-                                                                            name="a_surat_hak_cipta" value="2"
-                                                                            {{ $data->a_surat_hak_cipta == 2 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-success">Lengkap</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_hak_cipta"
-                                                                            name="a_surat_hak_cipta" value="0"
-                                                                            {{ $data->a_surat_hak_cipta == 0 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-danger">Tidak</span>
-                                                                    </label>
-                                                                </div>
-                                                                <span class="messages"></span>
-                                                            </div>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                @else
-                                                    <p class="text-muted text-center p-b-5">
-                                                        <label class="label label-inverse-danger"><span
-                                                                data-feather="x-circle"></span>{{ $data->surat_hak_cipta }}</label>
-                                                    </p>
-
-                                                    <p class="text-muted text-center">
-                                                        <label class="col-sm-12">Data tidak lengkap yang dikirim,
-                                                            tunggu
-                                                            sampai pengguna memperbaiki</label>
-                                                    </p>
-                                                @endif
-
-                                                {{-- tutup aktif a_surat_hak_cipta JPG --}}
-                                            </div>
-                                        </div>
-                                        {{-- TUTUP jpg --}}
-                                    @else
-                                        {{-- SELAIN PDF DAN JPG HAH KOSONG --}}
-                                    @endif
-
-                                    {{-- tutup pdf --}}
-                                @else
-                                @endif
-                                {{-- tutup kodong data surat_hak_cipta --}}
-
-                                {{-- kodong data surat_laporan --}}
-                                @if (!empty($data->surat_laporan))
-                                    @php
-                                        $pecah = explode('.', $data->surat_laporan);
-                                        $surat_laporan = $pecah[1];
-                                    @endphp
-
-                                    @if ($surat_laporan == 'pdf')
-                                        <div class="col-lg-12">
-                                            <div class="p-20 z-depth-bottom-1">
-
-                                                {{-- aktif a_surat_laporan --}}
-                                                @if ($data->a_surat_laporan == 0)
-                                                    <p class="text-muted text-center"><label
-                                                            class="label label-inverse-primary"><span
-                                                                data-feather="loader"></span>{{ $data->surat_laporan }}</label>
-                                                    </p>
-
-                                                    <p class="text-muted text-center">
-                                                        <a class="btn btn-primary" data-toggle="modal"
-                                                            href="#surat_laporan-{{ $data->id }}">Lihat
-                                                            Data
-                                                        </a>
-                                                    </p>
-
-                                                    <div class="card-block">
-                                                        <div class="form-group row">
-                                                            <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat penyataan untuk
-                                                                    melaporkan setiap
-                                                                    kegiatan orkemas sesuai,
-                                                                    tervalidasi ?</label>
-                                                            </p>
-                                                            <p class="text-muted text-center">
-                                                            <div class="col-sm-12">
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_laporan"
-                                                                            name="a_surat_laporan" value="2"
-                                                                            {{ $data->a_surat_laporan == 2 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-success">Lengkap</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_laporan"
-                                                                            name="a_surat_laporan" value="0"
-                                                                            {{ $data->a_surat_laporan == 0 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-danger">Tidak</span>
-                                                                    </label>
-                                                                </div>
-                                                                <span class="messages"></span>
-                                                            </div>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                @elseif($data->a_surat_laporan == 2)
-                                                    <p class="text-muted text-center p-b-5">
-                                                        <label class="label label-inverse-success"><span
-                                                                data-feather="check-circle"></span>{{ $data->surat_laporan }}</label>
-                                                    </p>
-
-                                                    <p class="text-muted text-center">
-                                                        <a class="btn btn-primary" data-toggle="modal"
-                                                            href="#surat_laporan-{{ $data->id }}">Lihat
-                                                            Data
-                                                        </a>
-                                                    </p>
-
-                                                    <div class="card-block">
-                                                        <div class="form-group row">
-                                                            <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat penyataan untuk
-                                                                    melaporkan setiap
-                                                                    kegiatan orkemas sesuai,
-                                                                    tervalidasi ?</label>
-                                                            </p>
-                                                            <p class="text-muted text-center">
-                                                            <div class="col-sm-12">
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_laporan"
-                                                                            name="a_surat_laporan" value="2"
-                                                                            {{ $data->a_surat_laporan == 2 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-success">Lengkap</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_laporan"
-                                                                            name="a_surat_laporan" value="0"
-                                                                            {{ $data->a_surat_laporan == 0 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-danger">Tidak</span>
-                                                                    </label>
-                                                                </div>
-                                                                <span class="messages"></span>
-                                                            </div>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                @else
-                                                    <p class="text-muted text-center p-b-5">
-                                                        <label class="label label-inverse-danger"><span
-                                                                data-feather="x-circle"></span>{{ $data->surat_laporan }}</label>
-                                                    </p>
-
-                                                    <p class="text-muted text-center">
-                                                        <label class="col-sm-12">Data tidak lengkap yang dikirim,
-                                                            tunggu
-                                                            sampai pengguna memperbaiki</label>
-                                                    </p>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        {{-- tutup aktif a_surat_laporan --}}
-
-                                        {{-- buka JPG --}}
-                                    @elseif($surat_laporan == 'png' or $surat_laporan == 'jpg')
-                                        <div class="col-lg-12">
-                                            <div class="p-20 z-depth-bottom-1">
-
-                                                {{-- aktif a_surat_laporan JPG --}}
-                                                @if ($data->a_surat_laporan == 0)
-                                                    <p class="text-muted text-center"><label
-                                                            class="label label-inverse-primary"><span
-                                                                data-feather="loader"></span>{{ $data->surat_laporan }}</label>
-                                                    </p>
-
-                                                    {{-- tutup status data surat_laporan
-                                /**
-                                * Show the form for creating a new resource.
-                                * Whatapps 6289631031237
-                                * email : yogimaulana100@gmail.com
-                                * https://github.com/Ays1234
-                                * https://serbaotodidak.com/
-                                */ --}}
-                                                    <div class="col-lg-12 col-sm-12">
-                                                        <div class="thumbnail">
-                                                            <div class="thumb">
-                                                                <a href="{{ asset($data->email . '/' . $data->surat_laporan) }}"
-                                                                    data-lightbox="1"
-                                                                    data-title="{{ $data->email . '/' . $data->surat_laporan }}">
-
-                                                                    <img src="{{ asset($data->email . '/' . $data->surat_laporan) }}"
-                                                                        alt=""
-                                                                        class="img-fluid img-thumbnail mx-auto d-block"
-                                                                        style="max-height: 200px;">
-
-
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="card-block">
-                                                        <div class="form-group row">
-                                                            <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat penyataan untuk
-                                                                    melaporkan setiap
-                                                                    kegiatan orkemas sesuai,
-                                                                    tervalidasi ?</label>
-                                                            </p>
-                                                            <p class="text-muted text-center">
-                                                            <div class="col-sm-12">
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_laporan"
-                                                                            name="a_surat_laporan" value="2"
-                                                                            {{ $data->a_surat_laporan == 2 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-success">Lengkap</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_laporan"
-                                                                            name="a_surat_laporan" value="0"
-                                                                            {{ $data->a_surat_laporan == 0 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-danger">Tidak</span>
-                                                                    </label>
-                                                                </div>
-                                                                <span class="messages"></span>
-                                                            </div>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                @elseif($data->a_surat_laporan == 2)
-                                                    <p class="text-muted text-center p-b-5">
-                                                        <label class="label label-inverse-success"><span
-                                                                data-feather="check-circle"></span>{{ $data->surat_laporan }}</label>
-                                                    </p>
-
-                                                    {{-- tutup status data surat_laporan
-                                /**
-                                * Show the form for creating a new resource.
-                                * Whatapps 6289631031237
-                                * email : yogimaulana100@gmail.com
-                                * https://github.com/Ays1234
-                                * https://serbaotodidak.com/
-                                */ --}}
-                                                    <div class="col-lg-12 col-sm-12">
-                                                        <div class="thumbnail">
-                                                            <div class="thumb">
-                                                                <a href="{{ asset($data->email . '/' . $data->surat_laporan) }}"
-                                                                    data-lightbox="1"
-                                                                    data-title="{{ $data->email . '/' . $data->surat_laporan }}">
-
-                                                                    <img src="{{ asset($data->email . '/' . $data->surat_laporan) }}"
-                                                                        alt=""
-                                                                        class="img-fluid img-thumbnail mx-auto d-block"
-                                                                        style="max-height: 200px;">
-
-
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="card-block">
-                                                        <div class="form-group row">
-                                                            <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat penyataan untuk
-                                                                    melaporkan setiap
-                                                                    kegiatan orkemas sesuai,
-                                                                    tervalidasi ?</label>
-                                                            </p>
-                                                            <p class="text-muted text-center">
-                                                            <div class="col-sm-12">
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_laporan"
-                                                                            name="a_surat_laporan" value="2"
-                                                                            {{ $data->a_surat_laporan == 2 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-success">Lengkap</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_laporan"
-                                                                            name="a_surat_laporan" value="0"
-                                                                            {{ $data->a_surat_laporan == 0 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-danger">Tidak</span>
-                                                                    </label>
-                                                                </div>
-                                                                <span class="messages"></span>
-                                                            </div>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                @else
-                                                    <p class="text-muted text-center p-b-5">
-                                                        <label class="label label-inverse-danger"><span
-                                                                data-feather="x-circle"></span>{{ $data->surat_laporan }}</label>
-                                                    </p>
-
-                                                    <p class="text-muted text-center">
-                                                        <label class="col-sm-12">Data tidak lengkap yang dikirim,
-                                                            tunggu
-                                                            sampai pengguna memperbaiki</label>
-                                                    </p>
-                                                @endif
-
-                                                {{-- tutup aktif a_surat_laporan JPG --}}
-                                            </div>
-                                        </div>
-                                        {{-- TUTUP jpg --}}
-                                    @else
-                                        {{-- SELAIN PDF DAN JPG HAH KOSONG --}}
-                                    @endif
-
-                                    {{-- tutup pdf --}}
-                                @else
-                                @endif
-                                {{-- tutup kodong data surat_laporan --}}
-
-                                {{-- kodong data surat_rekom_agama --}}
                                 @if (!empty($data->surat_rekom_agama))
                                     @php
                                         $pecah = explode('.', $data->surat_rekom_agama);
@@ -6479,10 +5008,9 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat rekomendasi
-                                                                    dari kementrian agama
-                                                                    untuk orkemas sesuai,
-                                                                    tervalidasi ?</label>
+                                                                <label class="col-sm-12">14. Rekomendasi Dari Kementerian
+                                                                    Agama Untuk Omas Yang Memiliki Kekhususan Bidang
+                                                                    Keagamaan ** sesuai,</label>
                                                             </p>
                                                             <p class="text-muted text-center">
                                                             <div class="col-sm-12">
@@ -6533,10 +5061,9 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat rekomendasi
-                                                                    dari kementrian agama
-                                                                    untuk orkemas sesuai,
-                                                                    tervalidasi ?</label>
+                                                                <label class="col-sm-12">14. Rekomendasi Dari Kementerian
+                                                                    Agama Untuk Omas Yang Memiliki Kekhususan Bidang
+                                                                    Keagamaan ** sesuai,</label>
                                                             </p>
                                                             <p class="text-muted text-center">
                                                             <div class="col-sm-12">
@@ -6628,10 +5155,9 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat rekomendasi
-                                                                    dari kementrian agama
-                                                                    untuk orkemas sesuai,
-                                                                    tervalidasi ?</label>
+                                                                <label class="col-sm-12">14. Rekomendasi Dari Kementerian
+                                                                    Agama Untuk Omas Yang Memiliki Kekhususan Bidang
+                                                                    Keagamaan ** sesuai,</label>
                                                             </p>
                                                             <p class="text-muted text-center">
                                                             <div class="col-sm-12">
@@ -6701,10 +5227,9 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat rekomendasi
-                                                                    dari kementrian agama
-                                                                    untuk orkemas sesuai,
-                                                                    tervalidasi ?</label>
+                                                                <label class="col-sm-12">14. Rekomendasi Dari Kementerian
+                                                                    Agama Untuk Omas Yang Memiliki Kekhususan Bidang
+                                                                    Keagamaan ** sesuai,</label>
                                                             </p>
                                                             <p class="text-muted text-center">
                                                             <div class="col-sm-12">
@@ -6765,326 +5290,7 @@
                                 @endif
                                 {{-- tutup kodong data surat_rekom_agama --}}
 
-                                {{-- kodong data surat_rekom_skpd --}}
-                                @if (!empty($data->surat_rekom_skpd))
-                                    @php
-                                        $pecah = explode('.', $data->surat_rekom_skpd);
-                                        $surat_rekom_skpd = $pecah[1];
-                                    @endphp
 
-                                    @if ($surat_rekom_skpd == 'pdf')
-                                        <div class="col-lg-12">
-                                            <div class="p-20 z-depth-bottom-1">
-
-                                                {{-- aktif a_surat_rekom_skpd --}}
-                                                @if ($data->a_surat_rekom_skpd == 0)
-                                                    <p class="text-muted text-center"><label
-                                                            class="label label-inverse-primary"><span
-                                                                data-feather="loader"></span>{{ $data->surat_rekom_skpd }}</label>
-                                                    </p>
-
-                                                    <p class="text-muted text-center">
-                                                        <a class="btn btn-primary" data-toggle="modal"
-                                                            href="#surat_rekom_skpd-{{ $data->id }}">Lihat
-                                                            Data
-                                                        </a>
-                                                    </p>
-
-                                                    <div class="card-block">
-                                                        <div class="form-group row">
-                                                            <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat rekomendasi
-                                                                    dari kementrian dan SKPD
-                                                                    kebudayaan untuk
-                                                                    kepecayaan kepada tuhan Maha ESA sesuai,
-                                                                    tervalidasi ?</label>
-                                                            </p>
-                                                            <p class="text-muted text-center">
-                                                            <div class="col-sm-12">
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_rekom_skpd"
-                                                                            name="a_surat_rekom_skpd" value="2"
-                                                                            {{ $data->a_surat_rekom_skpd == 2 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-success">Lengkap</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_rekom_skpd"
-                                                                            name="a_surat_rekom_skpd" value="0"
-                                                                            {{ $data->a_surat_rekom_skpd == 0 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-danger">Tidak</span>
-                                                                    </label>
-                                                                </div>
-                                                                <span class="messages"></span>
-                                                            </div>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                @elseif($data->a_surat_rekom_skpd == 2)
-                                                    <p class="text-muted text-center p-b-5">
-                                                        <label class="label label-inverse-success"><span
-                                                                data-feather="check-circle"></span>{{ $data->surat_rekom_skpd }}</label>
-                                                    </p>
-
-                                                    <p class="text-muted text-center">
-                                                        <a class="btn btn-primary" data-toggle="modal"
-                                                            href="#surat_rekom_skpd-{{ $data->id }}">Lihat
-                                                            Data
-                                                        </a>
-                                                    </p>
-
-                                                    <div class="card-block">
-                                                        <div class="form-group row">
-                                                            <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat rekomendasi
-                                                                    dari kementrian dan SKPD
-                                                                    kebudayaan untuk
-                                                                    kepecayaan kepada tuhan Maha ESA sesuai,
-                                                                    tervalidasi ?</label>
-                                                            </p>
-                                                            <p class="text-muted text-center">
-                                                            <div class="col-sm-12">
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_rekom_skpd"
-                                                                            name="a_surat_rekom_skpd" value="2"
-                                                                            {{ $data->a_surat_rekom_skpd == 2 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-success">Lengkap</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_rekom_skpd"
-                                                                            name="a_surat_rekom_skpd" value="0"
-                                                                            {{ $data->a_surat_rekom_skpd == 0 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-danger">Tidak</span>
-                                                                    </label>
-                                                                </div>
-                                                                <span class="messages"></span>
-                                                            </div>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                @else
-                                                    <p class="text-muted text-center p-b-5">
-                                                        <label class="label label-inverse-danger"><span
-                                                                data-feather="x-circle"></span>{{ $data->surat_rekom_skpd }}</label>
-                                                    </p>
-
-                                                    <p class="text-muted text-center">
-                                                        <label class="col-sm-12">Data tidak lengkap yang dikirim,
-                                                            tunggu
-                                                            sampai pengguna memperbaiki</label>
-                                                    </p>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        {{-- tutup aktif a_surat_rekom_skpd --}}
-
-                                        {{-- buka JPG --}}
-                                    @elseif($surat_rekom_skpd == 'png' or $surat_rekom_skpd == 'jpg')
-                                        <div class="col-lg-12">
-                                            <div class="p-20 z-depth-bottom-1">
-
-                                                {{-- aktif a_surat_rekom_skpd JPG --}}
-                                                @if ($data->a_surat_rekom_skpd == 0)
-                                                    <p class="text-muted text-center"><label
-                                                            class="label label-inverse-primary"><span
-                                                                data-feather="loader"></span>{{ $data->surat_rekom_skpd }}</label>
-                                                    </p>
-
-                                                    {{-- tutup status data surat_rekom_skpd
-                                /**
-                                * Show the form for creating a new resource.
-                                * Whatapps 6289631031237
-                                * email : yogimaulana100@gmail.com
-                                * https://github.com/Ays1234
-                                * https://serbaotodidak.com/
-                                */ --}}
-                                                    <div class="col-lg-12 col-sm-12">
-                                                        <div class="thumbnail">
-                                                            <div class="thumb">
-                                                                <a href="{{ asset($data->email . '/' . $data->surat_rekom_skpd) }}"
-                                                                    data-lightbox="1"
-                                                                    data-title="{{ $data->email . '/' . $data->surat_rekom_skpd }}">
-
-                                                                    <img src="{{ asset($data->email . '/' . $data->surat_rekom_skpd) }}"
-                                                                        alt=""
-                                                                        class="img-fluid img-thumbnail mx-auto d-block"
-                                                                        style="max-height: 200px;">
-
-
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="card-block">
-                                                        <div class="form-group row">
-                                                            <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat rekomendasi
-                                                                    dari kementrian dan SKPD
-                                                                    kebudayaan untuk
-                                                                    kepecayaan kepada tuhan Maha ESA sesuai,
-                                                                    tervalidasi ?</label>
-                                                            </p>
-                                                            <p class="text-muted text-center">
-                                                            <div class="col-sm-12">
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_rekom_skpd"
-                                                                            name="a_surat_rekom_skpd" value="2"
-                                                                            {{ $data->a_surat_rekom_skpd == 2 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-success">Lengkap</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_rekom_skpd"
-                                                                            name="a_surat_rekom_skpd" value="0"
-                                                                            {{ $data->a_surat_rekom_skpd == 0 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-danger">Tidak</span>
-                                                                    </label>
-                                                                </div>
-                                                                <span class="messages"></span>
-                                                            </div>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                @elseif($data->a_surat_rekom_skpd == 2)
-                                                    <p class="text-muted text-center p-b-5">
-                                                        <label class="label label-inverse-success"><span
-                                                                data-feather="check-circle"></span>{{ $data->surat_rekom_skpd }}</label>
-                                                    </p>
-
-                                                    {{-- tutup status data surat_rekom_skpd
-                                /**
-                                * Show the form for creating a new resource.
-                                * Whatapps 6289631031237
-                                * email : yogimaulana100@gmail.com
-                                * https://github.com/Ays1234
-                                * https://serbaotodidak.com/
-                                */ --}}
-                                                    <div class="col-lg-12 col-sm-12">
-                                                        <div class="thumbnail">
-                                                            <div class="thumb">
-                                                                <a href="{{ asset($data->email . '/' . $data->surat_rekom_skpd) }}"
-                                                                    data-lightbox="1"
-                                                                    data-title="{{ $data->email . '/' . $data->surat_rekom_skpd }}">
-
-                                                                    <img src="{{ asset($data->email . '/' . $data->surat_rekom_skpd) }}"
-                                                                        alt=""
-                                                                        class="img-fluid img-thumbnail mx-auto d-block"
-                                                                        style="max-height: 200px;">
-
-
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="card-block">
-                                                        <div class="form-group row">
-                                                            <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah surat rekomendasi
-                                                                    dari kementrian dan SKPD
-                                                                    kebudayaan untuk
-                                                                    kepecayaan kepada tuhan Maha ESA sesuai,
-                                                                    tervalidasi ?</label>
-                                                            </p>
-                                                            <p class="text-muted text-center">
-                                                            <div class="col-sm-12">
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_rekom_skpd"
-                                                                            name="a_surat_rekom_skpd" value="2"
-                                                                            {{ $data->a_surat_rekom_skpd == 2 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-success">Lengkap</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                    <label>
-                                                                        <input type="checkbox" id="a_surat_rekom_skpd"
-                                                                            name="a_surat_rekom_skpd" value="0"
-                                                                            {{ $data->a_surat_rekom_skpd == 0 ? 'checked' : '' }}>
-                                                                        <span class="cr">
-                                                                            <i
-                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                        </span>
-                                                                        <span
-                                                                            class="label label-lg label-danger">Tidak</span>
-                                                                    </label>
-                                                                </div>
-                                                                <span class="messages"></span>
-                                                            </div>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                @else
-                                                    <p class="text-muted text-center p-b-5">
-                                                        <label class="label label-inverse-danger"><span
-                                                                data-feather="x-circle"></span>{{ $data->surat_rekom_skpd }}</label>
-                                                    </p>
-
-                                                    <p class="text-muted text-center">
-                                                        <label class="col-sm-12">Data tidak lengkap yang dikirim,
-                                                            tunggu
-                                                            sampai pengguna memperbaiki</label>
-                                                    </p>
-                                                @endif
-
-                                                {{-- tutup aktif a_surat_rekom_skpd JPG --}}
-                                            </div>
-                                        </div>
-                                        {{-- TUTUP jpg --}}
-                                    @else
-                                        {{-- SELAIN PDF DAN JPG HAH KOSONG --}}
-                                    @endif
-
-                                    {{-- tutup pdf --}}
-                                @else
-                                @endif
-                                {{-- tutup kodong data surat_rekom_skpd --}}
-
-                            </div>
-                            <div class="tab-pane" id="{{ $data->adrt }}" role="tabpanel">
                                 {{-- kodong data surat_rekom_skpd_kerja --}}
                                 @if (!empty($data->surat_rekom_skpd_kerja))
                                     @php
@@ -7122,8 +5328,10 @@
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_rekom_skpd_kerja"
-                                                                            name="a_surat_rekom_skpd_kerja" value="2"
+                                                                        <input type="checkbox"
+                                                                            id="a_surat_rekom_skpd_kerja"
+                                                                            name="a_surat_rekom_skpd_kerja"
+                                                                            value="2"
                                                                             {{ $data->a_surat_rekom_skpd_kerja == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -7135,8 +5343,10 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_rekom_skpd_kerja"
-                                                                            name="a_surat_rekom_skpd_kerja" value="0"
+                                                                        <input type="checkbox"
+                                                                            id="a_surat_rekom_skpd_kerja"
+                                                                            name="a_surat_rekom_skpd_kerja"
+                                                                            value="0"
                                                                             {{ $data->a_surat_rekom_skpd_kerja == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -7176,8 +5386,10 @@
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_rekom_skpd_kerja"
-                                                                            name="a_surat_rekom_skpd_kerja" value="2"
+                                                                        <input type="checkbox"
+                                                                            id="a_surat_rekom_skpd_kerja"
+                                                                            name="a_surat_rekom_skpd_kerja"
+                                                                            value="2"
                                                                             {{ $data->a_surat_rekom_skpd_kerja == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -7189,8 +5401,10 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_rekom_skpd_kerja"
-                                                                            name="a_surat_rekom_skpd_kerja" value="0"
+                                                                        <input type="checkbox"
+                                                                            id="a_surat_rekom_skpd_kerja"
+                                                                            name="a_surat_rekom_skpd_kerja"
+                                                                            value="0"
                                                                             {{ $data->a_surat_rekom_skpd_kerja == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -7271,8 +5485,10 @@
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_rekom_skpd_kerja"
-                                                                            name="a_surat_rekom_skpd_kerja" value="2"
+                                                                        <input type="checkbox"
+                                                                            id="a_surat_rekom_skpd_kerja"
+                                                                            name="a_surat_rekom_skpd_kerja"
+                                                                            value="2"
                                                                             {{ $data->a_surat_rekom_skpd_kerja == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -7284,8 +5500,10 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_rekom_skpd_kerja"
-                                                                            name="a_surat_rekom_skpd_kerja" value="0"
+                                                                        <input type="checkbox"
+                                                                            id="a_surat_rekom_skpd_kerja"
+                                                                            name="a_surat_rekom_skpd_kerja"
+                                                                            value="0"
                                                                             {{ $data->a_surat_rekom_skpd_kerja == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -7344,8 +5562,10 @@
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_rekom_skpd_kerja"
-                                                                            name="a_surat_rekom_skpd_kerja" value="2"
+                                                                        <input type="checkbox"
+                                                                            id="a_surat_rekom_skpd_kerja"
+                                                                            name="a_surat_rekom_skpd_kerja"
+                                                                            value="2"
                                                                             {{ $data->a_surat_rekom_skpd_kerja == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -7357,8 +5577,10 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_surat_rekom_skpd_kerja"
-                                                                            name="a_surat_rekom_skpd_kerja" value="0"
+                                                                        <input type="checkbox"
+                                                                            id="a_surat_rekom_skpd_kerja"
+                                                                            name="a_surat_rekom_skpd_kerja"
+                                                                            value="0"
                                                                             {{ $data->a_surat_rekom_skpd_kerja == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
@@ -7717,27 +5939,27 @@
                                 @endif
                                 {{-- tutup kodong data izasah --}}
 
-                                {{-- kodong data skt --}}
-                                @if (!empty($data->skt))
+                                {{-- kodong data stlk --}}
+                                @if (!empty($data->stlk))
                                     @php
-                                        $pecah = explode('.', $data->skt);
-                                        $skt = $pecah[1];
+                                        $pecah = explode('.', $data->stlk);
+                                        $stlk = $pecah[1];
                                     @endphp
 
-                                    @if ($skt == 'pdf')
+                                    @if ($stlk == 'pdf')
                                         <div class="col-lg-12">
                                             <div class="p-20 z-depth-bottom-1">
 
-                                                {{-- aktif a_skt --}}
-                                                @if ($data->a_skt == 0)
+                                                {{-- aktif a_stlk --}}
+                                                @if ($data->a_stlk == 0)
                                                     <p class="text-muted text-center"><label
                                                             class="label label-inverse-primary"><span
-                                                                data-feather="loader"></span>{{ $data->skt }}</label>
+                                                                data-feather="loader"></span>{{ $data->stlk }}</label>
                                                     </p>
 
                                                     <p class="text-muted text-center">
                                                         <a class="btn btn-primary" data-toggle="modal"
-                                                            href="#skt-{{ $data->id }}">Lihat
+                                                            href="#stlk-{{ $data->id }}">Lihat
                                                             Data
                                                         </a>
                                                     </p>
@@ -7745,8 +5967,9 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah Surat keterangan
-                                                                    terdaftar (SKT) Provinsi,
+                                                                <label class="col-sm-12">19. STLK Dari Badan Kesatuan
+                                                                    Bangsa Dan Politik Provinsi Lampung Bagi Organisasi Yang
+                                                                    Memiliki Kepengurusan Tingkat Provinsi **,
                                                                     sesuai ?
                                                                     ?</label>
                                                             </p>
@@ -7754,9 +5977,9 @@
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_skt" name="a_skt"
-                                                                            value="2"
-                                                                            {{ $data->a_skt == 2 ? 'checked' : '' }}>
+                                                                        <input type="checkbox" id="a_stlk"
+                                                                            name="a_stlk" value="2"
+                                                                            {{ $data->a_stlk == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
                                                                                 class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -7767,9 +5990,9 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_skt" name="a_skt"
-                                                                            value="0"
-                                                                            {{ $data->a_skt == 0 ? 'checked' : '' }}>
+                                                                        <input type="checkbox" id="a_stlk"
+                                                                            name="a_stlk" value="0"
+                                                                            {{ $data->a_stlk == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
                                                                                 class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -7783,15 +6006,15 @@
                                                             </p>
                                                         </div>
                                                     </div>
-                                                @elseif($data->a_skt == 2)
+                                                @elseif($data->a_stlk == 2)
                                                     <p class="text-muted text-center p-b-5">
                                                         <label class="label label-inverse-success"><span
-                                                                data-feather="check-circle"></span>{{ $data->skt }}</label>
+                                                                data-feather="check-circle"></span>{{ $data->stlk }}</label>
                                                     </p>
 
                                                     <p class="text-muted text-center">
                                                         <a class="btn btn-primary" data-toggle="modal"
-                                                            href="#skt-{{ $data->id }}">Lihat
+                                                            href="#stlk-{{ $data->id }}">Lihat
                                                             Data
                                                         </a>
                                                     </p>
@@ -7799,8 +6022,9 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah Surat keterangan
-                                                                    terdaftar (SKT) Provinsi,
+                                                                <label class="col-sm-12">19. STLK Dari Badan Kesatuan
+                                                                    Bangsa Dan Politik Provinsi Lampung Bagi Organisasi Yang
+                                                                    Memiliki Kepengurusan Tingkat Provinsi **,
                                                                     sesuai ?
                                                                     ?</label>
                                                             </p>
@@ -7808,9 +6032,9 @@
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_skt" name="a_skt"
-                                                                            value="2"
-                                                                            {{ $data->a_skt == 2 ? 'checked' : '' }}>
+                                                                        <input type="checkbox" id="a_stlk"
+                                                                            name="a_stlk" value="2"
+                                                                            {{ $data->a_stlk == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
                                                                                 class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -7821,9 +6045,9 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_skt" name="a_skt"
-                                                                            value="0"
-                                                                            {{ $data->a_skt == 0 ? 'checked' : '' }}>
+                                                                        <input type="checkbox" id="a_stlk"
+                                                                            name="a_stlk" value="0"
+                                                                            {{ $data->a_stlk == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
                                                                                 class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -7840,7 +6064,7 @@
                                                 @else
                                                     <p class="text-muted text-center p-b-5">
                                                         <label class="label label-inverse-danger"><span
-                                                                data-feather="x-circle"></span>{{ $data->skt }}</label>
+                                                                data-feather="x-circle"></span>{{ $data->stlk }}</label>
                                                     </p>
 
                                                     <p class="text-muted text-center">
@@ -7851,21 +6075,21 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        {{-- tutup aktif a_skt --}}
+                                        {{-- tutup aktif a_stlk --}}
 
                                         {{-- buka JPG --}}
-                                    @elseif($skt == 'png' or $skt == 'jpg')
+                                    @elseif($stlk == 'png' or $stlk == 'jpg')
                                         <div class="col-lg-12">
                                             <div class="p-20 z-depth-bottom-1">
 
-                                                {{-- aktif a_skt JPG --}}
-                                                @if ($data->a_skt == 0)
+                                                {{-- aktif a_stlk JPG --}}
+                                                @if ($data->a_stlk == 0)
                                                     <p class="text-muted text-center"><label
                                                             class="label label-inverse-primary"><span
-                                                                data-feather="loader"></span>{{ $data->skt }}</label>
+                                                                data-feather="loader"></span>{{ $data->stlk }}</label>
                                                     </p>
 
-                                                    {{-- tutup status data skt
+                                                    {{-- tutup status data stlk
                                 /**
                                 * Show the form for creating a new resource.
                                 * Whatapps 6289631031237
@@ -7876,11 +6100,11 @@
                                                     <div class="col-lg-12 col-sm-12">
                                                         <div class="thumbnail">
                                                             <div class="thumb">
-                                                                <a href="{{ asset($data->email . '/' . $data->skt) }}"
+                                                                <a href="{{ asset($data->email . '/' . $data->stlk) }}"
                                                                     data-lightbox="1"
-                                                                    data-title="{{ $data->email . '/' . $data->skt }}">
+                                                                    data-title="{{ $data->email . '/' . $data->stlk }}">
 
-                                                                    <img src="{{ asset($data->email . '/' . $data->skt) }}"
+                                                                    <img src="{{ asset($data->email . '/' . $data->stlk) }}"
                                                                         alt=""
                                                                         class="img-fluid img-thumbnail mx-auto d-block"
                                                                         style="max-height: 200px;">
@@ -7894,8 +6118,9 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah Surat keterangan
-                                                                    terdaftar (SKT) Provinsi,
+                                                                <label class="col-sm-12">19. STLK Dari Badan Kesatuan
+                                                                    Bangsa Dan Politik Provinsi Lampung Bagi Organisasi Yang
+                                                                    Memiliki Kepengurusan Tingkat Provinsi **,
                                                                     sesuai ?
                                                                     ?</label>
                                                             </p>
@@ -7903,9 +6128,9 @@
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_skt" name="a_skt"
-                                                                            value="2"
-                                                                            {{ $data->a_skt == 2 ? 'checked' : '' }}>
+                                                                        <input type="checkbox" id="a_stlk"
+                                                                            name="a_stlk" value="2"
+                                                                            {{ $data->a_stlk == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
                                                                                 class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -7916,9 +6141,9 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_skt" name="a_skt"
-                                                                            value="0"
-                                                                            {{ $data->a_skt == 0 ? 'checked' : '' }}>
+                                                                        <input type="checkbox" id="a_stlk"
+                                                                            name="a_stlk" value="0"
+                                                                            {{ $data->a_stlk == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
                                                                                 class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -7932,13 +6157,13 @@
                                                             </p>
                                                         </div>
                                                     </div>
-                                                @elseif($data->a_skt == 2)
+                                                @elseif($data->a_stlk == 2)
                                                     <p class="text-muted text-center p-b-5">
                                                         <label class="label label-inverse-success"><span
-                                                                data-feather="check-circle"></span>{{ $data->skt }}</label>
+                                                                data-feather="check-circle"></span>{{ $data->stlk }}</label>
                                                     </p>
 
-                                                    {{-- tutup status data skt
+                                                    {{-- tutup status data stlk
                                 /**
                                 * Show the form for creating a new resource.
                                 * Whatapps 6289631031237
@@ -7949,11 +6174,11 @@
                                                     <div class="col-lg-12 col-sm-12">
                                                         <div class="thumbnail">
                                                             <div class="thumb">
-                                                                <a href="{{ asset($data->email . '/' . $data->skt) }}"
+                                                                <a href="{{ asset($data->email . '/' . $data->stlk) }}"
                                                                     data-lightbox="1"
-                                                                    data-title="{{ $data->email . '/' . $data->skt }}">
+                                                                    data-title="{{ $data->email . '/' . $data->stlk }}">
 
-                                                                    <img src="{{ asset($data->email . '/' . $data->skt) }}"
+                                                                    <img src="{{ asset($data->email . '/' . $data->stlk) }}"
                                                                         alt=""
                                                                         class="img-fluid img-thumbnail mx-auto d-block"
                                                                         style="max-height: 200px;">
@@ -7967,8 +6192,9 @@
                                                     <div class="card-block">
                                                         <div class="form-group row">
                                                             <p class="text-muted text-center">
-                                                                <label class="col-sm-12">Apakah Surat keterangan
-                                                                    terdaftar (SKT) Provinsi,
+                                                                <label class="col-sm-12">19. STLK Dari Badan Kesatuan
+                                                                    Bangsa Dan Politik Provinsi Lampung Bagi Organisasi Yang
+                                                                    Memiliki Kepengurusan Tingkat Provinsi **,
                                                                     sesuai ?
                                                                     ?</label>
                                                             </p>
@@ -7976,9 +6202,9 @@
                                                             <div class="col-sm-12">
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_skt" name="a_skt"
-                                                                            value="2"
-                                                                            {{ $data->a_skt == 2 ? 'checked' : '' }}>
+                                                                        <input type="checkbox" id="a_stlk"
+                                                                            name="a_stlk" value="2"
+                                                                            {{ $data->a_stlk == 2 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
                                                                                 class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -7989,9 +6215,9 @@
                                                                 </div>
                                                                 <div class="checkbox-fade fade-in-primary">
                                                                     <label>
-                                                                        <input type="checkbox" id="a_skt" name="a_skt"
-                                                                            value="0"
-                                                                            {{ $data->a_skt == 0 ? 'checked' : '' }}>
+                                                                        <input type="checkbox" id="a_stlk"
+                                                                            name="a_stlk" value="0"
+                                                                            {{ $data->a_stlk == 0 ? 'checked' : '' }}>
                                                                         <span class="cr">
                                                                             <i
                                                                                 class="cr-icon icofont icofont-ui-check txt-primary"></i>
@@ -8008,7 +6234,7 @@
                                                 @else
                                                     <p class="text-muted text-center p-b-5">
                                                         <label class="label label-inverse-danger"><span
-                                                                data-feather="x-circle"></span>{{ $data->skt }}</label>
+                                                                data-feather="x-circle"></span>{{ $data->stlk }}</label>
                                                     </p>
 
                                                     <p class="text-muted text-center">
@@ -8018,7 +6244,7 @@
                                                     </p>
                                                 @endif
 
-                                                {{-- tutup aktif a_skt JPG --}}
+                                                {{-- tutup aktif a_stlk JPG --}}
                                             </div>
                                         </div>
                                         {{-- TUTUP jpg --}}
@@ -8029,16 +6255,335 @@
                                     {{-- tutup pdf --}}
                                 @else
                                 @endif
-                                {{-- tutup kodong data skt --}}
+                                {{-- tutup kodong data stlk --}}
+
+
+                                {{-- kodong data surat_kemenkumham --}}
+                                @if (!empty($data->surat_kemenkumham))
+                                    @php
+                                        $pecah = explode('.', $data->surat_kemenkumham);
+                                        $surat_kemenkumham = $pecah[1];
+                                    @endphp
+
+                                    @if ($surat_kemenkumham == 'pdf')
+                                        <div class="col-lg-12">
+                                            <div class="p-20 z-depth-bottom-1">
+
+                                                {{-- aktif surat_kemenkumham --}}
+                                                @if ($data->a_surat_kemenkumham == 0)
+                                                    <p class="text-muted text-center"><label
+                                                            class="label label-inverse-primary"><span
+                                                                data-feather="loader"></span>{{ $data->surat_kemenkumham }}</label>
+                                                    </p>
+
+                                                    <p class="text-muted text-center">
+                                                        <a class="btn btn-primary" data-toggle="modal"
+                                                            href="#surat_kemenkumham-{{ $data->id }}">Lihat
+                                                            Data
+                                                        </a>
+                                                    </p>
+
+                                                    <div class="card-block">
+                                                        <div class="form-group row">
+                                                            <p class="text-muted text-center">
+                                                                <label class="col-sm-12">20. Surat Keterangan Terdaftar Di
+                                                                    Kementrian Hukum Dan Ham Bagi Ormas Yang Berbadan Hukum,
+                                                                    Dan/ Atau Surat Keterangan Terdaftar Di Kementrian Dalam
+                                                                    Negri Bagi Ormas Yang Tidak Berbadan Hukum sesuai,
+                                                                    tervalidasi ?</label>
+                                                            </p>
+                                                            <p class="text-muted text-center">
+                                                            <div class="col-sm-12">
+                                                                <div class="checkbox-fade fade-in-primary">
+                                                                    <label>
+                                                                        <input type="checkbox" id="a_surat_kemenkumham"
+                                                                            name="a_surat_kemenkumham" value="2"
+                                                                            {{ $data->a_surat_kemenkumham == 2 ? 'checked' : '' }}>
+                                                                        <span class="cr">
+                                                                            <i
+                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                                                        </span>
+                                                                        <span
+                                                                            class="label label-lg label-success">Lengkap</span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="checkbox-fade fade-in-primary">
+                                                                    <label>
+                                                                        <input type="checkbox" id="a_surat_kemenkumham"
+                                                                            name="a_surat_kemenkumham" value="0"
+                                                                            {{ $data->a_surat_kemenkumham == 0 ? 'checked' : '' }}>
+                                                                        <span class="cr">
+                                                                            <i
+                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                                                        </span>
+                                                                        <span
+                                                                            class="label label-lg label-danger">Tidak</span>
+                                                                    </label>
+                                                                </div>
+                                                                <span class="messages"></span>
+                                                            </div>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                @elseif($data->a_surat_kemenkumham == 2)
+                                                    <p class="text-muted text-center p-b-5">
+                                                        <label class="label label-inverse-success"><span
+                                                                data-feather="check-circle"></span>{{ $data->surat_kemenkumham }}</label>
+                                                    </p>
+
+                                                    <p class="text-muted text-center">
+                                                        <a class="btn btn-primary" data-toggle="modal"
+                                                            href="#surat_kemenkumham-{{ $data->id }}">Lihat
+                                                            Data
+                                                        </a>
+                                                    </p>
+
+                                                    <div class="card-block">
+                                                        <div class="form-group row">
+                                                            <p class="text-muted text-center">
+                                                                <label class="col-sm-12">20. Surat Keterangan Terdaftar Di
+                                                                    Kementrian Hukum Dan Ham Bagi Ormas Yang Berbadan Hukum,
+                                                                    Dan/ Atau Surat Keterangan Terdaftar Di Kementrian Dalam
+                                                                    Negri Bagi Ormas Yang Tidak Berbadan Hukum sesuai,
+                                                                    tervalidasi ?</label>
+                                                            </p>
+                                                            <p class="text-muted text-center">
+                                                            <div class="col-sm-12">
+                                                                <div class="checkbox-fade fade-in-primary">
+                                                                    <label>
+                                                                        <input type="checkbox" id="a_surat_kemenkumham"
+                                                                            name="a_surat_kemenkumham" value="2"
+                                                                            {{ $data->a_surat_kemenkumham == 2 ? 'checked' : '' }}>
+                                                                        <span class="cr">
+                                                                            <i
+                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                                                        </span>
+                                                                        <span
+                                                                            class="label label-lg label-success">Lengkap</span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="checkbox-fade fade-in-primary">
+                                                                    <label>
+                                                                        <input type="checkbox" id="a_surat_kemenkumham"
+                                                                            name="a_surat_kemenkumham" value="0"
+                                                                            {{ $data->a_surat_kemenkumham == 0 ? 'checked' : '' }}>
+                                                                        <span class="cr">
+                                                                            <i
+                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                                                        </span>
+                                                                        <span
+                                                                            class="label label-lg label-danger">Tidak</span>
+                                                                    </label>
+                                                                </div>
+                                                                <span class="messages"></span>
+                                                            </div>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                @else
+                                                    <p class="text-muted text-center p-b-5">
+                                                        <label class="label label-inverse-danger"><span
+                                                                data-feather="x-circle"></span>{{ $data->surat_kemenkumham }}</label>
+                                                    </p>
+
+                                                    <p class="text-muted text-center">
+                                                        <label class="col-sm-12">Data tidak lengkap yang dikirim,
+                                                            tunggu
+                                                            sampai pengguna memperbaiki</label>
+                                                    </p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        {{-- tutup aktif surat_kemenkumham --}}
+
+                                        {{-- buka JPG --}}
+                                    @elseif($surat_kemenkumham == 'png' or $surat_kemenkumham == 'jpg')
+                                        <div class="col-lg-12">
+                                            <div class="p-20 z-depth-bottom-1">
+
+                                                {{-- aktif surat_kemenkumham JPG --}}
+                                                @if ($data->a_surat_kemenkumham == 0)
+                                                    <p class="text-muted text-center"><label
+                                                            class="label label-inverse-primary"><span
+                                                                data-feather="loader"></span>{{ $data->surat_kemenkumham }}</label>
+                                                    </p>
+
+                                                    {{-- tutup status data surat_kemenkumham
+                                /**
+                                * Show the form for creating a new resource.
+                                * Whatapps 6289631031237
+                                * email : yogimaulana100@gmail.com
+                                * https://github.com/Ays1234
+                                * https://serbaotodidak.com/
+                                */ --}}
+                                                    <div class="col-lg-12 col-sm-12">
+                                                        <div class="thumbnail">
+                                                            <div class="thumb">
+                                                                <a href="{{ asset($data->email . '/' . $data->surat_kemenkumham) }}"
+                                                                    data-lightbox="1"
+                                                                    data-title="{{ $data->email . '/' . $data->surat_kemenkumham }}">
+
+                                                                    <img src="{{ asset($data->email . '/' . $data->surat_kemenkumham) }}"
+                                                                        alt=""
+                                                                        class="img-fluid img-thumbnail mx-auto d-block"
+                                                                        style="max-height: 200px;">
+
+
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="card-block">
+                                                        <div class="form-group row">
+                                                            <p class="text-muted text-center">
+                                                                <label class="col-sm-12">20. Surat Keterangan Terdaftar Di
+                                                                    Kementrian Hukum Dan Ham Bagi Ormas Yang Berbadan Hukum,
+                                                                    Dan/ Atau Surat Keterangan Terdaftar Di Kementrian Dalam
+                                                                    Negri Bagi Ormas Yang Tidak Berbadan Hukum sesuai,
+                                                                    tervalidasi ?</label>
+                                                            </p>
+                                                            <p class="text-muted text-center">
+                                                            <div class="col-sm-12">
+                                                                <div class="checkbox-fade fade-in-primary">
+                                                                    <label>
+                                                                        <input type="checkbox" id="a_surat_kemenkumham"
+                                                                            name="a_surat_kemenkumham" value="2"
+                                                                            {{ $data->a_surat_kemenkumham == 2 ? 'checked' : '' }}>
+                                                                        <span class="cr">
+                                                                            <i
+                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                                                        </span>
+                                                                        <span
+                                                                            class="label label-lg label-success">Lengkap</span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="checkbox-fade fade-in-primary">
+                                                                    <label>
+                                                                        <input type="checkbox" id="a_surat_kemenkumham"
+                                                                            name="a_surat_kemenkumham" value="0"
+                                                                            {{ $data->a_surat_kemenkumham == 0 ? 'checked' : '' }}>
+                                                                        <span class="cr">
+                                                                            <i
+                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                                                        </span>
+                                                                        <span
+                                                                            class="label label-lg label-danger">Tidak</span>
+                                                                    </label>
+                                                                </div>
+                                                                <span class="messages"></span>
+                                                            </div>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                @elseif($data->a_surat_kemenkumham == 2)
+                                                    <p class="text-muted text-center p-b-5">
+                                                        <label class="label label-inverse-success"><span
+                                                                data-feather="check-circle"></span>{{ $data->surat_kemenkumham }}</label>
+                                                    </p>
+
+                                                    {{-- tutup status data surat_kemenkumham
+                                /**
+                                * Show the form for creating a new resource.
+                                * Whatapps 6289631031237
+                                * email : yogimaulana100@gmail.com
+                                * https://github.com/Ays1234
+                                * https://serbaotodidak.com/
+                                */ --}}
+                                                    <div class="col-lg-12 col-sm-12">
+                                                        <div class="thumbnail">
+                                                            <div class="thumb">
+                                                                <a href="{{ asset($data->email . '/' . $data->surat_kemenkumham) }}"
+                                                                    data-lightbox="1"
+                                                                    data-title="{{ $data->email . '/' . $data->surat_kemenkumham }}">
+
+                                                                    <img src="{{ asset($data->email . '/' . $data->surat_kemenkumham) }}"
+                                                                        alt=""
+                                                                        class="img-fluid img-thumbnail mx-auto d-block"
+                                                                        style="max-height: 200px;">
+
+
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="card-block">
+                                                        <div class="form-group row">
+                                                            <p class="text-muted text-center">
+                                                                <label class="col-sm-12">20. Surat Keterangan Terdaftar Di
+                                                                    Kementrian Hukum Dan Ham Bagi Ormas Yang Berbadan Hukum,
+                                                                    Dan/ Atau Surat Keterangan Terdaftar Di Kementrian Dalam
+                                                                    Negri Bagi Ormas Yang Tidak Berbadan Hukum sesuai,
+                                                                    tervalidasi ?</label>
+                                                            </p>
+                                                            <p class="text-muted text-center">
+                                                            <div class="col-sm-12">
+                                                                <div class="checkbox-fade fade-in-primary">
+                                                                    <label>
+                                                                        <input type="checkbox" id="a_surat_kemenkumham"
+                                                                            name="a_surat_kemenkumham" value="2"
+                                                                            {{ $data->a_surat_kemenkumham == 2 ? 'checked' : '' }}>
+                                                                        <span class="cr">
+                                                                            <i
+                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                                                        </span>
+                                                                        <span
+                                                                            class="label label-lg label-success">Lengkap</span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="checkbox-fade fade-in-primary">
+                                                                    <label>
+                                                                        <input type="checkbox" id="a_surat_kemenkumham"
+                                                                            name="a_surat_kemenkumham" value="0"
+                                                                            {{ $data->a_surat_kemenkumham == 0 ? 'checked' : '' }}>
+                                                                        <span class="cr">
+                                                                            <i
+                                                                                class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                                                        </span>
+                                                                        <span
+                                                                            class="label label-lg label-danger">Tidak</span>
+                                                                    </label>
+                                                                </div>
+                                                                <span class="messages"></span>
+                                                            </div>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                @else
+                                                    <p class="text-muted text-center p-b-5">
+                                                        <label class="label label-inverse-danger"><span
+                                                                data-feather="x-circle"></span>{{ $data->surat_kemenkumham }}</label>
+                                                    </p>
+
+                                                    <p class="text-muted text-center">
+                                                        <label class="col-sm-12">Data tidak lengkap yang dikirim,
+                                                            tunggu
+                                                            sampai pengguna memperbaiki</label>
+                                                    </p>
+                                                @endif
+
+                                                {{-- tutup aktif surat_kemenkumham JPG --}}
+                                            </div>
+                                        </div>
+                                        {{-- TUTUP jpg --}}
+                                    @else
+                                        {{-- SELAIN PDF DAN JPG HAH KOSONG --}}
+                                    @endif
+
+                                    {{-- tutup pdf --}}
+                                @else
+                                @endif
+                                {{-- tutup kodong data surat_rekom_skpd_kepercayaan --}}
+
 
                                 <div class="col-lg-12">
-                                    <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title=".z-depth-top-1">
+                                    <div class="p-2 z-depth-bottom-1" data-toggle="tooltip" data-placement="top"
+                                        title="" data-original-title=".z-depth-top-1">
                                         <p class="text-muted text-center p-b-5">Keterangan Diisi sesuai hasil
                                             validasi</p>
                                         <div class="form-group form-primary">
-                                            <textarea rows="10" cols="5" class="form-control" name="ket"
-                                                placeholder="Keterangan">{{ $data->ket }}</textarea>
+                                            <textarea rows="10" cols="5" class="form-control" name="ket" placeholder="Keterangan">{{ $data->ket }}</textarea>
                                             <span class="form-bar"></span>
                                         </div>
                                     </div>
@@ -8048,7 +6593,8 @@
 
                                 <div class="col-lg-12">
                                     <div class="card">
-                                        <button type="submit" class="btn waves-effect waves-light hor-grd btn-grd-success"
+                                        <button type="submit"
+                                            class="btn waves-effect waves-light hor-grd btn-grd-success"
                                             id="cuy">Simpan
                                             Data</button>
                                     </div>
@@ -8065,7 +6611,7 @@
         <!-- tabbed form modal end -->
 
         <!-- Modal 1-->
-        <div id="surat_terdaftar_dikemenkumham-{{ $data->id }}" class="modal fade" role="dialog">
+        <div id="surat_kemenkumham-{{ $data->id }}" class="modal fade" role="dialog">
             <div class="modal-dialog modal-lg">
                 <!-- Modal content-->
                 <div class="modal-content">
@@ -8074,21 +6620,21 @@
                             &times;
                         </button>
                         <h4 class="modal-title">
-                            {{ $data->email . '/' . $data->surat_terdaftar_dikemenkumham }}
+                            {{ $data->email . '/' . $data->surat_kemenkumham }}
                         </h4>
                         </h4>
                     </div>
                     <div class="modal-body">
                         <!-- <embed
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    type="application/pdf"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    src="http://127.0.0.1:8000/yrka1234/akte_pendirian20220416012844.pdf"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    frameborder="0"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    width="100%"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    height="400px"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    scrolling="auto"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  /> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        type="application/pdf"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        src="http://127.0.0.1:8000/yrka1234/ktp20220416012844.pdf"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        frameborder="0"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        width="100%"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        height="400px"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        scrolling="auto"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      /> -->
                         <object width="100%" height="400px"
-                            data="{{ asset($data->email . '/' . $data->surat_terdaftar_dikemenkumham) }}"></object>
+                            data="{{ asset($data->email . '/' . $data->surat_kemenkumham) }}"></object>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">
                                 Close
@@ -8115,13 +6661,13 @@
                     </div>
                     <div class="modal-body">
                         <!-- <embed
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    type="application/pdf"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    src="http://127.0.0.1:8000/yrka1234/akte_pendirian20220416012844.pdf"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    frameborder="0"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    width="100%"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    height="400px"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    scrolling="auto"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  /> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        type="application/pdf"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        src="http://127.0.0.1:8000/yrka1234/ktp20220416012844.pdf"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        frameborder="0"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        width="100%"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        height="400px"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        scrolling="auto"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      /> -->
                         <object width="100%" height="400px"
                             data="{{ asset($data->email . '/' . $data->surat_pendaftaran) }}"></object>
                         <div class="modal-footer">
@@ -8151,13 +6697,13 @@
                     </div>
                     <div class="modal-body">
                         <!-- <embed
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    type="application/pdf"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    src="http://127.0.0.1:8000/yrka1234/akte_pendirian20220416012844.pdf"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    frameborder="0"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    width="100%"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    height="400px"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    scrolling="auto"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  /> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        type="application/pdf"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        src="http://127.0.0.1:8000/yrka1234/ktp20220416012844.pdf"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        frameborder="0"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        width="100%"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        height="400px"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        scrolling="auto"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      /> -->
                         <object width="100%" height="400px"
                             data="{{ asset($data->email . '/' . $data->adrt) }}"></object>
                         <div class="modal-footer">
@@ -8171,7 +6717,7 @@
         </div>
 
         <!-- Modal 1-->
-        <div id="akte_pendirian-{{ $data->id }}" class="modal fade" role="dialog">
+        <div id="ktp-{{ $data->id }}" class="modal fade" role="dialog">
             <div class="modal-dialog modal-lg">
                 <!-- Modal content-->
                 <div class="modal-content">
@@ -8180,21 +6726,21 @@
                             &times;
                         </button>
                         <h4 class="modal-title">
-                            {{ $data->email . '/' . $data->akte_pendirian }}
+                            {{ $data->email . '/' . $data->ktp }}
                         </h4>
                         </h4>
                     </div>
                     <div class="modal-body">
                         <!-- <embed
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    type="application/pdf"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    src="http://127.0.0.1:8000/yrka1234/akte_pendirian20220416012844.pdf"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    frameborder="0"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    width="100%"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    height="400px"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    scrolling="auto"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  /> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        type="application/pdf"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        src="http://127.0.0.1:8000/yrka1234/ktp20220416012844.pdf"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        frameborder="0"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        width="100%"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        height="400px"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        scrolling="auto"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      /> -->
                         <object width="100%" height="400px"
-                            data="{{ asset($data->email . '/' . $data->akte_pendirian) }}"></object>
+                            data="{{ asset($data->email . '/' . $data->ktp) }}"></object>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">
                                 Close
@@ -8222,13 +6768,13 @@
                     </div>
                     <div class="modal-body">
                         <!-- <embed
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    type="application/pdf"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    src="http://127.0.0.1:8000/yrka1234/	keabsahan_kantor20220416012844.pdf"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    frameborder="0"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    width="100%"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    height="400px"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    scrolling="auto"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  /> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        type="application/pdf"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        src="http://127.0.0.1:8000/yrka1234/	keabsahan_kantor20220416012844.pdf"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        frameborder="0"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        width="100%"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        height="400px"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        scrolling="auto"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      /> -->
                         <object width="100%" height="400px"
                             data="{{ asset($data->email . '/' . $data->keabsahan_kantor) }}"></object>
                         <div class="modal-footer">
@@ -8242,7 +6788,7 @@
         </div>
 
         <!-- Modal 1-->
-        <div id="program-{{ $data->id }}" class="modal fade" role="dialog">
+        <div id="tujuan-{{ $data->id }}" class="modal fade" role="dialog">
             <div class="modal-dialog modal-lg">
                 <!-- Modal content-->
                 <div class="modal-content">
@@ -8251,13 +6797,13 @@
                             &times;
                         </button>
                         <h4 class="modal-title">
-                            {{ $data->email . '/' . $data->program }}
+                            {{ $data->email . '/' . $data->tujuan }}
                         </h4>
                         </h4>
                     </div>
                     <div class="modal-body">
                         <object width="100%" height="400px"
-                            data="{{ asset($data->email . '/' . $data->program) }}"></object>
+                            data="{{ asset($data->email . '/' . $data->tujuan) }}"></object>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">
                                 Close
@@ -8649,7 +7195,7 @@
         </div>
 
         <!-- Modal 1-->
-        <div id="surat_rekom_skpd-{{ $data->id }}" class="modal fade" role="dialog">
+        <div id="surat_rekom_skpd_kepercayaan-{{ $data->id }}" class="modal fade" role="dialog">
             <div class="modal-dialog modal-lg">
                 <!-- Modal content-->
                 <div class="modal-content">
@@ -8658,13 +7204,13 @@
                             &times;
                         </button>
                         <h4 class="modal-title">
-                            {{ $data->email . '/' . $data->surat_rekom_skpd }}
+                            {{ $data->email . '/' . $data->surat_rekom_skpd_kepercayaan }}
                         </h4>
                         </h4>
                     </div>
                     <div class="modal-body">
                         <object width="100%" height="400px"
-                            data="{{ asset($data->email . '/' . $data->surat_rekom_skpd) }}"></object>
+                            data="{{ asset($data->email . '/' . $data->surat_rekom_skpd_kepercayaan) }}"></object>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">
                                 Close
@@ -8757,7 +7303,7 @@
         </div>
 
         <!-- Modal 1-->
-        <div id="skt-{{ $data->id }}" class="modal fade" role="dialog">
+        <div id="surat_memuat-{{ $data->id }}" class="modal fade" role="dialog">
             <div class="modal-dialog modal-lg">
                 <!-- Modal content-->
                 <div class="modal-content">
@@ -8766,13 +7312,40 @@
                             &times;
                         </button>
                         <h4 class="modal-title">
-                            {{ $data->email . '/' . $data->skt }}
+                            {{ $data->email . '/' . $data->surat_memuat }}
                         </h4>
                         </h4>
                     </div>
                     <div class="modal-body">
                         <object width="100%" height="400px"
-                            data="{{ asset($data->email . '/' . $data->skt) }}"></object>
+                            data="{{ asset($data->email . '/' . $data->surat_memuat) }}"></object>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal 1-->
+        <div id="stlk-{{ $data->id }}" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            &times;
+                        </button>
+                        <h4 class="modal-title">
+                            {{ $data->email . '/' . $data->stlk }}
+                        </h4>
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <object width="100%" height="400px"
+                            data="{{ asset($data->email . '/' . $data->stlk) }}"></object>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">
                                 Close
@@ -8793,8 +7366,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script>
-        $(document).on('click', 'input[name="a_surat_terdaftar_dikemenkumham"]', function() {
-            $('input[name="a_surat_terdaftar_dikemenkumham"]').not(this).prop('checked', false);
+        $(document).on('click', 'input[name="a_surat_kemenkumham"]', function() {
+            $('input[name="a_surat_kemenkumham"]').not(this).prop('checked', false);
+        });
+
+        $(document).on('click', 'input[name="a_akte_pendirian"]', function() {
+            $('input[name="a_akte_pendirian"]').not(this).prop('checked', false);
         });
 
         $(document).on('click', 'input[name="a_surat_pendaftaran"]', function() {
@@ -8809,8 +7386,8 @@
             $('input[name="a_keabsahan_kantor"]').not(this).prop('checked', false);
         });
 
-        $(document).on('click', 'input[name="a_program"]', function() {
-            $('input[name="a_program"]').not(this).prop('checked', false);
+        $(document).on('click', 'input[name="a_tujuan"]', function() {
+            $('input[name="a_tujuan"]').not(this).prop('checked', false);
         });
 
         $(document).on('click', 'input[name="a_surat_keputusan"]', function() {
@@ -8822,8 +7399,8 @@
         });
 
 
-        $(document).on('click', 'input[name="a_akte_pendirian"]', function() {
-            $('input[name="a_akte_pendirian"]').not(this).prop('checked', false);
+        $(document).on('click', 'input[name="a_ktp"]', function() {
+            $('input[name="a_ktp"]').not(this).prop('checked', false);
         });
 
         $(document).on('click', 'input[name="a_ktp"]', function() {
@@ -8867,8 +7444,8 @@
         $(document).on('click', 'input[name="a_surat_rekom_agama"]', function() {
             $('input[name="a_surat_rekom_agama"]').not(this).prop('checked', false);
         });
-        $(document).on('click', 'input[name="a_surat_rekom_skpd"]', function() {
-            $('input[name="a_surat_rekom_skpd"]').not(this).prop('checked', false);
+        $(document).on('click', 'input[name="a_surat_rekom_skpd_kepercayaan"]', function() {
+            $('input[name="a_surat_rekom_skpd_kepercayaan"]').not(this).prop('checked', false);
         });
         $(document).on('click', 'input[name="a_surat_rekom_skpd_kerja"]', function() {
             $('input[name="a_surat_rekom_skpd_kerja"]').not(this).prop('checked', false);
@@ -8879,8 +7456,12 @@
         $(document).on('click', 'input[name="a_surat_izasah"]', function() {
             $('input[name="a_surat_izasah"]').not(this).prop('checked', false);
         });
-        $(document).on('click', 'input[name="a_skt"]', function() {
-            $('input[name="a_skt"]').not(this).prop('checked', false);
+        $(document).on('click', 'input[name="a_stlk"]', function() {
+            $('input[name="a_stlk"]').not(this).prop('checked', false);
+        });
+
+        $(document).on('click', 'input[name="a_surat_memuat"]', function() {
+            $('input[name="a_surat_memuat"]').not(this).prop('checked', false);
         });
     </script>
 

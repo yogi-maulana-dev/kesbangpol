@@ -120,7 +120,7 @@
                                     @if (session()->has('success'))
                                         <div class="alert alert-success alert-dismissible fade show"
                                             data-bs-dismiss="alert" role="alert">
-                                            {{ session('success') }}ddasd</strong>
+                                            {{ session('success') }}</strong>
                                             <button type="button" class="x-square" data-bs-dismiss="alert"
                                                 aria-label="Close"></button>
                                         </div>
@@ -212,7 +212,7 @@
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
                                         <button type="submit"
-                                            class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Masuk
+                                            class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Kirim
                                         </button>
                                     </div>
                                 </div>
@@ -223,8 +223,8 @@
                             <div class="row">
                                 <div class="col-md-10">
                                     {{-- <p class="text-inverse text-left m-b-0">Thank you.</p> --}}
-                                    <p class="text-inverse text-left"><a href="index.html"><b>Kembali padadadasd
-                                                dashboard</b></a>
+                                    <p class="text-inverse text-left"><a href="/login"><b>Kembali
+                                                Login</b></a>
                                     </p>
                                 </div>
                                 <div class="col-md-2">

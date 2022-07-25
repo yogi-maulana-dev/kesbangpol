@@ -26,6 +26,20 @@
     <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    
+    <style>
+div.example {
+  padding: 10px;
+}
+
+@media screen and (min-width: 351px) {
+  div.example {
+    font-size: 50px;
+  }
+}
+
+
+</style>
 
     <!-- Template Main CSS File -->
     <link href="/assets/css/style.css" rel="stylesheet">
@@ -45,8 +59,8 @@
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
             <a href="index.html" class="logo d-flex align-items-center">
-                <img src="/assets/img/logo.png" alt="">
-                <span style="font-size: small;">Badan Kesatuan Bangsa dan Politik Kabupaten Mesuji</span>
+                <!--<img src="/assets/img/logo.png" alt="">-->
+               <div class="example"> <span style="font-size: small;">Badan Kesatuan Bangsa dan Politik Kabupaten Mesuji</span></div>
             </a>
 
             <nav id="navbar" class="navbar">

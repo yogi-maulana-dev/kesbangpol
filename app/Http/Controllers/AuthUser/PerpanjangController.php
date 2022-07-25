@@ -1,31 +1,96 @@
 <?php
 
-namespace App\Http\Controllers\AuthUser;
+namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
 use App\Models\Perpanjang;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class PerpanjangController extends Controller
 {
-    //
-
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         //
-        return view('user.perpanjang', ['judul' => 'Halaman Pepanjang', 'perpanjangans' => Perpanjang::where('id_user', auth()->user()->id)->get()]);
+  return view('user.perpanjang', ['judul' => 'Halaman Pepanjang', 'perpanjangs' => Perpanjang::where('id_user', auth()->user()->id)->get()]);}
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
         //
         //
         $tes = auth()->user()->email;
+        // $anusurat_terdaftar_dikemenkumham = '/' . $tes . '/' . $perpanjang->surat_terdaftar_dikemenkumham;
+        // $anusurat_pendaftaran = '/' . $tes . '/' . $perpanjang->surat_pendaftaran;
+        // $anuakte_pendirian = '/' . $tes . '/' . $perpanjang->akte_pendirian;
+        // $anuadrt = '/' . $tes . '/' . $perpanjang->adrt;
+        // $anukeabsahan_kantor = '/' . $tes . '/' . $perpanjang->keabsahan_kantor;
+        // $anuprogram = '/' . $tes . '/' . $perpanjang->program;
+        // $anusurat_keputusan = '/' . $tes . '/' . $perpanjang->surat_keputusan;
+        // $anubioperpanjang_pengurus = '/' . $tes . '/' . $perpanjang->bioperpanjang_pengurus;
+        // $anuktp = '/' . $tes . '/' . $perpanjang->ktp;
+        // $anufoto = '/' . $tes . '/' . $perpanjang->foto;
+        // $anusurat_keterangan_domisili = '/' . $tes . '/' . $perpanjang->surat_keterangan_domisili;
+        // $anunpwp = '/' . $tes . '/' . $perpanjang->npwp;
+        // $anufoto_kantor = '/' . $tes . '/' . $perpanjang->foto_kantor;
+        // $anusurat_ketertiban = '/' . $tes . '/' . $perpanjang->surat_ketertiban;
+        // $anusurat_tidak_avilasi = '/' . $tes . '/' . $perpanjang->surat_tidak_avilasi;
+        // $anusurat_konflik = '/' . $tes . '/' . $perpanjang->surat_konflik;
+        // $anusurat_hak_cipta = '/' . $tes . '/' . $perpanjang->surat_hak_cipta;
+        // $anusurat_laporan = '/' . $tes . '/' . $perpanjang->surat_laporan;
+        // $anusurat_absah = '/' . $tes . '/' . $perpanjang->surat_absah;
+        // $anusurat_rekom_agama = '/' . $tes . '/' . $perpanjang->surat_rekom_agama;
+        // $anusurat_rekom_skpd = '/' . $tes . '/' . $perpanjang->surat_rekom_skpd;
+        // $anusurat_rekom_skpd_kerja = '/' . $tes . '/' . $perpanjang->surat_rekom_skpd_kerja;
+        // $anusurat_rekom_kesediaan = '/' . $tes . '/' . $perpanjang->surat_rekom_kesediaan;
+        // $anusurat_izasah = '/' . $tes . '/' . $perpanjang->surat_izasah;
+        // $anuskt = '/' . $tes . '/' . $perpanjang->skt;
+        // return $request->file('image')->store($tes);
 
         $validasi = $request->validate([
-            'sk_pengurusan' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,surat_terdaftar_dikemenkumham',
-            'foto_ketua' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,surat_pendaftaran',
-            'npwp' => 'required|file|mimes:pdf,png,jpg,jpeg|max:1024,akte_pendirian',
+            'surat_pendaftaran' => 'required|file|mimes:pdf,png,jpg|max:1024',
+            'akte_pendirian' => 'required|file|mimes:pdf,png,jpg|max:1024',
+            'adrt' => 'required|file|mimes:pdf,png,jpg|max:1024',
+            // 'keabsahan_kantor' => 'required|file|mimes:pdf,png,jpg|max:1024',
+            'program' => 'required|file|mimes:pdf,png,jpg|max:1024',
+            'surat_keputusan' => 'required|file|mimes:pdf,png,jpg|max:1024',
+            'bioperpanjang_pengurus' => 'required|file|mimes:pdf,png,jpg|max:1024',
+            'ktp' => 'required|file|mimes:pdf,png,jpg|max:1024',
+            'foto' => 'required|file|mimes:pdf,png,jpg|max:1024',
+            'surat_keterangan_domisili' => 'required|file|mimes:pdf,png,jpg|max:1024',
+            'npwp' => 'required|file|mimes:pdf,png,jpg|max:1024',
+            'foto_kantor' => 'required|file|mimes:pdf,png,jpg|max:1024',
+            'surat_ketertiban' => 'required|file|mimes:pdf,png,jpg|max:1024',
+            'surat_tidak_avilasi' => 'required|file|mimes:pdf,png,jpg|max:1024',
+            'surat_konflik' => 'required|file|mimes:pdf,png,jpg|max:1024',
+            'surat_hak_cipta' => 'required|file|mimes:pdf,png,jpg|max:1024',
+            'surat_laporan' => 'required|file|mimes:pdf,png,jpg|max:1024',
+            'surat_absah' => 'required|file|mimes:pdf,png,jpg|max:1024',
+            'surat_rekom_agama' => 'required|file|mimes:pdf,png,jpg|max:1024',
+            'surat_rekom_skpd' => 'required|file|mimes:pdf,png,jpg|max:1024',
+            'surat_rekom_skpd_kerja' => 'required|file|mimes:pdf,png,jpg|max:1024',
+            'surat_rekom_kesediaan' => 'required|file|mimes:pdf,png,jpg|max:1024',
+            'surat_izasah' => 'required|file|mimes:pdf,png,jpg|max:1024',
+            'skt' => 'required|file|mimes:pdf,png,jpg|max:1024',
 
             /**
              * Show the form for creating a new resource.
@@ -36,36 +101,41 @@ class PerpanjangController extends Controller
              */
         ]);
 
-        $sk_pengurusan = $request->file('sk_pengurusan');
-        $nama_dokumen1 = 'sk_pengurusan' . date('Ymdhis') . '.' . $request->file('sk_pengurusan')->getClientOriginalExtension();
-        $sk_pengurusan->move($tes . '/pembaruan/', $nama_dokumen1);
+        $surat_pendaftaran = $request->file('surat_pendaftaran');
+        $nama_dokumen1 = 'surat_pendaftaran' . date('Ymdhis') . '.' . $request->file('surat_pendaftaran')->getClientOriginalExtension();
+        $surat_pendaftaran->move($tes . '/', $nama_dokumen1);
 
-        $foto_ketua = $request->file('foto_ketua');
-        $nama_dokumen2 = 'foto_ketua' . date('Ymdhis') . '.' . $request->file('foto_ketua')->getClientOriginalExtension();
-        $foto_ketua->move($tes . '/pembaruan/', $nama_dokumen2);
+        $akte_pendirian = $request->file('akte_pendirian');
+        $nama_dokumen2 = 'akte_pendirian' . date('Ymdhis') . '.' . $request->file('akte_pendirian')->getClientOriginalExtension();
+        $akte_pendirian->move($tes . '/', $nama_dokumen2);
+
+        $adrt = $request->file('adrt');
+        $nama_dokumen3 = 'adrt' . date('Ymdhis') . '.' . $request->file('adrt')->getClientOriginalExtension();
+        $adrt->move($tes . '/', $nama_dokumen3);
+
+        $surat_keputusan = $request->file('surat_keputusan');
+        $nama_dokumen4 = 'surat_keputusan' . date('Ymdhis') . '.' . $request->file('surat_keputusan')->getClientOriginalExtension();
+        $surat_keputusan->move($tes . '/', $nama_dokumen4);
+
+        $bioperpanjang_pengurus = $request->file('bioperpanjang_pengurus');
+        $nama_dokumen5 = 'bioperpanjang_pengurus' . date('Ymdhis') . '.' . $request->file('bioperpanjang_pengurus')->getClientOriginalExtension();
+        $bioperpanjang_pengurus->move($tes . '/', $nama_dokumen5);
+
+        $KTP = $request->file('ktp');
+        $nama_dokumen6 = 'KTP' . date('Ymdhis') . '.' . $request->file('ktp')->getClientOriginalExtension();
+        $KTP->move($tes . '/', $nama_dokumen6);
+
+        $foto = $request->file('foto');
+        $nama_dokumen7 = 'foto' . date('Ymdhis') . '.' . $request->file('foto')->getClientOriginalExtension();
+        $foto->move($tes . '/', $nama_dokumen7);
 
         $npwp = $request->file('npwp');
-        $nama_dokumen3 = 'npwp' . date('Ymdhis') . '.' . $request->file('npwp')->getClientOriginalExtension();
-        $npwp->move($tes . '/pembaruan/', $nama_dokumen3);
+        $nama_dokumen8 = 'npwp' . date('Ymdhis') . '.' . $request->file('npwp')->getClientOriginalExtension();
+        $npwp->move($tes . '/', $nama_dokumen8);
 
-        $validasi['sk_pengurusan'] = $nama_dokumen1;
-        $validasi['foto_ketua'] = $nama_dokumen2;
-        $validasi['npwp'] = $nama_dokumen3;
-        $validasi['id_user'] = auth()->user()->id;
-
-        // dd($validasi);
-
-        Perpanjang::create($validasi);
-
-        //     dump($request->all()); // melihat data yang disubmit
-        // $post = Post::create($request->all());
-        // dump($post); // Melihat apakah model benar-benar berhasil dibuat.
-        // $subscribers = User::subscribing($post->creator)->get();
-        // dd($subscribers); // Melihat data yang diambil dan berhenti eksekusi.
-        // Notification::send($subscribers, NewPostNotification($post));
-        // return response()->json(['data' => $post]);
-
-        return redirect('/perpanjang')->with('success', 'Berhasil di tambah data');
+        $foto_kantor = $request->file('foto_kantor');
+        $nama_dokumen9 = 'foto_kantor' . date('Ymdhis') . '.' . $request->file('foto_kantor')->getClientOriginalExtension();
+        $foto_kantor->move($tes . '/', $nama_dokumen9);
 
         /**
          * Show the form for creating a new resource.
@@ -74,5 +144,695 @@ class PerpanjangController extends Controller
          * https://github.com/Ays1234
          * https://serbaotodidak.com/
          */
+
+        $surat_ketertiban = $request->file('surat_ketertiban');
+        $nama_dokumen10 = 'surat_ketertiban' . date('Ymdhis') . '.' . $request->file('surat_ketertiban')->getClientOriginalExtension();
+        $surat_ketertiban->move($tes . '/', $nama_dokumen10);
+
+        $surat_tidak_avilasi = $request->file('surat_tidak_avilasi');
+        $nama_dokumen11 = 'surat_tidak_avilasi' . date('Ymdhis') . '.' . $request->file('surat_tidak_avilasi')->getClientOriginalExtension();
+        $surat_tidak_avilasi->move($tes . '/', $nama_dokumen11);
+
+        $surat_konflik = $request->file('surat_konflik');
+        $nama_dokumen12 = 'surat_konflik' . date('Ymdhis') . '.' . $request->file('surat_konflik')->getClientOriginalExtension();
+        $surat_konflik->move($tes . '/', $nama_dokumen12);
+
+        $surat_hak_cipta = $request->file('surat_hak_cipta');
+        $nama_dokumen13 = 'surat_hak_cipta' . date('Ymdhis') . '.' . $request->file('surat_hak_cipta')->getClientOriginalExtension();
+        $surat_hak_cipta->move($tes . '/', $nama_dokumen13);
+
+        $surat_laporan = $request->file('surat_laporan');
+        $nama_dokumen14 = 'surat_laporan' . date('Ymdhis') . '.' . $request->file('surat_laporan')->getClientOriginalExtension();
+        $surat_laporan->move($tes . '/', $nama_dokumen14);
+
+        $surat_absah = $request->file('surat_absah');
+        $nama_dokumen15 = 'surat_absah' . date('Ymdhis') . '.' . $request->file('surat_absah')->getClientOriginalExtension();
+        $surat_absah->move($tes . '/', $nama_dokumen15);
+
+        $surat_rekom_agama = $request->file('surat_rekom_agama');
+        $nama_dokumen16 = 'surat_rekom_agama' . date('Ymdhis') . '.' . $request->file('surat_rekom_agama')->getClientOriginalExtension();
+        $surat_rekom_agama->move($tes . '/', $nama_dokumen16);
+
+        $surat_rekom_skpd = $request->file('surat_rekom_skpd');
+        $nama_dokumen17 = 'surat_rekom_skpd' . date('Ymdhis') . '.' . $request->file('surat_rekom_skpd')->getClientOriginalExtension();
+        $surat_rekom_skpd->move($tes . '/', $nama_dokumen17);
+
+        $surat_rekom_skpd_kerja = $request->file('surat_rekom_skpd_kerja');
+        $nama_dokumen18 = 'surat_rekom_skpd_kerja' . date('Ymdhis') . '.' . $request->file('surat_rekom_skpd_kerja')->getClientOriginalExtension();
+        $surat_rekom_skpd_kerja->move($tes . '/', $nama_dokumen18);
+
+        $surat_rekom_kesediaan = $request->file('surat_rekom_kesediaan');
+        $nama_dokumen19 = 'surat_rekom_kesediaan' . date('Ymdhis') . '.' . $request->file('surat_rekom_kesediaan')->getClientOriginalExtension();
+        $surat_rekom_kesediaan->move($tes . '/', $nama_dokumen19);
+
+        $izasah = $request->file('surat_izasah');
+        $nama_dokumen20 = 'surat_izasah' . date('Ymdhis') . '.' . $request->file('surat_izasah')->getClientOriginalExtension();
+        $izasah->move($tes . '/', $nama_dokumen20);
+
+        $skt = $request->file('skt');
+        $nama_dokumen21 = 'skt' . date('Ymdhis') . '.' . $request->file('skt')->getClientOriginalExtension();
+        $skt->move($tes . '/', $nama_dokumen21);
+
+        $surat_keterangan_domisili = $request->file('surat_keterangan_domisili');
+        $nama_dokumen22 = 'surat_keterangan_domisili' . date('Ymdhis') . '.' . $request->file('surat_keterangan_domisili')->getClientOriginalExtension();
+        $surat_keterangan_domisili->move($tes . '/', $nama_dokumen22);
+
+        $program = $request->file('program');
+        $nama_dokumen23 = 'program' . date('Ymdhis') . '.' . $request->file('program')->getClientOriginalExtension();
+        $program->move($tes . '/', $nama_dokumen23);
+
+        // $keabsahan_kantor = $request->file('keabsahan_kantor');
+        // $nama_dokumen24 = 'keabsahan_kantor' . date('Ymdhis') . '.' . $request->file('keabsahan_kantor')->getClientOriginalExtension();
+        // $keabsahan_kantor->move($tes . '/', $nama_dokumen24);
+
+        $validasi['surat_pendaftaran'] = $nama_dokumen1;
+        $validasi['akte_pendirian'] = $nama_dokumen2;
+        $validasi['adrt'] = $nama_dokumen3;
+        $validasi['surat_keputusan'] = $nama_dokumen4;
+        $validasi['bioperpanjang_pengurus'] = $nama_dokumen5;
+
+        $validasi['ktp'] = $nama_dokumen6;
+        $validasi['foto'] = $nama_dokumen7;
+
+        $validasi['npwp'] = $nama_dokumen8;
+        $validasi['foto_kantor'] = $nama_dokumen9;
+        $validasi['surat_ketertiban'] = $nama_dokumen10;
+        $validasi['surat_tidak_avilasi'] = $nama_dokumen11;
+        $validasi['surat_konflik'] = $nama_dokumen12;
+        $validasi['surat_hak_cipta'] = $nama_dokumen13;
+        $validasi['surat_laporan'] = $nama_dokumen14;
+        $validasi['surat_absah'] = $nama_dokumen15;
+        $validasi['surat_rekom_agama'] = $nama_dokumen16;
+        $validasi['surat_rekom_skpd'] = $nama_dokumen17;
+        $validasi['surat_rekom_skpd_kerja'] = $nama_dokumen18;
+        $validasi['surat_rekom_kesediaan'] = $nama_dokumen19;
+        $validasi['surat_izasah'] = $nama_dokumen20;
+        $validasi['skt'] = $nama_dokumen21;
+
+        $validasi['surat_keterangan_domisili'] = $nama_dokumen22;
+        $validasi['program'] = $nama_dokumen23;
+        // $validasi['keabsahan_kantor'] = $nama_dokumen24;
+        $validasi['id_user'] = auth()->user()->id;
+ Perpanjang::create($validasi);
+
+        dd($validasi);
+
+        //     dump($request->all()); // melihat perpanjang yang disubmit
+        // $post = Post::create($request->all());
+        // dump($post); // Melihat apakah model benar-benar berhasil dibuat.
+        // $subscribers = User::subscribing($post->creator)->get();
+        // dd($subscribers); // Melihat perpanjang yang diambil dan berhenti eksekusi.
+        // Notification::send($subscribers, NewPostNotification($post));
+        // return response()->json(['perpanjang' => $post]);
+
+        return redirect('/dashboard')->with('success', 'Berhasil di tambah perpanjang');
+
+        /**
+         * Show the form for creating a new resource.
+         * Whatapps 6289631031237
+         * email : yogimaulana100@gmail.com
+         * https://github.com/Ays1234
+         * https://serbaotodidak.com/
+         */
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\perpanjang  $perpanjang
+     * @return \Illuminate\Http\Response
+     */
+    public function show(perpanjang $perpanjang)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\perpanjang  $perpanjang
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(perpanjang $perpanjang)
+    {
+        //
+        return view('user.edit', ['judul' => 'Halaman Edit perpanjang', 'perpanjang' => $perpanjang]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\perpanjang  $perpanjang
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, perpanjang $perpanjang)
+    {
+        //
+
+        //
+        //
+        $tes = auth()->user()->email;
+        $anusurat_terdaftar_dikemenkumham = $tes . '/' . $perpanjang->surat_terdaftar_dikemenkumham;
+        $anusurat_pendaftaran = $tes . '/' . $perpanjang->surat_pendaftaran;
+        $anuakte_pendirian = $tes . '/' . $perpanjang->akte_pendirian;
+        $anuadrt = $tes . '/' . $perpanjang->adrt;
+        $anukeabsahan_kantor = $tes . '/' . $perpanjang->keabsahan_kantor;
+        $anuprogram = $tes . '/' . $perpanjang->program;
+        $anusurat_keputusan = $tes . '/' . $perpanjang->surat_keputusan;
+        $anubioperpanjang_pengurus = $tes . '/' . $perpanjang->bioperpanjang_pengurus;
+        $anuktp = $tes . '/' . $perpanjang->ktp;
+        $anufoto = $tes . '/' . $perpanjang->foto;
+        $anusurat_keterangan_domisili = $tes . '/' . $perpanjang->surat_keterangan_domisili;
+        $anunpwp = $tes . '/' . $perpanjang->npwp;
+        $anufoto_kantor = $tes . '/' . $perpanjang->foto_kantor;
+        $anusurat_ketertiban = $tes . '/' . $perpanjang->surat_ketertiban;
+        $anusurat_tidak_avilasi = $tes . '/' . $perpanjang->surat_tidak_avilasi;
+        $anusurat_konflik = $tes . '/' . $perpanjang->surat_konflik;
+        $anusurat_hak_cipta = $tes . '/' . $perpanjang->surat_hak_cipta;
+        $anusurat_laporan = $tes . '/' . $perpanjang->surat_laporan;
+        $anusurat_absah = $tes . '/' . $perpanjang->surat_absah;
+        $anusurat_rekom_agama = $tes . '/' . $perpanjang->surat_rekom_agama;
+        $anusurat_rekom_skpd = $tes . '/' . $perpanjang->surat_rekom_skpd;
+        $anusurat_rekom_skpd_kerja = $tes . '/' . $perpanjang->surat_rekom_skpd_kerja;
+        $anusurat_rekom_kesediaan = $tes . '/' . $perpanjang->surat_rekom_kesediaan;
+        $anusurat_izasah = $tes . '/' . $perpanjang->surat_izasah;
+        $anuskt = $tes . '/' . $perpanjang->skt;
+        // return $request->file('image')->store($tes);
+
+        $validasi = $request->validate([
+            'surat_terdaftar_dikemenkumham' => 'file|mimes:pdf,png,jpg|max:1024',
+            'surat_pendaftaran' => 'file|mimes:pdf,png,jpg|max:1024',
+            'akte_pendirian' => 'file|mimes:pdf,png,jpg|max:1024',
+            'adrt' => 'file|mimes:pdf,png,jpg|max:1024',
+            'keabsahan_kantor' => 'file|mimes:pdf,png,jpg|max:1024',
+            'program' => 'file|mimes:pdf,png,jpg|max:1024',
+            'surat_keputusan' => 'file|mimes:pdf,png,jpg|max:1024',
+            'bioperpanjang_pengurus' => 'file|mimes:pdf,png,jpg|max:1024',
+            'ktp' => 'file|mimes:pdf,png,jpg|max:1024',
+            'foto' => 'file|mimes:pdf,png,jpg|max:1024',
+            'surat_keterangan_domisili' => 'file|mimes:pdf,png,jpg|max:1024',
+            'npwp' => 'file|mimes:pdf,png,jpg|max:1024',
+            'foto_kantor' => 'file|mimes:pdf,png,jpg|max:1024',
+            'surat_ketertiban' => 'file|mimes:pdf,png,jpg|max:1024',
+            'surat_tidak_avilasi' => 'file|mimes:pdf,png,jpg|max:1024',
+            'surat_konflik' => 'file|mimes:pdf,png,jpg|max:1024',
+            'surat_hak_cipta' => 'file|mimes:pdf,png,jpg|max:1024',
+            'surat_laporan' => 'file|mimes:pdf,png,jpg|max:1024',
+            'surat_absah' => 'file|mimes:pdf,png,jpg|max:1024',
+            'surat_rekom_agama' => 'file|mimes:pdf,png,jpg|max:1024',
+            'surat_rekom_skpd' => 'file|mimes:pdf,png,jpg|max:1024',
+            'surat_rekom_skpd_kerja' => 'file|mimes:pdf,png,jpg|max:1024',
+            'surat_rekom_kesediaan' => 'file|mimes:pdf,png,jpg|max:1024',
+            'surat_izasah' => 'file|mimes:pdf,png,jpg|max:1024',
+            'skt' => 'file|mimes:pdf,png,jpg|max:1024',
+
+            /**
+             * Show the form for creating a new resource.
+             * Whatapps 6289631031237
+             * email : yogimaulana100@gmail.com
+             * https://github.com/Ays1234
+             * https://serbaotodidak.com/
+             */
+        ]);
+
+        if ($request->hasFile('surat_terdaftar_dikemenkumham')) {
+            // cek jika ada
+            if (File::exists($anusurat_terdaftar_dikemenkumham)) {
+                File::delete($anusurat_terdaftar_dikemenkumham);
+            }
+
+            $surat_terdaftar_dikemenkumham = $request->file('surat_terdaftar_dikemenkumham');
+            $nama_dokumen25 = 'surat_terdaftar_dikemenkumham' . date('Ymdhis') . '.' . $request->file('surat_terdaftar_dikemenkumham')->getClientOriginalExtension();
+            $surat_terdaftar_dikemenkumham->move($tes . '/', $nama_dokumen25);
+            $validasi['surat_terdaftar_dikemenkumham'] = $nama_dokumen25;
+        }
+
+        if ($request->hasFile('surat_pendaftaran')) {
+            // cek jika ada
+            if (File::exists($anusurat_pendaftaran)) {
+                File::delete($anusurat_pendaftaran);
+            }
+
+            $surat_pendaftaran = $request->file('surat_pendaftaran');
+            $nama_dokumen1 = 'surat_pendaftaran' . date('Ymdhis') . '.' . $request->file('surat_pendaftaran')->getClientOriginalExtension();
+            $surat_pendaftaran->move($tes . '/', $nama_dokumen1);
+            $validasi['surat_pendaftaran'] = $nama_dokumen1;
+        }
+
+        if ($request->hasFile('akte_pendirian')) {
+            // cek jika ada
+            if (File::exists($anuakte_pendirian)) {
+                File::delete($anuakte_pendirian);
+            }
+
+            $akte_pendirian = $request->file('akte_pendirian');
+
+            $nama_dokumen2 = 'akte_pendirian' . date('Ymdhis') . '.' . $request->file('akte_pendirian')->getClientOriginalExtension();
+            $akte_pendirian->move($tes . '/', $nama_dokumen2);
+
+            $validasi['akte_pendirian'] = $nama_dokumen2;
+        }
+
+        if ($request->hasFile('adrt')) {
+            // cek jika ada
+            if (File::exists($anuadrt)) {
+                File::delete($anuadrt);
+            }
+
+            $adrt = $request->file('adrt');
+
+            $nama_dokumen3 = 'adrt' . date('Ymdhis') . '.' . $request->file('adrt')->getClientOriginalExtension();
+            $adrt->move($tes . '/', $nama_dokumen3);
+
+            $validasi['adrt'] = $nama_dokumen3;
+        }
+
+        if ($request->hasFile('surat_keputusan')) {
+            // cek jika ada
+            if (File::exists($anusurat_keputusan)) {
+                File::delete($anusurat_keputusan);
+            }
+
+            $nama_dokumen4 = 'surat_keputusan' . date('Ymdhis') . '.' . $request->file('surat_keputusan')->getClientOriginalExtension();
+            $surat_keputusan->move($tes . '/', $nama_dokumen4);
+            $validasi['surat_keputusan'] = $nama_dokumen4;
+        }
+
+        if ($request->hasFile('bioperpanjang_pengurus')) {
+            // cek jika ada
+            if (File::exists($anubioperpanjang_pengurus)) {
+                File::delete($anubioperpanjang_pengurus);
+            }
+
+            $bioperpanjang_pengurus = $request->file('bioperpanjang_pengurus');
+
+            $nama_dokumen5 = 'bioperpanjang_pengurus' . date('Ymdhis') . '.' . $request->file('bioperpanjang_pengurus')->getClientOriginalExtension();
+            $bioperpanjang_pengurus->move($tes . '/', $nama_dokumen5);
+
+            $validasi['bioperpanjang_pengurus'] = $nama_dokumen5;
+
+            /** bioperpanjang_pengurus
+             * Show the form for creating a new resource.
+             * Whatapps 6289631031237
+             * email : yogimaulana100@gmail.com
+             * https://github.com/Ays1234
+             * https://serbaotodidak.com/
+             */
+        }
+
+        if ($request->hasFile('ktp')) {
+            // cek jika ada
+            if (File::exists($anuktp)) {
+                File::delete($anuktp);
+            }
+            $KTP = $request->file('ktp');
+            $nama_dokumen6 = 'KTP' . date('Ymdhis') . '.' . $request->file('ktp')->getClientOriginalExtension();
+            $KTP->move($tes . '/', $nama_dokumen6);
+            $validasi['ktp'] = $nama_dokumen6;
+            /** ktp
+             * Show the form for creating a new resource.
+             * Whatapps 6289631031237
+             * email : yogimaulana100@gmail.com
+             * https://github.com/Ays1234
+             * https://serbaotodidak.com/
+             */
+        }
+
+        if ($request->hasFile('foto')) {
+            if (File::exists($anufoto)) {
+                File::delete($anufoto);
+            }
+
+            $foto = $request->file('foto');
+            $nama_dokumen7 = 'foto' . date('Ymdhis') . '.' . $request->file('foto')->getClientOriginalExtension();
+            $foto->move($tes . '/', $nama_dokumen7);
+            $validasi['foto'] = $nama_dokumen7;
+            /** foto
+             * Show the form for creating a new resource.
+             * Whatapps 6289631031237
+             * email : yogimaulana100@gmail.com
+             * https://github.com/Ays1234
+             * https://serbaotodidak.com/
+             */
+        }
+
+        if ($request->hasFile('npwp')) {
+            if (File::exists($anunpwp)) {
+                File::delete($anunpwp);
+            }
+
+            $npwp = $request->file('npwp');
+            $nama_dokumen8 = 'npwp' . date('Ymdhis') . '.' . $request->file('npwp')->getClientOriginalExtension();
+            $npwp->move($tes . '/', $nama_dokumen8);
+            $validasi['npwp'] = $nama_dokumen8;
+            /** npwp
+             * Show the form for creating a new resource.
+             * Whatapps 6289631031237
+             * email : yogimaulana100@gmail.com
+             * https://github.com/Ays1234
+             * https://serbaotodidak.com/
+             */
+        }
+
+        if ($request->hasFile('foto_kantor')) {
+            if (File::exists($anufoto_kantor)) {
+                File::delete($anufoto_kantor);
+            }
+
+            $foto_kantor = $request->file('foto_kantor');
+            $nama_dokumen9 = 'foto_kantor' . date('Ymdhis') . '.' . $request->file('foto_kantor')->getClientOriginalExtension();
+            $foto_kantor->move($tes . '/', $nama_dokumen9);
+            $validasi['foto_kantor'] = $nama_dokumen9;
+            /** foto_kantor
+             * Show the form for creating a new resource.
+             * Whatapps 6289631031237
+             * email : yogimaulana100@gmail.com
+             * https://github.com/Ays1234
+             * https://serbaotodidak.com/
+             */
+        }
+
+        if ($request->hasFile('surat_ketertiban')) {
+            if (File::exists($anusurat_ketertiban)) {
+                File::delete($anusurat_ketertiban);
+            }
+
+            $surat_ketertiban = $request->file('surat_ketertiban');
+            $nama_dokumen10 = 'surat_ketertiban' . date('Ymdhis') . '.' . $request->file('surat_ketertiban')->getClientOriginalExtension();
+            $surat_ketertiban->move($tes . '/', $nama_dokumen10);
+            $validasi['surat_ketertiban'] = $nama_dokumen10;
+            /** surat_ketertiban
+             * Show the form for creating a new resource.
+             * Whatapps 6289631031237
+             * email : yogimaulana100@gmail.com
+             * https://github.com/Ays1234
+             * https://serbaotodidak.com/
+             */
+        }
+
+        /**
+         * Show the form for creating a new resource.
+         * Whatapps 6289631031237
+         * email : yogimaulana100@gmail.com
+         * https://github.com/Ays1234
+         * https://serbaotodidak.com/
+         */
+
+        if ($request->hasFile('surat_tidak_avilasi')) {
+            if (File::exists($anusurat_tidak_avilasi)) {
+                File::delete($anusurat_tidak_avilasi);
+            }
+
+            $surat_tidak_avilasi = $request->file('surat_tidak_avilasi');
+            $nama_dokumen11 = 'surat_tidak_avilasi' . date('Ymdhis') . '.' . $request->file('surat_tidak_avilasi')->getClientOriginalExtension();
+            $surat_tidak_avilasi->move($tes . '/', $nama_dokumen11);
+            $validasi['surat_tidak_avilasi'] = $nama_dokumen11;
+            /** surat_tidak_avilasi
+             * Show the form for creating a new resource.
+             * Whatapps 6289631031237
+             * email : yogimaulana100@gmail.com
+             * https://github.com/Ays1234
+             * https://serbaotodidak.com/
+             */
+        }
+
+        if ($request->hasFile('surat_konflik')) {
+            if (File::exists($anusurat_konflik)) {
+                File::delete($anusurat_konflik);
+            }
+
+            $surat_konflik = $request->file('surat_konflik');
+            $nama_dokumen12 = 'surat_konflik' . date('Ymdhis') . '.' . $request->file('surat_konflik')->getClientOriginalExtension();
+            $surat_konflik->move($tes . '/', $nama_dokumen12);
+            $validasi['surat_konflik'] = $nama_dokumen12;
+            /** surat_konflik
+             * Show the form for creating a new resource.
+             * Whatapps 6289631031237
+             * email : yogimaulana100@gmail.com
+             * https://github.com/Ays1234
+             * https://serbaotodidak.com/
+             */
+        }
+
+        if ($request->hasFile('surat_hak_cipta')) {
+            if (File::exists($anusurat_hak_cipta)) {
+                File::delete($anusurat_hak_cipta);
+            }
+
+            $surat_hak_cipta = $request->file('surat_hak_cipta');
+            $nama_dokumen13 = 'surat_hak_cipta' . date('Ymdhis') . '.' . $request->file('surat_hak_cipta')->getClientOriginalExtension();
+            $surat_hak_cipta->move($tes . '/', $nama_dokumen13);
+            $validasi['surat_hak_cipta'] = $nama_dokumen13;
+            /** surat_hak_cipta
+             * Show the form for creating a new resource.
+             * Whatapps 6289631031237
+             * email : yogimaulana100@gmail.com
+             * https://github.com/Ays1234
+             * https://serbaotodidak.com/
+             */
+        }
+
+        if ($request->hasFile('surat_laporan')) {
+            if (File::exists($anusurat_laporan)) {
+                File::delete($anusurat_laporan);
+            }
+
+            $surat_laporan = $request->file('surat_laporan');
+            $nama_dokumen14 = 'surat_laporan' . date('Ymdhis') . '.' . $request->file('surat_laporan')->getClientOriginalExtension();
+            $surat_laporan->move($tes . '/', $nama_dokumen14);
+            $validasi['surat_laporan'] = $nama_dokumen14;
+            /** surat_laporan
+             * Show the form for creating a new resource.
+             * Whatapps 6289631031237
+             * email : yogimaulana100@gmail.com
+             * https://github.com/Ays1234
+             * https://serbaotodidak.com/
+             */
+        }
+
+        if ($request->hasFile('surat_absah')) {
+            if (File::exists($anusurat_absah)) {
+                File::delete($anusurat_absah);
+            }
+
+            $surat_absah = $request->file('surat_absah');
+            $nama_dokumen15 = 'surat_absah' . date('Ymdhis') . '.' . $request->file('surat_absah')->getClientOriginalExtension();
+            $surat_absah->move($tes . '/', $nama_dokumen15);
+            $validasi['surat_absah'] = $nama_dokumen15;
+            /** surat_absah
+             * Show the form for creating a new resource.
+             * Whatapps 6289631031237
+             * email : yogimaulana100@gmail.com
+             * https://github.com/Ays1234
+             * https://serbaotodidak.com/
+             */
+        }
+
+        if ($request->hasFile('surat_rekom_agama')) {
+            if (File::exists($anusurat_rekom_agama)) {
+                File::delete($anusurat_rekom_agama);
+            }
+
+            $surat_rekom_agama = $request->file('surat_rekom_agama');
+            $nama_dokumen16 = 'surat_rekom_agama' . date('Ymdhis') . '.' . $request->file('surat_rekom_agama')->getClientOriginalExtension();
+            $surat_rekom_agama->move($tes . '/', $nama_dokumen16);
+            $validasi['surat_rekom_agama'] = $nama_dokumen16;
+            /** surat_rekom_agama
+             * Show the form for creating a new resource.
+             * Whatapps 6289631031237
+             * email : yogimaulana100@gmail.com
+             * https://github.com/Ays1234
+             * https://serbaotodidak.com/
+             */
+        }
+
+        if ($request->hasFile('surat_rekom_skpd')) {
+            if (File::exists($anusurat_rekom_skpd)) {
+                File::delete($anusurat_rekom_skpd);
+            }
+
+            $surat_rekom_skpd = $request->file('surat_rekom_skpd');
+            $nama_dokumen17 = 'surat_rekom_skpd' . date('Ymdhis') . '.' . $request->file('surat_rekom_skpd')->getClientOriginalExtension();
+            $surat_rekom_skpd->move($tes . '/', $nama_dokumen17);
+            $validasi['surat_rekom_skpd'] = $nama_dokumen17;
+            /** surat_rekom_skpd
+             * Show the form for creating a new resource.
+             * Whatapps 6289631031237
+             * email : yogimaulana100@gmail.com
+             * https://github.com/Ays1234
+             * https://serbaotodidak.com/
+             */
+        }
+
+        if ($request->hasFile('surat_rekom_skpd_kerja')) {
+            if (File::exists($anusurat_rekom_skpd_kerja)) {
+                File::delete($anusurat_rekom_skpd_kerja);
+            }
+
+            $surat_rekom_skpd = $request->file('surat_rekom_skpd_kerja');
+            $nama_dokumen18 = 'surat_rekom_skpd_kerja' . date('Ymdhis') . '.' . $request->file('surat_rekom_skpd_kerja')->getClientOriginalExtension();
+            $surat_rekom_skpd->move($tes . '/', $nama_dokumen18);
+            $validasi['surat_rekom_skpd_kerja'] = $nama_dokumen18;
+            /** surat_rekom_skpd_kerja
+             * Show the form for creating a new resource.
+             * Whatapps 6289631031237
+             * email : yogimaulana100@gmail.com
+             * https://github.com/Ays1234
+             * https://serbaotodidak.com/
+             */
+        }
+
+        if ($request->hasFile('surat_rekom_kesediaan')) {
+            if (File::exists($anusurat_rekom_kesediaan)) {
+                File::delete($anusurat_rekom_kesediaan);
+            }
+
+            $surat_rekom_kesediaan = $request->file('surat_rekom_kesediaan');
+            $nama_dokumen19 = 'surat_rekom_kesediaan' . date('Ymdhis') . '.' . $request->file('surat_rekom_kesediaan')->getClientOriginalExtension();
+            $surat_rekom_kesediaan->move($tes . '/', $nama_dokumen19);
+            $validasi['surat_rekom_kesediaan'] = $nama_dokumen19;
+            /** surat_rekom_kesediaan
+             * Show the form for creating a new resource.
+             * Whatapps 6289631031237
+             * email : yogimaulana100@gmail.com
+             * https://github.com/Ays1234
+             * https://serbaotodidak.com/
+             */
+        }
+
+        if ($request->hasFile('surat_izasah')) {
+            if (File::exists($anusurat_izasah)) {
+                File::delete($anusurat_izasah);
+            }
+
+            $izasah = $request->file('surat_izasah');
+            $nama_dokumen20 = 'surat_izasah' . date('Ymdhis') . '.' . $request->file('surat_izasah')->getClientOriginalExtension();
+            $izasah->move($tes . '/', $nama_dokumen20);
+            $validasi['surat_izasah'] = $nama_dokumen20;
+            /** surat_izasah
+             * Show the form for creating a new resource.
+             * Whatapps 6289631031237
+             * email : yogimaulana100@gmail.com
+             * https://github.com/Ays1234
+             * https://serbaotodidak.com/
+             */
+        }
+
+        if ($request->hasFile('skt')) {
+            if (File::exists($anuskt)) {
+                File::delete($anuskt);
+            }
+
+            $skt = $request->file('skt');
+            $nama_dokumen21 = 'skt' . date('Ymdhis') . '.' . $request->file('skt')->getClientOriginalExtension();
+            $skt->move($tes . '/', $nama_dokumen21);
+            $validasi['skt'] = $nama_dokumen21;
+            /** skt
+             * Show the form for creating a new resource.
+             * Whatapps 6289631031237
+             * email : yogimaulana100@gmail.com
+             * https://github.com/Ays1234
+             * https://serbaotodidak.com/
+             */
+        }
+
+        if ($request->hasFile('surat_keterangan_domisili')) {
+            if (File::exists($anusurat_keterangan_domisili)) {
+                File::delete($anusurat_keterangan_domisili);
+            }
+
+            $surat_keterangan_domisili = $request->file('surat_keterangan_domisili');
+            $nama_dokumen22 = 'surat_keterangan_domisili' . date('Ymdhis') . '.' . $request->file('surat_keterangan_domisili')->getClientOriginalExtension();
+            $surat_keterangan_domisili->move($tes . '/', $nama_dokumen22);
+            $validasi['surat_keterangan_domisili'] = $nama_dokumen22;
+            /** surat_keterangan_domisili
+             * Show the form for creating a new resource.
+             * Whatapps 6289631031237
+             * email : yogimaulana100@gmail.com
+             * https://github.com/Ays1234
+             * https://serbaotodidak.com/
+             */
+        }
+
+        if ($request->hasFile('program')) {
+            if (File::exists($anuprogram)) {
+                File::delete($anuprogram);
+            }
+
+            $program = $request->file('program');
+            $nama_dokumen23 = 'program' . date('Ymdhis') . '.' . $request->file('program')->getClientOriginalExtension();
+            $program->move($tes . '/', $nama_dokumen23);
+            $validasi['program'] = $nama_dokumen23;
+            /** program
+             * Show the form for creating a new resource.
+             * Whatapps 6289631031237
+             * email : yogimaulana100@gmail.com
+             * https://github.com/Ays1234
+             * https://serbaotodidak.com/
+             */
+        }
+
+        if ($request->hasFile('keabsahan_kantor')) {
+            if (File::exists($anukeabsahan_kantor)) {
+                File::delete($anukeabsahan_kantor);
+            }
+
+            $keabsahan_kantor = $request->file('keabsahan_kantor');
+            $nama_dokumen24 = 'keabsahan_kantor' . date('Ymdhis') . '.' . $request->file('keabsahan_kantor')->getClientOriginalExtension();
+            $keabsahan_kantor->move($tes . '/', $nama_dokumen24);
+            $validasi['keabsahan_kantor'] = $nama_dokumen24;
+            /** keabsahan_kantor
+             * Show the form for creating a new resource.
+             * Whatapps 6289631031237
+             * email : yogimaulana100@gmail.com
+             * https://github.com/Ays1234
+             * https://serbaotodidak.com/
+             */
+        }
+
+        //   $validasi['surat_terdaftar_dikemenkumham'] = $anusurat_terdaftar_dikemenkumham;
+        // $validasi['akte_pendirian'] = $nama_dokumen2;
+        // $validasi['adrt'] = $nama_dokumen3;
+        // $validasi['surat_keputusan'] = $nama_dokumen4;
+        // $validasi['bioperpanjang_pengurus'] = $nama_dokumen5;
+
+        // $validasi['ktp'] = $nama_dokumen6;
+        // $validasi['foto'] = $nama_dokumen7;
+
+        // $validasi['npwp'] = $nama_dokumen8;
+        // $validasi['foto_kantor'] = $nama_dokumen9;
+        // $validasi['surat_ketertiban'] = $nama_dokumen10;
+        // $validasi['surat_tidak_avilasi'] = $nama_dokumen11;
+        // $validasi['surat_konflik'] = $nama_dokumen12;
+        // $validasi['surat_hak_cipta'] = $nama_dokumen13;
+        // $validasi['surat_laporan'] = $nama_dokumen14;
+        // $validasi['surat_absah'] = $nama_dokumen15;
+        // $validasi['surat_rekom_agama'] = $nama_dokumen16;
+        // $validasi['surat_rekom_skpd'] = $nama_dokumen17;
+        // $validasi['surat_rekom_skpd_kerja'] = $nama_dokumen18;
+        // $validasi['surat_rekom_kesediaan'] = $nama_dokumen19;
+        // $validasi['surat_izasah'] = $nama_dokumen20;
+        // $validasi['skt'] = $nama_dokumen21;
+
+        // $validasi['surat_keterangan_domisili'] = $nama_dokumen22;
+        // $validasi['program'] = $nama_dokumen23;
+        // $validasi['keabsahan_kantor'] = $nama_dokumen24;
+        // $validasi['surat_terdaftar_dikemenkumham'] = $nama_dokumen25;
+        $validasi['id_user'] = auth()->user()->id;
+
+        perpanjang::where('id', $perpanjang->id)->update($validasi);
+        return redirect('/dashboard')->with('success', 'Berhasil di Update perpanjang');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\perpanjang  $perpanjang
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(perpanjang $perpanjang)
+    {
+        //
     }
 }

@@ -17,10 +17,14 @@ use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\VerifikasiController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\PerpanjangController;
+use App\Http\Controllers\PembaruanController;
+use App\Http\Controllers\ForgotPasswordController;
 
 use App\Models\Dashboard;
 use Illuminate\Http\Request;
 use App\Models\Upload;
+use App\Models\Perpanjang;
+use App\Models\Pembaruan;
 use App\Models\Categori;
 use App\Models\Home;
 
@@ -44,16 +48,15 @@ use App\Models\Home;
  */
 
 // ----------------------------- forget password ----------------------------//
-Route::get('/reset-password', [App\Http\Controllers\AuthUser\ResetPasswordController::class, 'index'])->name('reset-password');
-Route::post('/reset-password', [App\Http\Controllers\AuthUser\ResetPasswordController::class, 'reset-password'])->name('user.reset-password');
+// Route::get('/reset-password', [App\Http\Controllers\AuthUser\ResetPasswordController::class, 'dapatPassword'])->name('reset-password');
 
 Route::get('/verifikasi', [App\Http\Controllers\AuthUser\VerifikasiController::class, 'index'])->name('user.verifikasi');
 Route::post('/verifikasi/verifikasi', [App\Http\Controllers\AuthUser\VerifikasiController::class, 'verifikasi'])->name('user.add.verifikasi');
 Route::post('/verifikasi/reset', [App\Http\Controllers\AuthUser\VerifikasiController::class, 'reset'])->name('user.reset.verifikasi');
 
 // ----------------------------- reset password -----------------------------//
-Route::get('reset-password/{token}', [App\Http\Controllers\AuthUser\ResetPasswordController::class, 'getPassword']);
-Route::post('reset-password', [App\Http\Controllers\AuthUser\ResetPasswordController::class, 'updatePassword']);
+// Route::get('reset-password/{token}', [App\Http\Controllers\AuthUser\ResetPasswordController::class, 'getPassword']);
+// Route::post('reset-password', [App\Http\Controllers\AuthUser\ResetPasswordController::class, 'updatePassword']);
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
@@ -63,15 +66,24 @@ Route::get('/categori/{categori:id}', function (Categori $categori) {
     return view('categori_berita', ['judul' => 'Categori Berita', 'beritas' => $categori->home, 'categoris' => $categori->name]);
 });
 Route::resource('/data', DataController::class);
-// Route::resource('/perpanjang', PerpanjangController::class);
+Route::resource('/perpanjang', PerpanjangController::class);
+Route::resource('/pembaruan', PembaruanController::class);
+
+Route::get('/reset-password/{token}', [App\Http\Controllers\AuthUser\ResetPasswordController::class, 'getPassword']);
+Route::get('/lupa-password', [App\Http\Controllers\AuthUser\ForgotPasswordController::class, 'getEmail']);
+Route::post('/reset-password/updatePassword', [App\Http\Controllers\AuthUser\ResetPasswordController::class, 'updatePassword'])->name('user.updatereset');
+
+Route::post('/forget-password', [App\Http\Controllers\AuthUser\ForgotPasswordController::class, 'postEmail']);
 
 // router bagian loginuser
+Route::get('/awal', ['App\Http\Controllers\AuthUser\HomeController', 'index'])->name('user.awal');
 Route::get('/login', ['App\Http\Controllers\AuthUser\LoginController', 'index'])->name('user.login');
 Route::post('/keluar', ['App\Http\Controllers\AuthUser\LoginController', 'keluar'])->name('user.keluar');
 Route::post('/login', ['App\Http\Controllers\AuthUser\LoginController', 'loginuser'])->name('user.login.save');
 Route::get('/dashboard', ['App\Http\Controllers\AuthUser\AdminController', 'index'])->name('user.dashboard');
-Route::get('/perpanjang', ['App\Http\Controllers\AuthUser\PerpanjangController', 'index'])->name('user.perpanjang');
-Route::post('/perpanjang', ['App\Http\Controllers\AuthUser\PerpanjangController', 'store'])->name('user.perpanjang.save');
+// Route::get('/perpanjang', ['App\Http\Controllers\AuthUser\PerpanjangController', 'index'])->name('user.perpanjang');
+// Route::post('/perpanjang', ['App\Http\Controllers\AuthUser\PerpanjangController', 'store'])->name('user.perpanjang.save');
+// Route::get('/perpanjang/editperpanjang/{id}', ['App\Http\Controllers\AuthUser\PerpanjangController', 'editperpanjang'])->name('user.perpanjang.save');
 Route::get('/profil', ['App\Http\Controllers\AuthUser\ProfilController', 'index'])->name('profil');
 Route::post('/profil/update', ['App\Http\Controllers\AuthUser\ProfilController', 'update'])->name('user.update.profil');
 
@@ -104,9 +116,16 @@ Route::prefix('admin')
             Route::post('/berita/destroy/{id}', ['App\Http\Controllers\AuthAdmin\BeritaController', 'destroy']);
             Route::get('/berita/checkSlug', ['App\Http\Controllers\AuthAdmin\BeritaController', 'checkSlug']);
             Route::get('/menudata', ['App\Http\Controllers\AuthAdmin\MenudataController', 'index'])->name('menudata');
+            Route::get('/perpanjang', ['App\Http\Controllers\AuthAdmin\PerpanjangController', 'index'])->name('perpanjang');
             Route::post('/menudata', ['App\Http\Controllers\AuthAdmin\MenudataController', 'update'])->name('menudata.update');
+            Route::post('/perpanjang', ['App\Http\Controllers\AuthAdmin\PerpanjangController', 'update'])->name('perpanjang.update');
             Route::post('/editor', ['App\Http\Controllers\AuthAdmin\EditorController', 'uploadimage'])->name('ckeditor.upload');
 
-            Route::get('/menudata/download/{nama}', ['App\Http\Controllers\AuthAdmin\MenudataController', 'download'])->name('download');
+            Route::get('/menudata/download/{email}', ['App\Http\Controllers\AuthAdmin\MenudataController', 'download'])->name('download-menudata');
+            Route::get('/perpanjang/download/{email}', ['App\Http\Controllers\AuthAdmin\PerpanjangController', 'download'])->name('download-perpanjang');
         });
+        Route::get('/pembaruan', ['App\Http\Controllers\AuthAdmin\PembaruanController', 'index'])->name('pembaruan');
+        Route::post('/pembaruan', ['App\Http\Controllers\AuthAdmin\PembaruanController', 'update'])->name('pembaruan.update');
+
+        Route::get('/pembaruan/download/{email}', ['App\Http\Controllers\AuthAdmin\PembaruanController', 'download'])->name('download-pembaruan');
     });

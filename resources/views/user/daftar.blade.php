@@ -264,14 +264,11 @@
                                     </div>
                                     <div class="col-md-5">
                                         <p class="text-inverse text-right">
-                                            <a href="index.html"><b>Login akun sudah ada
+                                            <a href="/login"><b>Login akun sudah ada
                                                     !</b></a>
                                         </p>
                                     </div>
-                                    <div class="col-md-2">
-                                        <img src="/admin_tampil/assets/images/auth/Logo-small-bottom.png"
-                                            alt="small-logo.png" />
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>

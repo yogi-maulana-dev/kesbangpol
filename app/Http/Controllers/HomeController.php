@@ -7,6 +7,8 @@ use Illuminate\Routing\Controller;
 use App\Http\Controllers\HomeController;
 use App\Models\Home;
 use App\Models\Categori;
+use App\Models\Upload;
+use App\Models\Perpanjang;
 
 class HomeController extends Controller
 {
@@ -25,7 +27,10 @@ class HomeController extends Controller
     {
         //
 
-        return view('home', [
+        $daftar = upload::count();
+        $perpanjang = perpanjang::count();
+
+        return view('home', compact('daftar', 'perpanjang'), [
             'judul' => 'Halaman Berita',
             'beritas' => Home::all(),
             'categoris' => categori::all(),

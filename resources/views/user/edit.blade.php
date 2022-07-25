@@ -7,75 +7,14 @@
             <!--<span>Add class of <code>.form-control required</code> with <code>&lt;input&gt;</code> tag</span>-->
         </div>
         <div class="card-block">
-            <form method="post" action="/berita/{{ $data->id }}" class="form-material" enctype="multipart/form-data">
+            <form method="post" action="/data/{{ $data->id }}" class="form-material" enctype="multipart/form-data">
                 @method('put')
                 @csrf
 
-                @if ($data->a_surat_terdaftar_dikemenkumham == 0)
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">File Terdaftar dikemenkumham/kementerian dalam negeri</label>
-                        <div class="col-sm-8">
-                            {{-- <img class="img-fluid " id="gambar" src="#" alt="Pilih Gambar" OnError=" $(this).hide();" /> --}}
-                            <input type="file" name="surat_terdaftar_dikemenkumham" id="upload"
-                                class="form-control upload @error('surat_terdaftar_dikemenkumham') is-invalid @enderror"
-                                onchange="showFile()" accept="image/*, application/pdf">
-                            @error('surat_terdaftar_dikemenkumham')
-                                <div class="invalid-feedback">
-
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                    </div>
-                @else
-                @endif
-
-                {{-- ini adalah penutup a_surat_terdaftar_dikemenkumham --}}
-
-                @if ($data->a_keabsahan_kantor == 0)
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">keabsahan_kantor Organisasi </label>
-                        <div class="col-sm-8">
-                            {{-- <img class="img-fluid " id="gambar" src="#" alt="Pilih Gambar" OnError=" $(this).hide();" /> --}}
-                            <input type="file" name="keabsahan_kantor" id="upload"
-                                class="form-control upload @error('keabsahan_kantor') is-invalid @enderror"
-                                onchange="showFile()" accept="image/*, application/pdf">
-                            @error('keabsahan_kantor')
-                                <div class="invalid-feedback">
-
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                    </div>
-                @else
-                @endif
-
-                {{-- ini adalah penutup a_keabsahan_kantor --}}
-
-                @if ($data->a_program == 0)
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Program Organisasi</label>
-                        <div class="col-sm-8">
-                            {{-- <img class="img-fluid " id="gambar" src="#" alt="Pilih Gambar" OnError=" $(this).hide();" /> --}}
-                            <input type="file" name="program" id="upload"
-                                class="form-control upload @error('program') is-invalid @enderror" onchange="showFile()"
-                                accept="image/*, application/pdf">
-                            @error('program')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                    </div>
-                @else
-                @endif
-
-                {{-- ini adalah penutup a_program --}}
-
                 @if ($data->a_surat_pendaftaran == 0)
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Surat Pendaftaran</label>
+                        <label class="col-sm-3 col-form-label">1. Surat Permohonan
+                            Pendaftaran</label>
                         <div class="col-sm-8">
                             {{-- <img class="img-fluid " id="gambar" src="#" alt="Pilih Gambar" OnError=" $(this).hide();" /> --}}
                             <input type="file" name="surat_pendaftaran" id="upload"
@@ -96,7 +35,8 @@
 
                 @if ($data->a_akte_pendirian == 0)
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Akte Pendirian</label>
+                        <label class="col-sm-3 col-form-label">2. Akte Pendirian Ormas
+                            Yang Disahkan Oleh Notaris</label>
                         <div class="col-sm-8">
                             <input type="file" name="akte_pendirian"
                                 class="form-control @error('akte_pendirian') is-invalid @enderror">
@@ -119,7 +59,10 @@
 
                 @if ($data->a_adrt == 0)
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Anggaran rumah Tangga</label>
+                        <label class="col-sm-3 col-form-label">3. Anggaran Dasar (AD)
+                            Anggaran Rumah Tangga (ART) Yang Disahkan Oleh Notaris Dan
+                            Organisasi Berdiri Berdasarkan (Menkumham/Berdasarkan
+                            UUD)</label>
                         <div class="col-sm-8">
                             <input type="file" name="adrt" class="form-control @error('adrt') is-invalid @enderror">
 
@@ -136,11 +79,34 @@
 
                 {{-- ini adalah penutup a_adrt --}}
 
+
+                {{-- ini adalah penutup a_tujuan --}}
+
+                @if ($data->a_tujuan == 0)
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">4. Tujuan Dan Program
+                            kerja Organisasi</label>
+                        <div class="col-sm-8">
+                            <input type="file" name="tujuan" class="form-control @error('tujuan') is-invalid @enderror">
+
+                            @error('tujuan')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+
+                        </div>
+                    </div>
+                @else
+                @endif
+
+                {{-- ini adalah penutup a_tujuan --}}
+
                 {{-- ini adalah penutup a_surat_keputusan --}}
 
                 @if ($data->a_surat_keputusan == 0)
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Surat Pernyataan ketersediaan</label>
+                        <label class="col-sm-3 col-form-label">5. Surat Keputusan Tentang Susunan Pengurus Ormas</label>
                         <div class="col-sm-8">
                             <input type="file" name="surat_keputusan"
                                 class="form-control @error('surat_keputusan') is-invalid @enderror">
@@ -162,7 +128,9 @@
 
                 @if ($data->a_biodata_pengurus == 0)
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Biodata Pengurus</label>
+                        <label class="col-sm-3 col-form-label">6. Biodata pangurus
+                            organisasi (ketua, sekretaris dan bendahara atau sebutan
+                            lainnya)</label>
                         <div class="col-sm-8">
                             <input type="file" name="biodata_pengurus"
                                 class="form-control @error('biodata_pengurus') is-invalid @enderror">
@@ -183,7 +151,7 @@
                 {{-- ini adalah penutup a_ktp --}}
                 @if ($data->a_ktp == 0)
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">KTP</label>
+                        <label class="col-sm-3 col-form-label">7. Kartu Tanda Penduduk (Mesuji) Pengurus Organisasi</label>
                         <div class="col-sm-8">
                             <input type="file" name="ktp" class="form-control @error('ktp') is-invalid @enderror">
 
@@ -200,7 +168,7 @@
 
                 @if ($data->a_foto == 0)
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Foto</label>
+                        <label class="col-sm-3 col-form-label">8. Pas Foto Ketua Organisasi Berwarna Terbaru</label>
                         <div class="col-sm-8">
                             <input type="file" name="foto" class="form-control @error('foto') is-invalid @enderror">
 
@@ -218,7 +186,9 @@
 
                 @if ($data->a_surat_keterangan_domisili == 0)
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Surat Keterangan Domisili</label>
+                        <label class="col-sm-3 col-form-label">9. Surat Keterangan Domisili Sekretariat Omas Yang
+                            Diterbitkan Olah Lurah / Kepala Desa / Camat
+                        </label>
                         <div class="col-sm-8">
                             <input type="file" name="surat_keterangan_domisili"
                                 class="form-control @error('surat_keterangan_domisili') is-invalid @enderror">
@@ -237,7 +207,7 @@
 
                 @if ($data->a_npwp == 0)
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">NPWP Organisasi</label>
+                        <label class="col-sm-3 col-form-label">10. Nomor Pokolk Wajib Pajak Atas Nama Organisasi</label>
                         <div class="col-sm-8">
                             <input type="file" name="npwp" class="form-control @error('npwp') is-invalid @enderror">
 
@@ -257,7 +227,8 @@
 
                 @if ($data->a_foto_kantor == 0)
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Foto Kantor Tampak Depan papan nama organisasi</label>
+                        <label class="col-sm-3 col-form-label">11. Foto Kantor Atau Sekretariat Ormas, Tampak Depan Yang
+                            Memuat Papan Nama</label>
                         <div class="col-sm-8">
                             <input type="file" name="foto_kantor"
                                 class="form-control @error('foto_kantor') is-invalid @enderror">
@@ -275,15 +246,17 @@
 
 
                 {{-- ini adalah penutup a_surat_ketertiban --}}
+                {{-- ini adalah penutup a_keabsahan_kantor --}}
 
-                @if ($data->a_surat_ketertiban == 0)
+                @if ($data->a_keabsahan_kantor == 0)
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Surat Pernyataan Kesiapan menertibkan organisasi</label>
+                        <label class="col-sm-3 col-form-label">12. Keabsahan Kantor Atau Sekretariat Ormas Dilampiri Bukti
+                            Kepemilikan, atau Surat Perjanjian Kontrak Atau Ijin Pakai Dari Pemilik/Pengelola</label>
                         <div class="col-sm-8">
-                            <input type="file" name="surat_ketertiban"
-                                class="form-control @error('surat_ketertiban') is-invalid @enderror">
+                            <input type="file" name="keabsahan_kantor"
+                                class="form-control @error('keabsahan_kantor') is-invalid @enderror">
 
-                            @error('surat_ketertiban')
+                            @error('keabsahan_kantor')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
@@ -293,18 +266,23 @@
                 @else
                 @endif
 
-                {{-- ini adalah penutup a_surat_ketertiban --}}
+                {{-- ini adalah penutup a_keabsahan_kantor --}}
 
-                {{-- ini adalah penutup a_surat_tidak_avilasi --}}
+                {{-- ini adalah penutup a_surat_memuat --}}
 
-                @if ($data->a_surat_tidak_avilasi == 0)
+                @if ($data->a_surat_memuat == 0)
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Surat Pernyataan Tidak Berafilasi dengan partai politik
-                            ditanda tangani ketua</label>
+                        <label class="col-sm-3 col-form-label">13. Surat Pernyataan Yang Memuat : 1. Pernyataan Tidak
+                            Terjadi Konflik Kepengurusan Dan Perkara Pengadilan, 2. Pernyataan Bahwa Nama, Lambang, Bendera,
+                            Tanda Gambar, Simbol, Atribut, Cap Stempel Yang Digunakan Belum Menjadi Hak Paten Atau Hak Cipta
+                            Pihak Lain, 3. Pernyataan Kesanggupan Menyampaikan Laporan Perkembangan Dan Kegiatan Ormas
+                            Setiap Akhir Tahun, 4. Surat Pernyataan Bahwa Bertanggung Jawab Terhadap Keabsahan Seluruh Isi,
+                            Data, Dan Informasi Dokumen Atau Berkas Yang Diserahkan, Dan Bersedia Dituntut Secara Hukum. (Di
+                            Tanda Tangani Ketua Dan Sekretaris)</label>
                         <div class="col-sm-8">
-                            <input type="file" name="surat_tidak_avilasi"
-                                class="form-control @error('surat_tidak_avilasi') is-invalid @enderror">
-                            @error('surat_tidak_avilasi')
+                            <input type="file" name="surat_memuat"
+                                class="form-control @error('surat_memuat') is-invalid @enderror">
+                            @error('surat_memuat')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
@@ -314,105 +292,14 @@
                 @else
                 @endif
 
-                {{-- ini adalah penutup a_surat_tidak_avilasi --}}
-
-                {{-- ini adalah penutup a_surat_konflik --}}
-
-                @if ($data->a_surat_konflik == 0)
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Surat Pernyataan Tidak Tejadi Konflik pengurusan ditanda
-                            tangani
-                            ketua</label>
-                        <div class="col-sm-8">
-                            <input type="file" name="surat_konflik"
-                                class="form-control @error('surat_konflik') is-invalid @enderror">
-                            @error('surat_konflik')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                    </div>
-                @else
-                @endif
-
-                {{-- ini adalah penutup a_surat_konflik --}}
-
-
-                {{-- ini adalah penutup a_surat_hak_cipta --}}
-
-                @if ($data->a_surat_hak_cipta == 0)
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Surat Pernyataan Hak Cipta Simbol Organisasi ditanda
-                            tangani
-                            ketua
-                            dan seketaris</label>
-                        <div class="col-sm-8">
-                            <input type="file" name="surat_hak_cipta"
-                                class="form-control @error('surat_hak_cipta') is-invalid @enderror">
-                            @error('surat_hak_cipta')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                    </div>
-                @else
-                @endif
-
-                {{-- ini adalah penutup a_surat_hak_cipta --}}
-
-
-                {{-- ini adalah penutup a_surat_laporan --}}
-
-                @if ($data->a_surat_laporan == 0)
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Surat Pernyataan sanggup menyampaikan laporan ditanda
-                            tangani
-                            ketua</label>
-                        <div class="col-sm-8">
-                            <input type="file" name="surat_laporan"
-                                class="form-control @error('surat_laporan') is-invalid @enderror">
-                            @error('surat_laporan')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                    </div>
-                @else
-                @endif
-
-                {{-- ini adalah penutup a_surat_laporan --}}
-
-                {{-- ini adalah penutup a_surat_absah --}}
-
-                @if ($data->a_surat_absah == 0)
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Surat Pernyataan bertanggung jawab keabsahan data ditanda
-                            tangan
-                            ketua dan seketaris</label>
-                        <div class="col-sm-8">
-                            <input type="file" name="surat_absah"
-                                class="form-control @error('surat_absah') is-invalid @enderror">
-                            @error('surat_absah')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                    </div>
-                @else
-                @endif
-
-                {{-- ini adalah penutup a_surat_absah --}}
+                {{-- ini adalah penutup a_surat_memuat --}}
 
                 {{-- ini adalah penutup a_surat_rekom_agama --}}
 
                 @if ($data->a_surat_rekom_agama == 0)
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Surat Rekomendasi dari kementrian agama untuk orkermas
-                            keagamaan</label>
+                        <label class="col-sm-3 col-form-label">14. Rekomendasi Dari Kementerian Agama Untuk Omas Yang
+                            Memiliki Kekhususan Bidang Keagamaan **</label>
                         <div class="col-sm-8">
                             <input type="file" name="surat_rekom_agama"
                                 class="form-control @error('surat_rekom_agama') is-invalid @enderror">
@@ -430,16 +317,14 @@
 
                 {{-- ini adalah penutup a_surat_rekom_skpd --}}
 
-                @if ($data->a_surat_rekom_skpd == 0)
+                @if ($data->a_surat_rekom_skpd_kepercayaan == 0)
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Surat Rekomendasi dari kementrian dan SKPD bidang
-                            kebudayaan
-                            khusus
-                            kepercayaan pada tuhan yang Maha Esa</label>
+                        <label class="col-sm-3 col-form-label">15. Rekomendasi Dari SKPD Yang Membidangi Urusan Kebudayaan
+                            Untuk Ormas Yang Memiliki Kekhususan Bidang Kepercayaan Kepada Tuhan Yang Maha Esa **</label>
                         <div class="col-sm-8">
-                            <input type="file" name="surat_rekom_skpd"
-                                class="form-control @error('surat_rekom_skpd') is-invalid @enderror">
-                            @error('surat_rekom_skpd')
+                            <input type="file" name="surat_rekom_skpd_kepercayaan"
+                                class="form-control @error('surat_rekom_skpd_kepercayaan') is-invalid @enderror">
+                            @error('surat_rekom_skpd_kepercayaan')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
@@ -456,9 +341,8 @@
 
                 @if ($data->a_surat_rekom_skpd_kerja == 0)
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Surat Rekomendasi dari kementrian dan SKPD bidang tenaga
-                            kerja
-                            orkemas serikat buruh</label>
+                        <label class="col-sm-3 col-form-label">16. Rekomendasi Dari SKPD Yang Membidangi Urusan Tenaga
+                            Kerja Untuk Ormas Serikat Buruh Dan Serikat Pekerja **</label>
                         <div class="col-sm-8">
                             <input type="file" name="surat_rekom_skpd_kerja"
                                 class="form-control @error('surat_rekom_skpd_kerja') is-invalid @enderror">
@@ -478,10 +362,9 @@
 
                 @if ($data->a_surat_rekom_kesediaan == 0)
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Surat pernyataan persekeabsahan_kantor, untuk menyantumkan
-                            nama
-                            anggota nama
-                            pejabat negara, pemerintahan, dan tokoh masyarakt</label>
+                        <label class="col-sm-3 col-form-label">17. Surat Pernyataan Kesediaan Atau Persetujuan Untuk Ormas
+                            Yang Dalam Kepengurusannya Mencantumkan Nama Dari Pajabat Negara, Pejabat Pemerintah, Dan Tokoh
+                            Masyarakat **</label>
                         <div class="col-sm-8">
                             <input type="file" name="surat_rekom_kesediaan"
                                 class="form-control @error('surat_rekom_kesediaan') is-invalid @enderror">
@@ -505,10 +388,8 @@
 
                 @if ($data->a_surat_izasah == 0)
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Surat pernyataan persekeabsahan_kantor, untuk menyantumkan
-                            nama
-                            anggota nama
-                            pejabat negara, pemerintahan, dan tokoh masyarakt</label>
+                        <label class="col-sm-3 col-form-label">18. Ijazah Terakhir Pengurus Harian (Ketua, Sekretaris,
+                            Bendahara)</label>
                         <div class="col-sm-8">
                             <input type="file" name="surat_izasah"
                                 class="form-control @error('surat_izasah') is-invalid @enderror">
@@ -525,15 +406,17 @@
 
                 {{-- ini adalah penutup a_surat_izasah --}}
 
-                {{-- ini adalah penutup a_skt --}}
+                {{-- ini adalah penutup a_stlk --}}
 
-                @if ($data->a_skt == 0)
+                @if ($data->a_stlk == 0)
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Surat keterangan terdaftar dari provinsi</label>
+                        <label class="col-sm-3 col-form-label">19. STLK Dari Badan Kesatuan Bangsa Dan Politik Provinsi
+                            Lampung Bagi Organisasi Yang Memiliki Kepengurusan Tingkat Provinsi **</label>
                         <div class="col-sm-8">
-                            <input type="file" name="skt" class="form-control @error('skt') is-invalid @enderror">
+                            <input type="file" name="stlk"
+                                class="form-control @error('stlk') is-invalid @enderror">
 
-                            @error('skt')
+                            @error('stlk')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
@@ -543,7 +426,33 @@
                 @else
                 @endif
 
-                {{-- ini adalah penutup skt --}}
+                {{-- ini adalah penutup stlk --}}
+
+
+
+                {{-- ini adalah penutup a_surat_kemenkumham --}}
+
+                @if ($data->a_surat_kemenkumham == 0)
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">20. Surat Keterangan Terdaftar Di Kementrian Hukum Dan Ham
+                            Bagi Ormas Yang Berbadan Hukum, Dan/ Atau Surat Keterangan Terdaftar Di Kementrian Dalam Negri
+                            Bagi Ormas Yang Tidak Berbadan Hukum</label>
+                        <div class="col-sm-8">
+                            {{-- <img class="img-fluid " id="gambar" src="#" alt="Pilih Gambar" OnError=" $(this).hide();" /> --}}
+                            <input type="file" name="surat_kemenkumham" id="upload"
+                                class="form-control upload @error('surat_kemenkumham') is-invalid @enderror"
+                                onchange="showFile()" accept="image/*, application/pdf">
+                            @error('surat_kemenkumham')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                    </div>
+                @else
+                @endif
+
+                {{-- ini adalah penutup a_surat_kemenkumham --}}
 
 
                 <div class="col-sm-10">

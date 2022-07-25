@@ -219,6 +219,12 @@
                                     </div>
                                 </div>
 
+                                <div class="col-md-10">
+                                    {{-- <p class="text-inverse text-left m-b-0">Thank you.</p> --}}
+                                    <p class="text-inverse text-left"><a href="/lupa-password"><b>Lupa Password</b></a>
+                                    </p>
+                                </div>
+
 
                             </div>
                         </div>

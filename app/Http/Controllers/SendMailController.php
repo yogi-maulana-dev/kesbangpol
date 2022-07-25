@@ -32,6 +32,6 @@ class SendMailController extends Controller
 
         Mail::to($request->email)->send(new SendData($maildata));
 
-        return redirect('/menudata')->with('success', 'Notifikasi data lengkap sudah di kirim');
+        return redirect('/admin/menudata')->with('success', 'Notifikasi data lengkap sudah di kirim');
     }
 }

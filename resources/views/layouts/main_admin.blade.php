@@ -163,7 +163,8 @@
                             </div>
                         </div>
                         <a href="index-2.html">
-                            <img class="img-fluid" src="/admin_tampil/assets/images/logo.png" alt="Theme-Logo" />
+                            <img class="img-fluid" src="/admin_tampil/assets/images/logokecil.png"
+                                alt="Theme-Logo" />
                         </a>
                         <a class="mobile-options waves-effect waves-light">
                             <i class="ti-more"></i>
@@ -173,8 +174,7 @@
                     <div class="navbar-container container-fluid">
                         <ul class="nav-left">
                             <li>
-                                <div class="sidebar_toggle"><a href="javascript:void(0)"><i
-                                            class="ti-menu"></i></a>
+                                <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a>
                                 </div>
                             </li>
                             <li class="header-search">
@@ -189,7 +189,8 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="#!" onclick="javascript:toggleFullScreen()" class="waves-effect waves-light">
+                                <a href="#!" onclick="javascript:toggleFullScreen()"
+                                    class="waves-effect waves-light">
                                     <i class="ti-fullscreen"></i>
                                 </a>
                             </li>
@@ -260,17 +261,17 @@
                                     <i class="ti-angle-down"></i>
                                 </a>
                                 <ul class="show-notification profile-notification">
-                                    <li class="waves-effect waves-light">
+                                    {{-- <li class="waves-effect waves-light">
                                         <a href="#!">
                                             <i class="ti-settings"></i> Settings
                                         </a>
-                                    </li>
+                                    </li> --}}
                                     <li class="waves-effect waves-light">
                                         <a href="/profil">
                                             <i class="ti-user"></i> Profile
                                         </a>
                                     </li>
-                                    <li class="waves-effect waves-light">
+                                    {{-- <li class="waves-effect waves-light">
                                         <a href="email-inbox.html">
                                             <i class="ti-email"></i> My Messages
                                         </a>
@@ -279,7 +280,7 @@
                                         <a href="auth-lock-screen.html">
                                             <i class="ti-lock"></i> Lock Screen
                                         </a>
-                                    </li>
+                                    </li> --}}
                                     <form action="/keluar" method="post">
 
                                         @csrf
@@ -444,72 +445,31 @@
                 </div>
             </div>
             <!-- Sidebar inner chat end-->
-            <div class="pcoded-main-container">
-                <nav class="pcoded-navbar">
-                    <div class="pcoded-inner-navbar">
-                        <ul class="pcoded-item pcoded-left-item">
-                            <li class="pcoded-hasmenu">
-                                <a href="/tutorial" class="waves-effect waves-dark">
-                                    <span class="pcoded-micon"><i class="ti-layout-cta-right"></i><b>D</b></span>
-                                    <span class="pcoded-mtext">Tutorial</span>
-                                    <span class="pcoded-mcaret"></span>
-                                </a>
-                        </ul>
-                        </li>
 
-                        <ul class="pcoded-item pcoded-left-item">
-                            <li class="pcoded-hasmenu is-hover" subitem-icon="style6" dropdown-icon="style1">
-                                <a href="/dashboard" class="waves-effect waves-dark">
-                                    <span class="pcoded-micon"><i class="ti-layout-cta-right"></i><b>D</b></span>
-                                    <span class="pcoded-mtext">Pendaftaran</span>
-                                    <span class="pcoded-mcaret"></span>
-                                </a>
-                            </li>
-                        </ul>
 
-                        <ul class="pcoded-item pcoded-left-item">
-                            <li class="pcoded-hasmenu is-hover" subitem-icon="style6" dropdown-icon="style1">
-                                <a href="/perpanjangan" class="waves-effect waves-dark">
-                                    <span class="pcoded-micon"><i class="ti-layout-cta-right"></i><b>D</b></span>
-                                    <span class="pcoded-mtext">Pepanjangan</span>
-                                    <span class="pcoded-mcaret"></span>
-                                </a>
-                            </li>
-                        </ul>
-
-                    </div>
-                </nav>
-                <div class="pcoded-wrapper">
-                    <div class="pcoded-content">
-                        <div class="pcoded-inner-content">
-                            <!-- Main-body start -->
-                            <div class="main-body">
-                                <div class="page-wrapper">
-
-                                    <!-- Page body start -->
-                                    <div class="page-body">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <!-- Default card start -->
-                                                @yield('dashboard')
-                                                @yield('profil')
-                                                @yield('perpanjang')
-                                                @yield('tutorial')
-                                                <!-- Default card end -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Page body end -->
-                                </div>
-                            </div>
-                            <!-- Main-body end -->
-
-                            {{-- <div id="styleSelector"> --}}
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- Default card start -->
+            @yield('home')
+            @yield('dashboard')
+            @yield('profil')
+            @yield('perpanjang')
+            @yield('tutorial')
+            @yield('resetpassword')
+            @yield('pembaruan')
+            <!-- Default card end -->
         </div>
+    </div>
+    </div>
+    <!-- Page body end -->
+    </div>
+    </div>
+    <!-- Main-body end -->
+
+    {{-- <div id="styleSelector"> --}}
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
     </div>
     </div>
     <!-- Warning Section Starts -->
